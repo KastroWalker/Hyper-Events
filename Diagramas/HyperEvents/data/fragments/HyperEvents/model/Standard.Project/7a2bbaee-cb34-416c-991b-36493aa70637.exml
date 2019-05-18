@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="HyperEvents" version="4">
+  <OBJECT>
+    <ID name="HyperEvents" mc="Standard.Project" uid="7a2bbaee-cb34-416c-991b-36493aa70637"/>
+    <ATTRIBUTES>
+      <ATT name="ProjectContext"></ATT>
+      <ATT name="ProjectDescr"></ATT>
+      <ATT name="Name"><![CDATA[HyperEvents]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="Model">
+        <COMPID name="hyperevents" mc="Standard.Package" uid="3f426c03-0da4-4afd-82ea-db737b2ecbfa"/>
+      </COMP>
+      <COMP relation="DiagramRoot">
+        <COMPID name="HyperEvents" mc="Infrastructure.DiagramSet" uid="464c10fb-ec73-4ebb-93c9-6563db73f3e5"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

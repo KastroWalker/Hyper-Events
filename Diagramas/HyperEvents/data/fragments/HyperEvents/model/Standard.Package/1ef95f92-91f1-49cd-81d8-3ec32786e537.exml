@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Sequencia" version="4">
+  <OBJECT>
+    <ID name="Sequencia" mc="Standard.Package" uid="1ef95f92-91f1-49cd-81d8-3ec32786e537"/>
+    <PID name="hyperevents" mc="Standard.Package" uid="3f426c03-0da4-4afd-82ea-db737b2ecbfa"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[Sequencia]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedBehavior">
+        <COMPID name="Interaction" mc="Standard.Interaction" uid="680f11f5-7a94-4297-82c8-bb91b628997b"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>
