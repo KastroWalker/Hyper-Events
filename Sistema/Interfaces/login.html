@@ -13,15 +13,24 @@
     <body>
         <header>
             <img src="img/logo" alt="Logo Hyper Events">HyperEvents
+        </header>
+        <main>
             <h1>Bem vindo ao Hyper Events</h1>
             <h2>Sistema de Eventos Academicos</h2>
-        </header>
-        <nav>
-            <a href="eventos_disponiveis.html">Eventos Disponiveis</a>
-            <a href="eventos_finalizados.html">Eventos Finalizados</a>
-        </nav>
-        <main>
-            <button><a href="cadastro_organizador.html">Entrar como organizador</a></button>
+            <section id="Login">
+                <h2>Login</h2>
+                <form action="POST">
+                    <label for="user">USUÁRIO: </label>
+                    <input type="text" name="user" id="user"><br/>
+                    <label for="senha">SENHA: </label>
+                    <input type="password" name="senha" id="senha"><a href="#">Esqueci Usuário/Senha</a><br/>
+                    <button type="submit">Entrar</button>
+                </form>
+            </section>
+            <section id="Cadastrar">
+                <h2>Ainda não tem um cadastro?</h2>
+                <a href="cadastro.html">Cadastrar na Hyper Events</a>
+            </section>
             <section id="Manual">
                 <h2>Está com dificuldade?</h2>
                 <a href="manual.html">Acesse aqui o manual</a>
