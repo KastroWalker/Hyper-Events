@@ -29,10 +29,15 @@
         <COMPID name="Modificar rede de contatos" mc="Standard.UseCase" uid="dc5aa81a-06d5-4753-9c6d-5be023ae8d84"/>
         <COMPID name="Modificar ministrantes" mc="Standard.UseCase" uid="cf7a4d73-723b-4ed4-9f3f-a01102a78a8b"/>
         <COMPID name="Modificar palestrantes" mc="Standard.UseCase" uid="a3475a1d-f7c0-403d-9755-71e4b1bfe0f7"/>
+        <COMPID name="Usuário" mc="Standard.Actor" uid="7875bd71-c168-46cd-bc5c-a7e624192323"/>
+        <COMPID name="Use Case" mc="Standard.UseCase" uid="fa52837a-366f-4ae9-960a-e543eee9292b"/>
+        <COMPID name="Use Case1" mc="Standard.UseCase" uid="f7f37919-9af2-44e4-9794-bad7894cde73"/>
+        <COMPID name="Use Case2" mc="Standard.UseCase" uid="7d445c63-6a67-449b-9a32-9139afa361f6"/>
       </COMP>
       <COMP relation="Product">
         <COMPID name="Cadastro" mc="Standard.UseCaseDiagram" uid="9d5714e8-30a9-4f51-abf3-3655554e9880"/>
         <COMPID name="Modificar" mc="Standard.UseCaseDiagram" uid="9f387650-033d-4266-9093-cc621fac7d47"/>
+        <COMPID name="Cadastro Usuario" mc="Standard.UseCaseDiagram" uid="5108bf39-b384-472c-a1de-f0e8384359ed"/>
       </COMP>
     </DEPENDENCIES>
   </OBJECT>
