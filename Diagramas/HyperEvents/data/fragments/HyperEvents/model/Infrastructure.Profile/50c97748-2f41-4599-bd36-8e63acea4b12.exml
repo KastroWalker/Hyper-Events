@@ -1,8 +1,8 @@
 <?xml version="1.0" ?>
 <!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="LocalProfile" version="4">
   <OBJECT>
-    <ID name="LocalProfile" mc="Infrastructure.Profile" uid="b17265f8-3f57-4802-8716-3fdc58270185"/>
-    <PID name="LocalModule" mc="Infrastructure.ModuleComponent" uid="7c02bdc1-8d16-403e-b031-b62e71a4bd6d"/>
+    <ID name="LocalProfile" mc="Infrastructure.Profile" uid="50c97748-2f41-4599-bd36-8e63acea4b12"/>
+    <PID name="LocalModule" mc="Infrastructure.ModuleComponent" uid="6ea94fb6-00d4-4a30-ac48-9e92f44444fa"/>
     <ATTRIBUTES>
       <ATT name="Name"><![CDATA[LocalProfile]]></ATT>
       <ATT name="status">1970354901745664</ATT>
