@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="HyperEvents" version="4">
+  <OBJECT>
+    <ID name="HyperEvents" mc="Infrastructure.DiagramSet" uid="7b638869-7764-4777-87f0-abaf3edfad8c"/>
+    <PID name="HyperEvents" mc="Standard.Project" uid="30e7831b-d5ae-48e2-a4c9-dc9ef9494b83"/>
+    <ATTRIBUTES>
+      <ATT name="Name"><![CDATA[HyperEvents]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES></DEPENDENCIES>
+  </OBJECT>
+</EXT>
