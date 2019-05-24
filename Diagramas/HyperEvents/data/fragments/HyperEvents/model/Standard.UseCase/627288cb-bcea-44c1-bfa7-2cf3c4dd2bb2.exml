@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
-<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Cadastrar rede de contatos" version="4">
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Manter rede de contatos" version="4">
   <OBJECT>
-    <ID name="Cadastrar rede de contatos" mc="Standard.UseCase" uid="627288cb-bcea-44c1-bfa7-2cf3c4dd2bb2"/>
+    <ID name="Manter rede de contatos" mc="Standard.UseCase" uid="627288cb-bcea-44c1-bfa7-2cf3c4dd2bb2"/>
     <PID name="Diagramas de Caso de Uso" mc="Standard.Package" uid="3b818e25-102b-45dd-bb7c-ae9842a2c4e7"/>
     <ATTRIBUTES>
       <ATT name="IsElementary">false</ATT>
@@ -9,7 +9,7 @@
       <ATT name="IsLeaf">false</ATT>
       <ATT name="IsRoot">false</ATT>
       <ATT name="Visibility">Public</ATT>
-      <ATT name="Name"><![CDATA[Cadastrar rede de contatos]]></ATT>
+      <ATT name="Name"><![CDATA[Manter rede de contatos]]></ATT>
       <ATT name="status">1970354901745664</ATT>
     </ATTRIBUTES>
     <DEPENDENCIES>

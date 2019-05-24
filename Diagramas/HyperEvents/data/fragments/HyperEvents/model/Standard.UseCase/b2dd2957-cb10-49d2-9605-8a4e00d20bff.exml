@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
-<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Cadastrar Minicurso" version="4">
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Manter Minicurso" version="4">
   <OBJECT>
-    <ID name="Cadastrar Minicurso" mc="Standard.UseCase" uid="b2dd2957-cb10-49d2-9605-8a4e00d20bff"/>
+    <ID name="Manter Minicurso" mc="Standard.UseCase" uid="b2dd2957-cb10-49d2-9605-8a4e00d20bff"/>
     <PID name="Diagramas de Caso de Uso" mc="Standard.Package" uid="3b818e25-102b-45dd-bb7c-ae9842a2c4e7"/>
     <ATTRIBUTES>
       <ATT name="IsElementary">false</ATT>
@@ -9,7 +9,7 @@
       <ATT name="IsLeaf">false</ATT>
       <ATT name="IsRoot">false</ATT>
       <ATT name="Visibility">Public</ATT>
-      <ATT name="Name"><![CDATA[Cadastrar Minicurso]]></ATT>
+      <ATT name="Name"><![CDATA[Manter Minicurso]]></ATT>
       <ATT name="status">1970354901745664</ATT>
     </ATTRIBUTES>
     <DEPENDENCIES>

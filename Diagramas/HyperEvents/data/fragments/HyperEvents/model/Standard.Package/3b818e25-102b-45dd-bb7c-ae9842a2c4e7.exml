@@ -14,13 +14,13 @@
     </ATTRIBUTES>
     <DEPENDENCIES>
       <COMP relation="OwnedElement">
-        <COMPID name="Cadastrar Minicurso" mc="Standard.UseCase" uid="b2dd2957-cb10-49d2-9605-8a4e00d20bff"/>
-        <COMPID name="Cadastrar palestrantes" mc="Standard.UseCase" uid="a8228635-40ce-48be-8ecb-a2c50d4d0e4c"/>
-        <COMPID name="Cadastrar palestra" mc="Standard.UseCase" uid="9b4bb8c7-981c-4fe0-ae95-e6c04270c7ec"/>
-        <COMPID name="Cadastrar Ministrantes" mc="Standard.UseCase" uid="664c03fa-9130-4d04-aa26-7d4e7b476f59"/>
-        <COMPID name="Cadastrar local do evento" mc="Standard.UseCase" uid="52a50109-f0a9-4706-bd67-de4665639149"/>
-        <COMPID name="Cadastrar sócios" mc="Standard.UseCase" uid="ff82b850-fc66-4293-b0a2-32d45a4380aa"/>
-        <COMPID name="Cadastrar rede de contatos" mc="Standard.UseCase" uid="627288cb-bcea-44c1-bfa7-2cf3c4dd2bb2"/>
+        <COMPID name="Manter Minicurso" mc="Standard.UseCase" uid="b2dd2957-cb10-49d2-9605-8a4e00d20bff"/>
+        <COMPID name="Manter palestrantes" mc="Standard.UseCase" uid="a8228635-40ce-48be-8ecb-a2c50d4d0e4c"/>
+        <COMPID name="Manter palestra" mc="Standard.UseCase" uid="9b4bb8c7-981c-4fe0-ae95-e6c04270c7ec"/>
+        <COMPID name="Manter Ministrantes" mc="Standard.UseCase" uid="664c03fa-9130-4d04-aa26-7d4e7b476f59"/>
+        <COMPID name="Manter local do evento" mc="Standard.UseCase" uid="52a50109-f0a9-4706-bd67-de4665639149"/>
+        <COMPID name="Manter sócios" mc="Standard.UseCase" uid="ff82b850-fc66-4293-b0a2-32d45a4380aa"/>
+        <COMPID name="Manter rede de contatos" mc="Standard.UseCase" uid="627288cb-bcea-44c1-bfa7-2cf3c4dd2bb2"/>
         <COMPID name="Modificar palestra" mc="Standard.UseCase" uid="c434cf45-ba99-4da7-91dc-e0f200f96810"/>
         <COMPID name="Modificar minicurso" mc="Standard.UseCase" uid="7608c834-4a7a-4592-aa26-65c202df4c46"/>
         <COMPID name="Modificar sócios" mc="Standard.UseCase" uid="1f627d82-2372-4842-ae89-086945bec023"/>
@@ -28,14 +28,16 @@
         <COMPID name="Modificar rede de contatos" mc="Standard.UseCase" uid="dc5aa81a-06d5-4753-9c6d-5be023ae8d84"/>
         <COMPID name="Modificar ministrantes" mc="Standard.UseCase" uid="cf7a4d73-723b-4ed4-9f3f-a01102a78a8b"/>
         <COMPID name="Modificar palestrantes" mc="Standard.UseCase" uid="a3475a1d-f7c0-403d-9755-71e4b1bfe0f7"/>
-        <COMPID name="Use Case" mc="Standard.UseCase" uid="fa52837a-366f-4ae9-960a-e543eee9292b"/>
-        <COMPID name="Use Case1" mc="Standard.UseCase" uid="f7f37919-9af2-44e4-9794-bad7894cde73"/>
-        <COMPID name="Use Case2" mc="Standard.UseCase" uid="7d445c63-6a67-449b-9a32-9139afa361f6"/>
+        <COMPID name="Cadastrar-se no sistema" mc="Standard.UseCase" uid="fa52837a-366f-4ae9-960a-e543eee9292b"/>
+        <COMPID name="Ver certificado" mc="Standard.UseCase" uid="f7f37919-9af2-44e4-9794-bad7894cde73"/>
+        <COMPID name="Manter inscrição no evento" mc="Standard.UseCase" uid="7d445c63-6a67-449b-9a32-9139afa361f6"/>
+        <COMPID name="Realizar frequencia de atividade do evento" mc="Standard.UseCase" uid="80e53e15-6dd1-4461-98cb-4a7409e5fd76"/>
+        <COMPID name="Manter atividades do evento" mc="Standard.UseCase" uid="17932d36-5b6d-4836-9042-fde5463985cc"/>
+        <COMPID name="Manter Dados do usuário" mc="Standard.UseCase" uid="613a04b0-6158-4b6c-8c28-8f208f538584"/>
       </COMP>
       <COMP relation="Product">
-        <COMPID name="Cadastro" mc="Standard.UseCaseDiagram" uid="9d5714e8-30a9-4f51-abf3-3655554e9880"/>
-        <COMPID name="Modificar" mc="Standard.UseCaseDiagram" uid="9f387650-033d-4266-9093-cc621fac7d47"/>
-        <COMPID name="Cadastro Usuario" mc="Standard.UseCaseDiagram" uid="5108bf39-b384-472c-a1de-f0e8384359ed"/>
+        <COMPID name="Organizador" mc="Standard.UseCaseDiagram" uid="9d5714e8-30a9-4f51-abf3-3655554e9880"/>
+        <COMPID name="Usuario" mc="Standard.UseCaseDiagram" uid="5108bf39-b384-472c-a1de-f0e8384359ed"/>
       </COMP>
     </DEPENDENCIES>
   </OBJECT>
