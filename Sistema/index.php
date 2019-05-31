@@ -6,7 +6,7 @@
         <meta name="keywords" content="Eventos, Acadêmico, Escola">
         <meta name="robots" content="index, follow">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="">
+        <link rel="stylesheet" type="text/css" href="CSS/style_index.css">
         <meta name="author" content="Victor Castro">
         <title>Home - Hyper Events</title>
     </head>
@@ -17,14 +17,12 @@
         <main>
             <h1 class="titulo">Bem vindo ao Hyper Events</h1>
             <h2 class="titulo">Sistema de Eventos Academicos</h2>
-            <section>
-                Entrar como:<br/>
-                <button>
-                    Participante
-                </button>    
-                <button>
-                    Organizador
-                </button>
+            <section id="entrar">
+            	<form method="POST" action="Arquivos/login.php">
+	                Entrar como:<br/>
+	                <button id="bt_participante" value="participante" name="login">Participante</button><br/>    
+	                <button id="bt_organizador" value="organizador" name="login">Organizador</button>
+                </form>
             </section>
             <section id="Manual">
                 <h2>Está com dificuldade?</h2>

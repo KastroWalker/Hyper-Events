@@ -7,7 +7,7 @@
         <meta name="robots" content="index, follow">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!--<link rel="canonical" href="https://localhost:8000/home/">-->
-        <link rel="stylesheet" type="text/css" href="css/style_login.css"
+        <link rel="stylesheet" type="text/css" href="../CSS/style_login.css">
         <meta name="author" content="Victor Castro">
         <title>Login - Hyper-Events</title>
     </head>
@@ -21,10 +21,11 @@
             <section id="login">
                 <h2>Login</h2>
                 <form method="POST">
-                    <input type="text" placeholder="Usuário">
-                    <input type="password" placeholder="Senha">
-                    <input type="submit" value="Entrar">
-                    <a href="cadastro.html">Ainda não é inscrito?<strong>Cadastrar na Hyper Events</strong></a>
+                    <input type="text" placeholder="Usuário"><br/>
+                    <input type="password" placeholder="Senha"><br/>
+                    <input type="submit" value="Entrar"><br/>
+                    <button id="logout"><a href="logout.php">VOLTAR</a></button><br/>
+                    <a href="cadastro.html" id="cadastrar">Ainda não é inscrito?<strong>Cadastrar na Hyper Events</strong></a><br/>
                 </form>
             </section>
             <section id="Manual">

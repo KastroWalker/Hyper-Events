@@ -1,0 +1,30 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	background-color: blue;
+	text-align: center;
+}
+
+#entrar{
+	background-color: white;
+	margin: auto;
+	width: 30%;
+}
+
+input, #logout{
+   	height: 55px;
+   	width: 400px;
+   	margin: 10px;
+   	border-radius: 30px;
+	padding: 10px 20px;
+    font-size: 16pt;
+    background-color: green;
+}
+
+a {
+	color: red;
+}
+
