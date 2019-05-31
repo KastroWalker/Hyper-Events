@@ -1,3 +1,3 @@
 <?php
-	$conexao = mysqli_connect('localhost', 'root', 'Suc0del@ranjaasd', 'HyperEvents') or die ('Não foi possivel conectar');
+	$conexao = mysqli_connect('localhost', 'root', '', 'HyperEvents') or die ('Não foi possivel conectar');
 ?>

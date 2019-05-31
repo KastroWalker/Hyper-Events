@@ -1,24 +1,13 @@
-*{
-	margin: 0px;
-	padding: 0px;
-}
-
-body {
-	background-color: blue;
-	text-align: center;
+button {
+	padding: 20px;
+	margin: 15px;
+	color: black;
 }
 
 #entrar{
-	background-color: white;
+	color: #fff;
+	background-color: blue;
+	width: 20%;
 	margin: auto;
-	width: 30%;
-}
-
-#bt_participante, #bt_organizador {
-   	height: 55px;
-   	width: 400px;
-   	margin: 10px;
-   	border-radius: 30px;
-	padding: 10px 20px;
-    font-size: 16pt;
+	padding: 100px 120px 120px 120px;
 }
