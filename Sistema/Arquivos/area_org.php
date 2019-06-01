@@ -1,6 +1,11 @@
+<!-- 
+Tela do organizador 
+Criado por Victor Castro
+-->
+
 <?php
-	session_start();
-	include 'verifica_login.php';
+    session_start();
+    include 'verifica_login.php';
 ?>
 
 <h2>Olá organizador, <?php echo $_SESSION['usuario']; ?></h2>

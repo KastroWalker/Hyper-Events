@@ -1,3 +1,8 @@
+<!-- 
+Tela de Login 
+Criado por: Victor Castro
+-->
+
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -9,7 +14,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!--<link rel="canonical" href="https://localhost:8000/home/">-->
         <link rel="stylesheet" type="text/css" href="CSS/style_padrao.css">
-        <link rel="stylesheet" type="text/css" href="CSS/style_login.css">
+        <link rel="stylesheet" type="text/css" href="CSS/style_index.css">
         <link rel="stylesheet" type="text/css" href="">
         <meta name="author" content="Victor Castro">
         <title>Login - Hyper-Events</title>
@@ -21,9 +26,10 @@
         </header>
         <main>
             <section id="login">
+                <!-- Formulario de Login -->
                 <div id="form_login">
                     <h2>Login: </h2>
-                        <form method="POST" action="Arquivos/login.php">
+                    <form method="POST" action="Arquivos/login.php">
                         <input type="text" placeholder="Usuário" name="usuario"><br/>
                         <input type="password" placeholder="Senha" name="senha"><br/>
                         <input type="submit" value="Entrar" id="entrar"><br/>
@@ -32,6 +38,7 @@
                     </form>
                 </div>
             </section>
+            <!-- Manual do Usuário -->
             <section id="Manual">
                 <h2>Está com dificuldade?</h2>
                 <a href="manual.html">Acesse aqui o manual</a>
