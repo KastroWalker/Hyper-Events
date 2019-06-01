@@ -44,7 +44,7 @@
             exit();
         }
         else{
-            header('Location: tela_login.php');
+            header('Location: ../index.php');
             exit();
         }
     } 
