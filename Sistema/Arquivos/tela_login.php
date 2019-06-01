@@ -23,9 +23,9 @@
             <section id="login">
                 <div id="form_login">
                     <h2>Login: </h2>
-                    <form method="POST">
-                        <input type="text" placeholder="Usuário"><br/>
-                        <input type="password" placeholder="Senha"><br/>
+                    <form method="POST" action="login.php">
+                        <input type="text" placeholder="Usuário" name="usuario"><br/>
+                        <input type="password" placeholder="Senha" name="senha"><br/>
                         <input type="submit" value="Entrar" id="entrar"><br/>
                         <a href="cadastro.html" id="cadastrar"><strong>Cadastrar na Hyper Events</strong></a><br/>
                         <a href="logout.php" id="voltar">Voltar</a>
