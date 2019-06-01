@@ -1,0 +1,36 @@
+table {
+	width: 80%;
+	padding: 15px;
+	margin: auto;
+	background-color: #00f;
+	height: 250px;
+	color: #fff;
+	font-size: 16pt;
+	margin-top: 15px; 
+}
+
+table td {
+	text-align: left;
+}
+
+button {
+	margin: 15px;
+}
+
+#Manual {
+	padding: 15px;
+}
+
+#cadastro {
+	background-color: #6E6E6E;
+	margin: 15px auto 15px auto;
+	padding: 15px;
+}
+
+.label {
+	text-align: right;
+}
+
+.titulo {
+	color: red;
+}

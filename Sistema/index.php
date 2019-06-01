@@ -33,7 +33,7 @@ Criado por: Victor Castro
                         <input type="text" placeholder="Usuário" name="usuario"><br/>
                         <input type="password" placeholder="Senha" name="senha"><br/>
                         <input type="submit" value="Entrar" id="entrar"><br/>
-                        <a href="cadastro.html" id="cadastrar"><strong>Cadastrar na Hyper Events</strong></a><br/>
+                        <a href="Arquivos/cadastro.php" id="cadastrar"><strong>Cadastrar na Hyper Events</strong></a><br/>
                         <a href="logout.php" id="voltar">Voltar</a>
                     </form>
                 </div>
