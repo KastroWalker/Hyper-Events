@@ -1,12 +1,12 @@
 form {
-	width: 20%;
+	width: 50%;
 	background-color: #ccc;
-	margin: 50px auto;
+	margin: 20px auto;
 	padding: 10px;
 	padding-left: 40px;
 	padding-right: 0px;	 
 	text-align: left;
-	height: 650px;
+	height: 815px;
 }
 
 form label {
@@ -27,7 +27,7 @@ form input {
 }
 	
 x {
-		color: #069;
+	color: #069;
 }
 
 form input[type="radio"] {
@@ -61,5 +61,46 @@ button a{
 #titulo {
 	color: #069;
 	font-size: 21pt;
-	padding: 15px; 
+	padding: 8px; 
+}
+
+.erro {
+	color: red;
+    text-align: left;
+    padding-bottom: 10px;
+    display: none;
+}
+
+#sexo_invalido {
+	/*display: block;*/
+}
+
+#user_cadastrado{
+	background-color: green;
+	display: block;
+	width: 30%;
+	padding: 20px 25px;
+	margin: 25px auto 5px auto;
+	color: #fff;
+	border-radius: 4px;
+}
+
+#user_cadastrado a {
+	font-style: bold;
+	text-decoration: none;
+	color: #fff;
+}
+
+#user_cadastrado a:hover {
+	text-decoration: underline;
+}
+
+#erro_cadastro{
+	background-color: #f00;
+	display: block;
+	width: 30%;
+	padding: 25px;
+	margin: 25px auto 5px auto;
+	color: #fff;
+	border-radius: 4px;
 }

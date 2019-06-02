@@ -3,11 +3,13 @@
 	include 'conexao.php';
 
 	/*Dados Pessoais*/
+	
 	$nome = mysqli_real_escape_string($conexao, trim($_POST['campo_nome']));
 	$data_nasc = mysqli_real_escape_string($conexao, trim($_POST['campo_data_nasc']));
 	$sexo = mysqli_real_escape_string($conexao, trim($_POST['campo_sexo']));
 	$cpf =  mysqli_real_escape_string($conexao, trim($_POST['campo_cpf']));
-
+	$cpf = str_replace('-', '', $cpf);
+	$cpf = str_replace('.', '', $cpf);
 	/*Dados da conta*/
 	$email = mysqli_real_escape_string($conexao, trim($_POST['campo_email']));
 	$conf_email = mysqli_real_escape_string($conexao, trim($_POST['campo_conf_email']));
@@ -47,7 +49,7 @@
 	if($conexao->query($sql) === TRUE){
 		$_SESSION['status_cadastro'] = true;
 	}else{
-		$_SESSION['Não foi cadastrar'] = true;
+		$_SESSION['Não_foi_cadastrar'] = true;
 	}
 
 	$conexao->close();

@@ -20,6 +20,11 @@ Criado por: Victor Castro
         <link rel="stylesheet" type="text/css" href="CSS/style_padrao.css">
         <link rel="stylesheet" type="text/css" href="CSS/style_index.css">
         <link rel="stylesheet" type="text/css" href="">
+        <script type="text/javascript">
+            function cadastrar() {
+                window.location.href = 'Arquivos/cadastro.php';
+            }
+        </script>
         <meta name="author" content="Victor Castro">
         <title>Login - Hyper-Events</title>
     </head>
@@ -52,7 +57,7 @@ Criado por: Victor Castro
                     </tr>
                     <tr>
                         <td id="user">
-                            <input type="text" name="usuario" id="field_user" style="text-align: none !important;"><br/>
+                            <input type="text" name="usuario" id="field_user" required style="text-align: none !important;"><br/>
                         </td>
                     </tr>
                     <tr>
@@ -60,13 +65,13 @@ Criado por: Victor Castro
                     </tr>
                     <tr>
                         <td id="pass">
-                            <input type="password" name="senha" id="field_pass"><br/>
+                            <input type="password" name="senha" id="field_pass" required><br/>
                         </td>
                     </tr>
                     <tr>
                         <td id="bnts">
                             <button type="submit" id="btn_entrar">Entrar</button>
-                            <button id="btn_cadastrar"><a href="Arquivos/cadastro.php">Cadastrar-se</a></button>
+                            <button id="btn_cadastrar" onclick="cadastrar();">Cadastrar-se</button>
                         </td>
                     </tr>
                 </table>
