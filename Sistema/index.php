@@ -3,6 +3,10 @@ Tela de Login
 Criado por: Victor Castro
 -->
 
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -25,20 +29,48 @@ Criado por: Victor Castro
             <h2 class="titulo">Sistema de Eventos Academicos</h2><hr/>
         </header>
         <main>
-            <section id="login">
-                <!-- Formulario de Login -->
-                <div id="form_login">
-                    <h2>Login: </h2>
-                    <form method="POST" action="Arquivos/login.php">
-                        <input type="text" placeholder="Usuário" name="usuario"><br/>
-                        <input type="password" placeholder="Senha" name="senha"><br/>
-                        <input type="submit" value="Entrar" id="entrar"><br/>
-                        <a href="Arquivos/cadastro.php" id="cadastrar"><strong>Cadastrar na Hyper Events</strong></a><br/>
-                        <a href="logout.php" id="voltar">Voltar</a>
-                    </form>
-                </div>
-            </section>
-            <!-- Manual do Usuário -->
+            <form method="POST" action="Arquivos/login.php" name="form_login">
+                <table id="table_login">
+                    <tr><td id="titulo"><strong>LOGIN</strong><td></tr>
+                    <tr><td id="icon"><img src="https://img.icons8.com/ios/100/000000/gender-neutral-user-filled.png" width="150px" alt="icone_login"></td></tr>
+                    <tr>
+                        <td>
+                            <?php
+                                if(isset($_SESSION['nao_autenticado'])):
+                             ?>
+                            <div id="div_erro">
+                                Usuário ou senha incorreta!
+                            </div>
+                            <?php
+                                endif;
+                                unset($_SESSION['nao_autenticado']);
+                            ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="label_user"><label>Nome do Usário</label></td>
+                    </tr>
+                    <tr>
+                        <td id="user">
+                            <input type="text" name="usuario" id="field_user" style="text-align: none !important;"><br/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="label_pass"><label>Senha:</label></td>
+                    </tr>
+                    <tr>
+                        <td id="pass">
+                            <input type="password" name="senha" id="field_pass"><br/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="bnts">
+                            <button type="submit" id="btn_entrar">Entrar</button>
+                            <button id="btn_cadastrar"><a href="Arquivos/cadastro.php">Cadastrar-se</a></button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
             <section id="Manual">
                 <h2>Está com dificuldade?</h2>
                 <a href="manual.html">Acesse aqui o manual</a>

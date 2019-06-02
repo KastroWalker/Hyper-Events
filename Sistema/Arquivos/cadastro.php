@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -9,6 +13,7 @@
         <!--<link rel="canonical" href="https://localhost:8000/home/">-->
         <link rel="stylesheet" type="text/css" href="../CSS/style_padrao.css">
         <link rel="stylesheet" type="text/css" href="../CSS/style_cadastro.css">
+        <script type="text/javascript" src="../JS/valida_dados.js"></script>
         <meta name="author" content="Victor Castro">
         <title>Cadastro - Hyper-Events</title>
     </head>
@@ -19,63 +24,39 @@
         </header>
         <main>
             <section id="cadastro">
-                <h2>Cadastro no sistema</h2>
-                <form method="POST" action="cadastrar.php">
-                    <table id="form_dados_pessoais">
-                        <tr>
-                            <td colspan="2" class="titulo"><h3>Dados Pessoais</h3></td>
-                        </tr>
-                        <tr><td><br/></td></tr>
-                        <tr>
-                            <td class="label"><label for="nome">Nome: *</label></td>
-                            <td><input type="text" name="nome" id="nome" required></td>
-                        </tr>
-                        <tr>
-                            <td class="label"><label for="data_nasc">Data de Nascimento: *</label></td>
-                            <td><input type="date" name="data_nasc" id="data_nasc" required></td>
-                        </tr>
-                        <tr>
-                            <td class="label"><label>Sexo: *</label></td>
-                            <td> 
-                                <input type="radio" name="sexo" id="sexo_masc" value="M">Masculino
-                                <input type="radio" name="sexo" id="sexo_femi" value="F">Feminino<br/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="label"><label for="cpf">CPF:*</label></td>
-                            <td><input type="text" name="cpf" id="cpf" required></td>
-                        </tr>
-                    </table>
-                    <table id="form_dados_da_conta">
-                        <tr>
-                            <td colspan="2" class="titulo"><h3>Dados da conta</h3></td>
-                        </tr>
-                        <tr><td><br/></td></tr>
-                        <tr>
-                            <td class="label"><label for="email">E-mail: *</label></td>
-                            <td><input type="email" name="email" id="email" required></td>
-                        </tr>
-                        <tr>
-                            <td class="label"><label for="conf_email">Confirmar E-mail: *</label></td>
-                            <td><input type="email" name="conf_email" id="conf_email" required></td>
-                        </tr>
-                        <tr>
-                            <td class="label"><label for="user">Usuário: *</label></td>
-                            <td><input type="text" name="user" id="user" required></td>
-                        </tr>
-                        <tr>
-                            <td class="label"><label for="senha">Senha: *</label></td>
-                            <td><input type="text" name="senha" id="senha" required></td>
-                        </tr>
-                        <tr>
-                            <td class="label"><label for="conf_senha">Confirmar Senha: *</label></td>
-                            <td><input type="text" name="conf_senha" id="conf_senha" required></td>
-                        </tr>
-                    </table>
-                    <button type="submit">Cadastrar</button>
-                    <button type="reset">Limpar</button>
-                    <p><strong>Atenção: </strong>Todos os campos que possuem '*' são obrigatorios.</p>
+                <form method="POST" action="teste.php" name="form_cadastro" onsubmit="return valida_dados();">
+                    <h2 id="titulo">Cadastro no sistema</h2>
+                    <label id="campo_nome">Nome: *</label>
+                    <input type="text" name="campo_nome" id="nome" required>
+                   
+                    <label for="data_nasc">Data de Nascimento: *</label>
+                    <input type="date" name="campo_data_nasc" id="data_nasc" required>
+                   
+                    <label id="label_sexo">Sexo: *</label>
+                    <input type="radio" name="campo_sexo" id="sexo_masc" value="M"><x>Masculino</x>
+                    <input type="radio" name="campo_sexo" id="sexo_femi" value="F"><x>Feminino</x>
+                   
+                    <label for="campo_cpf">CPF:*</label>
+                    <input type="text" name="campo_cpf" id="cpf" required>
+                   
+                    <label for="campo_email">E-mail: *</label>
+                    <input type="email" name="campo_email" id="email" required><label for="campo_conf_email">Confirmar E-mail: *</label>
+                    <input type="email" name="campo_conf_email" id="conf_email" required>
+                   
+                    <label for="campo_user">Usuário: *</label>
+                    <input type="text" name="campo_user" id="user" required>
+                   
+                    <label for="campo_senha">Senha: *</label>
+                    <input type="text" name="campo_senha" id="senha" required>                
+                   
+                    <label for="campo_conf_senha">Confirmar Senha: *</label>
+                    <input type="text" name="campo_conf_senha" id="conf_senha" required>
+                    <br/>
+                    <input type="submit" value="Cadastar" class="btn">
+                    <input type="reset" value="Limpar" class="btn">
+                    <a href="logout.php" id="sair"><button class="btn">Sair</button></a>
                 </form>
+                <p><strong>Atenção: </strong>Todos os campos que possuem '*' são obrigatorios.</p>
             </section>
             <section id="Manual">
                 <h2>Está com dificuldade?</h2>

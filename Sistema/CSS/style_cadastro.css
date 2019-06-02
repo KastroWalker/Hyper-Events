@@ -1,36 +1,65 @@
-table {
-	width: 80%;
-	padding: 15px;
-	margin: auto;
-	background-color: #00f;
-	height: 250px;
-	color: #fff;
-	font-size: 16pt;
-	margin-top: 15px; 
+form {
+	width: 20%;
+	background-color: #ccc;
+	margin: 50px auto;
+	padding: 10px;
+	padding-left: 40px;
+	padding-right: 0px;	 
+	text-align: left;
+	height: 650px;
 }
 
-table td {
+form label {
+	font: 16px Verdana, Geneva, sans-serif; 
+	color: #069;
+	display: block;
+	padding: 4px 0px;
 	text-align: left;
 }
 
-button {
-	margin: 15px;
+form input {
+	width: 280px;
+	padding: 6px;
+	border: none;
+	font: 15px; 
+	border-radius: 4px;
+	text-align: left !important;
+}
+	
+x {
+		color: #069;
 }
 
-#Manual {
-	padding: 15px;
+form input[type="radio"] {
+	width: auto;
+	color: #069;
 }
 
-#cadastro {
-	background-color: #6E6E6E;
-	margin: 15px auto 15px auto;
-	padding: 15px;
+form .btn { 
+	width: 80px;
+	background-color: #069;
+	color: #fff; 
+	padding: 7px;
+	cursor: pointer;
+	border-radius: 4px; 
+	border: none;
+	float: left;
+	margin: 5px;
+	margin-top: 15px;
 }
 
-.label {
-	text-align: right;
+form .btn:hover {
+	background-color: #f60;
 }
 
-.titulo {
-	color: red;
+button a{
+	text-decoration: none;
+	color: #fff;
+}
+
+
+#titulo {
+	color: #069;
+	font-size: 21pt;
+	padding: 15px; 
 }

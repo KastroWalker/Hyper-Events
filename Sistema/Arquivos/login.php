@@ -59,6 +59,7 @@
         }
         else{
             //Retornado o usuário para a tela de login
+            $_SESSION['nao_autenticado'] = true;
             header('Location: ../index.php');
             exit();
         }

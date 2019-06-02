@@ -3,22 +3,23 @@
 	include 'conexao.php';
 
 	/*Dados Pessoais*/
-	$nome = mysqli_real_escape_string($conexao, trim($_POST['nome']));
-	$data_nasc = mysqli_real_escape_string($conexao, trim($_POST['data_nasc']));
-	$sexo = mysqli_real_escape_string($conexao, trim($_POST['sexo']));
-	$cpf =  mysqli_real_escape_string($conexao, trim($_POST['cpf']));
+	$nome = mysqli_real_escape_string($conexao, trim($_POST['campo_nome']));
+	$data_nasc = mysqli_real_escape_string($conexao, trim($_POST['campo_data_nasc']));
+	$sexo = mysqli_real_escape_string($conexao, trim($_POST['campo_sexo']));
+	$cpf =  mysqli_real_escape_string($conexao, trim($_POST['campo_cpf']));
 
 	/*Dados da conta*/
-	$email = mysqli_real_escape_string($conexao, trim($_POST['email']));
-	$conf_email = mysqli_real_escape_string($conexao, trim($_POST['conf_email']));
-	$user = mysqli_real_escape_string($conexao, trim($_POST['user']));
-	$senha = mysqli_real_escape_string($conexao, trim($_POST['senha']));
-	$conf_senha = mysqli_real_escape_string($conexao, trim($_POST['conf_senha']));
+	$email = mysqli_real_escape_string($conexao, trim($_POST['campo_email']));
+	$conf_email = mysqli_real_escape_string($conexao, trim($_POST['campo_conf_email']));
+	$user = mysqli_real_escape_string($conexao, trim($_POST['campo_user']));
+	$senha = mysqli_real_escape_string($conexao, trim($_POST['campo_senha']));
+	$conf_senha = mysqli_real_escape_string($conexao, trim($_POST['campo_conf_senha']));
 
 	$senha = md5($senha);
 
-	echo "$senha";
+	//echo "$senha";
 
+	/*
 	echo "NOME: <strong>$nome</strong><br/>";
 	echo "DATA: <strong>$data_nasc</strong><br/>";
 	echo "SEXO: <strong>$sexo</strong><br/>";
@@ -28,6 +29,7 @@
 	echo "USER: <strong>$user</strong><br/>";
 	echo "SENHA: <strong>$senha</strong><br/>";
 	echo "CONF_SENHA: <strong>$conf_senha</strong><br/>";
+	*/
 
 	$sql = "select count(*) as total from participante where user = '$user'";
 	$result = mysqli_query($conexao, $sql);
@@ -35,7 +37,6 @@
 
 
 	if ($row['total'] == 1) {
-		/*header('Location: cadastro.php');*/
 		$_SESSION['usuario_existe'] = true;
 		header('Location: cadastro.php');
 		exit();

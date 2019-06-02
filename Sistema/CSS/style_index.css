@@ -1,52 +1,80 @@
-/* 
-Documento de Estilização da pagina principal.
-Criado por: Victor Castro e Rian Carvalho. 
-*/
-
-/* TAGS */
-input {
-	padding: 20px;
-	margin: 15px;
-	color: black;
+table {
+	background-color: #ccc;
+	margin: 20px auto 20px auto;
+	height: 500px;
+	width: 30%;
+	border-radius: 10px;
 }
-
-/* IDS */
-#form_login{
-	color: #fff;
-	background-color: blue;
-	width: 20%;
-	margin: auto;
-	padding: 80px 100px 80px 100px;
-}
-
-#login{
-	margin: 15px;
-}
-
-#Manual{
-	margin: 30px;	
-}
-
-#cadastrar {
-	color: #fff;
+#btn_cadastrar a {
 	text-decoration: none;
+	color: #fff;
 }
 
-#cadastrar:hover {
-	text-decoration: underline;
+#titulo {
+	padding-top: 15px;  
+	font-size: 16pt;
+	height: 10px; 
 }
 
-#entrar{
+#label_user, #label_pass{ 
+	color: #069;
+	padding: 10px 10px 10px 10px; 
+	height: 10px;
+}
+
+#user, #pass {
+	padding-top: 0px;
+	padding-right: auto; 
+	height: 25px;
+}
+
+#field_pass, #field_user{
+	width: 280px;
+	padding: 6px;
+	border: none;
+	font: 15px; 
+	border-radius: 4px;
+	text-align: left !important;
+}
+
+#btn_cadastrar {
+	text-decoration: none; 
+	color: #fff;
+}
+
+#btn_cadastrar:hover{
+	background-color: #f60;
+}
+
+#btn_entrar, #btn_cadastrar {
+	
+	font-size: 15pt;
+	margin: 0px 5px 0px 5px; 
+	background-color: #069;
+	color: #fff; 
+	padding: 7px;
 	cursor: pointer;
+	border-radius: 4px; 
+	border: none;
+	margin: 5px;
+
 }
 
-#voltar{
-	color: #fff;
-	margin: 100px;
-	font-size: 18pt;
-	text-decoration: none;
+#btn_entrar:hover {
+	cursor: pointer;
+	background-color: #f60;
 }
 
-#voltar:hover{
-	text-decoration: underline;
+#icon {
+	padding: 0px;
+	margin: 0px;
+	height: 100px;
+}
+
+#div_erro {
+	margin: auto;
+	text-align: center !important;
+	background-color: red;
+	padding: 10px;
+	width: 200px;
 }
