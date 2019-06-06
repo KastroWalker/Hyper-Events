@@ -1,6 +1,6 @@
 /*
 Bando de Dados Hyper Events
-Criado por Victor Castro
+Criado por: Victor Castro
 */
 
 -- Criando a base de dados --
@@ -12,7 +12,7 @@ use HyperEvents;
 create table participante(
     participante_id int not null auto_increment,
     nome varchar(200) not null,
-    idade int not null,
+    -- idade int not null, --
     datanasc date not null,
     sexo char(1) not null,
     cpf varchar(11) not null,

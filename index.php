@@ -20,11 +20,6 @@ Criado por: Victor Castro
         <link rel="stylesheet" type="text/css" href="CSS/style_padrao.css">
         <link rel="stylesheet" type="text/css" href="CSS/style_index.css">
         <link rel="stylesheet" type="text/css" href="">
-        <script type="text/javascript">
-            function cadastrar() {
-                window.location.href = 'Arquivos/cadastro.php';
-            }
-        </script>
         <meta name="author" content="Victor Castro">
         <title>Login - Hyper-Events</title>
     </head>
@@ -85,6 +80,11 @@ Criado por: Victor Castro
         <footer>
             <h2>Direitos</h2>
             <p>2019 &copy; Copyright - Todos os direitos reservados | Criado por Descompila Compilando.</p>
+            <script type="text/javascript">
+            function cadastrar() {
+                window.location.href = 'Arquivos/cadastro.php';
+            }
+            </script>
         </footer>
     </body>
 </html>
