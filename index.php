@@ -5,6 +5,34 @@ Criado por: Victor Castro
 
 <?php
     session_start();
+    
+    $pagina = 'home';
+
+    if (isset($_GET['pagina'])) {
+        $pagina = $_GET['pagina'];
+    }
+
+    require_once 'Arquivos/header.php';
+
+    switch ($pagina) {
+        case 'login':
+            require_once 'Arquivos/login.php';
+            break;
+        
+        case 'tela_cadastro':
+            require_once 'Arquivos/tela_cadastro.php';
+            break;
+
+        case 'cadastro':
+            require_once 'Arquivos/cadastro.php';
+            break;
+
+        default:
+            require_once 'index.php';
+            break;
+    }
+
+    require_once 'Arquivos/footer.php';
 ?>
 
 <!DOCTYPE html>
