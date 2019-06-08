@@ -1,63 +1,21 @@
-<!-- 
-Tela de Login 
-Criado por: Victor Castro
--->
-
-<?php
-    session_start();
-    
-    $pagina = 'home';
-
-    if (isset($_GET['pagina'])) {
-        $pagina = $_GET['pagina'];
-    }
-
-    require_once 'Arquivos/header.php';
-
-    switch ($pagina) {
-        case 'login':
-            require_once 'Arquivos/login.php';
-            break;
-        
-        case 'tela_cadastro':
-            require_once 'Arquivos/tela_cadastro.php';
-            break;
-
-        case 'cadastro':
-            require_once 'Arquivos/cadastro.php';
-            break;
-
-        default:
-            require_once 'index.php';
-            break;
-    }
-
-    require_once 'Arquivos/footer.php';
-?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
-        <meta charset="utf-8">
-        <meta name="description" content="Hyper Events - Sistema de Eventos Acadêmicos">
-        <!--meta http-equiv="refresh" content="1"-->
-        <meta name="keywords" content="Eventos, Acadêmico, Escola">
-        <meta name="robots" content="index, follow">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!--<link rel="canonical" href="https://localhost:8000/home/">-->
-        <link rel="stylesheet" type="text/css" href="CSS/style_padrao.css">
-        <link rel="stylesheet" type="text/css" href="CSS/style_index.css">
-        <link rel="stylesheet" type="text/css" href="">
-        <meta name="author" content="Victor Castro">
-        <title>Login - Hyper-Events</title>
+        <meta charset="UTF-8">
+        <?php
+            session_start();
+            include_once 'vizualizacoes/SEO.php';
+        ?>
+        <title>Document</title>
     </head>
     <body>
-        <header>
-            <h1 class="titulo">Bem vindo ao Hyper Events</h1>
-            <h2 class="titulo">Sistema de Eventos Academicos</h2><hr/>
-        </header>
+        <?php 
+            require_once 'vizualizacoes/header.php'; 
+        ?>
         <main>
-            <form method="POST" action="Arquivos/login.php" name="form_login">
+            <link rel="stylesheet" type="text/css" href="vizualizacoes/CSS/style_padrao.css">
+            <link rel="stylesheet" type="text/css" href="vizualizacoes/CSS/style_index.css">
+            <form method="POST" action="Negocios/login.php" name="form_login">
                 <table id="table_login">
                     <tr><td id="titulo"><strong>LOGIN</strong><td></tr>
                     <tr><td id="icon"><img src="https://img.icons8.com/ios/100/000000/gender-neutral-user-filled.png" width="150px" alt="icone_login"></td></tr>
@@ -104,15 +62,14 @@ Criado por: Victor Castro
                 <a href="manual.html">Acesse aqui o manual</a>
             </section>
             <hr/>
-        </main>
-        <footer>
-            <h2>Direitos</h2>
-            <p>2019 &copy; Copyright - Todos os direitos reservados | Criado por Descompila Compilando.</p>
             <script type="text/javascript">
             function cadastrar() {
-                window.location.href = 'Arquivos/cadastro.php';
+                window.location.href = 'Telas/cadastro.php';
             }
             </script>
-        </footer>
+            <?php 
+                require_once 'vizualizacoes/footer.php';
+            ?>
+        </main>
     </body>
 </html>

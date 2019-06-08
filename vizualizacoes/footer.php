@@ -1,8 +1,9 @@
-        </main>
-        <footer>
-            <h2>Direitos</h2>
-            <p>2019 &copy; Copyright - Todos os direitos reservados | Criado por Descompila Compilando.</p>
-            <script type="text/javascript" src="../JS/valida_dados.js"></script>
+<footer>
+    <h2>Direitos</h2>
+    <p>2019 &copy; Copyright - Todos os direitos reservados | Criado por Descompila Compilando.</p>
+</footer>
+
+<!--script type="text/javascript" src="../JS/valida_dados.js"></script>
             <script type="text/javascript" src="../JS/formata.js"></script>
             <script type="text/javascript">
                 function logout() {
@@ -16,7 +17,4 @@
                         campo.value = "";
                     }
                 }
-            </script>
-        </footer>
-    </body>
-</html>
+            </script-->

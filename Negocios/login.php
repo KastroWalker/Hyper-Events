@@ -22,7 +22,7 @@
     $query = "select participante_id, user from participante where user = '{$user}' and senha = md5('{$pass}')";
 
     //Criando a pagina para destinar o usuário
-    $page = 'Location: area_user.php';
+    $page = 'Location: ../vizualizacoes/area_user.php';
     
     
     /*  
@@ -46,7 +46,7 @@
         $query = "select organizador_id, user from organizador where user = '{$user}' and senha = md5('{$pass}')";
 
         //Criando a pagina para destinar o usuário
-        $page = 'Location: area_org.php';
+        $page = 'Location: ../vizualizacoes/area_org.php';
         
         $result = mysqli_query($conexao, $query);
 
