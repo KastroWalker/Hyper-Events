@@ -16,7 +16,7 @@
         ?>
         <main>
             <section id="cadastro">
-            <form method="POST" action="../Negocios/cadastrar_participante.php" name="form_cadastro" onsubmit="return valida_dados();">
+            <form method="POST" action="../Negocios/cadastrar_organizador.php" name="form_cadastro" onsubmit="return valida_dados();">
                 <h2 id="titulo">Cadastro no sistema</h2>
                 <label id="campo_nome">Nome: *</label>
                 <input type="text" name="campo_nome" id="nome" required>
