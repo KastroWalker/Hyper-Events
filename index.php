@@ -6,6 +6,8 @@
             session_start();
             include_once 'vizualizacoes/SEO.php';
         ?>
+        <link rel="stylesheet" type="text/css" href="vizualizacoes/CSS/style_padrao.css">
+        <link rel="stylesheet" type="text/css" href="vizualizacoes/CSS/style_index.css">
         <title>Document</title>
     </head>
     <body>
@@ -13,8 +15,7 @@
             require_once 'vizualizacoes/header.php'; 
         ?>
         <main>
-            <link rel="stylesheet" type="text/css" href="vizualizacoes/CSS/style_padrao.css">
-            <link rel="stylesheet" type="text/css" href="vizualizacoes/CSS/style_index.css">
+            
             <form method="POST" action="Negocios/login.php" name="form_login">
                 <table id="table_login">
                     <tr><td id="titulo"><strong>LOGIN</strong><td></tr>
@@ -64,7 +65,7 @@
             <hr/>
             <script type="text/javascript">
             function cadastrar() {
-                window.location.href = 'Telas/cadastro.php';
+                window.location.href = 'vizualizacoes/cadastro.php';
             }
             </script>
             <?php 

@@ -40,7 +40,7 @@
 
 	if ($row['total'] == 1) {
 		$_SESSION['usuario_existe'] = true;
-		header('Location: cadastro.php');
+		header('Location: ../vizualizacoes/cadastro.php');
 		exit();
 	}
 
