@@ -19,21 +19,21 @@
     $pass = mysqli_real_escape_string($conexao, $_POST['senha']);
     
     //Criando a query para verificar o usuário na tabela participante
-    $query = "select participante_id, user from participante where user = '{$user}' and senha = md5('{$pass}')";
+    $query = "select org_id, usuario from organizadores where usuario = '{$user}' and senha = md5('{$pass}')";
 
     //Criando a pagina para destinar o usuário
     $page = 'Location: ../vizualizacoes/area_user.php';
     
     
-    /*  
-    echo $query;
+      
+    /*echo $query;
     exit();*/
     
     $result = mysqli_query($conexao, $query);
 
     $row = mysqli_num_rows($result);
 
-    /*echo $row;*/
+    #echo $row;
 
     //Verificando se o usuário é um participante
     if($row == 1){
