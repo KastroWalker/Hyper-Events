@@ -22,7 +22,7 @@
     $query = "select org_id, usuario from organizadores where usuario = '{$user}' and senha = md5('{$pass}')";
 
     //Criando a pagina para destinar o usuário
-    $page = 'Location: ../vizualizacoes/area_user.php';
+    $page = 'Location: ../vizualizacoes/area_org.php';
     
     
       

@@ -70,12 +70,9 @@
             </form>
             <p><strong>Atenção: </strong>Todos os campos que possuem '*' são obrigatorios.</p>
             </section>
-            <section id="Manual">
-                <h2>Está com dificuldade?</h2>
-                <a href="manual.html">Acesse aqui o manual</a>
-            </section>
-        <hr/>
-        </main>
+        <?php
+            require_once 'footer.php';
+        ?>
         <script type="text/javascript" src="JS/valida_dados.js"></script>
         <script type="text/javascript" src="JS/formata.js"></script>
         <script type="text/javascript">
@@ -91,9 +88,6 @@
                 }
             }
         </script>
-        <?php
-        require_once 'footer.php';
-        ?>
     </body>
 </html>
 

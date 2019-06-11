@@ -58,19 +58,14 @@
                     </tr>
                 </table>
             </form>
-            <section id="Manual">
-                <h2>Está com dificuldade?</h2>
-                <a href="manual.html">Acesse aqui o manual</a>
-            </section>
-            <hr/>
+            <?php 
+                require_once 'vizualizacoes/footer.php';
+            ?>
             <script type="text/javascript">
             function cadastrar() {
                 window.location.href = 'vizualizacoes/cadastro.php';
             }
             </script>
-            <?php 
-                require_once 'vizualizacoes/footer.php';
-            ?>
         </main>
     </body>
 </html>

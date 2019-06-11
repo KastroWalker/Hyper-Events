@@ -4,18 +4,6 @@
 create database	HyperEvents;
 
 use HyperEvents;
--- Criando a tabela de participantes --
-/*create table participantes(
-	part_id int not null auto_increment,
-	nome varchar(200) not null,
-	datanasc date not null,
-	sexo char(1) not null,
-	cpf varchar(11) not null,
-	email varchar(60) not null,
-	usuario varchar(200) not null,
-	senha varchar(20) not null,
-	primary key(part_id)
-);*/
 
 -- Criando a tabela organizadores --
 create table organizadores(
@@ -32,6 +20,35 @@ create table organizadores(
 
 -- Criando o organizador padrão para teste --
 insert into organizadores (nome, datanasc, sexo, cpf, email, usuario, senha) values ('organizador', '2000-02-02', 'M', '12345678901', 'root2002@gmail.com', 'organizador', md5('root'));
+
+-- Criando a tabela de eventos --
+create table eventos(
+	evento_id int not null auto_increment,
+	org_id int not null,
+	titulo varchar(200) not null,
+	descricao varchar(500) not null,
+	hora_inicio time not null,
+	data_inicio date not null,
+	data_fim date not null,
+	email_contato varchar(100) not null,
+	url_evento varchar(200),
+	primary key(evento_id),
+	foreign key(org_id) references organizadores(org_id)
+);
+
+-- Criando a tabela de participantes --
+/*create table participantes(
+	part_id int not null auto_increment,
+	nome varchar(200) not null,
+	datanasc date not null,
+	sexo char(1) not null,
+	cpf varchar(11) not null,
+	email varchar(60) not null,
+	usuario varchar(200) not null,
+	senha varchar(20) not null,
+	primary key(part_id)
+);*/
+
 
 -- Criando a tabela de palestrantes --
 /*create table palestrantes(
@@ -113,35 +130,26 @@ create table locais(
 	cep varchar(8) not null,
 	descricao varchar(500), -- Descrição do local
 	primary key(local_id)
-);
+);*/
 
 -- Criando a tabela de eventos --
-create table eventos(
-	evento_id int not null auto_increment,
-	-- part_id int not null, --
-	org_id int not null,
-	palestrante_id int,
+
+-- insert into eventos(org_id, titulo, descricao, inicio, fim, data_inicio, data_fim) values ('');--
+
+	/**palestrante_id int,
 	ministrante_id int,
+	part_id int not null,
 	palestra_id int,
 	idMinicurso int,
 	local_id int,
 	contato_id int,
 	socio_id int,
 	material_id int,
-	titulo varchar(200) not null,
-	descricao varchar(500) not null,
-	inicio time not null,
-	fim time not null,
-	data_inicio date not null,
-	data_fim date not null,
-	primary key(evento_id),
-	-- foreign key(part_id) references participantes(part_id), --
-	foreign key(org_id) references organizadores(org_id),
+	foreign key(part_id) references participantes(part_id),
 	foreign key(palestrante_id) references palestrantes(palestrante_id),
 	foreign key(ministrante_id) references ministrantes(ministrante_id),
 	foreign key(palestra_id) references palestras(palestrante_id),
 	foreign key(local_id) references locais(local_id),
 	foreign key(contato_id) references contatos(contato_id),
 	foreign key(socio_id) references socios(socio_id),
-	foreign key(material_id) references materiais(material_id)
-);*/
+	foreign key(material_id) references materiais(material_id)*/
