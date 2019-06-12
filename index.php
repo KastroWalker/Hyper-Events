@@ -5,7 +5,13 @@
         <?php
             session_start();
             include_once 'vizualizacoes/SEO.php';
+            echo time();
         ?>
+        <script type="text/javascript">
+            function cadastrar() {
+                window.location.href = 'vizualizacoes/cadastro.php';
+            }
+        </script>
         <link rel="stylesheet" type="text/css" href="vizualizacoes/CSS/style_padrao.css">
         <link rel="stylesheet" type="text/css" href="vizualizacoes/CSS/style_index.css">
         <title>Document</title>
@@ -35,7 +41,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td id="label_user"><label>Nome do Usário</label></td>
+                        <td id="label_user"><label>Nome do Usuário</label></td>
                     </tr>
                     <tr>
                         <td id="user">
@@ -61,11 +67,6 @@
             <?php 
                 require_once 'vizualizacoes/footer.php';
             ?>
-            <script type="text/javascript">
-            function cadastrar() {
-                window.location.href = 'vizualizacoes/cadastro.php';
-            }
-            </script>
         </main>
     </body>
 </html>

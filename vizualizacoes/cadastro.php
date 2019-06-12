@@ -3,10 +3,25 @@
     <head>
         <meta charset="UTF-8">
         <title>Document</title>
-        <?php 
+        <?php
             require_once 'SEO.php';
         ?>
         <link rel="stylesheet" type="text/css" href="CSS/style_cadastro.css">
+        <script type="text/javascript" src="JS/valida_dados.js"></script>
+        <script type="text/javascript" src="JS/formata.js"></script>
+        <script type="text/javascript">
+            function logout() {
+                window.location.href = '../index.php';
+            }
+            function somenteNumeros(num) {
+                var er = /[^0-9.-]/;
+                er.lastIndex = 0;
+                var campo = num;
+                if (er.test(campo.value)) {
+                    campo.value = "";
+                }
+            }
+        </script>
     </head>
     <body>
         <?php
@@ -73,21 +88,6 @@
         <?php
             require_once 'footer.php';
         ?>
-        <script type="text/javascript" src="JS/valida_dados.js"></script>
-        <script type="text/javascript" src="JS/formata.js"></script>
-        <script type="text/javascript">
-            function logout() {
-                window.location.href = '../index.php';
-            }
-            function somenteNumeros(num) {
-                var er = /[^0-9.-]/;
-                er.lastIndex = 0;
-                var campo = num;
-                if (er.test(campo.value)) {
-                    campo.value = "";
-                }
-            }
-        </script>
     </body>
 </html>
 

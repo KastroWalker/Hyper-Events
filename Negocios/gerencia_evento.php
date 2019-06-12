@@ -23,5 +23,5 @@
 	echo "$email<br/>";
 	echo "$site<br/>";
 
-	#$sql = "insert into eventos ()"
+	$sql = "insert into eventos (titulo, descricao, hora_inicio, data_inicio, data_fim, email_contato, url_evento) values ('{$titulo}', '{$descricao}', '{$hora}', '{$data_inicio}', '{$data_fim}', '{$email}', '{$site}');";
 ?>

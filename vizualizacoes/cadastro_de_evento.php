@@ -3,8 +3,11 @@
     <head>
         <meta charset="utf-8">
         <?php 
+            session_start();
             require_once 'SEO.php';
+            echo "$_SESSION[''];";
         ?>
+        <link rel="stylesheet" type="text/css" href="CSS/style_cadastro_eveto.css">
         <title>Cadastrar Evento - Hyper-Events</title>
     </head>
     <body>
@@ -29,6 +32,7 @@
                     <input type="url" name="site" id="site"><br/>
                     <label for="descricao">Descrição do evento</label>
                     <textarea name="descricao" id="descricao"></textarea>
+                    <br/>
                     <button type="submit">Cadastrar</button>
                     <button type="reset">Limpar</button>
                     <p><strong>Atenção: </strong>Todos os campos que possuem '*' são obrigatorios.</p>

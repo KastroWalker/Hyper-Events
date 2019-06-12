@@ -20,15 +20,22 @@
     
     //Criando a query para verificar o usuário na tabela participante
     $query = "select org_id, usuario from organizadores where usuario = '{$user}' and senha = md5('{$pass}')";
+    $query_id = "select org_id from organizadores where usuario = '{$user}';";
+
+    $result = mysqli_query($conexao, $query_id);
+    
+    $row = mysqli_fetch_array($result);
+    $id = $row['org_id'];
+    echo "$id";
+    
+    #$row = mysqli_num_rows($result);
+
 
     //Criando a pagina para destinar o usuário
     $page = 'Location: ../vizualizacoes/area_org.php';
-    
-    
-      
+          
     /*echo $query;
     exit();*/
-    
     $result = mysqli_query($conexao, $query);
 
     $row = mysqli_num_rows($result);
@@ -38,6 +45,7 @@
     //Verificando se o usuário é um participante
     if($row == 1){
         $_SESSION['usuario'] = $user;
+        $_SESSION['id'] = $id;
         header($page);
         exit();
     }
@@ -56,13 +64,12 @@
             $_SESSION['usuario'] = $user;
             header($page);
             exit();
-        }
-        else{
+        } else {
             //Retornado o usuário para a tela de login
             $_SESSION['nao_autenticado'] = true;
             header('Location: ../index.php');
             exit();
         }
-    } 
+    }
 
 ?>
