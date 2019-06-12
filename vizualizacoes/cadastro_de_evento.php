@@ -5,7 +5,6 @@
         <?php 
             session_start();
             require_once 'SEO.php';
-            echo "$_SESSION[''];";
         ?>
         <link rel="stylesheet" type="text/css" href="CSS/style_cadastro_eveto.css">
         <title>Cadastrar Evento - Hyper-Events</title>

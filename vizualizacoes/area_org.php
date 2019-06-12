@@ -24,20 +24,17 @@ Criado por: Victor Castro
             require_once 'header.php';
         ?>
         <h2>Olá organizador, <?php echo $_SESSION['usuario']; ?></h2>
-        <form>
-            <?php echo $_SESSION['id']; ?>
-            <a href="../Negocios/logout.php"><button>Sair</button></a>
-            <a href="cadastro_de_evento.php"><button>Cadastrar Evento</button></a>
-            <a href="eventos.php"><button>Ver meus Eventos</button></a> 
-        </form>
+        <a href="../Negocios/logout.php"><button>Sair</button></a>
+        <a href="cadastro_de_evento.php"><button>Cadastrar Evento</button></a>
+        <a href="eventos.php"><button>Ver meus Eventos</button></a> 
         <?php 
             require_once 'footer.php';
-        ?>
-    
+        ?>    
     </body>
 </html>
+
 <?php
-    #session_destroy(); 
+
     }else{
         header('Location: ../index.php');
     }

@@ -14,7 +14,9 @@
 	$data_fim = $_POST['fim'];
 	$email = $_POST['email'];
 	$site = $_POST['site'];
+	$id = $_SESSION['id'];
 
+	echo "$id<br/>";
 	echo "$titulo<br/>";
 	echo "$descricao<br/>";
 	echo "$hora<br/>";
@@ -23,5 +25,5 @@
 	echo "$email<br/>";
 	echo "$site<br/>";
 
-	$sql = "insert into eventos (titulo, descricao, hora_inicio, data_inicio, data_fim, email_contato, url_evento) values ('{$titulo}', '{$descricao}', '{$hora}', '{$data_inicio}', '{$data_fim}', '{$email}', '{$site}');";
+	#$sql = "insert into eventos (titulo, descricao, hora_inicio, data_inicio, data_fim, email_contato, url_evento) values ('{$titulo}', '{$descricao}', '{$hora}', '{$data_inicio}', '{$data_fim}', '{$email}', '{$site}');";
 ?>
