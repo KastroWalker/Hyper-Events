@@ -1,5 +1,6 @@
 <?php 
     session_start();
+    include_once '../Controls/verifica_login.php';
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -23,7 +24,35 @@
         ?>
         <main>
             <section id="Cadastrar_Evento">
-                <form method="POST" onsubmit="valida_cadastro_evento();" action="../Controls/gerencia_evento.php?acao=cadastrar" id="form_cadastro">
+                <?php 
+                    if(isset($_SESSION['evento_cadastrado'])){
+                ?>
+                    <div class="alert alert-success text-center">
+                        Evento Cadastrado com Sucesso!<br/>
+                        Clique <a href="lista_eventos.php"><strong>aqui</strong></a> para ver os evetntos;
+                    </div>
+                <?php 
+                    }
+                    unset($_SESSION['evento_cadastrado']);
+                    if (isset($_SESSION['evento_ja_cadastrado'])) {
+                ?>
+                    <div class="alert alert-danger text-center">
+                        Evento já cadastrado!
+                    </div>
+                <?php
+                    }
+                    unset($_SESSION['evento_ja_cadastrado']);
+                    if (isset($_SESSION['erro_cadastrado'])){
+                ?>
+                    <div class="alert alert-danger text-center">
+                        Não foi possivel cadastrar o evento!
+                    </div>
+                <?php
+                    }
+                    unset($_SESSION['erro_cadastrado']);
+                ?>
+
+                <form method="POST" action="../Controls/gerencia_evento.php" id="form_cadastro">
                     <h2>Cadastrar Evento</h2>
                     <div class="form-group">
                         <label for="titulo">Titulo do Evento: *</label>
@@ -35,7 +64,7 @@
                     <div>
                     <div class="form-group">
                         <label for="inicio">Inicio do evento: *</label>
-                        <input type="date" name="inicio" id="inicio" class="form-control" required>                    
+                        <input type="date" name="inicio" id="inicio" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label for="fim">Fim do Evento: *</label>
@@ -64,6 +93,5 @@
         <?php 
             require_once 'footer.php';
         ?>
-        <script src="../JS/valida_dados.js"></script>
     </body>
 </html>

@@ -169,25 +169,4 @@ function valida_dados() {
     } else {
         return false;
     }
-    
-}
-
-function valida_cadastro_evento(){
-    /*
-     * Função para validar cadastro de eventos
-     */
-    function valida_titulo(){
-        var tamanho = document.forms['form_cadastro'].titulo.value.length;
-        var titulo = document.forms['form_cadastro'].titulo.value;
-        var titulo = titulo.replace(/\s/, '' );
-
-        if(tamanho < 5 || tamanho > 100){//Verificando o tamanho
-            alert('5 < Campo < 100');
-            return false;
-        }
-        else{
-            document.forms['form_cadastro'].submit();
-        }
-    }
-    valida_titulo();
 }

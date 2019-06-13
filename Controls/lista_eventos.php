@@ -1,4 +1,5 @@
-<?php 
+<?php
+	include_once '../Controls/verifica_login.php'; 
 	$id = $_SESSION['id'];
 
 	# Dados para a conexão com o banco de dados

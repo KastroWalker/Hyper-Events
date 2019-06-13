@@ -1,4 +1,5 @@
 <?php
+    include_once '../Controls/verifica_login.php';
     /* 
     Realizando Login no sitema
     Criado pro Victor Castro

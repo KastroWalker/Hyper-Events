@@ -5,7 +5,7 @@ Criado por: Victor Castro
 
 <?php
     session_start();
-    include '../Negocios/verifica_login.php';
+    include '../Controls/verifica_login.php';
 ?>
 
 <h2>Olá, <?php echo $_SESSION['usuario']; ?></h2>

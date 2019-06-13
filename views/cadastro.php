@@ -149,9 +149,7 @@
                     <button type="reset" class="btn btn-primary">Limpar</button>
                     <button class="btn btn-danger" onclick="logout();">Sair</button>    
                 </form>
-            </section>
-            <script type="text/javascript">
-            </script>     
+            </section> 
             <script type="text/javascript" src="../JS/valida_dados.js"></script>
         <?php
             require_once 'footer.php';
