@@ -23,9 +23,13 @@
 	$row = mysqli_fetch_assoc($result);
 
 	print_r($row);
+	echo $row['total'];
 
-	if ($row['total'] == 1) {
+	if ($row['total'] >= 1) {
 		echo "Evento cadastrado".mysqli_error($conexao);
+		$_SESSION['evento já cadastrado'];
+		header('Location: index.php');
+		exit();
 	} else {
 		$sql = "insert into eventos (org_id, titulo, descricao, hora_inicio, data_inicio, data_fim, email_contato, url_evento) values ('{$id}', '{$titulo}', '{$descricao}', '{$hora}', '{$data_inicio}', '{$data_fim}', '{$email}', '{$site}');";
 
