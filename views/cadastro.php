@@ -2,9 +2,7 @@
 <html lang="pt-br">
     <head>
         <meta charset="UTF-8">
-<<<<<<< HEAD
         <title>Cadastro de usuário - Hyper Events</title>
-=======
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="author" content="Victor Castro">
         <link rel="stylesheet" type="text/css" href="../CSS/bootstrap.min.css">
@@ -14,7 +12,6 @@
             }
         </style>
         <title>Document</title>
->>>>>>> de891acfd6c360f61f69e76067d524cd39902596
         <link rel="stylesheet" type="text/css" href="../CSS/style_cadastro.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="author" content="Victor Castro">
@@ -26,7 +23,6 @@
         </style>
         <link rel="stylesheet" type="text/css" href="../CSS/bootstrap.min.css">
         <script type="text/javascript" src="../JS/formata.js"></script>
-        <script type="text/javascript" src="../JS/valida_dados.js"></script>
         <script type="text/javascript">
             function logout() {
                 window.location.href = '../index.php';
@@ -44,9 +40,7 @@
     <body>
         <?php
         session_start();
-
         require_once 'header.php';
-        #onsubmit="return valida_dados();"
         ?>
         <style type="text/css">
             .teste{
@@ -55,7 +49,34 @@
         </style>
         <main>
             <section id="cadastro">
-                <form method="POST" action="../Controls/cadastrar_organizador.php" name="form_cadastro">
+                <?php
+                    if(isset($_SESSION['status_cadastro'])){
+                ?>
+                <div class="alert alert-success text-center">
+                    Usuário Cadastrado com Sucesso!<br/>
+                    Clique <a href="../index.php"><strong>aqui</strong></a> para fazer o login!
+                </div>
+                <?php
+                    }
+                    unset($_SESSION['status_cadastro']);
+                    if (isset($_SESSION['Não_foi_cadastrado'])) {
+                ?>
+                <div class="alert alert-danger text-center">
+                    Erro ao cadastrar o usuário!
+                </div>
+                <?php
+                    }
+                    unset($_SESSION['Não_foi_cadastrado']);
+                    if(isset($_SESSION['usuario_existe'])){
+                ?>
+                    <div class="alert alert-danger text-center">
+                        Usuário já cadastrado!
+                    </div>
+                <?php
+                    }
+                    unset($_SESSION['usuario_existe']);
+                ?>
+                <form method="POST" action="../Controls/cadastrar_organizador.php" name="form_cadastro" onsubmit="return valida_dados();">
                     <h2>Cadastro de Usuário</h2>
                     <div class="form-row">
                         <div class="col-md-8">
@@ -88,11 +109,11 @@
                             <div class="invalid-feedback">CPF inválido!</div>
                         </div>
                         <div class="col-md-3">
-                            <label for="tipo_user">Sexo: *</label>
-                            <select class="form-control" id="tipo_user" name="tipo_user" class="form-control">
+                            <label for="campo_sexo">Sexo: *</label>
+                            <select class="form-control" id="campo_sexo" name="campo_sexo" class="form-control">
                               <option value="padrao" selected>Sexo...</option>
-                              <option value="masculino">Masculino</option>
-                              <option value="feminino">Feminino</option>
+                              <option value="M">Masculino</option>
+                              <option value="F">Feminino</option>
                             </select>
                             <div class="invalid-feedback">Escolha um valor!</div>
                         </div>
@@ -105,8 +126,8 @@
                             <label for="tipo_user">Tipo de usuário: *</label>
                             <select class="form-control" id="tipo_user" name="tipo_user" class="form-control">
                               <option value="padrao" selected>Escolha o tipo de usuário</option>
-                              <option>Participante</option>
-                              <option>Organizador</option>
+                              <option value="part">Participante</option>
+                              <option value="org">Organizador</option>
                             </select>
                             <div class="invalid-feedback">Escolha um valor!</div>
                         </div>
@@ -131,6 +152,7 @@
             </section>
             <script type="text/javascript">
             </script>     
+            <script type="text/javascript" src="../JS/valida_dados.js"></script>
         <?php
             require_once 'footer.php';
         ?>

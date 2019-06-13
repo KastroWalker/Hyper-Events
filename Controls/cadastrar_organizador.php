@@ -51,7 +51,7 @@
 		$_SESSION['status_cadastro'] = true;
 		echo "cadastrado";
 	}else{
-		$_SESSION['Não_foi_cadastrar'] = true;
+		$_SESSION['Não_foi_cadastrado'] = true;
 		echo "não cadastrado".mysqli_error($conexao);
 	}
 

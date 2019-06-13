@@ -2,62 +2,82 @@ function valida_dados() {
     /**
      * Função para validar os Dados do usuário
      */
+
+    var name_class_nome = document.forms['form_cadastro'].campo_nome.className;
+    var name_class_sexo = document.forms['form_cadastro'].campo_sexo.className;
+    var name_class_email = document.forms['form_cadastro'].campo_conf_email.className;
+    var name_class_user = document.forms['form_cadastro'].campo_user.className;
+    var name_class_tipo_user = document.forms['form_cadastro'].tipo_user.className;
+    var name_class_senha = document.forms['form_cadastro'].campo_conf_senha.className;
+        
+    if(name_class_nome.match(/is-invalid/)){
+        document.forms['form_cadastro'].campo_nome.className = name_class_nome.replace('is-invalid', ' ');
+    }
+    if(name_class_sexo.match(/is-invalid/)){
+        document.forms['form_cadastro'].campo_sexo.className = name_class_sexo.replace('is-invalid', ' ');
+    }
+    if(name_class_email.match(/is-invalid/)){
+        document.forms['form_cadastro'].campo_conf_email.className = name_class_email.replace('is-invalid', ' ');
+    }
+    if(name_class_user.match(/is-invalid/)){
+        document.forms['form_cadastro'].campo_user.className = name_class_user.replace('is-invalid', ' ');
+    }
+    if(name_class_tipo_user.match(/is-invalid/)){
+        document.forms['form_cadastro'].tipo_user.className = name_class_tipo_user.replace('is-invalid', ' ');
+    }
+    if(name_class_senha.match(/is-invalid/)){
+        document.forms['form_cadastro'].campo_conf_senha.className = name_class_senha.replace('is-invalid', ' ');
+    }
+
     function valida_nome(){
         /**
          * Função para validar o Nome do usuário
          */
         var nome = document.forms['form_cadastro'].campo_nome.value;
         var nome = nome.replace( /\s/g, '' );
-        var nome_invalido = document.getElementById("nome_invalido");
+        var name_class = document.forms['form_cadastro'].campo_nome.className;
         if (/[^a-zA-Z]/.test(nome)) {
-            nome_invalido.style.display = "block";
+            var new_name_class = name_class + ' is-invalid';
+            document.forms['form_cadastro'].campo_nome.className = new_name_class;
             form_cadastro.campo_nome.focus();
-            /*alert("O campo nome deve possuir apenas letras");*/
             return false;
         } else {
-            nome_invalido.style.display = "none";
+            document.forms['form_cadastro'].campo_nome.className = name_class;
         }
 
         return true;
     }
-
+    
     function valida_sexo(){
         /**
          * Função para validar o sexo do usuário
          */
-        var campo_sexo = document.forms["form_cadastro"].campo_sexo;
-        var sexo = false;
-        var sexo_invalido = document.getElementById("sexo_invalido");
-        for (var i = 0; i < campo_sexo.length; i++) {
-            if (campo_sexo[i].checked == true) {
-                sexo = campo_sexo[i].value;
-                break;
-            }
-        }
-        if (sexo == false) {
-            sexo_invalido.style.display = "block";
-            //alert("O campo 'sexo' deve ser preenchido.");
+        var sexo = document.forms["form_cadastro"].campo_sexo.selectedIndex;
+        var name_class = document.forms['form_cadastro'].campo_sexo.className;
+        if (sexo == 0) {
+            var new_name_class = name_class + ' is-invalid';
+            document.forms['form_cadastro'].campo_sexo.className = new_name_class;
             return false;
-        }else{
-            sexo_invalido.style.display = "none";
+        } else {
+            document.forms['form_cadastro'].campo_sexo.className = name_class;
         }
-
         return true;
     }
-
+    
     function valida_email() {
         /**
          * Função para verificar se os e-mails passados são iguais
          */
         var email = document.forms['form_cadastro'].campo_email.value;
         var conf_email = document.forms['form_cadastro'].campo_conf_email.value;
-        var email_diferente = document.getElementById("conf_email_invalido");
+        var name_class = document.forms['form_cadastro'].campo_conf_email.className;
         if (email != conf_email) {
-            email_diferente.style.display = "block";
+            var new_name_class = name_class + ' is-invalid';
+            document.forms['form_cadastro'].campo_conf_email.className = new_name_class;
             form_cadastro.campo_email.focus();
             return false;
         } else {
-            email_diferente.style.display = "none";
+            document.forms['form_cadastro'].campo_conf_email.className = name_class;
         }
 
         return true;
@@ -68,7 +88,6 @@ function valida_dados() {
          * Função para validar o nome de usuário
          */
         var user = document.forms['form_cadastro'].campo_user.value;
-        var user_invalido = document.getElementById("user_invalido");
         
         function isNumeric(str) {
             var er = /^[0-9]+$/;
@@ -78,12 +97,15 @@ function valida_dados() {
         var number = user.substring(0,1);
         var number = isNumeric(number);
 
+        var name_class = document.forms['form_cadastro'].campo_user.className;
+
         if(number) {
-            user_invalido.style.display = "block";
+            var new_name_class = name_class + ' is-invalid';
+            document.forms['form_cadastro'].campo_user.className = new_name_class;
             form_cadastro.campo_user.focus();
             return false;
         } else {
-            user_invalido.style.display = "none";
+            document.forms['form_cadastro'].campo_user.className = name_class;
         }
 
         return true;
@@ -95,18 +117,34 @@ function valida_dados() {
          */
         var senha = document.forms['form_cadastro'].campo_senha.value;
         var conf_senha = document.forms['form_cadastro'].campo_conf_senha.value;
-        var senha_diferente = document.getElementById("conf_senha_invalido");
+        var name_class = document.forms['form_cadastro'].campo_conf_senha.className;
         if (senha != conf_senha) {
-            senha_diferente.style.display = "block";
+            var new_name_class = name_class + ' is-invalid';
+            document.forms['form_cadastro'].campo_conf_senha.className = new_name_class;
             form_cadastro.campo_senha.focus();
             return false;
         } else {
-            senha_diferente.style.display = "none";
+            document.forms['form_cadastro'].campo_conf_senha.className = name_class;
         }
 
         return true;
     }
 
+    function valida_tipo_user(){
+        /**
+         * Função para validar o sexo de usuário
+         */
+        var tipo_user = document.forms["form_cadastro"].tipo_user.selectedIndex;
+        var name_class = document.forms['form_cadastro'].tipo_user.className;
+        if (tipo_user == 0) {
+            var new_name_class = name_class + ' is-invalid';
+            document.forms['form_cadastro'].tipo_user.className = new_name_class;
+            return false;
+        } else {
+            document.forms['form_cadastro'].tipo_user.className = name_class;
+        }
+        return true;
+    }
 
     var erro = [];
     var nome = valida_nome();
@@ -119,6 +157,8 @@ function valida_dados() {
     erro.push(user);
     var senha = valida_senha();
     erro.push(senha);
+    var tipo_user = valida_tipo_user();
+    erro.push(tipo_user);
 
     var teste = erro.indexOf(false);
 
