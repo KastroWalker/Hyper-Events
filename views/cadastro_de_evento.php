@@ -7,7 +7,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="author" content="Victor Castro">
-        <link rel="stylesheet" type="text/css" href="CSS/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../CSS/bootstrap.min.css">
         <style type="text/css">
             header, footer, #Manual {
                 text-align: center;
@@ -23,7 +23,7 @@
         ?>
         <main>
             <section id="Cadastrar_Evento">
-                <form method="POST" action="../Controls/gerencia_evento.php?acao=cadastrar" id="form_cadastro">
+                <form method="POST" onsubmit="valida_cadastro_evento();" action="../Controls/gerencia_evento.php?acao=cadastrar" id="form_cadastro">
                     <h2>Cadastrar Evento</h2>
                     <div class="form-group">
                         <label for="titulo">Titulo do Evento: *</label>
@@ -64,5 +64,6 @@
         <?php 
             require_once 'footer.php';
         ?>
+        <script src="../JS/valida_dados.js"></script>
     </body>
 </html>

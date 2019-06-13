@@ -3,5 +3,10 @@
     Conectando com o Banco de Dados
     Criador por: Victor Castro  
     */
-    $conexao = mysqli_connect('localhost', 'root', 'kauan031002', 'HyperEvents') or die ('Não foi possivel conectar');
+    define('HOST', 'localhost');
+    define('USER', 'matue');
+    define('SENHA', 'banco');
+    define('BD', 'HyperEvents');
+
+    $conexao = mysqli_connect(HOST, USER, SENHA, BD) or die ('Não foi possivel conectar');
 ?>

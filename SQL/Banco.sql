@@ -1,9 +1,16 @@
 -- Banco de dados HyperEvents --
 -- Criado por Kauan portela e Victor Castro --
+
+--Criando usuário padrão para todos--
+create user 'matue'@'%' identified by 'banco';
+
 -- Criando a base de dados --
 create database	HyperEvents;
 
+grant all privileges on HyperEvents.* to 'matue'@'%';
+
 use HyperEvents;
+
 
 -- Criando a tabela organizadores --
 create table organizadores(
