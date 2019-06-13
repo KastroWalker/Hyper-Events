@@ -2,20 +2,31 @@ function valida_dados() {
     /**
      * Função para validar os Dados do usuário
      */
+
+     /*<script type="text/javascript">
+        var teste = document.forms['form_cadastro'].campo_nome.className;
+        alert(teste);
+        form-control is-invalid
+        var teste2 = teste + ' is-invalid';
+        alert(teste2);
+        document.forms['form_cadastro'].campo_nome.className = teste2;
+    </script>*/
+
+
     function valida_nome(){
         /**
          * Função para validar o Nome do usuário
          */
         var nome = document.forms['form_cadastro'].campo_nome.value;
         var nome = nome.replace( /\s/g, '' );
-        var nome_invalido = document.getElementById("nome_invalido");
+        var name_class = document.getElementById['nome'].className;
         if (/[^a-zA-Z]/.test(nome)) {
-            nome_invalido.style.display = "block";
+            var new_name_class = name_class + ' is-invalid';
+            document.forms['form_cadastro'].campo_nome.className = new_name_class;
             form_cadastro.campo_nome.focus();
-            /*alert("O campo nome deve possuir apenas letras");*/
             return false;
         } else {
-            nome_invalido.style.display = "none";
+            document.forms['form_cadastro'].campo_nome.className = name_class;
         }
 
         return true;

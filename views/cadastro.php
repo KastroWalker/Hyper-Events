@@ -2,9 +2,7 @@
 <html lang="pt-br">
     <head>
         <meta charset="UTF-8">
-<<<<<<< HEAD
         <title>Cadastro de usuário - Hyper Events</title>
-=======
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="author" content="Victor Castro">
         <link rel="stylesheet" type="text/css" href="CSS/bootstrap.min.css">
@@ -14,7 +12,6 @@
             }
         </style>
         <title>Document</title>
->>>>>>> de891acfd6c360f61f69e76067d524cd39902596
         <link rel="stylesheet" type="text/css" href="../CSS/style_cadastro.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="author" content="Victor Castro">
@@ -26,7 +23,6 @@
         </style>
         <link rel="stylesheet" type="text/css" href="../CSS/bootstrap.min.css">
         <script type="text/javascript" src="../JS/formata.js"></script>
-        <script type="text/javascript" src="../JS/valida_dados.js"></script>
         <script type="text/javascript">
             function logout() {
                 window.location.href = '../index.php';
@@ -44,9 +40,7 @@
     <body>
         <?php
         session_start();
-
         require_once 'header.php';
-        #onsubmit="return valida_dados();"
         ?>
         <style type="text/css">
             .teste{
@@ -55,7 +49,7 @@
         </style>
         <main>
             <section id="cadastro">
-                <form method="POST" action="../Controls/cadastrar_organizador.php" name="form_cadastro">
+                <form method="POST" action="../Controls/cadastrar_organizador.php" name="form_cadastro" onsubmit="return valida_nome();">
                     <h2>Cadastro de Usuário</h2>
                     <div class="form-row">
                         <div class="col-md-8">
@@ -131,6 +125,7 @@
             </section>
             <script type="text/javascript">
             </script>     
+            <script type="text/javascript" src="../JS/valida_dados.js"></script>
         <?php
             require_once 'footer.php';
         ?>
