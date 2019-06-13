@@ -41,7 +41,7 @@
 
 	if ($row['total'] == 1) {
 		$_SESSION['usuario_existe'] = true;
-		header('Location: ../vizualizacoes/cadastro.php');
+		header('Location: ../views/cadastro.php');
 		exit();
 	}
 
@@ -57,7 +57,7 @@
 
 	$conexao->close();
 
-	header('Location: ../vizualizacoes/cadastro.php');
+	header('Location: ../views/cadastro.php');
 	exit();
 	
 ?>

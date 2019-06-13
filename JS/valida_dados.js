@@ -107,6 +107,7 @@ function valida_dados() {
         return true;
     }
 
+
     var erro = [];
     var nome = valida_nome();
     erro.push(nome);

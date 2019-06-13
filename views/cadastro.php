@@ -2,7 +2,19 @@
 <html lang="pt-br">
     <head>
         <meta charset="UTF-8">
+<<<<<<< HEAD
         <title>Cadastro de usuário - Hyper Events</title>
+=======
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Victor Castro">
+        <link rel="stylesheet" type="text/css" href="CSS/bootstrap.min.css">
+        <style type="text/css">
+            header, footer, #Manual {
+                text-align: center;
+            }
+        </style>
+        <title>Document</title>
+>>>>>>> de891acfd6c360f61f69e76067d524cd39902596
         <link rel="stylesheet" type="text/css" href="../CSS/style_cadastro.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="author" content="Victor Castro">
