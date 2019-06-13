@@ -1,0 +1,106 @@
+form {
+	width: 50%;
+	background-color: #ccc;
+	margin: 20px auto;
+	padding: 10px;
+	padding-left: 40px;
+	padding-right: 0px;	 
+	text-align: left;
+	height: 815px;
+}
+
+form label {
+	font: 16px Verdana, Geneva, sans-serif; 
+	color: #069;
+	display: block;
+	padding: 4px 0px;
+	text-align: left;
+}
+
+form input {
+	width: 280px;
+	padding: 6px;
+	border: none;
+	font: 15px; 
+	border-radius: 4px;
+	text-align: left !important;
+}
+	
+x {
+	color: #069;
+}
+
+form input[type="radio"] {
+	width: auto;
+	color: #069;
+}
+
+form .btn { 
+	width: 80px;
+	background-color: #069;
+	color: #fff; 
+	padding: 7px;
+	cursor: pointer;
+	border-radius: 4px; 
+	border: none;
+	float: left;
+	margin: 5px;
+	margin-top: 15px;
+}
+
+form .btn:hover {
+	background-color: #f60;
+}
+
+button a{
+	text-decoration: none;
+	color: #fff;
+}
+
+
+#titulo {
+	color: #069;
+	font-size: 21pt;
+	padding: 8px; 
+}
+
+.erro {
+	color: red;
+    text-align: left;
+    padding-bottom: 10px;
+    display: none;
+}
+
+#sexo_invalido {
+	/*display: block;*/
+}
+
+#user_cadastrado{
+	background-color: green;
+	display: block;
+	width: 30%;
+	padding: 20px 25px;
+	margin: 25px auto 5px auto;
+	color: #fff;
+	border-radius: 4px;
+}
+
+#user_cadastrado a {
+	font-style: bold;
+	text-decoration: none;
+	color: #fff;
+}
+
+#user_cadastrado a:hover {
+	text-decoration: underline;
+}
+
+#erro_cadastro{
+	background-color: #f00;
+	display: block;
+	width: 30%;
+	padding: 25px;
+	margin: 25px auto 5px auto;
+	color: #fff;
+	border-radius: 4px;
+}

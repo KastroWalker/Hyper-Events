@@ -1,0 +1,20 @@
+/* 
+Documento de estilização padrão para todas as paginas.
+Criado por: Victor Castro e Rian Carvalho
+*/
+*{
+	margin: 0px;
+	padding: 0px;
+	text-align: center;
+}
+
+header {
+	background-image: linear-gradient(to right, rgb(1, 1, 150), rgb(240, 240, 240));
+	color: rgb(4, 4, 4);
+}
+
+footer {
+	background-image: linear-gradient(to left, rgb(1, 1, 255), rgb(240, 240, 240));
+	height: 110px;
+	color: rgb(25, 25, 25);
+}
