@@ -1,7 +1,8 @@
 <?php
 	session_start();
 	include 'conexao.php';
-
+	include_once '../Controls/verifica_login.php';
+	
 	/*Dados Pessoais*/
 	
 	$nome = mysqli_real_escape_string($conexao, trim($_POST['campo_nome']));
