@@ -32,7 +32,7 @@
 
 
     //Criando a pagina para destinar o usuário
-    $page = 'Location: ../vizualizacoes/area_org.php';
+    $page = 'Location: ../views/area_org.php';
           
     /*echo $query;
     exit();*/
@@ -54,7 +54,7 @@
         $query = "select organizador_id, user from organizador where user = '{$user}' and senha = md5('{$pass}')";
 
         //Criando a pagina para destinar o usuário
-        $page = 'Location: ../vizualizacoes/area_org.php';
+        $page = 'Location: ../views/area_org.php';
         
         $result = mysqli_query($conexao, $query);
 

@@ -37,7 +37,7 @@ create table eventos(
 );
 
 -- Criando a tabela de participantes --
-create table participantes(
+/*create table participantes(
 	part_id int not null auto_increment,
 	nome varchar(200) not null,
 	datanasc date not null,
@@ -47,7 +47,7 @@ create table participantes(
 	usuario varchar(200) not null,
 	senha varchar(20) not null,
 	primary key(part_id)
-);
+);*/
 
 
 -- Criando a tabela de palestrantes --
