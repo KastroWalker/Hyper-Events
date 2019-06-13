@@ -1,11 +1,18 @@
+<?php 
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
         <meta charset="utf-8">
-        <?php 
-            session_start();
-            require_once 'SEO.php';
-        ?>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Victor Castro">
+        <link rel="stylesheet" type="text/css" href="CSS/bootstrap.min.css">
+        <style type="text/css">
+            header, footer, #Manual {
+                text-align: center;
+            }
+        </style>
         <link rel="stylesheet" type="text/css" href="../CSS/style_cadastro_eveto.css">
         <link rel="stylesheet" type="text/css" href="../CSS/bootstrap.min.css">
         <title>Cadastrar Evento - Hyper-Events</title>
@@ -49,7 +56,7 @@
                     <br/>
                     <button type="submit" class="btn btn-primary">Cadastrar</button>
                     <button type="reset" class="btn btn-secondary">Limpar</button>
-                    <button class="btn btn-info">Voltar</button>
+                    <a class="btn btn-info" href="lista_eventos.php">Voltar</a>
                     <p><strong>Atenção: </strong>Todos os campos que possuem '*' são obrigatorios.</p>
                 </form>
             </section>

@@ -1,12 +1,19 @@
+<?php
+    session_start();
+    #echo time();;
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
         <meta charset="UTF-8">
-        <?php
-            session_start();
-            include_once 'views/SEO.php';
-            #echo time();;
-        ?>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Victor Castro">
+        <link rel="stylesheet" type="text/css" href="CSS/bootstrap.min.css">
+        <style type="text/css">
+            header, footer, #Manual {
+                text-align: center;
+            }
+        </style>
         <script type="text/javascript">
             function cadastrar() {
                 window.location.href = 'views/cadastro.php';

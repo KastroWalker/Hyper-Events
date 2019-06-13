@@ -7,7 +7,6 @@
             require_once 'SEO.php';
         ?>
         <link rel="stylesheet" type="text/css" href="../CSS/style_cadastro.css">
-        <script type="text/javascript" src="../JS/valida_dados.js"></script>
         <script type="text/javascript" src="../JS/formata.js"></script>
         <link rel="stylesheet" type="text/css" href="../CSS/bootstrap.min.css">
         <script type="text/javascript">
@@ -29,56 +28,100 @@
         session_start();
 
         require_once 'header.php';
+        #onsubmit="return valida_dados();"
+        #<script type="text/javascript" src="../JS/valida_dados.js"></script>
         ?>
+        <style type="text/css">
+            .teste{
+                color: pink;
+            }
+        </style>
         <main>
             <section id="cadastro">
-            <form method="POST" action="../Controls/cadastrar_organizador.php" name="form_cadastro" onsubmit="return valida_dados();">
-                <h2 id="titulo">Cadastro no sistema</h2>
-                <label id="campo_nome">Nome: *</label>
-                <input type="text" name="campo_nome" id="nome" required>
-                <div class="erro" id="nome_invalido">Nome inválido</div>
-
-                <label for="data_nasc">Data de Nascimento: *</label>
-                <input type="date" name="campo_data_nasc" id="data_nasc" required>
-               
-                <label id="label_sexo">Sexo: *</label>
-                <input type="radio" name="campo_sexo" id="sexo_masc" value="M"><x>Masculino</x>
-                <input type="radio" name="campo_sexo" id="sexo_femi" value="F"><x>Feminino</x>
-                <div class="erro" id="sexo_invalido">Selecione um valor</div>
-                
-                <label for="campo_cpf">CPF:*</label>
-                <input type="text" name="campo_cpf" id="cpf" required onkeyup="somenteNumeros(this);" onkeypress="formata_mascara(this, '###.###.###-##', event)" maxlength="14" onpaste="return false;">
-                <div class="erro" id="cpf_invalido">CPF inválido</div>
-               
-                <label for="campo_email">E-mail: *</label>
-                <input type="email" name="campo_email" id="email" required>
-                <div class="erro" id="email">E-mail inválido</div>
-
-                <label for="campo_conf_email">Confirmar E-mail: *</label>
-                <input type="email" name="campo_conf_email" id="conf_email" required>
-                <div class="erro" id="conf_email_invalido">O e-mail não correpondem</div>
-               
-                <label for="campo_user">Usuário: *</label>
-                <input type="text" name="campo_user" id="user" required>
-                <div class="erro" id="user_invalido">Usuário Inválido</div>
-
-                <label for="campo_senha">Senha: *</label>
-                <input type="text" name="campo_senha" id="senha" required>                
-                <div class="erro" id="senha_invalido">Senha invalida</div>
-
-                <label for="campo_conf_senha">Confirmar Senha: *</label>
-                <input type="text" name="campo_conf_senha" id="conf_senha" required>
-                <div class="erro" id="conf_senha_invalido">As senhas não correspondem</div>
-
-                <br/>
-                <button type="submit" class="btn">Cadastrar</button>
-                <button type="reset" class="btn">Limpar</button>
-                <button class="btn" onclick="logout();">Sair</button>
-            
-                <br/>
-            </form>
-            <p><strong>Atenção: </strong>Todos os campos que possuem '*' são obrigatorios.</p>
+                <form method="POST" action="../Controls/cadastrar_organizador.php" name="form_cadastro">
+                    <div class="form-row">
+                        <div class="col-md-8">
+                            <label for="nome" id="campo_nome">Nome: </label>
+                            <input type="text" name="campo_nome" id="nome" class="form-control" class="" required>
+                            <div class="invalid-feedback">Nome inválido!</div>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="data_nasc">Data de Nascimento: *</label>
+                            <input type="date" name="campo_data_nasc" id="data_nasc" class="form-control" required>
+                            <div class="invalid-feedback">Data inválida!</div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-6">
+                            <label for="campo_cpf">CPF:*</label>
+                            <input type="text" name="campo_cpf" id="cpf" required onkeyup="somenteNumeros(this);" onkeypress="formata_mascara(this, '###.###.###-##', event)" maxlength="14" onpaste="return false;" class="form-control">
+                            <div class="invalid-feedback">CPF inválido!</div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-check form-check-inline">
+                                <input type="radio" name="campo_sexo" id="sexo_masc" class="form-check-input" value="M">
+                                <label class="form-check-label">Masculino</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input type="radio" name="campo_sexo" id="sexo_femi" class="form-check-input" value="F">
+                                <label class="form-check-label">Feminino</label>
+                            </div>
+                            <div class="invalid-feedback">Selecione um valor!</div>
+                        </div>  
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="campo_email">E-mail: *</label>
+                            <input type="email" name="campo_email" id="email" class="form-control" required>
+                            <div class="invalid-feedback">E-mail inválido!</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="campo_conf_email">Confirmar E-mail: *</label>
+                            <input type="email" name="campo_conf_email" id="conf_email"class="form-control" required>
+                            <div class="invalid-feedback">O e-mail não correpondem!</div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="campo_user">Usuário: *</label>
+                            <input type="text" name="campo_user" id="user" class="form-control" required>
+                            <div class="invalid-feedback">Usuário Inválido!</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="tipo_user">Tipo de usuário: *</label>
+                            <select class="form-control" id="tipo_user" name="tipo_user" class="form-control">
+                              <option value="padrao" selected>Escolha o tipo de usuário</option>
+                              <option>Participante</option>
+                              <option>Organizador</option>
+                            </select>
+                            <div class="invalid-feedback">Escolha um valor!</div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="campo_senha">Senha: *</label>
+                            <input type="text" name="campo_senha" id="senha" class="form-control" required>                
+                            <div class="invalid-feedback">Senha invalida!</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="campo_conf_senha">Confirmar Senha: *</label>
+                            <input type="text" name="campo_conf_senha" id="conf_senha" class="form-control" required>
+                            <div class="invalid-feedback">As senhas não correspondem!</div>
+                        </div>
+                    </div>
+                    <p class="alert alert-danger" style="text-align: center;"><strong>Atenção: </strong>Todos os campos que possuem '*' são obrigatorios.</p>
+                    <button type="submit" class="btn btn-success">Cadastrar</button>
+                    <button type="reset" class="btn btn-primary">Limpar</button>
+                    <button class="btn btn-danger" onclick="logout();">Sair</button>    
+                </form>
             </section>
+            <script type="text/javascript">
+            /*function mostra(){
+                 document.getElementById("nome").className = "form-control is-invalid";
+            }*/
+           // mostra();
+            </script>
+            
         <?php
             require_once 'footer.php';
         ?>

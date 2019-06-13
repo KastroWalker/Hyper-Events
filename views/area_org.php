@@ -7,28 +7,33 @@ Criado por: Victor Castro
     session_start();
     if(isset($_SESSION['id'])){
     include '../Controls/verifica_login.php';
+    $site = ' ';
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Document</title>
-        <?php 
-            require_once 'SEO.php';
-            $site = ' ';
-        ?>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Victor Castro">
+        <link rel="stylesheet" type="text/css" href="CSS/bootstrap.min.css">
+        <style type="text/css">
+            header, footer, #Manual {
+                text-align: center;
+            }
+        </style>
+        <title>Home - Hyper Events</title>
         <link rel="stylesheet" type="text/css" href="../CSS/bootstrap.min.css">
     </head>
     <body>
         <?php 
             require_once 'header.php';
+            require_once 'nav_bar.php';
         ?>
-        <h2>Olá organizador, <?php echo $_SESSION['usuario']; ?></h2>
-        <a href="../Controls/logout.php"><button>Sair</button></a>
-        <a href="cadastro_de_evento.php"><button>Cadastrar Evento</button></a>
-        <a href="lista_eventos.php"><button>Ver meus Eventos</button></a> 
-        <?php 
+        <span>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia magni reprehenderit quae sit quidem, delectus. Et laboriosam quia cumque, animi rerum! Eveniet provident eius, numquam, iure sit quis laboriosam voluptatibus?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia magni reprehenderit quae sit quidem, delectus. Et laboriosam quia cumque, animi rerum! Eveniet provident eius, numquam, iure sit quis laboriosam voluptatibus?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia magni reprehenderit quae sit quidem, delectus. Et laboriosam quia cumque, animi rerum! Eveniet provident eius, numquam, iure sit quis laboriosam voluptatibus?
+        </span>
+        <?php
             require_once 'footer.php';
         ?>    
     </body>
