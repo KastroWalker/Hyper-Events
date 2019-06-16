@@ -15,14 +15,13 @@ Criado por: Victor Castro
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="author" content="Victor Castro">
-        <link rel="stylesheet" type="text/css" href="CSS/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../CSS/bootstrap/bootstrap.min.css">
         <style type="text/css">
             header, footer, #Manual {
                 text-align: center;
             }
         </style>
         <title>Home - Hyper Events</title>
-        <link rel="stylesheet" type="text/css" href="../CSS/bootstrap.min.css">
     </head>
     <body>
         <?php 
@@ -39,7 +38,6 @@ Criado por: Victor Castro
 </html>
 
 <?php
-
     }else{
         header('Location: ../index.php');
     }
