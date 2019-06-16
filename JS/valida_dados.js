@@ -11,12 +11,13 @@ function valida_dados() {
     var name_class_cpf = document.forms['form_cadastro'].campo_cpf.className;
     var name_class_tipo_user = document.forms['form_cadastro'].tipo_user.className;
     var name_class_senha = document.forms['form_cadastro'].campo_conf_senha.className;
+    var name_class_data_nasc = document.forms['form_cadastro'].campo_data_nasc.className;
         
     if(name_class_nome.match(/is-invalid/)){
         document.forms['form_cadastro'].campo_nome.className = name_class_nome.replace('is-invalid', ' ');
     }
-    if(name_class_nome.match(/is-invalid/)){
-        document.forms['form_cadastro'].campo_cpf.className = name_class_cpf.replace('is-invalid', ' ');
+    if(name_class_data_nasc.match(/is-invalid/)){
+        document.forms['form_cadastro'].campo_data_nasc.className = name_class_cpf.replace('is-invalid', ' ');
     }
     if(name_class_sexo.match(/is-invalid/)){
         document.forms['form_cadastro'].campo_sexo.className = name_class_sexo.replace('is-invalid', ' ');
@@ -175,8 +176,9 @@ function valida_dados() {
             Resto = 0;
         }
         if (Resto != parseInt(cpf.substring(9, 10)) ){
-          var new_name_class = name_class + ' is-invalid';
-        document.forms['form_cadastro'].campo_cpf.className = new_name_class; return false;      
+            var new_name_class = name_class + ' is-invalid';
+            document.forms['form_cadastro'].campo_cpf.className = new_name_class;
+            return false;      
         } 
 
         Soma = 0;
@@ -195,27 +197,70 @@ function valida_dados() {
     }
 
     function valida_data_nasc(){
+        /**
+          * Função para validar a data de nascimento
+          */
+
+        document.getElementById("data_invalida").innerHTML = "Data inválida";
+        var name_class = document.forms['form_cadastro'].campo_data_nasc.className;
+
+        // Pegando a data de nascimento do usuario
+        var data_passada = document.forms['form_cadastro'].campo_data_nasc.value;
+
+        // Pegando a data atual
         var data = new Date()
         var ano = data.getFullYear();
-        var mes = data.getMonth();
+        var mes = data.getMonth() + 1;
         var dia = data.getDate();
-        mes = mes + 1;
-        var data_passada = document.forms['form_cadastro'].campo_data_nasc.value;
-        var ano_passado = data_passada.substring(0, 4);
-        var ano_passado = Number(ano_passado);
-        var mes_passado = data_passada.substring(5, 7);
-        var mes_passado = Number(mes_passado);
-        var dia_passado = data_passada.substring(8, 11);
-        var dia_passado = Number(dia_passado);
 
-        if((ano_passado - ano) < 16){
+        // Verificando se a data é valida
+        if(data_passada.length > 10 || data_passada.length < 10){
+            var new_name_class = name_class + ' is-invalid';
+            document.forms['form_cadastro'].campo_data_nasc.className = new_name_class;
             return false;
-        }else {
-            if(){
-
-            }
         }
-        return str_data;
+
+        // Separando a data em ano, mes e dia
+        var ano_passado = data_passada.substring(0, 4);
+        var mes_passado = data_passada.substring(5, 7);
+        var dia_passado = data_passada.substring(8, 11);
+
+        // Convertendo a data para numero
+        var ano_passado = Number(ano_passado);
+        var mes_passado = Number(mes_passado);
+        var dia_passado = Number(dia_passado);
+        
+        // Calculando a idade
+        idade = ano - ano_passado;
+        alert(idade);
+        
+        // Verificando se a idade esta correta
+        if (mes < mes_passado || mes == mes_passado && dia < dia_passado) {
+            idade--;
+        }
+
+        //Pega o valor do tipo de usuario
+        var e = document.getElementById("tipo_user");
+        var tipo_user = e.options[e.selectedIndex].value;
+        alert(tipo_user);
+
+        // Verificando se a idade do organizador é valida
+        if(idade < 16 && tipo_user == 'org'){
+            document.getElementById("data_invalida").innerHTML = "Organizador tem que no minino 16 anos";
+            var new_name_class = name_class + ' is-invalid';
+            document.forms['form_cadastro'].campo_data_nasc.className = new_name_class;
+            return false;
+        }
+
+        // Verificando se a idade do participante é valida
+        if(idade < 8 && tipo_user == 'part'){
+            document.getElementById("data_invalida").innerHTML = "Participante tem que no minino 8 anos";
+            var new_name_class = name_class + ' is-invalid';
+            document.forms['form_cadastro'].campo_data_nasc.className = new_name_class;
+            return false;
+        }
+
+        return true;
     }
 
     var erro = [];
@@ -233,6 +278,8 @@ function valida_dados() {
     erro.push(tipo_user);
     var cpf = valida_cpf();
     erro.push(cpf);
+    var data_nasc = valida_data_nasc();
+    erro.push(data_nasc);
 
     var teste = erro.indexOf(false);
 

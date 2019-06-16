@@ -91,7 +91,7 @@
                     unset($_SESSION['usuario_existe']);
                     #../Controls/cadastrar_organizador.php
                 ?>
-                <form method="POST" action="teste.php" name="form_cadastro" onsubmit="return valida_dados();">
+                <form method="POST" action="" name="form_cadastro" onsubmit="return valida_dados();">
                     <h2>Cadastro de Usuário</h2>
                     <div class="form-row">
                         <div class="col-md-8">
@@ -102,7 +102,7 @@
                         <div class="col-md-4">
                             <label for="campo_data_nasc">Data de Nascimento: *</label>
                             <input type="date" name="campo_data_nasc" id="data_nasc" class="form-control" required>
-                            <div class="invalid-feedback">Data inválida!</div>
+                            <div class="invalid-feedback" id="data_invalida">Data inválida!</div>
                         </div>
                     </div>
                     <div class="form-row">
