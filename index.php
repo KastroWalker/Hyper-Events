@@ -14,6 +14,7 @@
                 text-align: center;
             }
         </style>
+        <script src="JS/verSenha.js"></script>
         <script type="text/javascript">
             function cadastrar() {
                 window.location.href = 'views/cadastro.php';
@@ -58,7 +59,8 @@
                     </tr>
                     <tr>
                         <td id="pass">
-                            <input type="password" name="senha" id="field_pass" required><br/>
+                            <input type="password" name="senha" id="field_pass" required>
+                            <button type="button" onclick="verSenha();"><img src=img/verSenha.png width="25"></button> <br/>
                         </td>
                     </tr>
                     <tr>
