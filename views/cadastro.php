@@ -100,7 +100,7 @@
                             <div class="invalid-feedback">Nome inválido!</div>
                         </div>
                         <div class="col-md-4">
-                            <label for="data_nasc">Data de Nascimento: *</label>
+                            <label for="campo_data_nasc">Data de Nascimento: *</label>
                             <input type="date" name="campo_data_nasc" id="data_nasc" class="form-control" required>
                             <div class="invalid-feedback">Data inválida!</div>
                         </div>
@@ -118,14 +118,14 @@
                         </div>
                         <div class="col-md-4">
                             <label for="campo_telefone">Tel. Contato: </label>
-                            <input type="tel" name="campo_telefone" id="telefone" required onkeypress="formata_mascara(this, '## #####-####', event)" maxlength="13" onpaste="return false;" class="frm_number_only form-control" placeholder="(xx) xxxxx-xxxx" required>
+                            <input type="tel" name="campo_telefone" id="telefone" required onkeypress="formata_mascara(this, '## #####-####', event)" minlength="13" maxlength="13" onpaste="return false;" class="frm_number_only form-control" placeholder="(xx) xxxxx-xxxx" required>
                             <div class="invalid-feedback">Número invalido</div>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="col-md-2">
                             <label for="campo_cpf">CPF:*</label>
-                            <input type="text" name="campo_cpf" id="cpf" required onkeypress="formata_mascara(this, '###.###.###-##', event)" maxlength="14" onpaste="return false;" class="frm_number_only form-control" placeholder="xxx.xxx.xxx-xx">
+                            <input type="text" name="campo_cpf" id="cpf" required onkeypress="formata_mascara(this, '###.###.###-##', event)" minlength="14" maxlength="14" onpaste="return false;" class="frm_number_only form-control" placeholder="xxx.xxx.xxx-xx">
                             <div class="invalid-feedback">CPF inválido!</div>
                         </div>
                         <div class="col-md-3">

@@ -194,6 +194,30 @@ function valida_dados() {
         return true;
     }
 
+    function valida_data_nasc(){
+        var data = new Date()
+        var ano = data.getFullYear();
+        var mes = data.getMonth();
+        var dia = data.getDate();
+        mes = mes + 1;
+        var data_passada = document.forms['form_cadastro'].campo_data_nasc.value;
+        var ano_passado = data_passada.substring(0, 4);
+        var ano_passado = Number(ano_passado);
+        var mes_passado = data_passada.substring(5, 7);
+        var mes_passado = Number(mes_passado);
+        var dia_passado = data_passada.substring(8, 11);
+        var dia_passado = Number(dia_passado);
+
+        if((ano_passado - ano) < 16){
+            return false;
+        }else {
+            if(){
+
+            }
+        }
+        return str_data;
+    }
+
     var erro = [];
     var nome = valida_nome();
     erro.push(nome);
