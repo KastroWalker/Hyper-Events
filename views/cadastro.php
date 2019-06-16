@@ -89,8 +89,9 @@
                 <?php
                     }
                     unset($_SESSION['usuario_existe']);
+                    #../Controls/cadastrar_organizador.php
                 ?>
-                <form method="POST" action="../Controls/cadastrar_organizador.php" name="form_cadastro" onsubmit="return valida_dados();">
+                <form method="POST" action="teste.php" name="form_cadastro" onsubmit="return valida_dados();">
                     <h2>Cadastro de Usuário</h2>
                     <div class="form-row">
                         <div class="col-md-8">
