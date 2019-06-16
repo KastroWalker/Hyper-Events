@@ -2,40 +2,54 @@
 <html lang="pt-br">
     <head>
         <meta charset="UTF-8">
-        <title>Cadastro de usuário - Hyper Events</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="author" content="Victor Castro">
-        <link rel="stylesheet" type="text/css" href="../CSS/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../CSS/bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../CSS/style_cadastro.css">
         <style type="text/css">
             header, footer, #Manual {
                 text-align: center;
             }
         </style>
         <title>Document</title>
-        <link rel="stylesheet" type="text/css" href="../CSS/style_cadastro.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="author" content="Victor Castro">
-        <link rel="stylesheet" type="text/css" href="../CSS/bootstrap.min.css">
         <style type="text/css">
             header, footer, #Manual {
                 text-align: center;
             }
         </style>
-        <link rel="stylesheet" type="text/css" href="../CSS/bootstrap.min.css">
         <script type="text/javascript" src="../JS/formata.js"></script>
+        <script type="text/javascript" src="../JS/jquery.js"></script>
+        <script type="text/javascript" src="../JS/valida_dados.js"></script>
         <script type="text/javascript">
             function logout() {
                 window.location.href = '../index.php';
             }
-            function somenteNumeros(num) {
-                var er = /[^0-9.-]/;
-                er.lastIndex = 0;
-                var campo = num;
-                if (er.test(campo.value)) {
-                    campo.value = "";
+
+            function frm_number_only_exc(){
+            // allowed: numeric keys, numeric numpad keys, backspace, del and delete keys
+            if ( event.keyCode == 37 || event.keyCode == 38 || event.keyCode == 39 || event.keyCode == 40 || event.keyCode == 46 || event.keyCode == 8 || event.keyCode == 9 || ( event.keyCode < 106 && event.keyCode > 95 ) ) { 
+            return true;
+                }else{
+                    return false;
                 }
             }
+
+            $(document).ready(function(){
+
+            $("input.frm_number_only").keydown(function(event) { 
+
+                   if ( frm_number_only_exc() ) { 
+
+                   } else { 
+                           if ( event.keyCode < 48 || event.keyCode > 57 ) { 
+                                   event.preventDefault();  
+                           }        
+                   } 
+               }); 
+
+            });
         </script>
+        <title>Cadastro de usuário - Hyper Events</title>
     </head>
     <body>
         <?php
@@ -91,21 +105,26 @@
                         </div>
                     </div>
                     <div class="form-row">
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <label for="campo_email">E-mail: *</label>
-                            <input type="email" name="campo_email" id="email" class="form-control" placeholder="Ex: email@hospedagem.com" required>
+                            <input type="email" name="campo_email" id="email" class="form-control" placeholder="Ex: email@host.com" required>
                             <div class="invalid-feedback">E-mail inválido!</div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <label for="campo_conf_email">Confirmar E-mail: *</label>
                             <input type="email" name="campo_conf_email" id="conf_email"class="form-control" placeholder="Confirme o seu e-mail" required>
                             <div class="invalid-feedback">O e-mail não correpondem!</div>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="campo_telefone">Tel. Contato: </label>
+                            <input type="tel" name="campo_telefone" id="telefone" required onkeypress="formata_mascara(this, '## #####-####', event)" maxlength="13" onpaste="return false;" class="frm_number_only form-control" placeholder="(xx) xxxxx-xxxx" required>
+                            <div class="invalid-feedback">Número invalido</div>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="col-md-2">
                             <label for="campo_cpf">CPF:*</label>
-                            <input type="text" name="campo_cpf" id="cpf" required onkeyup="somenteNumeros(this);" onkeypress="formata_mascara(this, '###.###.###-##', event)" maxlength="14" onpaste="return false;" class="form-control" placeholder="xxx.xxx.xxx-xx">
+                            <input type="text" name="campo_cpf" id="cpf" required onkeypress="formata_mascara(this, '###.###.###-##', event)" maxlength="14" onpaste="return false;" class="frm_number_only form-control" placeholder="xxx.xxx.xxx-xx">
                             <div class="invalid-feedback">CPF inválido!</div>
                         </div>
                         <div class="col-md-3">
@@ -150,7 +169,6 @@
                     <button class="btn btn-danger" onclick="logout();">Sair</button>    
                 </form>
             </section> 
-            <script type="text/javascript" src="../JS/valida_dados.js"></script>
         <?php
             require_once 'footer.php';
         ?>
