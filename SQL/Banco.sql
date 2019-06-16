@@ -1,162 +1,48 @@
--- Banco de dados HyperEvents --
--- Criado por Kauan portela e Victor Castro --
+/**
+  *Banco de dados HyperEvents
+  *Criado por Desconpila Compitando
+  */
 
 --Criando usuário padrão para todos--
 create user 'matue'@'%' identified by 'banco';
 
 -- Criando a base de dados --
-create database	HyperEvents;
-
-grant all privileges on HyperEvents.* to 'matue'@'%';
+create database HyperEvents;
 
 use HyperEvents;
 
+-- Dando o privilegio para o usuário padrão --
+grant all privileges on HyperEvents.* to 'matue'@'%';
 
--- Criando a tabela organizadores --
+-- Criando a tabela de organizadores
 create table organizadores(
-	org_id int not null auto_increment,
-	nome varchar(200) not null,
-	datanasc date not null,
-	sexo char(1) not null,
-	cpf varchar(11) not null,
-	email varchar(60) not null,
-	usuario varchar(200) not null,
-	senha varchar(32) not null,
-	primary	key(org_id)
+    org_id int not null auto_increment,
+    nome varchar(200) not null,
+    data_nasc date not null,
+    idade int not null check(idade >= 16),
+    sexo char(1) not null,
+    cpf varchar(11) not null,
+    usuario varchar(100) not null,
+    senha varchar(32) not null,
+    email varchar(100) not null,
+    contato varchar(12),
+    primary key(org_id)
 );
 
--- Criando o organizador padrão para teste --
-insert into organizadores (nome, datanasc, sexo, cpf, email, usuario, senha) values ('organizador', '2000-02-02', 'M', '12345678901', 'root2002@gmail.com', 'organizador', md5('root'));
+insert into organizadores (nome, data_nasc, idade, sexo, cpf, usuario, senha, email, contato) values ('organizador', '2018-02-05', '16', 'M', '12346578909', 'organizador', md5('root'), 'root@gamil.com', '086999999999');
 
--- Criando a tabela de eventos --
-create table eventos(
-	evento_id int not null auto_increment,
-	org_id int not null,
-	titulo varchar(200) not null,
-	descricao varchar(500) not null,
-	hora_inicio time not null,
-	data_inicio date not null,
-	data_fim date not null,
-	email_contato varchar(100) not null,
-	url_evento varchar(200),
-	primary key(evento_id),
-	foreign key(org_id) references organizadores(org_id)
+create table participantes(
+    part_id int not null auto_increment,
+    nome varchar(200) not null,
+    data_nasc date not null,
+    idade int not null,
+    sexo char(1) not null,
+    cpf varchar(11) not null,
+    usuario varchar(100) not null,
+    senha varchar(32) not null,
+    email varchar(100) not null,
+    contato varchar(12),
+    primary key(part_id)
 );
 
--- Criando a tabela de participantes --
-/*create table participantes(
-	part_id int not null auto_increment,
-	nome varchar(200) not null,
-	datanasc date not null,
-	sexo char(1) not null,
-	cpf varchar(11) not null,
-	email varchar(60) not null,
-	usuario varchar(200) not null,
-	senha varchar(20) not null,
-	primary key(part_id)
-);*/
-
-
--- Criando a tabela de palestrantes --
-/*create table palestrantes(
-	palestrante_id int not null auto_increment,
-	nome varchar(200) not null,
-	cpf varchar(11) not null,
-	sexo char(1) not null,
-	descricao varchar(500) not null, -- Aqui é pra falar de onde ele veio e as possíveis áreas de atuação
-	primary key(palestrante_id)
-);
-
--- Criando a tabela de ministrantes --
-create table ministrantes(
-	ministrante_id int not null auto_increment,
-	nome varchar(200) not null,
-	cpf varchar(11) not null,
-	sexo char(1) not null,
-	descricao varchar(500) not null, -- Mesma coisa do palestrante
-	primary key(ministrante_id)
-);
-
--- Criando a tabela de contatos --
-create table contatos(
-	contato_id int not null auto_increment,
-	nome varchar(200) not null,
-	email varchar(200),
-	telefone varchar(10),
-	primary key(contato_id)
-);
-
--- Criando a tabela de materiais --
-create table materiais(
-	material_id int not null auto_increment,
-	nome varchar(200) not null,
-	tipo varchar(200) not null,
-	quantidade int not null,
-	primary key(material_id)
-);
-
--- Criando a tabela de sócios --
-create table socios(
-	socio_id int not null auto_increment,
-	nome varchar(200) not null,
-	informacoes varchar(500) not null, -- Eu fiquei sem ideia aqui kk
-	primary key(socio_id)
-);
-
--- Criando a tabela de minicursos --
-create table minicursos(
-	minicurso_id int not null auto_increment,
-	ministrante_id int not null,
-	titulo varchar(200) not null,
-	descricao varchar(500), -- Resumo do que irá ocorrer
-	inicio time not null, -- Horário de início
-	fim time not null, -- Horário que acabará
-	data date not null, -- Dia em que será ministrado
-	primary key(minicurso_id),
-	foreign key(ministrante_id) references ministrantes(ministrante_id)
-);
-
--- Criando a tabela de palestras --
-create table palestras(
-	palestra_id int not null auto_increment,
-	palestrante_id int not null,
-	titulo varchar(200) not null,
-	descricao varchar(500), -- Mesma coisa de minicursos
-	inicio time not null, -- Mesma coisa de minicursos
-	fim time not null, -- Mesma coisa de minicursos
-	data date not null, -- Mesma coisa de minicursos
-	primary key(palestra_id),
-	foreign key(palestrante_id) references palestrantes(palestrante_id)
-);
-
--- Criando tabela de locais --
-create table locais(
-	local_id int not null auto_increment,
-	nome varchar(200) not null,
-	endereco varchar(200) not null,
-	cep varchar(8) not null,
-	descricao varchar(500), -- Descrição do local
-	primary key(local_id)
-);*/
-
--- Criando a tabela de eventos --
-
--- insert into eventos(org_id, titulo, descricao, inicio, fim, data_inicio, data_fim) values ('');--
-
-	/**palestrante_id int,
-	ministrante_id int,
-	part_id int not null,
-	palestra_id int,
-	idMinicurso int,
-	local_id int,
-	contato_id int,
-	socio_id int,
-	material_id int,
-	foreign key(part_id) references participantes(part_id),
-	foreign key(palestrante_id) references palestrantes(palestrante_id),
-	foreign key(ministrante_id) references ministrantes(ministrante_id),
-	foreign key(palestra_id) references palestras(palestrante_id),
-	foreign key(local_id) references locais(local_id),
-	foreign key(contato_id) references contatos(contato_id),
-	foreign key(socio_id) references socios(socio_id),
-	foreign key(material_id) references materiais(material_id)*/
+insert into participantes (nome, data_nasc, idade, sexo, cpf, usuario, senha, email, contato) values ('participante', '2018-02-05', '16', 'M', '12346578909', 'partcipante', md5('user'), 'user@gamil.com', '086999999999');

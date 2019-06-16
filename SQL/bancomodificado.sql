@@ -4,8 +4,9 @@ use HyperEvents;
 
 create table organizadores(
 	org_id int not null auto_increment,
-	data_nasc date not null,
 	nome varchar(200) not null,
+	data_nasc date not null,
+	idade int not null check(idade => 16),
 	sexo char(1) not null,
 	cpf varchar(11) not null,
 	usuario varchar(100) not null,
@@ -17,8 +18,9 @@ create table organizadores(
 
 create table participantes(
 	part_id int not null auto_increment,
-	data_nasc date not null,
 	nome varchar(200) not null,
+	data_nasc date not null,
+	idade int not null,
 	sexo char(1) not null,
 	cpf varchar(11) not null,
 	usuario varchar(100) not null,
