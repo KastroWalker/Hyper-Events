@@ -6,7 +6,6 @@ Criado por: Victor Castro
 <?php
     session_start();
     if(isset($_SESSION['id'])){
-    include '../Controls/verifica_login.php';
     $site = ' ';
 ?>
 

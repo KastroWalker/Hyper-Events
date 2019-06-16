@@ -135,12 +135,12 @@
                     <div class="form-row">
                         <div class="col-md-6">
                             <label for="campo_senha">Senha: *</label>
-                            <input type="text" name="campo_senha" id="senha" class="form-control" placeholder="Digite sua senha" required>
+                            <input type="password" name="campo_senha" id="senha" class="form-control" placeholder="Digite sua senha" required>
                             <div class="invalid-feedback">Senha invalida!</div>
                         </div>
                         <div class="col-md-6">
                             <label for="campo_conf_senha">Confirmar Senha: *</label>
-                            <input type="text" name="campo_conf_senha" id="conf_senha" class="form-control" placeholder="Confirme sua senha" required>
+                            <input type="password" name="campo_conf_senha" id="conf_senha" class="form-control" placeholder="Confirme sua senha" required>
                             <div class="invalid-feedback">As senhas não correspondem!</div>
                         </div>
                     </div>

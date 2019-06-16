@@ -1,7 +1,6 @@
 <?php
 	session_start();
 	include 'conexao.php';
-	include_once '../Controls/verifica_login.php';
 	
 	/*Dados Pessoais*/
 	
