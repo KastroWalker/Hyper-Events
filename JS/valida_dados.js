@@ -16,8 +16,11 @@ function valida_dados() {
     if(name_class_nome.match(/is-invalid/)){
         document.forms['form_cadastro'].campo_nome.className = name_class_nome.replace('is-invalid', ' ');
     }
+    if(name_class_cpf.match(/is-invalid/)){
+        document.forms['form_cadastro'].campo_cpf.className = name_class_cpf.replace('is-invalid', ' ');
+    }
     if(name_class_data_nasc.match(/is-invalid/)){
-        document.forms['form_cadastro'].campo_data_nasc.className = name_class_cpf.replace('is-invalid', ' ');
+        document.forms['form_cadastro'].campo_data_nasc.className = name_class_data_nasc.replace('is-invalid', ' ');
     }
     if(name_class_sexo.match(/is-invalid/)){
         document.forms['form_cadastro'].campo_sexo.className = name_class_sexo.replace('is-invalid', ' ');
@@ -203,6 +206,7 @@ function valida_dados() {
 
         document.getElementById("data_invalida").innerHTML = "Data inválida";
         var name_class = document.forms['form_cadastro'].campo_data_nasc.className;
+        var new_name_class = name_class + ' is-invalid';
 
         // Pegando a data de nascimento do usuario
         var data_passada = document.forms['form_cadastro'].campo_data_nasc.value;
@@ -215,7 +219,6 @@ function valida_dados() {
 
         // Verificando se a data é valida
         if(data_passada.length > 10 || data_passada.length < 10){
-            var new_name_class = name_class + ' is-invalid';
             document.forms['form_cadastro'].campo_data_nasc.className = new_name_class;
             return false;
         }
@@ -232,8 +235,7 @@ function valida_dados() {
         
         // Calculando a idade
         idade = ano - ano_passado;
-        alert(idade);
-        
+
         // Verificando se a idade esta correta
         if (mes < mes_passado || mes == mes_passado && dia < dia_passado) {
             idade--;
@@ -242,12 +244,15 @@ function valida_dados() {
         //Pega o valor do tipo de usuario
         var e = document.getElementById("tipo_user");
         var tipo_user = e.options[e.selectedIndex].value;
-        alert(tipo_user);
+
+        if(ano_passado > ano || mes_passado > mes || (mes == mes_passado && dia_passado > dia)) {
+            document.forms['form_cadastro'].campo_data_nasc.className = new_name_class;
+            return false;
+        }
 
         // Verificando se a idade do organizador é valida
         if(idade < 16 && tipo_user == 'org'){
             document.getElementById("data_invalida").innerHTML = "Organizador tem que no minino 16 anos";
-            var new_name_class = name_class + ' is-invalid';
             document.forms['form_cadastro'].campo_data_nasc.className = new_name_class;
             return false;
         }
@@ -255,35 +260,27 @@ function valida_dados() {
         // Verificando se a idade do participante é valida
         if(idade < 8 && tipo_user == 'part'){
             document.getElementById("data_invalida").innerHTML = "Participante tem que no minino 8 anos";
-            var new_name_class = name_class + ' is-invalid';
             document.forms['form_cadastro'].campo_data_nasc.className = new_name_class;
             return false;
         }
-
+        
         return true;
     }
 
-    var erro = [];
     var nome = valida_nome();
-    erro.push(nome);
     var sexo = valida_sexo();
-    erro.push(sexo);
     var email = valida_email();
-    erro.push(email);
     var user = valida_user();
-    erro.push(user);
     var senha = valida_senha();
-    erro.push(senha);
     var tipo_user = valida_tipo_user();
-    erro.push(tipo_user);
     var cpf = valida_cpf();
-    erro.push(cpf);
     var data_nasc = valida_data_nasc();
-    erro.push(data_nasc);
 
-    var teste = erro.indexOf(false);
-
-    console.log(teste);
+    var erro = [];
+    var lista = [nome, sexo, email, user, senha, tipo_user, cpf, data_nasc];
+    for (i in lista){
+        erro.push(lista[i]);
+    }
 
     if (erro.indexOf(false) == '-1') {
         return true;

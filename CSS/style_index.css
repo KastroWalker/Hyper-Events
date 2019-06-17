@@ -22,6 +22,7 @@ table {
 	padding-top: 0px;
 	padding-right: auto; 
 	height: 25px;
+	width: 90%;
 }
 
 #field_pass, #field_user{
@@ -50,4 +51,9 @@ table {
 
 #table_login {
 	text-align: center;
+}
+
+#ver_senha {
+	background-color: rgba(0, 0, 0, 0);
+	border: none;
 }

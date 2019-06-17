@@ -21,7 +21,7 @@
             }
         </script>
         <link rel="stylesheet" type="text/css" href="CSS/style_index.css">
-        <title>Document</title>
+        <title>Login - HyperEvents</title>
     </head>
     <body>
         <?php 
@@ -30,8 +30,12 @@
         <main>
             <form method="POST" action="Controls/login.php" name="form_login" class="form-group">
                 <table id="table_login">
-                    <tr><td id="titulo"><strong>LOGIN</strong><td></tr>
-                    <tr><td id="icon"><img src="https://img.icons8.com/ios/100/000000/gender-neutral-user-filled.png" width="150px" alt="icone_login"></td></tr>
+                    <tr id="titulo"><td><strong>LOGIN</strong></td></tr>
+                    <tr>
+                        <td id="icon">
+                            <img src="https://img.icons8.com/ios/100/000000/gender-neutral-user-filled.png" width="150px" alt="icone_login">
+                        </td>
+                    </tr>
                     <tr>
                         <td>
                             <?php
@@ -59,8 +63,8 @@
                     </tr>
                     <tr>
                         <td id="pass">
-                            <input type="password" name="senha" id="field_pass" required>
-                            <button type="button" onclick="verSenha();"><img src=img/verSenha.png width="25"></button> <br/>
+                            <input style="margin-left: 8%; !important;" type="password" name="senha" id="field_pass" required>
+                            <button type="button" onclick="verSenha();" id="ver_senha"><img src="img/icons/baseline-visibility-24px.svg" width="25" id="btn-ver_senha"></button>
                         </td>
                     </tr>
                     <tr>
