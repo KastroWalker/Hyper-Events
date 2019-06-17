@@ -4,8 +4,8 @@
 
 	# Dados para a conexão com o banco de dados
 	$servidor = 'localhost'; 		# Nome do DNS ou IP do servidor HTTP
-	$usuario = 'root';        		# Nome de usuário para acesso ao MySQL
-	$senha = 'Suc0del@ranjaasd'; 	# Senha do acesso
+	$usuario = 'matue';        		# Nome de usuário para acesso ao MySQL
+	$senha = 'banco'; 	# Senha do acesso
 	$banco = 'HyperEvents';			# Nome do banco de dados
 
 	# Executa a conexao com MySQL
