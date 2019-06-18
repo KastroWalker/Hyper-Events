@@ -1,3 +1,4 @@
+			<!-- Rodape padrão para as paginas -->
 			<section id="Manual">
 	            <h2>Está com dificuldade?</h2>
 		        <a href="manual.html">Acesse aqui o manual</a>

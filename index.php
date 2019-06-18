@@ -3,6 +3,7 @@
     session_start();
     #echo time();;
 ?>
+<!-- Tela de Login da Hyper Events -->
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -20,6 +21,9 @@
         <script src="JS/verSenha.js"></script>
         <script>
             function cadastrar() {
+                /**
+                  * Função para abrir a tela de cadastro
+                  */
                 window.location.href = 'views/cadastro.php';
             }
         </script>
@@ -42,13 +46,16 @@
                     <tr>
                         <td>
                             <?php
+                                # Verifica se sessão de usuario cadastrado está preencida
                                 if(isset($_SESSION['nao_autenticado'])):
+                                # Exibe a mensagem pro usuário
                              ?>
                             <div id="div_erro" class="alert alert-danger" role="alert">
                                 Usuário ou senha incorreta!
                             </div>
                             <?php
                                 endif;
+                                # Encerra a sessão de usuario cadastrado
                                 unset($_SESSION['nao_autenticado']);
                             ?>
                         </td>

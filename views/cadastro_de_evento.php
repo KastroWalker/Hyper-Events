@@ -1,5 +1,8 @@
+<!-- Pagina de Cadastro de eventos da Hyper Events -->
 <?php 
+    # Inicia a sessão
     session_start();
+    # Importa a função para ver se o usuário esta logado
     include_once '../Controls/verifica_login.php';
 ?>
 <!DOCTYPE html>
@@ -24,7 +27,9 @@
         <main>
             <section id="Cadastrar_Evento">
                 <?php 
+                    # Verifica se o evento foi cadastrado com sucesso
                     if(isset($_SESSION['evento_cadastrado'])){
+                    # Mostra a mensagem pro usuário
                 ?>
                     <div class="alert alert-success text-center">
                         Evento Cadastrado com Sucesso!<br/>
@@ -32,22 +37,29 @@
                     </div>
                 <?php 
                     }
+                    # Encerra a sessão de evento cadastrado
                     unset($_SESSION['evento_cadastrado']);
+                    # Verifica se o evento ja esta cadastrado
                     if (isset($_SESSION['evento_ja_cadastrado'])) {
+                    # Mostra a mensagem pro usuário
                 ?>
                     <div class="alert alert-danger text-center">
                         Evento já cadastrado!
                     </div>
                 <?php
                     }
+                    # Encerra a sessão de evento ja cadastrado
                     unset($_SESSION['evento_ja_cadastrado']);
+                    # Verfica se deu algum erro na hora de cadastrar o evento
                     if (isset($_SESSION['erro_cadastrado'])){
+                    # Mostra a mensagem pro usuário
                 ?>
                     <div class="alert alert-danger text-center">
                         Não foi possivel cadastrar o evento!
                     </div>
                 <?php
                     }
+                    # Encerra a sessão de erro ao cadastrar
                     unset($_SESSION['erro_cadastrado']);
                 ?>
 
@@ -90,6 +102,7 @@
             </section>
         </main>
         <?php 
+            # Importa o rodape padrão
             require_once 'footer.php';
         ?>
     </body>

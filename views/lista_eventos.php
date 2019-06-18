@@ -1,13 +1,12 @@
-<!-- 
-Tela do organizador 
-Criado por: Victor Castro
--->
-
+<!-- Tela que mostra os eventos do organizador -->
 <?php
+    # Iniciando a sessção
     session_start();
+    # Verifica se o usuário está logado
     if(isset($_SESSION['id'])){
-    include '../Controls/verifica_login.php';
-    $site = ' ';
+        #Verifica se o usuario está logado
+        include '../Controls/verifica_login.php';
+        $site = ' ';
 ?>
 
 <!DOCTYPE html>
@@ -27,6 +26,7 @@ Criado por: Victor Castro
     </head>
     <body>
         <?php 
+            # Importa o cabeçalho e a nav bar padrão
             require_once 'header.php';
             require_once 'nav_bar.php';
         ?>
@@ -34,6 +34,7 @@ Criado por: Victor Castro
             <a href="cadastro_de_evento.php" class="btn btn-primary btn-lg text-right"> Cadastrar Evento </a>
         </div>
         <?php
+            # Importa a pagina de mostrar os eventos e o rodape
             require_once '../Controls/lista_eventos.php';
             require_once 'footer.php';
         ?>    

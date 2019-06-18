@@ -1,3 +1,4 @@
+<!-- Nav Bar padrão de todo as paginas de usuário -->
 <style type="text/css">
     .div_principal {
         width: 80%;

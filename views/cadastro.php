@@ -1,3 +1,4 @@
+<!-- Pagina de Cadastro da Hyper Events -->
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -24,16 +25,21 @@
         <script src="../JS/verSenha.js"></script>
         <script>
             function logout() {
+                /**
+                  * Função para sair da pagina de cadastro
+                  */
                 window.location.href = '../index.php';
             }
 
             function frm_number_only_exc(){
-            // allowed: numeric keys, numeric numpad keys, backspace, del and delete keys
-            if ( event.keyCode == 37 || event.keyCode == 38 || event.keyCode == 39 || event.keyCode == 40 || event.keyCode == 46 || event.keyCode == 8 || event.keyCode == 9 || ( event.keyCode < 106 && event.keyCode > 95 ) ) { 
-            return true;
-                }else{
-                    return false;
-                }
+                /**
+                  * Função pada deixar digitar apenas numero
+                  */
+                if ( event.keyCode == 37 || event.keyCode == 38 || event.keyCode == 39 || event.keyCode == 40 || event.keyCode == 46 || event.keyCode == 8 || event.keyCode == 9 || ( event.keyCode < 106 && event.keyCode > 95 ) ) { 
+                return true;
+                    }else{
+                        return false;
+                    }
             }
 
             $(document).ready(function(){
@@ -55,7 +61,9 @@
     </head>
     <body>
         <?php
+        # Iniciando a sessão
         session_start();
+        # Importando cabeçalho padrão
         require_once "header.php";
         ?>
         <main>
