@@ -11,11 +11,12 @@
                 text-align: center;
             }
         </style>
-        <title>Document</title>
+        <title>Cadastro - Hyper Events</title>
         <style type="text/css">
             header, footer, #Manual {
                 text-align: center;
             }
+            
         </style>
         <script type="text/javascript" src="../JS/formata.js"></script>
         <script type="text/javascript" src="../JS/jquery.js"></script>
@@ -55,7 +56,7 @@
     <body>
         <?php
         session_start();
-        require_once 'header.php';
+        require_once "header.php";
         ?>
         <style type="text/css">
             .teste{

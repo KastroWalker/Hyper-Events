@@ -9,6 +9,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="author" content="Victor Castro">
         <link rel="stylesheet" type="text/css" href="CSS/bootstrap/bootstrap.min.css">
+        <link rel="icon" href="img/icon.png" type="image/x-icon"/>
+        <!--link rel="shortcut icon" href="MeuIcone.ico" type="image/x-icon" /-->
         <style type="text/css">
             header, footer, #Manual {
                 text-align: center;
@@ -24,9 +26,10 @@
         <title>Login - HyperEvents</title>
     </head>
     <body>
-        <?php 
-            require_once 'views/header.php'; 
-        ?>
+        <header>
+            <h1>Bem vindo ao Hyper Events</h1>
+            <h2>Sistema de Eventos Academicos</h2><hr/>
+        </header>
         <main>
             <form method="POST" action="Controls/login.php" name="form_login" class="form-group">
                 <table id="table_login">
