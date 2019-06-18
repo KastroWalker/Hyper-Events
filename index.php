@@ -1,28 +1,28 @@
 <?php
+    #Iniciando as sessões
     session_start();
     #echo time();;
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="author" content="Victor Castro">
-        <link rel="stylesheet" type="text/css" href="CSS/bootstrap/bootstrap.min.css">
+        <meta charset="UTF-8"/>
+        <meta name="robots" content="index, follow">
+        <meta name="description" content="Hyper Events - Sistema de Eventos Acadêmicos">
+        <meta name="keywords" content="Eventos Acadêmicos, Escola,">
+        <link rel="canonical" href="https://localhost:8000/home/">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="author" content="Victor Castro"/>
+        <link rel="stylesheet" type="text/css" href="CSS/bootstrap/bootstrap.min.css"/>
         <link rel="icon" href="img/icon.png" type="image/x-icon"/>
-        <!--link rel="shortcut icon" href="MeuIcone.ico" type="image/x-icon" /-->
-        <style type="text/css">
-            header, footer, #Manual {
-                text-align: center;
-            }
-        </style>
+        <link rel="stylesheet" type="text/css" href="CSS/style_index.css"/>
+        <link rel="stylesheet" type="text/css" href="CSS/style_padrao.css"/>
         <script src="JS/verSenha.js"></script>
-        <script type="text/javascript">
+        <script>
             function cadastrar() {
                 window.location.href = 'views/cadastro.php';
             }
         </script>
-        <link rel="stylesheet" type="text/css" href="CSS/style_index.css">
         <title>Login - HyperEvents</title>
     </head>
     <body>
@@ -36,7 +36,7 @@
                     <tr id="titulo"><td><strong>LOGIN</strong></td></tr>
                     <tr>
                         <td id="icon">
-                            <img src="https://img.icons8.com/ios/100/000000/gender-neutral-user-filled.png" width="150px" alt="icone_login">
+                            <img src="https://img.icons8.com/ios/100/000000/gender-neutral-user-filled.png" alt="icone_login" id="icone_img">
                         </td>
                     </tr>
                     <tr>
@@ -58,7 +58,7 @@
                     </tr>
                     <tr>
                         <td id="user">
-                            <input type="text" name="usuario" id="field_user" required style="text-align: none !important;"><br/>
+                            <input type="text" name="usuario" id="field_user" required>
                         </td>
                     </tr>
                     <tr>
@@ -66,8 +66,8 @@
                     </tr>
                     <tr>
                         <td id="pass">
-                            <input style="margin-left: 8%; !important;" type="password" name="senha" id="field_pass" required>
-                            <button type="button" onclick="verSenha();" id="ver_senha"><img src="img/icons/baseline-visibility-24px.svg" width="25" id="btn-ver_senha"></button>
+                            <input type="password" name="senha" id="field_pass" required>
+                            <button type="button" onclick="verSenha();" id="ver_senha"><img src="img/icons/baseline-visibility-24px.svg" width="25" id="btn-ver_senha" alt="icone_ver_senha"></button>
                         </td>
                     </tr>
                     <tr>
@@ -78,9 +78,15 @@
                     </tr>
                 </table>
             </form>
-            <?php 
-                require_once 'views/footer.php';
-            ?>
+            <section id="Manual">
+                <h2>Está com dificuldade?</h2>
+                <a href="manual.html">Acesse aqui o manual</a>
+            </section>
+            <hr/>
         </main>
+        <footer>
+        <h2>Direitos</h2>
+        <p>2019 &copy; Copyright - Todos os direitos reservados | Criado por Descompila Compilando.</p>
+    </footer>
     </body>
 </html>
