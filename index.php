@@ -7,12 +7,12 @@
 <html lang="pt-br">
     <head>
         <meta charset="UTF-8"/>
-        <meta name="robots" content="index, follow">
-        <meta name="description" content="Hyper Events - Sistema de Eventos Acadêmicos">
-        <meta name="keywords" content="Eventos Acadêmicos, Escola,">
-        <link rel="canonical" href="https://localhost:8000/home/">
+        <meta name="robots" content="index, follow"/>
+        <meta name="description" content="Hyper Events - Sistema de Eventos Acadêmicos"/>
+        <meta name="keywords" content="Eventos Acadêmicos, Escola,"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <meta name="author" content="Victor Castro"/>
+        <link rel="canonical" href="https://localhost:8000/home/"/>
         <link rel="stylesheet" type="text/css" href="CSS/bootstrap/bootstrap.min.css"/>
         <link rel="icon" href="img/icon.png" type="image/x-icon"/>
         <link rel="stylesheet" type="text/css" href="CSS/style_index.css"/>
@@ -36,7 +36,7 @@
                     <tr id="titulo"><td><strong>LOGIN</strong></td></tr>
                     <tr>
                         <td id="icon">
-                            <img src="https://img.icons8.com/ios/100/000000/gender-neutral-user-filled.png" alt="icone_login" id="icone_img">
+                            <img src="https://img.icons8.com/ios/100/000000/gender-neutral-user-filled.png" alt="icone_login" id="icone_img"/>
                         </td>
                     </tr>
                     <tr>
@@ -58,7 +58,7 @@
                     </tr>
                     <tr>
                         <td id="user">
-                            <input type="text" name="usuario" id="field_user" required>
+                            <input type="text" name="usuario" id="field_user" required/>
                         </td>
                     </tr>
                     <tr>
@@ -66,7 +66,7 @@
                     </tr>
                     <tr>
                         <td id="pass">
-                            <input type="password" name="senha" id="field_pass" required>
+                            <input type="password" name="senha" id="field_pass" required/>
                             <button type="button" onclick="verSenha();" id="ver_senha"><img src="img/icons/baseline-visibility-24px.svg" width="25" id="btn-ver_senha" alt="icone_ver_senha"></button>
                         </td>
                     </tr>
