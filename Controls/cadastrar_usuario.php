@@ -6,7 +6,10 @@
 	$nome = mysqli_real_escape_string($conexao, trim($_POST['campo_nome']));
 	$data_nasc = mysqli_real_escape_string($conexao, trim($_POST['campo_data_nasc']));
 	$sexo = mysqli_real_escape_string($conexao, trim($_POST['campo_sexo']));
-	$contato = mysqli_real_escape_string($conexao, trim($_POST['tipo_user']));
+	$contato = mysqli_real_escape_string($conexao, trim($_POST['campo_telefone']));
+	$contato = str_replace('-', '', $contato);
+	$contato = str_replace(' ', '', $contato);
+
 	$cpf =  mysqli_real_escape_string($conexao, trim($_POST['campo_cpf']));
 	$cpf = str_replace('-', '', $cpf);
 	$cpf = str_replace('.', '', $cpf);
@@ -20,7 +23,27 @@
 	$tipo_user = mysqli_real_escape_string($conexao, trim($_POST['tipo_user']));
 	$senha = md5($senha);
 
+	if($tipo_user == "part"){
+		$tipo_user = "participantes";
+	}else if($tipo_user == "org"){
+		$tipo_user = "organizadores";
+	}
 
+	$ano = substr($data_nasc, 0, 4);
+	$mes = substr($data_nasc, 5, 2);
+	$dia = substr($data_nasc, 8, 2);
+	
+	$ano_atual = date('Y');
+	$mes_atual = date('m');
+	$dia_atual = date('d');
+
+	$idade = $ano_atual - $ano;
+
+	if ($mes_atual < $mes || $mes_atual == $mes && $dia_atual < $dia) {
+        $idade--;
+    }
+
+    /*
 	//echo "$senha";
 	echo "NOME: <strong>$nome</strong><br/>";
 	echo "DATA: <strong>$data_nasc</strong><br/>";
@@ -32,21 +55,26 @@
 	echo "SENHA: <strong>$senha</strong><br/>";
 	echo "CONF_SENHA: <strong>$conf_senha</strong><br/>";
 	echo "TIPO_USER: <strong>$tipo_user</strong><br/>";
+	*/
 
-	/*
-	$sql = "select count(*) as total from organizadores where usuario = '$user'";
-	$result = mysqli_query($conexao, $sql);
-	$row = mysqli_fetch_assoc($result);
+	$sql_org = "select count(*) as total from organizadores where usuario = '$user'";
+	$sql_part = "select count(*) as total from participantes where usuario = '$user'";
 
-	print_r($row);
+	$result_org = mysqli_query($conexao, $sql_org);
+	$result_part = mysqli_query($conexao, $sql_part);
+	
+	$row_org = mysqli_fetch_assoc($result_org);
+	$row_part = mysqli_fetch_assoc($result_part);
 
-	if ($row['total'] == 1) {
+	#print_r($row);
+
+	if ($row_org['total'] == 1 || $row_part['total'] == 1) {
 		$_SESSION['usuario_existe'] = true;
 		header('Location: ../views/cadastro.php');
 		exit();
 	}
 
-	$sql = "insert into organizadores (nome, datanasc, sexo, cpf, email, usuario, senha) values ('{$nome}', '{$data_nasc}', '{$sexo}', '{$cpf}', '{$email}', '{$user}', '{$senha}');";
+	$sql = "insert into {$tipo_user} (nome, data_nasc, idade, sexo, cpf, usuario, senha, email, contato) values ('{$nome}', '{$data_nasc}', '{$idade}', '{$sexo}', '{$cpf}', '{$user}', '{$senha}', '{$email}', '{$contato}');";
 
 	if($conexao->query($sql) === TRUE){
 		$_SESSION['status_cadastro'] = true;
@@ -60,5 +88,5 @@
 
 	header('Location: ../views/cadastro.php');
 	exit();
-	*/
+
 ?>

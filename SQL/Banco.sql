@@ -3,8 +3,8 @@
   *Criado por Desconpila Compitando
   */
 
---Criando usuário padrão para todos--
-create user 'matue'@'%' identified by 'banco';
+-- Criando usuário padrão para todos --
+-- create user 'matue'@'%' identified by 'banco'; --
 
 -- Criando a base de dados --
 create database HyperEvents;
@@ -14,12 +14,12 @@ use HyperEvents;
 -- Dando o privilegio para o usuário padrão --
 grant all privileges on HyperEvents.* to 'matue'@'%';
 
--- Criando a tabela de organizadores
+-- Criando a tabela de organizadores --
 create table organizadores(
     org_id int not null auto_increment,
     nome varchar(200) not null,
     data_nasc date not null,
-    idade int not null check(idade >= 16),
+    idade int not null,
     sexo char(1) not null,
     cpf varchar(11) not null,
     usuario varchar(100) not null,
