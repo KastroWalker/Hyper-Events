@@ -1,13 +1,9 @@
 <?php 
-	#$acao = $_REQUEST['acao'];
-	#echo "$acao";
-
 	session_start();
 
 	include_once 'conexao.php';
 	include_once '../Controls/verifica_login.php';
 
-	#$org = $_POST['org'];
 	#$acao = $_REQUEST['acao'];
 	$titulo = mysqli_real_escape_string($conexao, trim($_POST['titulo']));
 	$descricao = mysqli_real_escape_string($conexao, trim($_POST['descricao']));
