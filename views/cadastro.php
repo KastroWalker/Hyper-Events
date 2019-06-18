@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="author" content="Victor Castro">
+        <meta charset="UTF-8"/>
+        <meta name="robots" content="index, follow"/>
+        <meta name="description" content="Cadastro - Hyper Events - Sistema de Eventos Acadêmicos"/>
+        <meta name="keywords" content="Eventos Acadêmicos, Escola, Cadastro no sistema"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="author" content="Victor Castro"/>
+        <link rel="canonical" href="https://localhost:8000/home/"/>
         <link rel="stylesheet" type="text/css" href="../CSS/bootstrap/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../CSS/style_cadastro.css">
-        <style type="text/css">
-            header, footer, #Manual {
-                text-align: center;
-            }
-        </style>
-        <title>Cadastro - Hyper Events</title>
-        <style type="text/css">
+        <link rel="stylesheet" type="text/css" href="../CSS/style_padrao.css">
+        <link rel="icon" href="../img/icon.png" type="image/x-icon"/>
+        <style>
             header, footer, #Manual {
                 text-align: center;
             }
             
         </style>
-        <script type="text/javascript" src="../JS/formata.js"></script>
-        <script type="text/javascript" src="../JS/jquery.js"></script>
-        <script type="text/javascript" src="../JS/valida_dados.js"></script>
-        <script type="text/javascript" src="../JS/verSenha.js"></script>
-        <script type="text/javascript">
+        <script src="../JS/formata.js"></script>
+        <script src="../JS/jquery.js"></script>
+        <script src="../JS/valida_dados.js"></script>
+        <script src="../JS/verSenha.js"></script>
+        <script>
             function logout() {
                 window.location.href = '../index.php';
             }
@@ -58,11 +58,6 @@
         session_start();
         require_once "header.php";
         ?>
-        <style type="text/css">
-            .teste{
-                color: pink;
-            }
-        </style>
         <main>
             <section id="cadastro">
                 <?php
@@ -102,37 +97,37 @@
                             <div class="invalid-feedback">Nome inválido!</div>
                         </div>
                         <div class="col-md-4">
-                            <label for="campo_data_nasc">Data de Nascimento: *</label>
+                            <label for="data_nasc">Data de Nascimento: *</label>
                             <input type="date" name="campo_data_nasc" id="data_nasc" class="form-control" required>
                             <div class="invalid-feedback" id="data_invalida">Data inválida!</div>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="col-md-4">
-                            <label for="campo_email">E-mail: *</label>
+                            <label for="email">E-mail: *</label>
                             <input type="email" name="campo_email" id="email" class="form-control" placeholder="Ex: email@host.com" required>
                             <div class="invalid-feedback">E-mail inválido!</div>
                         </div>
                         <div class="col-md-4">
-                            <label for="campo_conf_email">Confirmar E-mail: *</label>
-                            <input type="email" name="campo_conf_email" id="conf_email"class="form-control" placeholder="Confirme o seu e-mail" required>
+                            <label for="conf_email">Confirmar E-mail: *</label>
+                            <input type="email" name="campo_conf_email" id="conf_email" class="form-control" placeholder="Confirme o seu e-mail" required>
                             <div class="invalid-feedback">O e-mail não correpondem!</div>
                         </div>
                         <div class="col-md-4">
-                            <label for="campo_telefone">Tel. Contato: </label>
-                            <input type="tel" name="campo_telefone" id="telefone" required onkeypress="formata_mascara(this, '## #####-####', event)" minlength="13" maxlength="13" onpaste="return false;" class="frm_number_only form-control" placeholder="(xx) xxxxx-xxxx" required>
+                            <label for="telefone">Tel. Contato: </label>
+                            <input type="tel" name="campo_telefone" id="telefone" onkeypress="formata_mascara(this, '## #####-####', event)" minlength="13" maxlength="13" class="frm_number_only form-control" placeholder="(xx) xxxxx-xxxx" required>
                             <div class="invalid-feedback">Número invalido</div>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="col-md-2">
-                            <label for="campo_cpf">CPF:*</label>
-                            <input type="text" name="campo_cpf" id="cpf" required onkeypress="formata_mascara(this, '###.###.###-##', event)" minlength="14" maxlength="14" onpaste="return false;" class="frm_number_only form-control" placeholder="xxx.xxx.xxx-xx">
+                            <label for="cpf">CPF:*</label>
+                            <input type="text" name="campo_cpf" id="cpf" required onkeypress="formata_mascara(this, '###.###.###-##', event)" minlength="14" maxlength="14" class="frm_number_only form-control" placeholder="xxx.xxx.xxx-xx">
                             <div class="invalid-feedback">CPF inválido!</div>
                         </div>
                         <div class="col-md-3">
                             <label for="campo_sexo">Sexo: *</label>
-                            <select class="form-control" id="campo_sexo" name="campo_sexo" class="form-control">
+                            <select class="form-control" id="campo_sexo" name="campo_sexo">
                               <option value="padrao" selected>Sexo...</option>
                               <option value="M">Masculino</option>
                               <option value="F">Feminino</option>
@@ -140,13 +135,13 @@
                             <div class="invalid-feedback">Escolha um valor!</div>
                         </div>
                         <div class="col-md-4">
-                            <label for="campo_user">Usuário: *</label>
+                            <label for="user">Usuário: *</label>
                             <input type="text" name="campo_user" id="user" class="form-control" placeholder="Nome de Usuário" required>
                             <div class="invalid-feedback">Usuário Inválido!</div>
                         </div>  
                         <div class="col-md-3">
                             <label for="tipo_user">Tipo de usuário: *</label>
-                            <select class="form-control" id="tipo_user" name="tipo_user" class="form-control">
+                            <select class="form-control" id="tipo_user" name="tipo_user">
                               <option value="padrao" selected>Escolha o tipo de usuário</option>
                               <option value="part">Participante</option>
                               <option value="org">Organizador</option>
@@ -156,12 +151,12 @@
                     </div>
                     <div class="form-row">
                         <div class="col-md-6">
-                            <label for="campo_senha">Senha: *</label>
+                            <label for="senha">Senha: *</label>
                             <input type="password" name="campo_senha" id="senha" class="form-control" placeholder="Digite sua senha" required>
                             <div class="invalid-feedback">Senha invalida!</div>
                         </div>
                         <div class="col-md-6">
-                            <label for="campo_conf_senha">Confirmar Senha: *</label>
+                            <label for="conf_senha">Confirmar Senha: *</label>
                             <input type="password" name="campo_conf_senha" id="conf_senha" class="form-control" placeholder="Confirme sua senha" required>
                             <div class="invalid-feedback">As senhas não correspondem!</div>
                         </div>
