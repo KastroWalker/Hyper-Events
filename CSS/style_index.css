@@ -25,6 +25,11 @@ table {
 	width: 90%;
 }
 
+#field_pass{
+	margin-left: 8% !important;
+}
+
+
 #field_pass, #field_user{
 	width: 280px;
 	padding: 6px;
@@ -32,6 +37,10 @@ table {
 	font: 15px; 
 	border-radius: 4px;
 	text-align: left !important;
+}
+
+#icone_img{
+	width: 150px;
 }
 
 #icon {
