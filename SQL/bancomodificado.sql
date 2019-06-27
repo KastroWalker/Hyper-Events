@@ -54,7 +54,7 @@ insert into participantes (nome, data_nasc, idade, sexo, cpf, usuario, senha, em
 create table eventos(
     evento_id int not null auto_increment,
     org_id int not null,
-    nome varchar(200) not null,
+    titulo varchar(200) not null,
     descricao varchar(500) not null,
     url_evento varchar(200),
     hora_inicio time not null,

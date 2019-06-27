@@ -26,10 +26,9 @@
     
     $row = mysqli_fetch_array($result);
     $id = $row['org_id'];
-    echo "$id";
+    #echo "$id";
     
     #$row = mysqli_num_rows($result);
-
 
     //Criando a pagina para destinar o usuário
     $page = 'Location: ../views/area_org.php';
@@ -51,14 +50,15 @@
     }
     else {  
         //Criando a query para verificar o usuário na tabela organizador
-        $query = "select organizador_id, user from organizador where user = '{$user}' and senha = md5('{$pass}')";
+        $query = "select part_id, usuario from participantes where usuario = '{$user}' and senha = md5('{$pass}')";
 
         //Criando a pagina para destinar o usuário
-        $page = 'Location: ../views/area_org.php';
+        $page = 'Location: ../views/area_part.php';
         
         $result = mysqli_query($conexao, $query);
 
         $row = mysqli_num_rows($result);
+
         //Verificando se o usuário é um organizador
         if ($row == 1) {
             $_SESSION['usuario'] = $user;
