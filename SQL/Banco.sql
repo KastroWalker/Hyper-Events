@@ -60,6 +60,7 @@ create table eventos(
     hora_inicio time not null,
     data_inicio date not null,
     data_fim date not null,
+    email varchar(100) not null,
     primary key(evento_id),
     foreign key(org_id) references organizadores(org_id)
 );

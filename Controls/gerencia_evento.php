@@ -39,7 +39,7 @@
 		header('Location: ../views/cadastro_de_evento.php');
 		exit();
 	} else {
-		$sql = "insert into eventos (org_id, titulo, descricao, url_evento, hora_inicio, data_inicio, data_fim) values ('$id', '$titulo', '$descricao', '$site', '$hora', '$data_inicio', '$data_fim');";
+		$sql = "insert into eventos (org_id, titulo, descricao, url_evento, hora_inicio, data_inicio, data_fim, email) values ('$id', '$titulo', '$descricao', '$site', '$hora', '$data_inicio', '$data_fim', '$email');";
 
 		if ($conexao->query($sql) === TRUE) {
 			$_SESSION['evento_cadastrado'] = true;

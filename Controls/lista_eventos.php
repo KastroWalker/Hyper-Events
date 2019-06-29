@@ -19,40 +19,45 @@
 	#org_id, titulo, descricao, hora_inicio, data_inicio, data_fim, email_contato, url_evento
 ?>
 	
-	<h2 class="text-center mx-auto" style="margin: 20px; font-size: 35pt;">Meus Eventos</h2>
-	<table class="table table-condensed table-striped table-bordered table-hover">
-		<tr>
-			<th>Titulo</th>
-			<th>Descricao</th>
-			<th>Hora de inicio</th>
-			<th>Data de incio</th>
-			<th>Data de fim</td>
-			<th>Email</td>
-			<th>Site</th>
-		</tr>
+<h2 class="text-center mx-auto" style="margin: 20px; font-size: 35pt;">Meus Eventos</h2>
+<table class="table table-condensed table-striped table-bordered table-hover">
+	<tr>
+		<th>Titulo</th>
+		<th>Descricao</th>
+		<th>Hora de inicio</th>
+		<th>Data de incio</th>
+		<th>Data de fim</td>
+		<th>Email</td>
+		<th>Site</th>
+		<th colspan="2">Ações</th>
+	</tr>
+
+<?php
+	# Exibe os resultados de novidades e noticias
+	$result = mysqli_query($link, $sql);
+	while ($tlb = mysqli_fetch_array($result)) {
+		$Titulo = $tlb['titulo'];
+		$Descricao = $tlb['descricao'];
+		$hora_inicio = $tlb['hora_inicio'];
+		$data_inicio = $tlb['data_inicio'];
+		$data_fim = $tlb['data_fim'];
+		$email = $tlb['email'];
+		$url_evento = $tlb['url_evento'];
+
+		echo "<tr>";
+		echo "<td>$Titulo</td>";
+		echo "<td>$Descricao</td>";
+		echo "<td>$hora_inicio</td>";
+		echo "<td>$data_inicio</td>";
+		echo "<td>$data_fim</td>";
+		echo "<td>$email</td>";
+		echo "<td><a href='$url_evento' blank>$url_evento</a></td>";
+		echo "<td><button class='btn btn-primary'>Editar</button></td>";
+		echo "<td><a href='../views/exclui_evento.php'><button class='btn btn-danger'>Excluir</button></a></td>";
+		echo "</tr>".mysqli_error($link);
+	}
+
 	
-	<?php 
-		# Exibe os resultados de novidades e noticias
-		$result = mysqli_query($link, $sql);
-		while ($tlb = mysqli_fetch_array($result)) {
-			$Titulo = $tlb['titulo'];
-			$Descricao = $tlb['descricao'];
-			$hora_inicio = $tlb['hora_inicio'];
-			$data_inicio = $tlb['data_inicio'];
-			$data_fim = $tlb['data_fim'];
-			$email_contato = $tlb['email_contato'];
-			$url_evento = $tlb['url_evento'];
+?>
 
-			echo "<tr>";
-			echo "<td>$Titulo</td>";
-			echo "<td>$Descricao</td>";
-			echo "<td>$hora_inicio</td>";
-			echo "<td>$data_inicio</td>";
-			echo "<td>$data_fim</td>";
-			echo "<td>$email_contato</td>";
-			echo "<td>$url_evento</td>";
-			echo "</tr>".mysqli_error($link);
-		}
-	?>
-
-	</table>
+</table>

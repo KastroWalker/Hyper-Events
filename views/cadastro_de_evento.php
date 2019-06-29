@@ -18,6 +18,7 @@
                 text-align: center;
             }
         </style>
+        <script src="../JS/valida_cadastro_evento.js"></script>
         <title>Cadastrar Evento - Hyper-Events</title>
     </head>
     <body>
@@ -63,7 +64,7 @@
                     unset($_SESSION['erro_cadastrado']);
                 ?>
 
-                <form method="POST" action="../Controls/gerencia_evento.php" id="form_cadastro">
+                <form method="POST" action="teste.php" id="form_cadastro" onsubmit="return valida_cadastro();">
                     <h2>Cadastrar Evento</h2>
                     <div class="form-group">
                         <label for="titulo">Titulo do Evento: *</label>
