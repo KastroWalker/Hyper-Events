@@ -57,7 +57,7 @@
 		echo "<td>$email</td>";
 		echo "<td><a href='$url_evento' blank>$url_evento</a></td>";
 		echo "<td><button class='btn btn-primary'>Editar</button></td>";
-		echo "<td><a href='../Controls/excluir_evento.php?id=$id_evento' data-confirm='teste'><button type='button' class='btn btn-danger'>Excluir</button></a></td>";
+		echo "<td><a href='../Controls/gerencia_evento.php?acao=deletar&id=$id_evento' data-confirm='teste'><button type='button' class='btn btn-danger'>Excluir</button></a></td>";
 		echo "</tr>";
 	}	
 ?>

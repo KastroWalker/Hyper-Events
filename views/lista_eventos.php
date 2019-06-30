@@ -33,6 +33,24 @@
         <div class="text-right mx-auto" style="margin: 20px">
             <a href="cadastro_de_evento.php" class="btn btn-primary btn-lg text-right"> Cadastrar Evento </a>
         </div>
+        <?php 
+            if (isset($_SESSION['sucesso_excluir'])) {
+        ?>
+        <div class="alert alert-success">
+            <p>Evento Excluido com Sucesso!</p>
+        </div>
+        <?php 
+            }
+            unset($_SESSION['sucesso_excluir']);
+            if (isset($_SESSION['erro_excluir'])) {
+        ?>
+        <div class="alert alert-danger">
+            <p>Erro ao Excluir o Evento!<br>Tente novamente!</p>
+        </div>
+        <?php 
+            }
+            unset($_SESSION['erro_exluir']);
+        ?>
         <?php
             # Importa a pagina de mostrar os eventos e o rodape
             require_once '../Controls/lista_eventos.php';
