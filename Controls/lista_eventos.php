@@ -18,10 +18,11 @@
 	$sql = "select * from eventos where org_id = '{$id}'";
 	#org_id, titulo, descricao, hora_inicio, data_inicio, data_fim, email_contato, url_evento
 ?>
-	
+
 <h2 class="text-center mx-auto" style="margin: 20px; font-size: 35pt;">Meus Eventos</h2>
 <table class="table table-condensed table-striped table-bordered table-hover">
 	<tr>
+		<th>id</th>
 		<th>Titulo</th>
 		<th>Descricao</th>
 		<th>Hora de inicio</th>
@@ -43,8 +44,11 @@
 		$data_fim = $tlb['data_fim'];
 		$email = $tlb['email'];
 		$url_evento = $tlb['url_evento'];
+		$id_evento = $tlb['evento_id'];
 
+		mysqli_error($link);
 		echo "<tr>";
+		echo "<td>$id_evento</td>";
 		echo "<td>$Titulo</td>";
 		echo "<td>$Descricao</td>";
 		echo "<td>$hora_inicio</td>";
@@ -53,11 +57,11 @@
 		echo "<td>$email</td>";
 		echo "<td><a href='$url_evento' blank>$url_evento</a></td>";
 		echo "<td><button class='btn btn-primary'>Editar</button></td>";
-		echo "<td><a href='../views/exclui_evento.php'><button class='btn btn-danger'>Excluir</button></a></td>";
-		echo "</tr>".mysqli_error($link);
-	}
-
-	
+		echo "<td><a href='../Controls/excluir_evento.php?id=$id_evento' data-confirm='teste'><button type='button' class='btn btn-danger'>Excluir</button></a></td>";
+		echo "</tr>";
+	}	
 ?>
 
 </table>
+
+<script src="../JS/personalizado.js"></script>
