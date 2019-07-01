@@ -246,7 +246,7 @@ function valida_dados() {
         var tipo_user = e.options[e.selectedIndex].value;
 
         // Verifica se o dia é valido
-        if(ano_passado > ano || mes_passado > mes || (mes == mes_passado && dia_passado > dia)) {
+        if(ano_passado > ano) {
             document.forms['form_cadastro'].campo_data_nasc.className = new_name_class;
             return false;
         }
