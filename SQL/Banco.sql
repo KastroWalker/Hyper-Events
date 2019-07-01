@@ -65,20 +65,6 @@ create table eventos(
     foreign key(org_id) references organizadores(org_id)
 );
 
--- Criando a tabela de material --
-create table material(
-    material_id int not null auto_increment,
-    evento_id int not null,
-    nome varchar(30) not null,
-    descricao_mat varchar(500) not null,
-    qnt_material int not null,
-    primary key (material_id),
-    foreign key (evento_id) references eventos(evento_id)
-);
-
--- Adicionado a chave estrangeira de material na tabela do evento --
-alter table eventos add material_id int after data_fim;
-alter table eventos add foreign key(material_id) references material(material_id);
 
 -- Criando tabela de palestrante --
 create table palestrante(
@@ -108,7 +94,7 @@ create table palestra(
 );
 
 -- Adicionado a chave estrangeira de palestra na tabela do evento --
-alter table eventos add palestra_id int after material_id;
+alter table eventos add palestra_id int after data_fim;
 alter table eventos add foreign key(palestra_id) references palestra(palestra_id);
 
 -- Criando a tabela de ministrante --
