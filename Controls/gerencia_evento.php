@@ -59,7 +59,7 @@
 
 		$conexao->close();
 	} elseif ($acao == "alterar") {
-
+		
 	} elseif ($acao == "deletar") {
 		$id = $_REQUEST['id'];
 		

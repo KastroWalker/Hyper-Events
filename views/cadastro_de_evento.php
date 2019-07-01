@@ -84,7 +84,7 @@
                     </div>
                     <div class="form-group">
                         <label for="hora_inicio">Horario de inicio do evento: *</label>
-                        <input type="time" name="hora_inicio" class="form-control" id="hora_inicio">
+                        <input type="time" name="hora_inicio" class="form-control" id="hora_inicio" required>
                     </div>
                     <div class="form-group">
                         <label for="site">Site do Evento: </label>

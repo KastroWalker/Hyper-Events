@@ -49,14 +49,14 @@
 		mysqli_error($link);
 		echo "<tr>";
 		echo "<td>$id_evento</td>";
-		echo "<td>$Titulo</td>";
+		echo "<td><a href='#'>$Titulo</a></td>";
 		echo "<td>$Descricao</td>";
 		echo "<td>$hora_inicio</td>";
 		echo "<td>$data_inicio</td>";
 		echo "<td>$data_fim</td>";
 		echo "<td>$email</td>";
 		echo "<td><a href='$url_evento' blank>$url_evento</a></td>";
-		echo "<td><button class='btn btn-primary'>Editar</button></td>";
+		echo "<td><a href='../views/edita_evento.php?id=$id_evento'><button class='btn btn-primary'>Editar</button></a></td>";
 		echo "<td><a href='../Controls/gerencia_evento.php?acao=deletar&id=$id_evento' data-confirm='teste'><button type='button' class='btn btn-danger'>Excluir</button></a></td>";
 		echo "</tr>";
 	}	
