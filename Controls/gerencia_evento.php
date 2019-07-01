@@ -51,8 +51,8 @@
 				echo "Cadastrado com sucesso";
 			} else {
 				$_SESSION['erro_cadastrado'] = true;
-				header('Location: ../views/cadastro_de_evento.php');
-				exit();
+				#header('Location: ../views/cadastro_de_evento.php');
+				#exit();
 				echo "não cadastrado".mysqli_error($conexao);
 			}
 		}
