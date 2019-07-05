@@ -30,7 +30,7 @@
 		<th>Data de fim</td>
 		<th>Email</td>
 		<th>Site</th>
-		<th colspan="2">Ações</th>
+		<th colspan="3">Ações</th>
 	</tr>
 
 <?php
@@ -58,6 +58,7 @@
 		echo "<td><a href='$url_evento' blank>$url_evento</a></td>";
 		echo "<td><a href='../views/edita_evento.php?id=$id_evento'><button class='btn btn-primary'>Editar</button></a></td>";
 		echo "<td><a href='../Controls/gerencia_evento.php?acao=deletar&id=$id_evento' data-confirm='teste'><button type='button' class='btn btn-danger'>Excluir</button></a></td>";
+		echo "<td><a href=''><button type'button' class='btn btn-info'> Atividades</button></a></td>";
 		echo "</tr>";
 	}	
 ?>
