@@ -47,7 +47,7 @@
         ?>
         <main>
             <form method="POST" action="../Controls/gerencia_evento.php?acao=editar" id="form_cadastro">
-                <input type="hidden" name="id" value="<?php echo $id ?>">
+                <input type="hidden" name="id" id="id" value="<?php echo $id ?>">
                 <h2>Editar Evento</h2>
                 <div class="form-group">
                     <label for="titulo">Titulo do Evento: *</label>

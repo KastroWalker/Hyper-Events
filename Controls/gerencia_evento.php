@@ -15,16 +15,30 @@
 	echo "<strong>Email: </strong>".$email."<br/>";
 	echo "<strong>Site: </strong>".$site."<br/>";
 	echo "<strong>Id: </strong>".$id."<br/>";
+	
+	logo do IFPI
+	1 Folha de isopor grossa
+	2 folha de isopor normal 
+	*palito de picole
+	bastao de cola quente
+	cola de isospor
+	cola branca
+	tinta guache
+	pincel de pelo
+	papel cartão (preto, verde, amarelo)
+	*arvore brinquedo
+
 	*/
 
+	$titulo = mysqli_real_escape_string($conexao, trim($_POST['titulo']));
+	$descricao = mysqli_real_escape_string($conexao, trim($_POST['descricao']));
+	$hora = mysqli_real_escape_string($conexao, trim($_POST['hora_inicio']));
+	$data_inicio = mysqli_real_escape_string($conexao, trim($_POST['inicio']));
+	$data_fim = mysqli_real_escape_string($conexao, trim($_POST['fim']));
+	$email = mysqli_real_escape_string($conexao, trim($_POST['email']));
+	$site = mysqli_real_escape_string($conexao, trim($_POST['site']));
+
 	if($acao == "cadastrar"){
-		$titulo = mysqli_real_escape_string($conexao, trim($_POST['titulo']));
-		$descricao = mysqli_real_escape_string($conexao, trim($_POST['descricao']));
-		$hora = mysqli_real_escape_string($conexao, trim($_POST['hora_inicio']));
-		$data_inicio = mysqli_real_escape_string($conexao, trim($_POST['inicio']));
-		$data_fim = mysqli_real_escape_string($conexao, trim($_POST['fim']));
-		$email = mysqli_real_escape_string($conexao, trim($_POST['email']));
-		$site = mysqli_real_escape_string($conexao, trim($_POST['site']));
 		$id = $_SESSION['id'];
 
 		$sql = "select count(*) as total from eventos where nome = '$titulo';";
@@ -58,8 +72,9 @@
 		}
 
 		$conexao->close();
-	} elseif ($acao == "alterar") {
-		
+	} elseif ($acao == "editar") {
+		$id = $_POST['id'];
+		echo "$id";		
 	} elseif ($acao == "deletar") {
 		$id = $_REQUEST['id'];
 		
