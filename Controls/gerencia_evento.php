@@ -74,7 +74,33 @@
 		$conexao->close();
 	} elseif ($acao == "editar") {
 		$id = $_POST['id'];
-		echo "$id";		
+
+		/*
+		echo "ID: $id<br>";	
+		echo "Titulo: ".$titulo."<br>";
+		echo "Descrição: ".$descricao."<br>";
+		echo "Hora: ".$hora."<br>";
+		echo "Data inicio: ".$data_inicio."<br>";
+		echo "Data fim: ".$data_fim."<br>";
+		echo "Email: ".$email."<br>";
+		echo "Site: ".$site."<br>";	
+		*/
+
+		$sql = "update eventos set titulo = '{$titulo}', descricao = '{$descricao}', hora_inicio = '{$hora}', data_inicio = '{$data_inicio}', data_fim = '{$data_fim}', email = '{$email}', url_evento = '{$site}' where evento_id = '{$id}';";
+
+		$result = mysqli_query($conexao, $sql);
+
+		if (!$result) {
+			die('Erro: '.mysqli_error($conexao));
+			$_SESSION['erro_alterar'] = true;
+			header('Location: ../views/lista_eventos.php');
+			exit();
+		}else {
+			echo "A operação foi realizado com sucesso";
+			$_SESSION['alterado'] = true;
+			header('Location: ../views/lista_eventos.php');
+			exit();
+		}
 	} elseif ($acao == "deletar") {
 		$id = $_REQUEST['id'];
 		

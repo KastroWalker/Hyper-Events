@@ -50,6 +50,22 @@
         <?php 
             }
             unset($_SESSION['erro_exluir']);
+            if(isset($_SESSION['alterado'])){
+        ?>
+        <div class="alert alert-success">
+            Alterado com sucesso!
+        </div>
+        <?php  
+            }
+            unset($_SESSION['alterado']);
+            if(isset($_SESSION['erro_alterar'])){
+        ?>
+        <div class="alert alert-danger">
+            Erro ao Editar!
+        </div>
+        <?php  
+            }
+            unset($_SESSION['erro_alterar']);
         ?>
         <?php
             # Importa a pagina de mostrar os eventos e o rodape
