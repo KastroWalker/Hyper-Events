@@ -1,21 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Cadastro de palestra - Hyper Events</title>
-</head>
-<body>
-	<form action="../Controls/cadastra_evento.php">
-		<label for="nome">Nome: </label>
-		<input type="text" name="nome" id="nome" required>
-		<label for="data_inicio">Data inicio</label>
-		<input type="date" name="data_inicio" id="data_inicio" required>
-		<label for="data_fim">Data fim</label>
-		<input type="date" name="data_fim" id="data_fim" required>
-		<label></label>
-		<input type="" name="" id="" required>
-		<label for="descricao">Descricao: </label>
-		<textarea id="descricao" name="descricao">Descrição do evento</textarea>
-	</form>
-</body>
-</html>
+
+	<form action="../Controls/cadastra_evento.php?tipo=palestra" method="POST">
+		<input type="hidden" name="id_evento" value="">
+			
+		<div class="form-group">
+			<label for="palestrante">Palestrante:</label>
+			<select name="palestrante" id="palestrante" class="form-control" required>
+			<option value="1">palestrante 1</option>
+			<option value="2">palestrante 2</option>
+			<option value="3">palestrante 3</option>
+			</select>
+			<a href="cadastro_palestrante.php">Cadastrar palestrante</a>
+		</div>
+
+		<div class="form-group">
+			<label for="nome">Nome</label>
+			<input type="text" name="nome" id="nome" class="form-control" required>
+		</div>
+
+		<div class="form-group">
+			<label for="descricao">Descrição</label>
+			<textarea name="descricao" id="descricao" cols="30" rows="10" class="form-control" required></textarea>
+		</div>
+		
+		<div class="form-group">
+			<label for="data_init">Data inicio</label>
+			<input type="date" name="data_init" id="data_init" class="form-control" required>
+		</div>
+
+		<div class="form-group">
+			<label for="data_end">Data fim</label>
+			<input type="date" name="data_end" id="data_end" class="form-control" required>
+		</div>
+
+		<div class="form-group">
+			<label for="time_init">Hora inicio</label>
+			<input type="time" name="time_init" id="time_init" class="form-control" required>
+		</div>
+
+		<div class="form-group">
+			<label for="time_end">Hora fim</label>
+			<input type="time" name="time_end" id="time_end" class="form-control" required>
+		</div>
+		<!--
+	    local varchar(30) required
+		-->
+	
