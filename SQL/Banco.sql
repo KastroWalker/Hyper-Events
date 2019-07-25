@@ -1,10 +1,10 @@
 /**
   *Banco de dados HyperEvents
-  *Criado por Descompila Compitando
+  *Criado por Descompila Compilando
   */
 
 -- Criando usuário padrão para todos --
--- create user 'matue'@'%' identified by 'banco'; --
+create user 'matue'@'%' identified by 'banco'; --
 
 -- Criando a base de dados --
 create database HyperEvents;
@@ -65,21 +65,20 @@ create table eventos(
     foreign key(org_id) references organizadores(org_id)
 );
 
-
--- Criando tabela de palestrante --
-create table palestrante(
-    palestrante_id int not null auto_increment,
+-- Criando a tabela de ministrante --
+create table ministrantes(
+    ministrante_id int not null auto_increment,
     nome varchar(200) not null,
     cpf varchar(11) not null,
     sexo char(1) not null,
-    descricao varchar(500),
-    primary key(palestrante_id)
+    descricao varchar(500) , 
+    primary key(ministrante_id)
 );
 
 -- Criando a tabela de palestra --
 create table palestra(
     palestra_id int not null auto_increment,
-    palestrante_id int not null,
+    ministrante_id int not null,
     evento_id int not null,
     nome varchar(20) not null,
     descricao varchar(200) not null, 
@@ -90,22 +89,12 @@ create table palestra(
     fim time not null,
     primary key(palestra_id),
     foreign key(evento_id) references eventos(evento_id),
-    foreign key(palestrante_id) references palestrante(palestrante_id)
+    foreign key(ministrante_id) references ministrantes(ministrante_id)
 );
 
 -- Adicionado a chave estrangeira de palestra na tabela do evento --
 alter table eventos add palestra_id int after data_fim;
 alter table eventos add foreign key(palestra_id) references palestra(palestra_id);
-
--- Criando a tabela de ministrante --
-create table ministrantes(
-    ministrante_id int not null auto_increment,
-    nome varchar(200) not null,
-    cpf varchar(11) not null,
-    sexo char(1) not null,
-    descricao varchar(500) , 
-    primary key(ministrante_id)
-);
 
 -- Criando a tabela de minicurso --
 create table minicursos(

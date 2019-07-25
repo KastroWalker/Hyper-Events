@@ -3,7 +3,7 @@
     Conectando com o Banco de Dados
     Criador por: Victor Castro  
     */
-    define('HOST', 'localhost');
+    define('HOST', 'localhost:3308');
     define('USER', 'matue');
     define('SENHA', 'banco');
     define('BD', 'HyperEvents');

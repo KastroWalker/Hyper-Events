@@ -1,6 +1,6 @@
 /**
   *Banco de dados HyperEvents
-  *Criado por Desconpila Compitando
+  *Criado por Desconpila Compilando
   */
 
 -- Criando usuário padrão para todos --

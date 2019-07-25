@@ -36,7 +36,7 @@ function valida_cadastro() {
 
 	var data_inicio = valida_data();
 
-	alert(data_inicio);
+	//alert(data_inicio);
 
 	if(data_inicio == false){
 		return false;
