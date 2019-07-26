@@ -71,7 +71,11 @@ create table ministrantes(
     nome varchar(200) not null,
     cpf varchar(11) not null,
     sexo char(1) not null,
-    descricao varchar(500) , 
+    email varchar(100) not null,
+    contato varchar(12),
+    idade int not null,
+    data_nasc date not null,
+    descricao varchar(500), 
     primary key(ministrante_id)
 );
 
