@@ -2,12 +2,6 @@
 	session_start();
 
 	include_once '../Controls/verifica_login.php';
-	$tipo_mini = $_REQUEST['tipo_mini'];
-	if ($tipo_mini == 'palestrante') {
-		$pag = 'palestra';
-	} else if ($tipo_mini == 'ministrante') {
-		$pag = 'minicurso';
-	}
 ?>
 
 <!DOCTYPE html>
