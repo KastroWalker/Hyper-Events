@@ -3,12 +3,20 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Atividades - Hyper Events</title>
+		<link rel="stylesheet" type="text/css" href="../CSS/style_padrao.css">
+		<link rel="stylesheet" type="text/css" href="../CSS/bootstrap/bootstrap.min.css">
 	</head>
 	<body>
+		<?php
+			require_once 'header.php';
+		?>
 		<li>
-			<ul><a href="cadastra_atividade.php?tipo=palestra">palestra</a></ul>
-			<ul><a href="cadastra_atividade.php?tipo=minicurso">minicurso</a></ul>
-			<ul><a href="cadastra_atividade.php?tipo=oficina">oficina</a></ul>
+			<ul><a href="lista_atividades.php?tipo=palestra">palestra</a></ul>
+			<ul><a href="lista_atividades.php?tipo=minicurso">minicurso</a></ul>
 		</li>
+		<a href="lista_eventos.php" id="btn_voltar" name="btn_voltar" class="btn btn-info">Voltar</a>
+		<?php
+			require_once 'footer.php';
+		?>
 	</body>
 </html>

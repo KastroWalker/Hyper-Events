@@ -1,13 +1,22 @@
+<?php
+	$sql = "select * from ministrantes;";
 
+	include "../Controls/conexao.php";
+?>
 	<form action="../Controls/cadastra_evento.php?tipo=palestra" method="POST">
 		<input type="hidden" name="id_evento" value="">
 			
 		<div class="form-group">
 			<label for="palestrante">Palestrante:</label>
 			<select name="palestrante" id="palestrante" class="form-control" required>
-				<option value="1">palestrante 1</option>
-				<option value="2">palestrante 2</option>
-				<option value="3">palestrante 3</option>
+				<?php
+					$result = mysqli_query($conexao, $sql);
+					while ($tlb = mysqli_fetch_array($result)) {
+						$id = $tlb['ministrante_id'];
+						$nome = $tlb['nome'];
+						echo"<option value='$id'>$nome</option>";
+					}
+				?>
 			</select>
 			<a href="cadastro_ministrante.php?tipo_mini=palestrante">Cadastrar palestrante</a>
 		</div>
@@ -40,8 +49,4 @@
 		<div class="form-group">
 			<label for="time_end">Hora fim</label>
 			<input type="time" name="time_end" id="time_end" class="form-control" required>
-		</div>
-		<!--
-	    local varchar(30) required
-		-->
-	
+		</div>	

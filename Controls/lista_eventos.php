@@ -49,7 +49,7 @@
 		mysqli_error($link);
 		echo "<tr>";
 		echo "<td>$id_evento</td>";
-		echo "<td><a href='#'>$Titulo</a></td>";
+		echo "<td><a href='../views/lista_atividades.php?id=$id_evento'>$Titulo</a></td>";
 		echo "<td>$Descricao</td>";
 		echo "<td>$hora_inicio</td>";
 		echo "<td>$data_inicio</td>";
