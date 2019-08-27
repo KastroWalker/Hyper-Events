@@ -3,7 +3,11 @@
 	$id = $_SESSION['id'];
 
 	# Dados para a conexão com o banco de dados
+<<<<<<< HEAD
 	$servidor = 'localhost:3306'; 		# Nome do DNS ou IP do servidor HTTP
+=======
+	$servidor = 'localhost'; 		# Nome do DNS ou IP do servidor HTTP
+>>>>>>> 7d1f9b16b5f7aa38cf8a26af11a0785790036adc
 	$usuario = 'matue';        		# Nome de usuário para acesso ao MySQL
 	$senha = 'banco'; 	            # Senha do acesso
 	$banco = 'HyperEvents';			# Nome do banco de dados
@@ -49,7 +53,7 @@
 		mysqli_error($link);
 		echo "<tr>";
 		echo "<td>$id_evento</td>";
-		echo "<td><a href='#'>$Titulo</a></td>";
+		echo "<td><a href='../views/lista_atividades.php?id=$id_evento'>$Titulo</a></td>";
 		echo "<td>$Descricao</td>";
 		echo "<td>$hora_inicio</td>";
 		echo "<td>$data_inicio</td>";

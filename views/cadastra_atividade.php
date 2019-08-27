@@ -26,7 +26,7 @@
             require_once 'header.php';
 
             if ($tipo == 'palestra') {
-				require_once 'cadastra_palesta.html';
+				require_once 'cadastra_palesta.php';
 			} else if ($tipo == 'minicurso') {
 				require_once 'cadastra_minicurso.html';
 			} else if ($tipo == 'oficina') {
