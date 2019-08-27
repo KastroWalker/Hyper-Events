@@ -16,17 +16,6 @@
 	echo "<strong>Site: </strong>".$site."<br/>";
 	echo "<strong>Id: </strong>".$id."<br/>";
 	
-	logo do IFPI
-	1 Folha de isopor grossa
-	2 folha de isopor normal 
-	*palito de picole
-	bastao de cola quente
-	cola de isospor
-	cola branca
-	tinta guache
-	pincel de pelo
-	papel cartão (preto, verde, amarelo)
-	*arvore brinquedo
 
 	*/
 
