@@ -1,6 +1,6 @@
 <?php 
 	$tipo = $_SESSION['tipo'];
-	#echo "$tipo";
+	echo "$tipo";
 	include "conexao.php";
 	$sql = "select * from palestra;";
 ?>
