@@ -2,18 +2,12 @@
 	$tipo = $_SESSION['tipo'];
 	#echo "$tipo";
 	include "conexao.php";
-	if($tipo == "palestra"){
-		$sql = "select * from palestra;";
-		$ministrante = "Palestrante";
-	}else if($tipo == "minicurso"){
-		$sql = "select * from minicursos;";
-		$ministrante = "Ministrante";
-	}
+	$sql = "select * from palestra;";
 ?>
 <table class="table table-condensed table-striped table-bordered table-hover">
 	<tr>
 		<th>id</th>
-		<th><?php echo $ministrante; ?></th>
+		<th>Palestrante</th>
 		<th>Titulo</th>
 		<th>Descricao</th>
 		<th>Data Inicio</th>
@@ -25,13 +19,8 @@
 <?php
 	$result = mysqli_query($conexao, $sql);
 	while ($tlb = mysqli_fetch_array($result)) {
-		if($tipo == "palestra"){
-			$id = $tlb['palestra_id'];
-			$palestrante_id = $tlb['palestrante_id'];
-		}else if($tipo == "minicurso"){
-			$id = $tlb['minicurso_id'];
-			$ministrante_id = $tlb['ministrante_id'];
-		}
+		$id = $tlb['palestra_id'];
+		$palestrante_id = $tlb['palestrante_id'];
 		$nome = $tlb['nome'];
 		$descricao = $tlb['descricao'];
 		$data_inicio = $tlb['data_inicio'];

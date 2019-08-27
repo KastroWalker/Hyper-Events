@@ -26,11 +26,9 @@
             require_once 'header.php';
 
             if ($tipo == 'palestra') {
-				require_once 'cadastra_palesta.php';
+				require_once 'cadastra_palestra.php';
 			} else if ($tipo == 'minicurso') {
-				require_once 'cadastra_minicurso.html';
-			} else if ($tipo == 'oficina') {
-				require_once 'cadastra_oficina.html';
+				require_once 'cadastra_minicurso.php?tipo=minicurso';
 			}
         ?>
         <input type="submit" name="btn_enviar" id="btn_enviar" value="Cadastrar" class="btn btn-primary">

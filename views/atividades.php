@@ -11,7 +11,7 @@
 			require_once 'header.php';
 		?>
 		<li>
-			<ul><a href="lista_atividades.php?tipo=palestra">palestra</a></ul>
+			<ul><a href="lista_palestras.php">palestra</a></ul>
 			<ul><a href="lista_atividades.php?tipo=minicurso">minicurso</a></ul>
 		</li>
 		<a href="lista_eventos.php" id="btn_voltar" name="btn_voltar" class="btn btn-info">Voltar</a>

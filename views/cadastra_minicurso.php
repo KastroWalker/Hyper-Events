@@ -3,7 +3,7 @@
 
 	include "../Controls/conexao.php";
 ?>
-	<form action="../Controls/cadastra_evento.php?tipo=palestra" method="POST">
+	<form action="../Controls/cadastra_atividade.php?tipo=palestra" method="POST">
 		<input type="hidden" name="id_evento" value="">
 			
 		<div class="form-group">
