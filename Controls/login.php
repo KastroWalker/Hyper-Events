@@ -61,6 +61,16 @@
 
         //Verificando se o usuário é um organizador
         if ($row == 1) {
+            $query_id = "select part_id from participantes where usuario = '{$user}';";
+
+            $result = mysqli_query($conexao, $query_id);
+            
+            $row = mysqli_fetch_array($result);
+        
+            $id = $row['part_id'];
+            $_SESSION['id'] = $id;
+            
+        
             $_SESSION['usuario'] = $user;
             header($page);
             exit();
