@@ -11,7 +11,7 @@
 				<?php
 					$result = mysqli_query($conexao, $sql);
 					while ($tlb = mysqli_fetch_array($result)) {
-						$id = $tlb['ministrantes_id'];
+						$id = $tlb['ministrante_id'];
 						$nome = $tlb['nome'];
 						echo"<option value='$id'>$nome</option>";
 					}

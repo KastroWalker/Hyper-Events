@@ -12,8 +12,7 @@
 	$hora_inicio = mysqli_real_escape_string($conexao, trim($_POST['time_init']));
 	$hora_fim = mysqli_real_escape_string($conexao, trim($_POST['time_end']));
 
-	$palestrante_id = 1;
-
+	/*
 	echo "$evento_id<br>";
 	echo "$palestrante_id<br>";
 	echo "$titulo<br>";
@@ -23,20 +22,19 @@
 	echo "$data_fim<br>";
 	echo "$hora_inicio<br>";
 	echo "$hora_fim<br>";
-
+	*/
 
 	$sql = "insert into palestra (ministrante_id, evento_id, nome, descricao, data_inicio, data_fim, local, inicio, fim) values ('{$palestrante_id}', '{$evento_id}', '{$titulo}', '{$descricao}', '{$data_inicio}', '{$data_fim}', '{$local}', '{$hora_inicio}', '{$hora_fim}');";
 
 	if ($conexao->query($sql) === TRUE) {
-		#$_SESSION['evento_cadastrado'] = true;
-		#header('Location: ../views/cadastro_de_evento.php');
-		#exit();
+		$_SESSION['palestra_cadastrada'] = true;
+		header('Location: ../views/cadastra_atividade.php?tipo=palestra&id='$evento_id'');
+		exit();
 		echo "Cadastrado com sucesso";
 	} else {
-		#$_SESSION['erro_cadastrado'] = true;
-		#header('Location: ../views/cadastro_de_evento.php');
-		#exit();
+		$_SESSION['erro_palestra_cadastro'] = true;
+		header('Location: ../views/cadastra_atividade.php?tipo=palestra&id='$evento_id'');
+		exit();
 		echo "não cadastrado".mysqli_error($conexao);
 	}
-
 ?>

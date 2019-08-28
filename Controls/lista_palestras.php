@@ -1,9 +1,4 @@
 <?php 
-<<<<<<< HEAD
-=======
-	$tipo = $_SESSION['tipo'];
-	echo "$tipo";
->>>>>>> e3320c923a244ceb4d09ba34e41b230a4b7bb42f
 	include "conexao.php";
 	$sql = "select * from palestra;";
 ?>
