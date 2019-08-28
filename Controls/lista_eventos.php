@@ -3,11 +3,8 @@
 	$id = $_SESSION['id'];
 
 	# Dados para a conexão com o banco de dados
-<<<<<<< HEAD
 	$servidor = 'localhost:3306'; 		# Nome do DNS ou IP do servidor HTTP
-=======
 	$servidor = 'localhost'; 		# Nome do DNS ou IP do servidor HTTP
->>>>>>> 7d1f9b16b5f7aa38cf8a26af11a0785790036adc
 	$usuario = 'matue';        		# Nome de usuário para acesso ao MySQL
 	$senha = 'banco'; 	            # Senha do acesso
 	$banco = 'HyperEvents';			# Nome do banco de dados
@@ -62,7 +59,7 @@
 		echo "<td><a href='$url_evento' blank>$url_evento</a></td>";
 		echo "<td><a href='../views/edita_evento.php?id=$id_evento'><button class='btn btn-primary'>Editar</button></a></td>";
 		echo "<td><a href='../Controls/gerencia_evento.php?acao=deletar&id=$id_evento' data-confirm='teste'><button type='button' class='btn btn-danger'>Excluir</button></a></td>";
-		echo "<td><a href='../views/atividades.php'><button type'button' class='btn btn-info'> Atividades</button></a></td>";
+		echo "<td><a href='../views/atividades.php?id=$id_evento'><button type'button' class='btn btn-info'> Atividades</button></a></td>";
 		echo "</tr>";
 	}	
 ?>

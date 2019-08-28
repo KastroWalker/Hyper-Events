@@ -1,6 +1,4 @@
 <?php 
-	$tipo = $_SESSION['tipo'];
-	#echo "$tipo";
 	include "conexao.php";
 	$sql = "select * from palestra;";
 ?>
@@ -20,7 +18,7 @@
 	$result = mysqli_query($conexao, $sql);
 	while ($tlb = mysqli_fetch_array($result)) {
 		$id = $tlb['palestra_id'];
-		$palestrante_id = $tlb['palestrante_id'];
+		$palestrante_id = $tlb['ministrante_id'];
 		$nome = $tlb['nome'];
 		$descricao = $tlb['descricao'];
 		$data_inicio = $tlb['data_inicio'];
@@ -30,6 +28,7 @@
 		$hora_fim = $tlb['fim'];
 		echo "<tr>";
 		echo "<td>$id</td>";
+		echo "<td>$palestrante_id</td>";
 		echo "<td>$nome</td>";
 		echo "<td>$descricao</td>";
 		echo "<td>$data_inicio</td>";

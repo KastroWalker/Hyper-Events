@@ -3,6 +3,7 @@
 	include_once '../Controls/verifica_login.php';
 
 	$tipo = $_REQUEST['tipo'];
+    $evento_id = $_REQUEST['id'];
 ?>
 
 <!DOCTYPE html>

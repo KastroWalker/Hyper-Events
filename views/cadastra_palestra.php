@@ -3,12 +3,11 @@
 
 	include "../Controls/conexao.php";
 ?>
-	<form action="../Controls/cadastra_atividade.php?tipo=palestra" method="POST">
-		<input type="hidden" name="id_evento" value="">
-			
+	<form action="../Controls/cadastra_palestra.php?id=<?php echo $evento_id?>" method="POST">
 		<div class="form-group">
 			<label for="palestrante">Palestrante:</label>
 			<select name="palestrante" id="palestrante" class="form-control" required>
+				<option>Selecione um Palestrante</option>
 				<?php
 					$result = mysqli_query($conexao, $sql);
 					while ($tlb = mysqli_fetch_array($result)) {
@@ -29,6 +28,11 @@
 		<div class="form-group">
 			<label for="descricao">Descrição</label>
 			<textarea name="descricao" id="descricao" cols="30" rows="10" class="form-control" required></textarea>
+		</div>
+
+		<div class="form-group">
+			<label for="local">Local</label>
+			<input type="text" name="local" id="local"class="form-control" required>
 		</div>
 		
 		<div class="form-group">
