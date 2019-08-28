@@ -123,9 +123,8 @@ alter table eventos add foreign key(minicurso_id) references minicursos(minicurs
 
 -- Criando a tabela que relaciona os participantes e os eventos --
 create table eventos_participantes(
-    evento_id int not null,
     part_id int not null,
-    primary key(evento_id, part_id),
-    foreign key(evento_id) references eventos(evento_id),
-    foreign key(part_id) references participantes(part_id)
+    evento_id int not null,
+    foreign key(part_id) references participantes(part_id),
+    foreign key(evento_id) references eventos(evento_id)
 );

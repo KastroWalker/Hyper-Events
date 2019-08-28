@@ -34,7 +34,7 @@
         ?>
         <input type="submit" name="btn_enviar" id="btn_enviar" value="Cadastrar" class="btn btn-primary">
         <input type="reset" name="btn_limpar" id="btn_limpar" value="Limpar" class="btn btn-secondary">
-        <a href="atividades.php" id="btn_voltar" name="btn_voltar" class="btn btn-info">Voltar</a>
+        <a href="lista_atividades.php?id=<?php echo $evento_id?>&tipo=<?php echo $tipo?>" id="btn_voltar" name="btn_voltar" class="btn btn-info">Voltar</a>
         </form>
         <?php 
         	# Importa o rodape padrão
