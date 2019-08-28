@@ -3,23 +3,24 @@ function valida_dados_palestrante(){
 	Função para validar os dados do palestrante
 	Autor: Kauan Portela
 	*/
-	var name_class_nome = document.forms['form_cadastro_palestrante'].campo_nome.className;
+
 	var name_class_sexo = document.forms['form_cadastro_palestrante'].campo_sexo.className;
 	var name_class_cpf = document.forms['form_cadastro_palestrante'].campo_cpf.className;
 	var name_class_data_nasc = document.forms['form_cadastro_palestrante'].campo_data_nasc.className;
+	var name_class_nome = document.forms['form_cadastro_palestrante'].campo_nome.className;
 
 	if(name_class_nome.match(/is-invalid/)){
         document.forms['form_cadastro_palestrante'].campo_nome.className = name_class_nome.replace('is-invalid', ' ');
     }
-    if(name_class_cpf.match(/is-invalid/)){
-        document.forms['form_cadastro_palestrante'].campo_cpf.className = name_class_cpf.replace('is-invalid', ' ');
-    }
-    if(name_class_data_nasc.match(/is-invalid/)){
-        document.forms['form_cadastro_palestrante'].campo_data_nasc.className = name_class_data_nasc.replace('is-invalid', ' ');
-    }
-    if(name_class_sexo.match(/is-invalid/)){
-        document.forms['form_cadastro_palestrante'].campo_sexo.className = name_class_sexo.replace('is-invalid', ' ');
-    }
+	if(name_class_cpf.match(/is-invalid/)){
+		document.forms['form_cadastro_palestrante'].campo_cpf.className = name_class_cpf.replace('is-invalid', ' ');
+	}
+	if(name_class_data_nasc.match(/is-invalid/)){
+		document.forms['form_cadastro_palestrante'].campo_data_nasc.className = name_class_data_nasc.replace('is-invalid', ' ');
+	}
+	if(name_class_sexo.match(/is-invalid/)){
+		document.forms['form_cadastro_palestrante'].campo_sexo.className = name_class_sexo.replace('is-invalid', ' ');
+	}
 
 	function valida_nome(){
         /**
@@ -41,7 +42,7 @@ function valida_dados_palestrante(){
         return true;
     }
 
-     function valida_sexo(){
+	function valida_sexo(){
         /**
          * Função para validar o sexo do usuário
          * Copiado por Kauan Portela
@@ -159,7 +160,7 @@ function valida_dados_palestrante(){
     var data_nasc = valida_data_nasc();
 
     var erro = [];
-    var lista = [nome, sexo, cpf, data_nasc];
+    var lista = [sexo, nome, cpf, data_nasc];
     for (i in lista){
     	erro.push(lista[i]);
     }
