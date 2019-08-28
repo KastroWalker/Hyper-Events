@@ -4,16 +4,16 @@ function valida_dados() {
      * Criada por Victor Castro
      */
 
-    var name_class_nome = document.forms['form_cadastro'].campo_nome.className;
-    var name_class_sexo = document.forms['form_cadastro'].campo_sexo.className;
-    var name_class_email = document.forms['form_cadastro'].campo_conf_email.className;
-    var name_class_user = document.forms['form_cadastro'].campo_user.className;
-    var name_class_cpf = document.forms['form_cadastro'].campo_cpf.className;
-    var name_class_tipo_user = document.forms['form_cadastro'].tipo_user.className;
-    var name_class_senha = document.forms['form_cadastro'].campo_conf_senha.className;
-    var name_class_data_nasc = document.forms['form_cadastro'].campo_data_nasc.className;
-        
-    if(name_class_nome.match(/is-invalid/)){
+     var name_class_nome = document.forms['form_cadastro'].campo_nome.className;
+     var name_class_sexo = document.forms['form_cadastro'].campo_sexo.className;
+     var name_class_email = document.forms['form_cadastro'].campo_conf_email.className;
+     var name_class_user = document.forms['form_cadastro'].campo_user.className;
+     var name_class_cpf = document.forms['form_cadastro'].campo_cpf.className;
+     var name_class_tipo_user = document.forms['form_cadastro'].tipo_user.className;
+     var name_class_senha = document.forms['form_cadastro'].campo_conf_senha.className;
+     var name_class_data_nasc = document.forms['form_cadastro'].campo_data_nasc.className;
+
+     if(name_class_nome.match(/is-invalid/)){
         document.forms['form_cadastro'].campo_nome.className = name_class_nome.replace('is-invalid', ' ');
     }
     if(name_class_cpf.match(/is-invalid/)){
@@ -43,10 +43,10 @@ function valida_dados() {
          * Função para validar o Nome do usuário
          * Criada por Victor Castro
          */
-        var nome = document.forms['form_cadastro'].campo_nome.value;
-        var nome = nome.replace( /\s/g, '' );
-        var name_class = document.forms['form_cadastro'].campo_nome.className;
-        if (/[^a-zA-Z]/.test(nome)) {
+         var nome = document.forms['form_cadastro'].campo_nome.value;
+         var nome = nome.replace( /\s/g, '' );
+         var name_class = document.forms['form_cadastro'].campo_nome.className;
+         if (/[^a-zA-Z]/.test(nome)) {
             var new_name_class = name_class + ' is-invalid';
             document.forms['form_cadastro'].campo_nome.className = new_name_class;
             form_cadastro.campo_nome.focus();
@@ -63,9 +63,9 @@ function valida_dados() {
          * Função para validar o sexo do usuário
          * Criada por Victor Castro
          */
-        var sexo = document.forms["form_cadastro"].campo_sexo.selectedIndex;
-        var name_class = document.forms['form_cadastro'].campo_sexo.className;
-        if (sexo == 0) {
+         var sexo = document.forms["form_cadastro"].campo_sexo.selectedIndex;
+         var name_class = document.forms['form_cadastro'].campo_sexo.className;
+         if (sexo == 0) {
             var new_name_class = name_class + ' is-invalid';
             document.forms['form_cadastro'].campo_sexo.className = new_name_class;
             return false;
@@ -80,10 +80,10 @@ function valida_dados() {
          * Função para verificar se os e-mails passados são iguais
          * Criada por Victor Castro
          */
-        var email = document.forms['form_cadastro'].campo_email.value;
-        var conf_email = document.forms['form_cadastro'].campo_conf_email.value;
-        var name_class = document.forms['form_cadastro'].campo_conf_email.className;
-        if (email != conf_email) {
+         var email = document.forms['form_cadastro'].campo_email.value;
+         var conf_email = document.forms['form_cadastro'].campo_conf_email.value;
+         var name_class = document.forms['form_cadastro'].campo_conf_email.className;
+         if (email != conf_email) {
             var new_name_class = name_class + ' is-invalid';
             document.forms['form_cadastro'].campo_conf_email.className = new_name_class;
             form_cadastro.campo_email.focus();
@@ -100,9 +100,9 @@ function valida_dados() {
          * Função para validar o nome de usuário
          * Criada por Victor Castro
          */
-        var user = document.forms['form_cadastro'].campo_user.value;
-        
-        function isNumeric(str) {
+         var user = document.forms['form_cadastro'].campo_user.value;
+
+         function isNumeric(str) {
             var er = /^[0-9]+$/;
             return (er.test(str));
         }
@@ -129,10 +129,10 @@ function valida_dados() {
          * Função para verificar se a senha do usuário são iguais
          * Criada por Victor Castro
          */
-        var senha = document.forms['form_cadastro'].campo_senha.value;
-        var conf_senha = document.forms['form_cadastro'].campo_conf_senha.value;
-        var name_class = document.forms['form_cadastro'].campo_conf_senha.className;
-        if (senha != conf_senha) {
+         var senha = document.forms['form_cadastro'].campo_senha.value;
+         var conf_senha = document.forms['form_cadastro'].campo_conf_senha.value;
+         var name_class = document.forms['form_cadastro'].campo_conf_senha.className;
+         if (senha != conf_senha) {
             var new_name_class = name_class + ' is-invalid';
             document.forms['form_cadastro'].campo_conf_senha.className = new_name_class;
             form_cadastro.campo_senha.focus();
@@ -149,9 +149,9 @@ function valida_dados() {
          * Função para validar o sexo de usuário
          * Criada por Victor Castro
          */
-        var tipo_user = document.forms["form_cadastro"].tipo_user.selectedIndex;
-        var name_class = document.forms['form_cadastro'].tipo_user.className;
-        if (tipo_user == 0) {
+         var tipo_user = document.forms["form_cadastro"].tipo_user.selectedIndex;
+         var name_class = document.forms['form_cadastro'].tipo_user.className;
+         if (tipo_user == 0) {
             var new_name_class = name_class + ' is-invalid';
             document.forms['form_cadastro'].tipo_user.className = new_name_class;
             return false;
@@ -170,43 +170,43 @@ function valida_dados() {
         var cpf = cpf.replace('-', '');
         var name_class = document.forms['form_cadastro'].campo_cpf.className;
         Soma = 0;
-      if (cpf == "00000000000") return false;
-         
-      for (i=1; i<=9; i++) Soma = Soma + parseInt(cpf.substring(i-1, i)) * (11 - i);
-      Resto = (Soma * 10) % 11;
-       
-        if ((Resto == 10) || (Resto == 11)){
-            Resto = 0;
-        }
-        if (Resto != parseInt(cpf.substring(9, 10)) ){
-            var new_name_class = name_class + ' is-invalid';
-            document.forms['form_cadastro'].campo_cpf.className = new_name_class;
-            return false;      
-        } 
+        if (cpf == "00000000000") return false;
 
-        Soma = 0;
-        for (i = 1; i <= 10; i++) Soma = Soma + parseInt(cpf.substring(i-1, i)) * (12 - i);
-        Resto = (Soma * 10) % 11;
-       
-        if ((Resto == 10) || (Resto == 11)){  
-            Resto = 0;
-        }
-        if (Resto != parseInt(cpf.substring(10, 11) ) ){
-            var new_name_class = name_class + ' is-invalid';
-            document.forms['form_cadastro'].campo_cpf.className = new_name_class;
-            return false;
-        }
-        return true;
+        for (i=1; i<=9; i++) Soma = Soma + parseInt(cpf.substring(i-1, i)) * (11 - i);
+          Resto = (Soma * 10) % 11;
+
+      if ((Resto == 10) || (Resto == 11)){
+        Resto = 0;
     }
+    if (Resto != parseInt(cpf.substring(9, 10)) ){
+        var new_name_class = name_class + ' is-invalid';
+        document.forms['form_cadastro'].campo_cpf.className = new_name_class;
+        return false;      
+    } 
 
-    function valida_data_nasc(){
+    Soma = 0;
+    for (i = 1; i <= 10; i++) Soma = Soma + parseInt(cpf.substring(i-1, i)) * (12 - i);
+        Resto = (Soma * 10) % 11;
+
+    if ((Resto == 10) || (Resto == 11)){  
+        Resto = 0;
+    }
+    if (Resto != parseInt(cpf.substring(10, 11) ) ){
+        var new_name_class = name_class + ' is-invalid';
+        document.forms['form_cadastro'].campo_cpf.className = new_name_class;
+        return false;
+    }
+    return true;
+}
+
+function valida_data_nasc(){
         /**
           * Função para validar a data de nascimento
           */
 
-        document.getElementById("data_invalida").innerHTML = "Data inválida";
-        var name_class = document.forms['form_cadastro'].campo_data_nasc.className;
-        var new_name_class = name_class + ' is-invalid';
+          document.getElementById("data_invalida").innerHTML = "Data inválida";
+          var name_class = document.forms['form_cadastro'].campo_data_nasc.className;
+          var new_name_class = name_class + ' is-invalid';
 
         // Pegando a data de nascimento do usuario
         var data_passada = document.forms['form_cadastro'].campo_data_nasc.value;
@@ -253,7 +253,7 @@ function valida_dados() {
 
         // Verificando se a idade do organizador é valida
         if(idade < 16 && tipo_user == 'org'){
-            document.getElementById("data_invalida").innerHTML = "Organizador tem que no minino 16 anos";
+            document.getElementById("data_invalida").innerHTML = "No mínimo 16 anos";
             document.forms['form_cadastro'].campo_data_nasc.className = new_name_class;
             return false;
         }
