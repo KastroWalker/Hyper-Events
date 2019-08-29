@@ -1,6 +1,8 @@
 <?php 
 session_start();
 
+$tipo = $_REQUEST['tipo'];
+$evento_id = $_REQUEST['id'];
 include_once '../Controls/verifica_login.php';
 ?>
 
@@ -113,11 +115,11 @@ include_once '../Controls/verifica_login.php';
                   <p class="alert alert-warning" style="text-align: center;"><strong>Atenção: </strong>Todos os campos que possuem '*' são obrigatorios.</p>
                   <button type="submit" class="btn btn-success">Cadastrar</button>
                   <button type="reset" class="btn btn-primary">Limpar</button>
-                  <button class="btn btn-danger" onclick="logout();">Sair</button>    
+                  <a href="cadastra_atividade.php?tipo=<?php echo $tipo?>&id=<?php echo $evento_id?>" id="btn_voltar" name="btn_voltar" class="btn btn-info">Voltar</a>    
               </form>
           </section> 
           <?php
           require_once 'footer.php';
-          ?>
+          ?>      
       </body>
       </html>

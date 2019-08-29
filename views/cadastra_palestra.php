@@ -17,7 +17,7 @@
 					}
 				?>
 			</select>
-			<a href="cadastra_palestrante.php">Cadastrar palestrante</a>
+			<a href="cadastra_palestrante.php?tipo=<?php echo $tipo?>&id=<?php echo $evento_id?>">Cadastrar palestrante</a>
 		</div>
 
 		<div class="form-group">
