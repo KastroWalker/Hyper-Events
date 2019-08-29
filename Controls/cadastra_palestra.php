@@ -37,4 +37,6 @@
 		exit();
 		echo "não cadastrado".mysqli_error($conexao);
 	}
+
+	$conexao->close();
 ?>
