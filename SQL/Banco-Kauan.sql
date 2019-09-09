@@ -4,24 +4,16 @@
   */
 
 -- Criando a base de dados --
-create database HyperEvents;
+create database HyperEvents2;
 
-use HyperEvents;
+use HyperEvents2;
 
 -- Dando o privilegio para o usuário padrão --
-grant all privileges on HyperEvents.* to 'matue'@'%';
-
--- Criando tabela de tipo usuário --
-create table tipo_user(
-	id_tipo_user int not null auto_increment,
-	nome varchar(50),
-	primary key(id_tipo_user)
-);
+grant all privileges on HyperEvents2.* to 'matue'@'%';
 
 -- Criando tabela de usuário --
 create table usuario(
     user_id int not null auto_increment,
-    id_tipo_user int not null,
     nome varchar(200) not null,
     data_nasc date not null,
     idade int not null,
@@ -31,9 +23,23 @@ create table usuario(
     senha varchar(32) not null,
     email varchar(100) not null,
     contato varchar(12),
-    primary key(user_id),
-    foreign key(id_tipo_user) references tipo_user(id_tipo_user)
+    primary key(user_id)
 );
+
+-- Criando tabela de palestrantes --
+create table palestrante(
+    palestrante_id int not null auto_increment,
+    nome varchar(200) not null,
+    data_nasc date not null,
+    idade int not null,
+    sexo char(1) not null,
+    cpf varchar(11) not null,
+    usuario varchar(100) not null,
+    senha varchar(32) not null,
+    email varchar(100) not null,
+    contato varchar(12),
+    primary key(user_id)
+)
 
 -- Criando tabela de eventos --
 create table eventos(
