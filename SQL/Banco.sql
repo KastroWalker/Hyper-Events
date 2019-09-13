@@ -4,7 +4,7 @@
   */
 
 -- Criando usuário padrão para todos --
-create user 'matue'@'%' identified by 'banco'; --
+create user 'matue'@'%' identified by 'banco';
 
 -- Criando a base de dados --
 create database HyperEvents;

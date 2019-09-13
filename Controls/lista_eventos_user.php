@@ -1,22 +1,10 @@
 <?php
 	include_once '../Controls/verifica_login.php'; 
 
-	# Dados para a conexão com o banco de dados
-	$servidor = 'localhost:3306'; 		# Nome do DNS ou IP do servidor HTTP
-	$servidor = 'localhost'; 		# Nome do DNS ou IP do servidor HTTP
-	$usuario = 'matue';        		# Nome de usuário para acesso ao MySQL
-	$senha = 'banco'; 	            # Senha do acesso
-	$banco = 'HyperEvents';			# Nome do banco de dados
-
-	# Executa a conexao com MySQL
-	$link = mysqli_connect($servidor, $usuario, $senha) or die ('Não foi possivel conectar: '.mysqli_error($link));
-
-	# Seleciona o banco de dados que deseja utilizar
-	$select = mysqli_select_db($link, $banco);
+	require_once 'conexao.php';
 
 	# Cria a expressão SQL de consulta aos registro
 	$sql = "select * from eventos";
-	#org_id, titulo, descricao, hora_inicio, data_inicio, data_fim, email_contato, url_evento
 ?>
 
 <h2 class="text-center mx-auto" style="margin: 20px; font-size: 35pt;">Meus Eventos</h2>
@@ -35,7 +23,7 @@
 
 <?php
 	# Exibe os resultados de novidades e noticias
-	$result = mysqli_query($link, $sql);
+	$result = mysqli_query($conexao, $sql);
 	while ($tlb = mysqli_fetch_array($result)) {
 		$Titulo = $tlb['titulo'];
 		$Descricao = $tlb['descricao'];
@@ -46,7 +34,7 @@
 		$url_evento = $tlb['url_evento'];
 		$id_evento = $tlb['evento_id'];
 
-		mysqli_error($link);
+		mysqli_error($conexao);
 		echo "<tr>";
 		echo "<td>$id_evento</td>";
 		echo "<td><a href='../views/lista_atividades.php?id=$id_evento'>$Titulo</a></td>";
