@@ -23,8 +23,8 @@ Criado por: Victor Castro
 <body>
 	<?php
 		require_once 'header.php';
-		require_once 'nav_bar_user.php';
-		require_once '../Controls/lista_eventos_user.php';
+		require_once 'Menus/nav_bar_user.php';
+		require_once '../Controls/Listar/lista_eventos_user.php';
 		require_once 'footer.php';
 	?>
 </body>

@@ -9,26 +9,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="author" content="Victor Castro"/>
     <link rel="canonical" href="https://localhost:8000/home/"/>
-    <link rel="stylesheet" type="text/css" href="../CSS/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../CSS/style_cadastro.css">
-    <link rel="stylesheet" type="text/css" href="../CSS/style_padrao.css">
-    <link rel="icon" href="../img/icon.png" type="image/x-icon"/>
+    <link rel="stylesheet" type="text/css" href="../../CSS/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../CSS/style_cadastro.css">
+    <link rel="stylesheet" type="text/css" href="../../CSS/style_padrao.css">
+    <link rel="icon" href="../../img/icon.png" type="image/x-icon"/>
     <style>
         header, footer, #Manual {
             text-align: center;
         }
         
     </style>
-    <script src="../JS/formata.js"></script>
-    <script src="../JS/jquery.js"></script>
-    <script src="../JS/valida_dados.js"></script>
-    <script src="../JS/verSenha.js"></script>
+    <script src="../../JS/formata.js"></script>
+    <script src="../../JS/jquery.js"></script>
+    <script src="../../JS/valida_dados.js"></script>
+    <script src="../../JS/verSenha.js"></script>
     <script>
         function logout() {
                 /**
                   * Função para sair da pagina de cadastro
                   */
-                  window.location.href = 'login.php';
+                  window.location.href = '../login.php';
               }
 
               function frm_number_only_exc(){
@@ -64,7 +64,7 @@
         # Iniciando a sessão
         session_start();
         # Importando cabeçalho padrão
-        require_once "header.php";
+        require_once "../header.php";
         ?>
         <main>
             <section id="cadastro">
@@ -96,7 +96,7 @@
                 unset($_SESSION['usuario_existe']);
                     #../Controls/cadastrar_organizador.php
                 ?>
-                <form method="POST" action="../Controls/cadastrar_usuario.php" name="form_cadastro" onsubmit="return valida_dados();">
+                <form method="POST" action="../../Controls/cadastrar_usuario.php" name="form_cadastro" onsubmit="return valida_dados();">
                     <h2>Cadastro de Usuário</h2>
                     <div class="form-row">
                         <div class="col-md-8">
@@ -176,7 +176,7 @@
         </form>
     </section> 
     <?php
-    require_once 'footer.php';
+    require_once '../footer.php';
     ?>
 </body>
 </html>

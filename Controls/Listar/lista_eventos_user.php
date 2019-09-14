@@ -1,7 +1,7 @@
 <?php
 	include_once '../Controls/verifica_login.php'; 
 
-	require_once 'conexao.php';
+	require_once '../Controls/conexao.php';
 
 	# Cria a expressão SQL de consulta aos registro
 	$sql = "select * from eventos";

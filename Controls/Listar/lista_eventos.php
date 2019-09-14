@@ -2,7 +2,7 @@
 	include_once '../Controls/verifica_login.php'; 
 	$id = $_SESSION['id'];
 
-	require_once 'conexao.php';
+	require_once '../Controls/conexao.php';
 
 	$sql = "select * from eventos where user_id = '{$id}'";
 ?>
