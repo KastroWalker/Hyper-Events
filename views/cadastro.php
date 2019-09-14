@@ -73,7 +73,7 @@
                     ?>
                     <div class="alert alert-success text-center">
                         Usuário Cadastrado com Sucesso!<br/>
-                        Clique <a href="../index.php"><strong>aqui</strong></a> para fazer o login!
+                        Clique <a href="login.php"><strong>aqui</strong></a> para fazer o login!
                     </div>
                     <?php
                 }
