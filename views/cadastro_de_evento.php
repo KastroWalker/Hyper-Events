@@ -79,12 +79,16 @@
                         <input type="date" name="inicio" id="inicio" class="form-control" required>
                     </div>
                     <div class="form-group">
+                        <label for="hora_inicio">Horario de inicio do evento: *</label>
+                        <input type="time" name="hora_inicio" class="form-control" id="hora_inicio" required>
+                    </div>
+                    <div class="form-group">
                         <label for="fim">Fim do Evento: *</label>
                         <input type="date" name="fim" id="fim" class="form-control" required>
                     </div>
                     <div class="form-group">
-                        <label for="hora_inicio">Horario de inicio do evento: *</label>
-                        <input type="time" name="hora_inicio" class="form-control" id="hora_inicio" required>
+                        <label for="hora_fim">Horario de finalização do evento: *</label>
+                        <input type="time" name="hora_fim" class="form-control" id="hora_inicio" required>
                     </div>
                     <div class="form-group">
                         <label for="site">Site do Evento: </label>
