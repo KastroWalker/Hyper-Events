@@ -21,7 +21,8 @@
 
 	$titulo = mysqli_real_escape_string($conexao, trim($_POST['titulo']));
 	$descricao = mysqli_real_escape_string($conexao, trim($_POST['descricao']));
-	$hora = mysqli_real_escape_string($conexao, trim($_POST['hora_inicio']));
+	$hora_inicio = mysqli_real_escape_string($conexao, trim($_POST['hora_inicio']));
+	$hora_fim = mysqli_real_escape_string($conexao, trim($_POST['hora_fim']))
 	$data_inicio = mysqli_real_escape_string($conexao, trim($_POST['inicio']));
 	$data_fim = mysqli_real_escape_string($conexao, trim($_POST['fim']));
 	$email = mysqli_real_escape_string($conexao, trim($_POST['email']));
@@ -45,7 +46,7 @@
 			header('Location: ../views/cadastro_de_evento.php');
 			exit();
 		} else {
-			$sql = "insert into eventos (org_id, titulo, descricao, url_evento, hora_inicio, data_inicio, data_fim, email) values ('$id', '$titulo', '$descricao', '$site', '$hora', '$data_inicio', '$data_fim', '$email');";
+			$sql = "insert into eventos (user_id, titulo, descricao, url_evento, data_inicio, data_fim, hora_inicio, hora_fim, email) values ('$id', '$titulo', '$descricao', '$site', '$data_inicio', '$data_fim', '$hora_inicio', '$hora_fim', '$email');";
 
 			if ($conexao->query($sql) === TRUE) {
 				$_SESSION['evento_cadastrado'] = true;
@@ -75,7 +76,7 @@
 		echo "Site: ".$site."<br>";	
 		*/
 
-		$sql = "update eventos set titulo = '{$titulo}', descricao = '{$descricao}', hora_inicio = '{$hora}', data_inicio = '{$data_inicio}', data_fim = '{$data_fim}', email = '{$email}', url_evento = '{$site}' where evento_id = '{$id}';";
+		$sql = "update eventos set titulo = '{$titulo}', descricao = '{$descricao}', data_inicio = '{$data_inicio}', data_fim = '{$data_fim}', hora_inicio = '{$hora_inicio}', hora_fim = '{$hora_fim}', email = '{$email}', url_evento = '{$site}' where evento_id = '{$id}';";
 
 		$result = mysqli_query($conexao, $sql);
 
