@@ -1,6 +1,13 @@
 <?php
     /* 
-    Realizando Login no sitema
+    echo "Usuario: <strong>$user</strong><br/>";
+    echo "Senha: <strong>$pass</strong><br/>";
+    echo "$id<br/>";
+    echo gettype($idtipo);
+    echo "$idtipo";
+    echo "$tipo_user";
+    echo gettype($tipo_user);
+    Realizando Login no sistema
     Criado pro Victor Castro
     */
 
@@ -10,7 +17,7 @@
 
     //Verificando se o valor de usuário ou senha é vazio
     if (empty($_POST['usuario']) || empty($_POST['senha'])) {
-        header('Location: ../index.php');
+        header('Location: ../views/login.php');
         exit();
     }
 
@@ -18,28 +25,35 @@
     $user = mysqli_real_escape_string($conexao, $_POST['usuario']);
     $pass = mysqli_real_escape_string($conexao, $_POST['senha']);
     
-    //Criando a query para verificar o usuário na tabela participante
-    $query = "select org_id, usuario from organizadores where usuario = '{$user}' and senha = md5('{$pass}')";
-    $query_id = "select org_id from organizadores where usuario = '{$user}';";
+    $sql = "select user_id, usuario from usuario where usuario = '{$user}' and senha = md5('{$pass}');";
 
+    $query_id = "select user_id from usuario where usuario = '{$user}';";
     $result = mysqli_query($conexao, $query_id);
-    
     $row = mysqli_fetch_array($result);
-    $id = $row['org_id'];
-    #echo "$id";
+    $id = $row['user_id'];
+
+    $query_idtipo = "select idtipo_usuario from usuario where usuario = '{$user}';";
+    $result = mysqli_query($conexao, $query_idtipo);
+    $row = mysqli_fetch_array($result);
+    $idtipo = $row['idtipo_usuario'];
     
-    #$row = mysqli_num_rows($result);
+    $query_tipo = "select nome from tipoUsuario where idtipo_usuario = '{$idtipo}';";
+    $result = mysqli_query($conexao, $query_tipo);
+    $row = mysqli_fetch_array($result);
+    $tipo_user = $row['nome'];
 
     //Criando a pagina para destinar o usuário
-    $page = 'Location: ../views/area_org.php';
-          
-    /*echo $query;
-    exit();*/
-    $result = mysqli_query($conexao, $query);
+    if($tipo_user == 'Organizador'){
+        $page = 'Location: ../views/area_org.php';
+    }else if($tipo_user == 'Participante'){
+        $page = 'Location: ../views/area_part.php';
+    }
+    
+    $result = mysqli_query($conexao, $sql);
 
     $row = mysqli_num_rows($result);
 
-    #echo $row;
+    echo $row;
 
     //Verificando se o usuário é um participante
     if($row == 1){
@@ -47,39 +61,10 @@
         $_SESSION['id'] = $id;
         header($page);
         exit();
+    } else {
+        //Retornado o usuário para a tela de login
+        $_SESSION['nao_autenticado'] = true;
+        header('Location: login.php');
+        exit();
     }
-    else {  
-        //Criando a query para verificar o usuário na tabela organizador
-        $query = "select part_id, usuario from participantes where usuario = '{$user}' and senha = md5('{$pass}')";
-
-        //Criando a pagina para destinar o usuário
-        $page = 'Location: ../views/area_part.php';
-        
-        $result = mysqli_query($conexao, $query);
-
-        $row = mysqli_num_rows($result);
-
-        //Verificando se o usuário é um organizador
-        if ($row == 1) {
-            $query_id = "select part_id from participantes where usuario = '{$user}';";
-
-            $result = mysqli_query($conexao, $query_id);
-            
-            $row = mysqli_fetch_array($result);
-        
-            $id = $row['part_id'];
-            $_SESSION['id'] = $id;
-            
-        
-            $_SESSION['usuario'] = $user;
-            header($page);
-            exit();
-        } else {
-            //Retornado o usuário para a tela de login
-            $_SESSION['nao_autenticado'] = true;
-            header('Location: ../index.php');
-            exit();
-        }
-    }
-
 ?>
