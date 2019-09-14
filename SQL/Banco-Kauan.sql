@@ -9,7 +9,7 @@ create database HyperEvents;
 use HyperEvents;
 
 -- Dando o privilegio para o usuário padrão --
-grant all privileges on HyperEvents2.* to 'matue'@'%';
+grant all privileges on HyperEvents.* to 'matue'@'%';
 
 -- Criando tabela de tipos de usuário --
 create table tipoUsuario(
@@ -29,13 +29,17 @@ create table usuario(
     nome varchar(200) not null,
     sexo char(1),
     cpf varchar(11),
+    data_nasc Date not null,
     usuario varchar(100) not null,
     senha varchar(32) not null,
     email varchar(100) not null,
-    contato varchar(12),
+    contato varchar(11),
     primary key(user_id),
     foreign key (idtipo_usuario) references tipoUsuario (idtipo_usuario)
 );
+
+insert into usuario (idtipo_usuario, nome, sexo, cpf, data_nasc, usuario, senha, email, contato) values ("1", "Organizador", "M", "12345678909", "2002-04-05", "organizador", md5("root"), "organizador@gmail.com", "86999999999");
+insert into usuario (idtipo_usuario, nome, sexo, cpf, data_nasc, usuario, senha, email, contato) values ("2", "Participante", "M", "12345678909", "2002-04-05", "participante", md5("1234"), "participante@gmail.com", "86999999999");
 
 -- Criando tabela de eventos --
 create table eventos(
@@ -46,6 +50,8 @@ create table eventos(
     url_evento varchar(200),
     data_inicio date not null,
     data_fim date not null,
+    hora_inicio time not null,
+    hora_fim time not null,
     email varchar(100) not null,
     primary key(evento_id),
     foreign key(user_id) references usuario(user_id)
@@ -57,6 +63,9 @@ create table tipoAtividade (
     titulo varchar(100) not null,
     primary key(idTipoAtividade)
 );
+
+insert into tipoAtividade (titulo) values ("Palestra");
+insert into tipoAtividade (titulo) values ("Minicurso");
 
 -- Criando tabela de tipo convidado --
 create table tipoConvidado (
