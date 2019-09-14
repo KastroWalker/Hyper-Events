@@ -95,6 +95,8 @@ create table atividade(
     evento_id int not null,
     idTipoAtividade int not null,
     idConvidado int,
+    vagas int,
+    valor float,
     nome varchar(20) not null,
     descricao varchar(500) not null, 
     data date not null,
