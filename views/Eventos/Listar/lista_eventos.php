@@ -69,7 +69,7 @@
         ?>
         <?php
             # Importa a pagina de mostrar os eventos e o rodape
-            require_once '../../../Controls/verifica_login.php';
+            require_once '../../../Controls/Listar/lista_eventos.php';
             require_once '../../footer.php';
         ?>    
     </body>

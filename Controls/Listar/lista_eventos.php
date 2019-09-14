@@ -1,8 +1,8 @@
 <?php
-	include_once '../Controls/verifica_login.php'; 
+	include_once '../../../Controls/verifica_login.php'; 
 	$id = $_SESSION['id'];
 
-	require_once '../Controls/conexao.php';
+	require_once '../../../Controls/conexao.php';
 
 	$sql = "select * from eventos where user_id = '{$id}'";
 ?>
@@ -36,7 +36,7 @@
 		mysqli_error($conexao);
 		echo "<tr>";
 		echo "<td>$id_evento</td>";
-		echo "<td><a href='../views/informacoes_evento.php?id=$id_evento'>$Titulo</a></td>";
+		echo "<td><a href='../informacoes_evento.php?id=$id_evento'>$Titulo</a></td>";
 		echo "<td>$Descricao</td>";
 		echo "<td>$hora_inicio</td>";
 		echo "<td>$data_inicio</td>";
