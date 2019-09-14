@@ -4,9 +4,9 @@
   */
 
 -- Criando a base de dados --
-create database HyperEvents2;
+create database HyperEvents;
 
-    use HyperEvents2;
+use HyperEvents;
 
 -- Dando o privilegio para o usuário padrão --
 grant all privileges on HyperEvents2.* to 'matue'@'%';
@@ -21,7 +21,7 @@ create table tipoUsuario(
 -- Inserindo usuários padrões --
 insert into tipoUsuario (nome) values ("Organizador"); 
 insert into tipoUsuario (nome) values ("Participante"); 
-insert into tipoUsuario (nome) values ("Palestrante");
+insert into tipoUsuario (nome) values ("Ministrante");
 
 -- Criando tabela de usuário --
 create table usuario(
