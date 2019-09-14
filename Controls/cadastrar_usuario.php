@@ -24,9 +24,9 @@
 	$senha = md5($senha);
 
 	if($tipo_user == "part"){
-		$tipo_user = "participantes";
+		$tipo_user = "1";
 	}else if($tipo_user == "org"){
-		$tipo_user = "organizadores";
+		$tipo_user = "2";
 	}
 
 	$ano = substr($data_nasc, 0, 4);
@@ -43,7 +43,6 @@
         $idade--;
     }
 
-    /*
 	//echo "$senha";
 	echo "NOME: <strong>$nome</strong><br/>";
 	echo "DATA: <strong>$data_nasc</strong><br/>";
@@ -55,26 +54,22 @@
 	echo "SENHA: <strong>$senha</strong><br/>";
 	echo "CONF_SENHA: <strong>$conf_senha</strong><br/>";
 	echo "TIPO_USER: <strong>$tipo_user</strong><br/>";
-	*/
 
-	$sql_org = "select count(*) as total from organizadores where usuario = '$user'";
-	$sql_part = "select count(*) as total from participantes where usuario = '$user'";
-
-	$result_org = mysqli_query($conexao, $sql_org);
-	$result_part = mysqli_query($conexao, $sql_part);
+	$sql = "select count(*) as total from usuario where usuario = '$user'";
 	
-	$row_org = mysqli_fetch_assoc($result_org);
-	$row_part = mysqli_fetch_assoc($result_part);
+	$result = mysqli_query($conexao, $sql);
+	
+	$row = mysqli_fetch_assoc($result);
 
 	#print_r($row);
 
-	if ($row_org['total'] == 1 || $row_part['total'] == 1) {
+	if ($row['total'] >= 1) {
 		$_SESSION['usuario_existe'] = true;
 		header('Location: ../views/cadastro.php');
 		exit();
 	}
 
-	$sql = "insert into {$tipo_user} (nome, data_nasc, idade, sexo, cpf, usuario, senha, email, contato) values ('{$nome}', '{$data_nasc}', '{$idade}', '{$sexo}', '{$cpf}', '{$user}', '{$senha}', '{$email}', '{$contato}');";
+	$sql = "insert into usuario (idtipo_usuario, nome, sexo, cpf, data_nasc, usuario, senha, email, contato) values ('{$tipo_user}', '{$nome}', '{$sexo}', '{$cpf}', '{$data_nasc}', '{$user}', '{$senha}', '{$email}', '{$contato}');";
 
 	if($conexao->query($sql) === TRUE){
 		$_SESSION['status_cadastro'] = true;
@@ -88,5 +83,4 @@
 
 	header('Location: ../views/cadastro.php');
 	exit();
-
 ?>

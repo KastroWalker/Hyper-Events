@@ -28,7 +28,7 @@
                 /**
                   * Função para sair da pagina de cadastro
                   */
-                  window.location.href = '../index.php';
+                  window.location.href = 'login.php';
               }
 
               function frm_number_only_exc(){

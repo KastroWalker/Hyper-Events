@@ -24,14 +24,14 @@
                 /**
                   * Função para abrir a tela de cadastro
                   */
-                window.location.href = 'views/cadastro.php';
+                window.location.href = 'cadastro.php';
             }
         </script>
         <title>Login - HyperEvents</title>
     </head>
     <body>
         <main>
-            <form method="POST" action="Controls/login.php" name="form_login" class="form-group">
+            <form method="POST" action="../Controls/login.php" name="form_login" class="form-group">
                 <table id="table_login">
                     <tr id="titulo"><td><strong>LOGIN</strong></td></tr>
                     <tr>
