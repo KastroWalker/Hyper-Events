@@ -72,11 +72,12 @@ insert into tipoConvidado (nome) values ("Palestrante");
 -- Criando tabela para convidado --
 create table convidado(
     idConvidado int not null auto_increment,
+    idTipoConvidado int not null,
     nome varchar(100) not null,
     descricao varchar(250),
     email varchar(60),
     primary key(idConvidado),
-    foreign key () references 
+    foreign key (idTipoConvidado) references tipoConvidado (idTipoConvidado)
 );
 
 -- Criando a tabela de atividades --
