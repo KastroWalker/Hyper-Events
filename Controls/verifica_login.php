@@ -4,7 +4,7 @@
     Criado por: Victor Castro
     */
     if (!$_SESSION['usuario']) {
-        header('Location: ../index.php');
+        header('Location: ../views/login.php');
         exit();
     }
 ?>
