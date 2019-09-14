@@ -22,7 +22,7 @@
 	$titulo = mysqli_real_escape_string($conexao, trim($_POST['titulo']));
 	$descricao = mysqli_real_escape_string($conexao, trim($_POST['descricao']));
 	$hora_inicio = mysqli_real_escape_string($conexao, trim($_POST['hora_inicio']));
-	$hora_fim = mysqli_real_escape_string($conexao, trim($_POST['hora_fim']))
+	$hora_fim = mysqli_real_escape_string($conexao, trim($_POST['hora_fim']));
 	$data_inicio = mysqli_real_escape_string($conexao, trim($_POST['inicio']));
 	$data_fim = mysqli_real_escape_string($conexao, trim($_POST['fim']));
 	$email = mysqli_real_escape_string($conexao, trim($_POST['email']));
