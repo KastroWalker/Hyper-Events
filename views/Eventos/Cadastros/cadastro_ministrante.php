@@ -1,7 +1,5 @@
 <?php 
 	session_start();
-
-	include_once '../Controls/verifica_login.php';
 ?>
 
 <!DOCTYPE html>
