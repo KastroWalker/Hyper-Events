@@ -7,8 +7,8 @@
 	<meta name="keywords" content="Eventos Acadêmicos, Escola,"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
 	<link rel="icon" href="img/icon.png" type="image/x-icon"/>
-	<link rel="stylesheet" type="text/css" href="CSS/style_padrao.css"/>
-	<!--link rel="stylesheet" type="text/css" href="CSS/style_index.css"/-->
+	<link rel="stylesheet" type="text/CSS" href="CSS/style_padrao.css"/>
+	<!--link rel="stylesheet" type="text/CSS" href="CSS/style_index.css"/-->
 	<link rel="stylesheet" type="text/CSS" href="CSS/bootstrap/bootstrap.min.css"/>
 	<title>Hyper Events</title>
 </head>
@@ -33,7 +33,7 @@
 			<a href="Controls/logout.php" class="btn btn-danger">Sair</a>             
 		</form>
 	</nav>
-	<div class="conteudo">
+	<div style="width: 80%; margin: 15px auto;">
 		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia magni reprehenderit quae sit quidem, delectus. Et laboriosam quia cumque, animi rerum! Eveniet provident eius, numquam, iure sit quis laboriosam voluptatibus?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia magni reprehenderit quae sit quidem, delectus. Et laboriosam quia cumque, animi rerum! Eveniet provident eius, numquam, iure sit quis laboriosam voluptatibus?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia magni reprehenderit quae sit quidem, delectus. Et laboriosam quia cumque, animi rerum! Eveniet provident eius, numquam, iure sit quis laboriosam voluptatibus?
 	</div>
 	<div class="rodape">
