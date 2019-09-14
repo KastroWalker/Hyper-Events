@@ -24,9 +24,9 @@
 	$senha = md5($senha);
 
 	if($tipo_user == "part"){
-		$tipo_user = "1";
-	}else if($tipo_user == "org"){
 		$tipo_user = "2";
+	}else if($tipo_user == "org"){
+		$tipo_user = "1";
 	}
 
 	$ano = substr($data_nasc, 0, 4);
