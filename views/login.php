@@ -80,6 +80,7 @@
                         <td id="bnts">
                             <button type="submit" id="btn_entrar" class="btn btn-success">Entrar</button>
                             <button id="btn_cadastrar" onclick="cadastrar();" class="btn btn-primary">Cadastrar-se</button>
+                            <a href="../Controls/logout.php" class="btn btn-danger">Sair</a>
                         </td>
                     </tr>
                 </table>
