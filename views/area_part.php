@@ -5,7 +5,6 @@ Criado por: Victor Castro
 
 <?php
     session_start();
-    include '../Controls/verifica_login.php';
 	$id = $_SESSION['id'];
     #echo "$id";
 	/*<h2>Olá, <?php echo $_SESSION['usuario']; ?></h2>

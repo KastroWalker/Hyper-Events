@@ -5,7 +5,6 @@
     # Verifica se o usuário está logado
     if(isset($_SESSION['id'])){
         #Verifica se o usuario está logado
-        include '../Controls/verifica_login.php';
         $site = ' ';
 ?>
 

@@ -3,7 +3,6 @@
     # Inicia a sessão
     session_start();
     # Importa a função para ver se o usuário esta logado
-    include_once '../Controls/verifica_login.php';
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
