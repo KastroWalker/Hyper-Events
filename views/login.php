@@ -30,6 +30,9 @@
         <title>Login - HyperEvents</title>
     </head>
     <body>
+        <?php
+            require_once 'header.php';
+        ?>
         <main>
             <form method="POST" action="../Controls/login.php" name="form_login" class="form-group">
                 <table id="table_login">
