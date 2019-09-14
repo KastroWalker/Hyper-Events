@@ -1,15 +1,15 @@
 <!-- Tela que mostra os eventos do organizador -->
 <?php
     # Iniciando a sessção
-    session_start();
+session_start();
     # Verifica se o usuário está logado
-    if(isset($_SESSION['id'])){
+if(isset($_SESSION['id'])){
         #Verifica se o usuario está logado
-        $site = ' ';
-?>
+    $site = ' ';
+    ?>
 
-<!DOCTYPE html>
-<html lang="en">
+    <!DOCTYPE html>
+    <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,63 +21,92 @@
                 text-align: center;
             }
         </style>
+        <style type="text/css">
+            .div_principal {
+                width: 80%;
+                margin: auto; 
+            }
+
+        </style>
+
         <title>Eventos - Hyper Events</title>
         <link rel="stylesheet" type="text/css" href="../CSS/bootstrap.min.css">
     </head>
     <body>
         <?php 
             # Importa o cabeçalho e a nav bar padrão
-            require_once '../../header_eventos.php';
-            require_once '../../Menus/nav_bar.php';
+        require_once '../../header_eventos.php';
         ?>
-        <div class="text-right mx-auto" style="margin: 20px">
-            <a href="cadastro_de_evento.php" class="btn btn-primary btn-lg text-right"> Cadastrar Evento </a>
-        </div>
-        <?php 
+        <div class="div_principal">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="area_org.php">Hyper Events</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="../../area_org.php">Home<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="lista_eventos.php">Meus eventos</a>
+                        </li>  
+                    </ul>
+                </div>
+                <form class="form-inline my-2 my-lg-0">
+                    <a href="../../../Controls/logout.php" class="btn btn-danger">Sair</a>             
+                </form>
+            </nav>
+            <div class="text-right mx-auto" style="margin: 20px">
+                <a href="../Cadastros/cadastro_de_evento.php" class="btn btn-primary btn-lg text-right"> Cadastrar Evento </a>
+            </div>
+            <?php 
             if (isset($_SESSION['sucesso_excluir'])) {
-        ?>
-        <div class="alert alert-success">
-            <p>Evento Excluido com Sucesso!</p>
-        </div>
-        <?php 
+                ?>
+                <div class="alert alert-success">
+                    <p>Evento Excluido com Sucesso!</p>
+                </div>
+                <?php 
             }
             unset($_SESSION['sucesso_excluir']);
             if (isset($_SESSION['erro_excluir'])) {
-        ?>
-        <div class="alert alert-danger">
-            <p>Erro ao Excluir o Evento!<br>Tente novamente!</p>
-        </div>
-        <?php 
+                ?>
+                <div class="alert alert-danger">
+                    <p>Erro ao Excluir o Evento!<br>Tente novamente!</p>
+                </div>
+                <?php 
             }
             unset($_SESSION['erro_exluir']);
             if(isset($_SESSION['alterado'])){
-        ?>
-        <div class="alert alert-success">
-            Alterado com sucesso!
-        </div>
-        <?php  
+                ?>
+                <div class="alert alert-success">
+                    Alterado com sucesso!
+                </div>
+                <?php  
             }
             unset($_SESSION['alterado']);
             if(isset($_SESSION['erro_alterar'])){
-        ?>
-        <div class="alert alert-danger">
-            Erro ao Editar!
-        </div>
-        <?php  
+                ?>
+                <div class="alert alert-danger">
+                    Erro ao Editar!
+                </div>
+                <?php  
             }
             unset($_SESSION['erro_alterar']);
-        ?>
-        <?php
+            ?>
+            <?php
             # Importa a pagina de mostrar os eventos e o rodape
             require_once '../../../Controls/Listar/lista_eventos.php';
             require_once '../../footer.php';
-        ?>    
+            ?>
+        </div>
     </body>
-</html>
+    </html>
 
-<?php
+    <?php
 
-    }else{
-        header('Location: ../index.php');
-    }
+}else{
+    header('Location: ../index.php');
+}
 ?>

@@ -10,9 +10,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="author" content="Victor Castro">
-        <link rel="stylesheet" type="text/css" href="../CSS/bootstrap/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="../CSS/style_cadastro_eveto.css">
-        <link rel="icon" href="../img/icon.png" type="image/x-icon"/>
+        <link rel="stylesheet" type="text/css" href="../../../CSS/bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../../../CSS/style_cadastro_eveto.css">
+        <link rel="icon" href="../../../img/icon.png" type="image/x-icon"/>
         <style type="text/css">
             header, footer, #Manual {
                 text-align: center;
@@ -23,7 +23,7 @@
     </head>
     <body>
         <?php 
-            require_once 'header.php';
+            require_once '../../header_eventos.php';
         ?>
         <main>
             <section id="Cadastrar_Evento">
@@ -34,7 +34,7 @@
                 ?>
                     <div class="alert alert-success text-center">
                         Evento Cadastrado com Sucesso!<br/>
-                        Clique <a href="lista_eventos.php"><strong>aqui</strong></a> para ver os eventos;
+                        Clique <a href="../Listar/lista_eventos.php"><strong>aqui</strong></a> para ver os eventos;
                     </div>
                 <?php 
                     }
@@ -64,7 +64,7 @@
                     unset($_SESSION['erro_cadastrado']);
                 ?>
 
-                <form method="POST" action="../Controls/gerencia_evento.php?acao=cadastrar" id="form_cadastro" onsubmit="return valida_cadastro();">
+                <form method="POST" action="../../../Controls/gerencia_evento.php?acao=cadastrar" id="form_cadastro" onsubmit="return valida_cadastro();">
                     <h2>Cadastrar Evento</h2>
                     <div class="form-group">
                         <label for="titulo">Titulo do Evento: *</label>
@@ -108,7 +108,7 @@
         </main>
         <?php 
             # Importa o rodape padrão
-            require_once 'footer.php';
+            require_once '../../footer.php';
         ?>
     </body>
 </html>

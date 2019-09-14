@@ -2,7 +2,7 @@
 	session_start();
 
 	include_once 'conexao.php';
-	include_once '../Controls/verifica_login.php';
+	include_once 'verifica_login.php';
 
 	$acao = $_REQUEST['acao'];
 
@@ -43,14 +43,14 @@
 		if ($row['total'] >= 1) {
 			echo "Evento cadastrado".mysqli_error($conexao);
 			$_SESSION['evento_ja_cadastrado'] = true;
-			header('Location: ../views/cadastro_de_evento.php');
+			header('Location: ../views/Eventos/Cadastros/cadastro_de_evento.php');
 			exit();
 		} else {
 			$sql = "insert into eventos (user_id, titulo, descricao, url_evento, data_inicio, data_fim, hora_inicio, hora_fim, email) values ('$id', '$titulo', '$descricao', '$site', '$data_inicio', '$data_fim', '$hora_inicio', '$hora_fim', '$email');";
 
 			if ($conexao->query($sql) === TRUE) {
 				$_SESSION['evento_cadastrado'] = true;
-				header('Location: ../views/cadastro_de_evento.php');
+				header('Location: ../views/Eventos/Cadastros/cadastro_de_evento.php');
 				exit();
 				echo "Cadastrado com sucesso";
 			} else {
@@ -83,12 +83,12 @@
 		if (!$result) {
 			die('Erro: '.mysqli_error($conexao));
 			$_SESSION['erro_alterar'] = true;
-			header('Location: ../views/lista_eventos.php');
+			header('Location: ../views/Listar/lista_eventos.php');
 			exit();
 		}else {
 			echo "A operação foi realizado com sucesso";
 			$_SESSION['alterado'] = true;
-			header('Location: ../views/lista_eventos.php');
+			header('Location: ../views/Listar/lista_eventos.php');
 			exit();
 		}
 	} elseif ($acao == "deletar") {
@@ -101,11 +101,11 @@
 		if(!$result){
 			$_SESSION['erro_excluir'] = true;
 			die('Erro: '.mysqli_error($conexao));
-			header('Location: ../views/lista_eventos.php');
+			header('Location: ../views/Listar/lista_eventos.php');
 			exit();
 		}else{
 			$_SESSION['sucesso_excluir'] = true;
-			header('Location: ../views/lista_eventos.php');
+			header('Location: ../views/Listar/lista_eventos.php');
 			exit();
 		}
 	}
