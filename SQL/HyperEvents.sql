@@ -9,7 +9,7 @@ create database HyperEvents;
 use HyperEvents;
 
 -- Dando o privilegio para o usuário padrão --
-grant all privileges on HyperEvents2.* to 'matue'@'%';
+-- grant all privileges on HyperEvents.* to 'matue'@'%'; --
 
 -- Criando tabela de tipos de usuário --
 create table tipoUsuario(
@@ -29,13 +29,16 @@ create table usuario(
     nome varchar(200) not null,
     sexo char(1),
     cpf varchar(11),
+    data_nasc Date not null,
     usuario varchar(100) not null,
     senha varchar(32) not null,
     email varchar(100) not null,
-    contato varchar(12),
+    contato varchar(11),
     primary key(user_id),
     foreign key (idtipo_usuario) references tipoUsuario (idtipo_usuario)
 );
+
+insert into usuario (idtipo_usuario, nome, sexo, cpf, data_nasc, usuario, senha, email, contato) values ("1", "Organizador", "M", "12345678909", "2002-04-05", "organizador", md5("root"), "organizador@gmail.com", "86999999999");
 
 -- Criando tabela de eventos --
 create table eventos(
