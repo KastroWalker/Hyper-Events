@@ -20,8 +20,7 @@ create table tipoUsuario(
 
 -- Inserindo usuários padrões --
 insert into tipoUsuario (nome) values ("Organizador"); 
-insert into tipoUsuario (nome) values ("Participante"); 
-insert into tipoUsuario (nome) values ("Ministrante");
+insert into tipoUsuario (nome) values ("Participante");
 
 -- Criando tabela de usuário --
 create table usuario(
@@ -59,13 +58,25 @@ create table tipoAtividade (
     primary key(idTipoAtividade)
 );
 
+-- Criando tabela de tipo convidado --
+create table tipoConvidado (
+    idTipoConvidado int not null auto_increment,
+    nome varchar (60) not null,
+    primary key (idTipoConvidado)
+);
+
+-- Adicionando convidados padrões --
+insert into tipoConvidado (nome) values ("Ministrante");
+insert into tipoConvidado (nome) values ("Palestrante");
+
 -- Criando tabela para convidado --
 create table convidado(
     idConvidado int not null auto_increment,
     nome varchar(100) not null,
     descricao varchar(250),
     email varchar(60),
-    primary key(idConvidado)
+    primary key(idConvidado),
+    foreign key () references 
 );
 
 -- Criando a tabela de atividades --
