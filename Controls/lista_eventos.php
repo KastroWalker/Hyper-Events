@@ -4,7 +4,7 @@
 
 	require_once 'conexao.php';
 
-	$sql = "select * from eventos where org_id = '{$id}'";
+	$sql = "select * from eventos where user_id = '{$id}'";
 ?>
 
 <h2 class="text-center mx-auto" style="margin: 20px; font-size: 35pt;">Meus Eventos</h2>
