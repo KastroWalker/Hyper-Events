@@ -64,6 +64,9 @@ create table tipoAtividade (
     primary key(idTipoAtividade)
 );
 
+insert into tipoAtividade (titulo) values ("Palestra");
+insert into tipoAtividade (titulo) values ("Minicurso");
+
 -- Criando tabela de tipo convidado --
 create table tipoConvidado (
     idTipoConvidado int not null auto_increment,
