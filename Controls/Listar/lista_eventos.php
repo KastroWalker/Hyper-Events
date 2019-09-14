@@ -15,8 +15,8 @@
 		<th>Descricao</th>
 		<th>Hora de inicio</th>
 		<th>Data de incio</th>
-		<th>Data de fim</td>
-		<th>Email</td>
+		<th>Data de fim</th>
+		<th>Email</th>
 		<th>Site</th>
 	</tr>
 

@@ -33,7 +33,7 @@
         <header>
             <h1 style="height: 100px"><img src="../img/logo.png" alt="logo" style="height: 125px;">Sistema de Eventos Academicos</h1>
             <hr/>
-            <script type="text/javascript" src="../JS/jquery.js"></script>
+            <script src="../JS/jquery.js"></script>
         </header>
         <main>
             <form method="POST" action="../Controls/login.php" name="form_login" class="form-group">

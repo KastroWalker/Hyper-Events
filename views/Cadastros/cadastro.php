@@ -66,7 +66,6 @@
         # Importando cabeçalho padrão
         require_once "../header_cadastro.php";
         ?>
-        <main>
             <section id="cadastro">
                 <?php
                 if(isset($_SESSION['status_cadastro'])){

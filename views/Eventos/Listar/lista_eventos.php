@@ -14,14 +14,15 @@ if(isset($_SESSION['id'])){
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="author" content="Victor Castro">
-        <link rel="stylesheet" type="text/css" href="../../../CSS/bootstrap/bootstrap.min.css">
+        <meta name="description" content="Organizador pode visualizar seus eventos já cadastrados">
+        <link rel="stylesheet" href="../../../CSS/bootstrap/bootstrap.min.css">
         <link rel="icon" href="../../../img/icon.png" type="image/x-icon"/>
-        <style type="text/css">
+        <style>
             header, footer, #Manual {
                 text-align: center;
             }
         </style>
-        <style type="text/css">
+        <style>
             .div_principal {
                 width: 80%;
                 margin: auto; 
