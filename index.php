@@ -22,6 +22,9 @@
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item">
+					<a class="nav-link" href="views/login.php">Login</a>
+				</li>
+				<li class="nav-item">
 					<a class="nav-link" href="views/area_part.php">Eventos</a>
 				</li>  
 			</ul>
@@ -30,6 +33,13 @@
 			<a href="Controls/logout.php" class="btn btn-danger">Sair</a>             
 		</form>
 	</nav>
-	
+	<div class="conteudo">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia magni reprehenderit quae sit quidem, delectus. Et laboriosam quia cumque, animi rerum! Eveniet provident eius, numquam, iure sit quis laboriosam voluptatibus?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia magni reprehenderit quae sit quidem, delectus. Et laboriosam quia cumque, animi rerum! Eveniet provident eius, numquam, iure sit quis laboriosam voluptatibus?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia magni reprehenderit quae sit quidem, delectus. Et laboriosam quia cumque, animi rerum! Eveniet provident eius, numquam, iure sit quis laboriosam voluptatibus?
+	</div>
+	<div class="rodape">
+		<?php 
+		require_once 'views/footer.php'
+		 ?>
+	</div>
 </body>
 </html>
