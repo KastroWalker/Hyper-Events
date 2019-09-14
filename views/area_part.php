@@ -19,6 +19,7 @@ Criado por: Victor Castro
 	<title>Area do participante - Hyper Events</title>
 	<link rel="stylesheet" type="text/css" href="../CSS/bootstrap/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="../CSS/style_padrao.css">
+	<link rel="icon" href="../img/icon.png" type="image/x-icon"/>
 </head>
 <body>
 	<?php
