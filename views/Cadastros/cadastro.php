@@ -64,7 +64,7 @@
         # Iniciando a sessão
         session_start();
         # Importando cabeçalho padrão
-        require_once "../header.php";
+        require_once "../header_cadastro.php";
         ?>
         <main>
             <section id="cadastro">

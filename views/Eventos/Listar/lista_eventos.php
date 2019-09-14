@@ -14,8 +14,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="author" content="Victor Castro">
-        <link rel="stylesheet" type="text/css" href="../CSS/bootstrap/bootstrap.min.css">
-        <link rel="icon" href="../img/icon.png" type="image/x-icon"/>
+        <link rel="stylesheet" type="text/css" href="../../../CSS/bootstrap/bootstrap.min.css">
+        <link rel="icon" href="../../../img/icon.png" type="image/x-icon"/>
         <style type="text/css">
             header, footer, #Manual {
                 text-align: center;
@@ -27,8 +27,8 @@
     <body>
         <?php 
             # Importa o cabeçalho e a nav bar padrão
-            require_once 'header.php';
-            require_once 'nav_bar.php';
+            require_once '../../header_eventos.php';
+            require_once '../../Menus/nav_bar.php';
         ?>
         <div class="text-right mx-auto" style="margin: 20px">
             <a href="cadastro_de_evento.php" class="btn btn-primary btn-lg text-right"> Cadastrar Evento </a>
@@ -69,8 +69,8 @@
         ?>
         <?php
             # Importa a pagina de mostrar os eventos e o rodape
-            require_once '../Controls/lista_eventos.php';
-            require_once 'footer.php';
+            require_once '../../../Controls/verifica_login.php';
+            require_once '../../footer.php';
         ?>    
     </body>
 </html>

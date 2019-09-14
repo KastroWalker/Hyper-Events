@@ -20,7 +20,7 @@
                     <a class="nav-link" href="area_org.php">Home<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../Eventos/Listar/lista_eventos.php">Meus eventos</a>
+                    <a class="nav-link" href="Eventos/Listar/lista_eventos.php">Meus eventos</a>
                 </li>  
             </ul>
         </div>
