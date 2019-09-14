@@ -30,7 +30,7 @@
 			</ul>
 		</div>
 		<form class="form-inline my-2 my-lg-0">
-			<a href="Controls/logout.php" class="btn btn-danger">Sair</a>             
+			<a href="Controls/logout.php" class="btn btn-danger">Sair</a>
 		</form>
 	</nav>
 	<div style="width: 80%; margin: 15px auto;">

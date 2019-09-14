@@ -33,7 +33,7 @@
                 ?>
                     <div class="alert alert-success text-center">
                         Evento Cadastrado com Sucesso!<br/>
-                        Clique <a href="lista_eventos.php"><strong>aqui</strong></a> para ver os evetntos;
+                        Clique <a href="lista_eventos.php"><strong>aqui</strong></a> para ver os eventos;
                     </div>
                 <?php 
                     }
