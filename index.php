@@ -14,10 +14,10 @@
 </head>
 <body>
 	<header>
-        <h1 style="height: 100px"><img src="img/logo.png" alt="logo" style="height: 125px;">Sistema de Eventos Academicos</h1>
-        <hr/>
-		<script src="../JS/jquery.js"></script>
-    </header>
+		<h1 style="height: 100px"><img src="img/logo.png" alt="logo" style="height: 125px;">Sistema de Eventos Academicos</h1>
+		<hr/>
+		<script src="JS/jquery.js"></script>
+	</header>
 
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<a class="navbar-brand" href="index.php"><img src="img/icon.png" width="30" height="30" class="d-inline-block align-top" alt="Hyper"></a>
@@ -39,10 +39,10 @@
 	<div style="width: 80%; margin: 15px auto;">
 		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia magni reprehenderit quae sit quidem, delectus. Et laboriosam quia cumque, animi rerum! Eveniet provident eius, numquam, iure sit quis laboriosam voluptatibus?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia magni reprehenderit quae sit quidem, delectus. Et laboriosam quia cumque, animi rerum! Eveniet provident eius, numquam, iure sit quis laboriosam voluptatibus?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia magni reprehenderit quae sit quidem, delectus. Et laboriosam quia cumque, animi rerum! Eveniet provident eius, numquam, iure sit quis laboriosam voluptatibus?
 	</div>
-	<div class="rodape">
-		<?php 
-		require_once 'views/footer.php'
-		 ?>
-	</div>
+		<footer>
+			<script src="JS/bootstrap/bootstrap.min.js"></script>
+			<h2>Direitos</h2>
+			<p>2019 &copy; Copyright - Todos os direitos reservados | Criado por Descompila Compilando.</p>
+		</footer>
 </body>
 </html>

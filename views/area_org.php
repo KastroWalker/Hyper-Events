@@ -39,9 +39,11 @@ if(isset($_SESSION['id'])){
         <div class="div_principal">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia magni reprehenderit quae sit quidem, delectus. Et laboriosam quia cumque, animi rerum! Eveniet provident eius, numquam, iure sit quis laboriosam voluptatibus?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia magni reprehenderit quae sit quidem, delectus. Et laboriosam quia cumque, animi rerum! Eveniet provident eius, numquam, iure sit quis laboriosam voluptatibus?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia magni reprehenderit quae sit quidem, delectus. Et laboriosam quia cumque, animi rerum! Eveniet provident eius, numquam, iure sit quis laboriosam voluptatibus?
         </div>
-        <?php
-        require_once 'footer.php';
-        ?>    
+        <footer>
+            <script src="../JS/bootstrap/bootstrap.min.js"></script>
+            <h2>Direitos</h2>
+            <p>2019 &copy; Copyright - Todos os direitos reservados | Criado por Descompila Compilando.</p>
+        </footer>
     </body>
     </html>
 

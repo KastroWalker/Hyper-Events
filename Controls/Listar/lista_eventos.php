@@ -49,4 +49,4 @@
 
 </table>
 
-<script src="../JS/personalizado.js"></script>
+<script src="../../../JS/personalizado.js"></script>

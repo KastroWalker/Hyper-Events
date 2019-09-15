@@ -31,7 +31,7 @@ if(isset($_SESSION['id'])){
         </style>
 
         <title>Eventos - Hyper Events</title>
-        <link rel="stylesheet" type="text/css" href="../CSS/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../../../CSS/bootstrap/bootstrap.min.css">
     </head>
     <body>
         <?php 
