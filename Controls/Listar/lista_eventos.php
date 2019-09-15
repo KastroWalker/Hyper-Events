@@ -1,5 +1,4 @@
 <?php
-	include_once '../../../Controls/verifica_login.php'; 
 	$id = $_SESSION['id'];
 
 	require_once '../../../Controls/conexao.php';
@@ -24,7 +23,7 @@
 	# Exibe os resultados de novidades e noticias
 	$result = mysqli_query($conexao, $sql);
 	while ($tlb = mysqli_fetch_array($result)) {
-		$Titulo = $tlb['titulo'];
+		$Titulo = $tlb['titulo_evento'];
 		$Descricao = $tlb['descricao'];
 		$hora_inicio = $tlb['hora_inicio'];
 		$data_inicio = $tlb['data_inicio'];

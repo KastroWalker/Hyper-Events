@@ -1,3 +1,6 @@
+<?php
+	$sql = "select atividade.*, tipoAtividade.tipo_atividade, convidado.nome_convidado from tipoAtividade inner join atividade on tipoAtividade.idTipoAtividade = atividade.idTipoAtividade left outer join convidado on atividade.idConvidado = convidado.idConvidado;";
+?>
 <table class="table table-condensed table-striped table-bordered table-hover">
 	<tr>
 		<th>Id: </th>
@@ -8,32 +11,13 @@
 		<th>Valor: </th>
 	</tr>
 <?php
-
-	function tipoAtividade(int $tipoAtiv){
-		$sql_tipo = "select titulo from tipoAtividade where idTipoAtividade = '$idTipoAtiv'";
-		$result_tipo = mysqli_query($conexao, $sql_tipo);
-		$row = mysqli_fetch_array($result_tipo);
-		$tipo = $row['titulo'];
-		return $tipo;
-	}
-
-	function Convidado(int $idConvidado){
-		$sql_nome = "select nome from convidado where idConvidado = '$idConvidado'";
-		$result_nome = mysqli_query($conexao, $sql_nome);
-		$row = mysqli_fetch_array($result_tipo);
-		$nome = $row['nome'];
-		return $nome;	
-	}
-
-	$sql = "select * from atividade;";
 	$result = mysqli_query($conexao, $sql);
 	while ($tlb = mysqli_fetch_array($result)) {
+		#header("Content-Type: text/html; charset=ISO-8859-1", true);
 		$id = $tlb['atividade_id'];
-		$titulo = $tlb['nome'];
-		$idTipoAtiv = $tlb['idTipoAtividade'];
-		$tipo_ativ = tipoAtividade($idTipoAtiv);
-		$idConvidado = $tlb['idConvidado'];
-		$nome_convidado = Convidado($idConvidado);
+		$titulo = utf8_encode($tlb['titulo_atividade']);
+		$tipo_ativ = $tlb['tipo_atividade'];
+		$nome_convidado = $tlb['nome_convidado'];
 		$vagas = $tlb['vagas'];
 		$valor = $tlb['valor'];
 
@@ -47,6 +31,5 @@
 		echo "<td>$valor</td>";
 		echo "</tr>";
 	}
-
 ?>
 </table>

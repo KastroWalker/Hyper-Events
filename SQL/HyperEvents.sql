@@ -38,7 +38,7 @@ create table usuario(
 create table eventos(
     evento_id int not null auto_increment,
     user_id int not null,
-    titulo varchar(200) not null,
+    titulo_evento varchar(200) not null,
     descricao varchar(500) not null,
     url_evento varchar(200),
     data_inicio date not null,
@@ -53,14 +53,14 @@ create table eventos(
 -- Criando tabela de tipos de atividade --
 create table tipoAtividade (
     idTipoAtividade int not null auto_increment,
-    titulo varchar(100) not null,
+    tipo_atividade varchar(100) not null,
     primary key(idTipoAtividade)
 );
 
 -- Criando tabela de tipo convidado --
 create table tipoConvidado (
     idTipoConvidado int not null auto_increment,
-    nome varchar (60) not null,
+    tipo_convidado varchar (60) not null,
     primary key (idTipoConvidado)
 );
 
@@ -68,7 +68,7 @@ create table tipoConvidado (
 create table convidado(
     idConvidado int not null auto_increment,
     idTipoConvidado int not null,
-    nome varchar(100) not null,
+    nome_convidado varchar(100) not null,
     descricao varchar(250),
     email varchar(60),
     primary key(idConvidado),
@@ -83,7 +83,7 @@ create table atividade(
     idConvidado int,
     vagas int,
     valor float,
-    nome varchar(150) not null,
+    titulo_atividade varchar(150) not null,
     descricao varchar(500) not null, 
     data date not null,
     local varchar(60),
