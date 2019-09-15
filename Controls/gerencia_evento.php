@@ -31,7 +31,7 @@
 	if($acao == "cadastrar"){
 		$id = $_SESSION['id'];
 
-		$sql = "select count(*) as total from eventos where nome = '$titulo';";
+		$sql = "select count(*) as total from eventos where titulo_evento = '$titulo';";
 
 		$result = mysqli_query($conexao, $sql);
 		$row = mysqli_fetch_assoc($result);
@@ -46,7 +46,7 @@
 			header('Location: ../views/Eventos/Cadastros/cadastro_de_evento.php');
 			exit();
 		} else {
-			$sql = "insert into eventos (user_id, titulo, descricao, url_evento, data_inicio, data_fim, hora_inicio, hora_fim, email) values ('$id', '$titulo', '$descricao', '$site', '$data_inicio', '$data_fim', '$hora_inicio', '$hora_fim', '$email');";
+			$sql = "insert into eventos (user_id, titulo_evento, descricao, url_evento, data_inicio, data_fim, hora_inicio, hora_fim, email) values ('$id', '$titulo', '$descricao', '$site', '$data_inicio', '$data_fim', '$hora_inicio', '$hora_fim', '$email');";
 
 			if ($conexao->query($sql) === TRUE) {
 				$_SESSION['evento_cadastrado'] = true;
