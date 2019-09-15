@@ -15,10 +15,18 @@ Criado por: Victor Castro
 <html lang="pt-br">
 <head>
 	<meta charset="UTF-8">
-	<title>Area do participante - Hyper Events</title>
+	<meta name="description" content="O participante pode ver os eventos disponíveis e se cadastrar no qual lhe agradar e estiver disponível">
+	<title>Área do participante - Hyper Events</title>
 	<link rel="stylesheet" type="text/css" href="../CSS/bootstrap/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="../CSS/style_padrao.css">
 	<link rel="icon" href="../img/icon.png" type="image/x-icon"/>
+	<style>
+    .div_principal {
+        width: 80%;
+        margin: auto; 
+    }
+</style>
+
 </head>
 <body>
 	<?php

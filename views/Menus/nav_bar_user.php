@@ -1,12 +1,4 @@
 <!-- Nav Bar padrão de todo as paginas de usuário -->
-<style type="text/css">
-    .div_principal {
-        width: 80%;
-        margin: auto; 
-    }
-
-</style>
-
 <div class="div_principal">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="area_org.php">Hyper Events</a>
@@ -22,7 +14,7 @@
             </ul>
         </div>
         <form class="form-inline my-2 my-lg-0">
-            <a href="../Controls/logout.php" class="btn btn-danger">Sair</a>             
+            <a href="../Controls/logout.php" class="btn btn-danger">Sair</a>        
         </form>
     </nav>
-    <main>
+</div>
