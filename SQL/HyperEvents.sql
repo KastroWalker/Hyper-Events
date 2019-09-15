@@ -46,7 +46,7 @@ create table eventos(
     evento_id int not null auto_increment,
     user_id int not null,
     titulo varchar(200) not null,
-    descricao varchar(500) not null,
+    descricao varchar(500),
     url_evento varchar(200),
     data_inicio date not null,
     data_fim date not null,
