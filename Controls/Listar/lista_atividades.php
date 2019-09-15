@@ -18,7 +18,7 @@
 		$titulo = utf8_encode($tlb['titulo_atividade']);
 		$tipo_ativ = $tlb['tipo_atividade'];
 		$nome_convidado = $tlb['nome_convidado'];
-		$vagas = $tlb['vagas'];
+		$vagas = $tlb['qtde_vagas_atividade'];
 		$valor = $tlb['valor'];
 
 		mysqli_error($conexao);

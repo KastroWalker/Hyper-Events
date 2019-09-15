@@ -1,5 +1,5 @@
 <?php
-    $id_evento = $_REQUEST['id'];
+    $id = $_REQUEST['id'];
     #echo "$id_evento";
 ?>
 
@@ -31,15 +31,15 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="area_org.php">Home<span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="informacoes_evento.php?id=<?php echo $id; ?>">Home<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Listar/lista_atividades.php">Atividades</a>
+                        <a class="nav-link" href="Listar/lista_atividades.php?id=<?php echo $id; ?>">Atividades</a>
                     </li>  
                 </ul>
             </div>
             <form class="form-inline my-2 my-lg-0">
-                <a href="../Controls/logout.php" class="btn btn-danger">Sair</a>
+                <a href="Listar/lista_eventos.php" class="btn btn-danger">Voltar</a>
             </form>
         </nav>
         <main>
