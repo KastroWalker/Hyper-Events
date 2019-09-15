@@ -1,3 +1,3 @@
-select ati.nome, tati.titulo
-from tipoatividade as tati inner join atividade as ati
-where tati.idTipoAtividade = ati.idTipoAtividade;
+select atividade.*, tipoAtividade.titulo, convidado.nome
+from atividade inner join tipoAtividade on atividade.idTipoAtividade = tipoAtividade.idTipoAtividade
+left outer join convidado on atividade.idConvidado = convidado.idConvidado;
