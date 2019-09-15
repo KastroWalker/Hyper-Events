@@ -40,6 +40,7 @@ create table eventos(
     user_id int not null,
     titulo_evento varchar(200) not null,
     descricao varchar(500) not null,
+    qtde_vagas_evento int not null,
     url_evento varchar(200),
     data_inicio date not null,
     data_fim date not null,
@@ -81,7 +82,7 @@ create table atividade(
     evento_id int not null,
     idTipoAtividade int not null,
     idConvidado int,
-    vagas int,
+    qtde_vagas_atividade int,
     valor float,
     titulo_atividade varchar(150) not null,
     descricao varchar(500) not null, 
@@ -93,4 +94,20 @@ create table atividade(
     foreign key(evento_id) references eventos(evento_id),
     foreign key(idTipoAtividade) references tipoAtividade(idTipoAtividade),
     foreign key(idConvidado) references convidado(idConvidado)
+);
+
+create table inscricao_evento (
+	evento_id int not null,
+    user_id int not null,
+    primary key (evento_id, user_id),
+    foreign key (user_id) references usuario (user_id),
+    foreign key (evento_id) references eventos (evento_id)
+);
+
+create table inscricao_atividade (
+	atividade_id int not null,
+    user_id int not null,
+    primary key (atividade_id, user_id),
+    foreign key (atividade_id) references atividade (atividade_id),
+    foreign key (user_id) references usuario (user_id)
 );
