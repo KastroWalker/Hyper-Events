@@ -42,7 +42,7 @@
 		echo "<td>$data_inicio</td>";
 		echo "<td>$data_fim</td>";
 		echo "<td>$email</td>";
-		echo "<td><a href='$url_evento' blank>$url_evento</a></td>";
+		echo "<td><a href='$url_evento'>$url_evento</a></td>";
 		echo "</tr>";
 	}	
 ?>

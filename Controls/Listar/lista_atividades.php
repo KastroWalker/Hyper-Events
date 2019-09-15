@@ -1,54 +1,52 @@
-<?php 
-	$tipo = $_SESSION['tipo'];
-	#echo "$tipo";
-	include "conexao.php";
-	if($tipo == "palestra"){
-		$sql = "select * from palestra;";
-		$ministrante = "Palestrante";
-	}else if($tipo == "minicurso"){
-		$sql = "select * from minicursos;";
-		$ministrante = "Ministrante";
-	}
-?>
 <table class="table table-condensed table-striped table-bordered table-hover">
 	<tr>
-		<th>id</th>
-		<th><?php echo $ministrante; ?></th>
-		<th>Titulo</th>
-		<th>Descricao</th>
-		<th>Data Inicio</th>
-		<th>Data Fim</th>
-		<th>Local</th>
-		<th>Hora Inicio</th>
-		<th>Hora Fim</th>
+		<th>Id: </th>
+		<th>Titulo: </th>
+		<th>Tipo: </th>
+		<th>Ministrante: </th>
+		<th>Vagas: </th>
+		<th>Valor: </th>
 	</tr>
 <?php
+
+	function tipoAtividade(int $tipoAtiv){
+		$sql_tipo = "select titulo from tipoAtividade where idTipoAtividade = '$idTipoAtiv'";
+		$result_tipo = mysqli_query($conexao, $sql_tipo);
+		$row = mysqli_fetch_array($result_tipo);
+		$tipo = $row['titulo'];
+		return $tipo;
+	}
+
+	function Convidado(int $idConvidado){
+		$sql_nome = "select nome from convidado where idConvidado = '$idConvidado'";
+		$result_nome = mysqli_query($conexao, $sql_nome);
+		$row = mysqli_fetch_array($result_tipo);
+		$nome = $row['nome'];
+		return $nome;	
+	}
+
+	$sql = "select * from atividade;";
 	$result = mysqli_query($conexao, $sql);
 	while ($tlb = mysqli_fetch_array($result)) {
-		if($tipo == "palestra"){
-			$id = $tlb['palestra_id'];
-			$palestrante_id = $tlb['palestrante_id'];
-		}else if($tipo == "minicurso"){
-			$id = $tlb['minicurso_id'];
-			$ministrante_id = $tlb['ministrante_id'];
-		}
-		$nome = $tlb['nome'];
-		$descricao = $tlb['descricao'];
-		$data_inicio = $tlb['data_inicio'];
-		$data_fim = $tlb['data_fim'];
-		$local = $tlb['local'];
-		$hora_inicio = $tlb['inicio'];
-		$hora_fim = $tlb['fim'];
+		$id = $tlb['atividade_id'];
+		$titulo = $tlb['nome'];
+		$idTipoAtiv = $tlb['idTipoAtividade'];
+		$tipo_ativ = tipoAtividade($idTipoAtiv);
+		$idConvidado = $tlb['idConvidado'];
+		$nome_convidado = Convidado($idConvidado);
+		$vagas = $tlb['vagas'];
+		$valor = $tlb['valor'];
+
+		mysqli_error($conexao);
 		echo "<tr>";
 		echo "<td>$id</td>";
-		echo "<td>$nome</td>";
-		echo "<td>$descricao</td>";
-		echo "<td>$data_inicio</td>";
-		echo "<td>$data_fim</td>";
-		echo "<td>$local</td>";
-		echo "<td>$hora_inicio</td>";
-		echo "<td>$hora_fim</td>";
+		echo "<td>$titulo</td>";
+		echo "<td>$tipo_ativ</td>";
+		echo "<td>$nome_convidado</td>";
+		echo "<td>$vagas</td>";
+		echo "<td>$valor</td>";
 		echo "</tr>";
 	}
+
 ?>
 </table>
