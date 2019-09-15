@@ -25,7 +25,7 @@ $sql = "select * from eventos";
 	# Exibe os resultados de novidades e noticias
 		$result = mysqli_query($conexao, $sql);
 		while ($tlb = mysqli_fetch_array($result)) {
-			$Titulo = $tlb['titulo'];
+			$Titulo = $tlb['titulo_evento'];
 			$Descricao = $tlb['descricao'];
 			$hora_inicio = $tlb['hora_inicio'];
 			$data_inicio = $tlb['data_inicio'];

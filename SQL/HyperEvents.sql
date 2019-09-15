@@ -41,7 +41,7 @@ create table eventos(
     titulo_evento varchar(200) not null,
     descricao varchar(500) not null,
     qtde_vagas_evento int not null,
-    url_evento varchar(200),
+    url_evento varchar(200) default 'Não possui site',
     data_inicio date not null,
     data_fim date not null,
     hora_inicio time not null,

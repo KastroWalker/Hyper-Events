@@ -102,7 +102,7 @@ session_start();
                 <br/>
                 <button type="submit" class="btn btn-primary">Cadastrar</button>
                 <button type="reset" class="btn btn-secondary">Limpar</button>
-                <a class="btn btn-info" href="lista_eventos.php">Voltar</a>
+                <a class="btn btn-info" href="../Listar/lista_eventos.php">Voltar</a>
                 <p><strong>Atenção: </strong>Todos os campos que possuem '*' são obrigatorios.</p>
             </form>
         </section>

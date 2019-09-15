@@ -97,7 +97,7 @@
                     </div>
                     <div class="form-group">
                         <label for="descricao">Descrição do evento</label>
-                        <textarea name="descricao" class="form-control" id="descricao"></textarea>
+                        <textarea name="descricao" class="form-control" id="descricao" required></textarea>
                     </div>
                     <br/>
                     <button type="submit" class="btn btn-primary">Cadastrar</button>
