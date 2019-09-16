@@ -1,7 +1,5 @@
 <?php
-include_once '../Controls/verifica_login.php'; 
-
-require_once '../Controls/conexao.php';
+require_once '../../../Controls/conexao.php';
 
 	# Cria a expressão SQL de consulta aos registro
 $sql = "select * from eventos";
@@ -15,7 +13,7 @@ $sql = "select * from eventos";
 			<th>Titulo</th>
 			<th>Descricao</th>
 			<th>Hora de inicio</th>
-			<th>Data de incio</th>
+			<th>Data de inicio</th>
 			<th>Data de fim</th>
 			<th>Email</th>
 			<th>Site</th>
@@ -23,6 +21,7 @@ $sql = "select * from eventos";
 		</tr>
 		<?php
 	# Exibe os resultados de novidades e noticias
+		$pos = 0;
 		$result = mysqli_query($conexao, $sql);
 		while ($tlb = mysqli_fetch_array($result)) {
 			$Titulo = $tlb['titulo_evento'];
@@ -37,14 +36,14 @@ $sql = "select * from eventos";
 			mysqli_error($conexao);
 			echo "<tr>";
 			echo "<td>$id_evento</td>";
-			echo "<td><a href='../views/lista_atividades.php?id=$id_evento'>$Titulo</a></td>";
+			echo "<td><a href='#'>$Titulo</a></td>";
 			echo "<td>$Descricao</td>";
 			echo "<td>$hora_inicio</td>";
 			echo "<td>$data_inicio</td>";
 			echo "<td>$data_fim</td>";
 			echo "<td>$email</td>";
 			echo "<td><a href='$url_evento' blank>$url_evento</a></td>";
-			echo "<td><a href='../Controls/cadastrar_em_evento.php?id=$id_evento&user_id=$id'><button class='btn btn-primary'>Cadastrar</button></a></td>";
+			echo "<td><a href='#'><button class='btn btn-primary'>Cadastrar</button></a></td>";
 			echo "</tr>";
 		}	
 		?>

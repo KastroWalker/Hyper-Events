@@ -31,7 +31,7 @@
                     <a class="nav-link" href="views/login.php">Login</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="views/area_part.php">Eventos</a>
+                    <a class="nav-link" href="views/Eventos/Listar/listar_eventos_user.php">Eventos</a>
                 </li>  
             </ul>
         </div>

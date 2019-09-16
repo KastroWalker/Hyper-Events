@@ -18,6 +18,10 @@ create table tipoUsuario(
     primary key(idtipo_usuario)
 );
 
+-- Inserindo tipo de usuarios padrões --
+insert into tipoUsuario (nome) values ("Organizador"); 
+insert into tipoUsuario (nome) values ("Participante");
+
 -- Criando tabela de usuário --
 create table usuario(
     user_id int not null auto_increment,
