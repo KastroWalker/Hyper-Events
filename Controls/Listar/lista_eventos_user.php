@@ -5,7 +5,7 @@ require_once '../../../Controls/conexao.php';
 $sql = "select * from eventos";
 ?>
 
-<h2 class="text-center mx-auto" style="margin: 20px; font-size: 35pt;">Meus Eventos</h2>
+<h2 class="text-center mx-auto" style="margin: 20px; font-size: 35pt;">Eventos</h2>
 <div class="div_principal">
 	<table class="table table-condensed table-striped table-bordered table-hover">
 		<tr>
