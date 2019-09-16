@@ -65,7 +65,7 @@ session_start();
             unset($_SESSION['erro_cadastrado']);
             ?>
 
-            <form method="POST" action="../../../Controls/gerencia_evento.php?acao=cadastrar" id="form_cadastro" onsubmit="valida_cadastro();">
+            <form method="POST" action="../../../Controls/gerencia_evento.php?acao=cadastrar" id="form_cadastro" onsubmit="return valida_cadastro();">
                 <h2>Cadastrar Evento</h2>
                 <div class="form-group">
                     <label for="titulo">Titulo do Evento: *</label>
@@ -97,7 +97,7 @@ session_start();
                 </div>
                 <div class="form-group">
                     <label for="descricao">Descrição do evento</label>
-                    <textarea name="descricao" class="form-control" id="descricao"></textarea>
+                    <textarea name="descricao" class="form-control" id="descricao" required></textarea>
                 </div>
                 <br/>
                 <button type="submit" class="btn btn-primary">Cadastrar</button>
