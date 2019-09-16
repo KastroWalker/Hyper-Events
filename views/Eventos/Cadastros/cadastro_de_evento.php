@@ -92,7 +92,7 @@ session_start();
                     <input type="time" name="hora_fim" class="form-control" id="hora_fim" required>
                 </div>
                 <div class="form-group">
-                    <label for="vagas">Site do Evento: </label>
+                    <label for="vagas">Vagas no evento: </label>
                     <select class="form-control" id="vagas" name="vagas">
                       <option value="100">100 vagas</option>
                       <option value="150">150 vagas</option>
