@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	include 'conexao.php';
+	include '../conexao.php';
 	
 	/*Dados Pessoais*/
 	$nome = mysqli_real_escape_string($conexao, trim($_POST['campo_nome']));
@@ -9,7 +9,6 @@
 	$contato = mysqli_real_escape_string($conexao, trim($_POST['campo_telefone']));
 	$contato = str_replace('-', '', $contato);
 	$contato = str_replace(' ', '', $contato);
-
 	$cpf =  mysqli_real_escape_string($conexao, trim($_POST['campo_cpf']));
 	$cpf = str_replace('-', '', $cpf);
 	$cpf = str_replace('.', '', $cpf);
@@ -24,9 +23,9 @@
 	$senha = md5($senha);
 
 	if($tipo_user == "part"){
-		$tipo_user = "1";
-	}else if($tipo_user == "org"){
 		$tipo_user = "2";
+	}else if($tipo_user == "org"){
+		$tipo_user = "1";
 	}
 
 	$ano = substr($data_nasc, 0, 4);
@@ -81,6 +80,6 @@
 
 	$conexao->close();
 
-	header('Location: ../views/cadastro.php');
+	header('Location: ../../views/Cadastros/cadastro.php');
 	exit();
 ?>
