@@ -46,14 +46,14 @@
 
                 $("input.frm_number_only").keydown(function(event) { 
 
-                 if ( frm_number_only_exc() ) { 
+                   if ( frm_number_only_exc() ) { 
 
-                 } else { 
-                     if ( event.keyCode < 48 || event.keyCode > 57 ) { 
-                         event.preventDefault();  
-                     }        
-                 } 
-             }); 
+                   } else { 
+                       if ( event.keyCode < 48 || event.keyCode > 57 ) { 
+                           event.preventDefault();  
+                       }        
+                   } 
+               }); 
 
             });
         </script>
