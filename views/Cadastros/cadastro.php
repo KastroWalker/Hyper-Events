@@ -46,14 +46,14 @@
 
                 $("input.frm_number_only").keydown(function(event) { 
 
-                 if ( frm_number_only_exc() ) { 
+                   if ( frm_number_only_exc() ) { 
 
-                 } else { 
-                     if ( event.keyCode < 48 || event.keyCode > 57 ) { 
-                         event.preventDefault();  
-                     }        
-                 } 
-             }); 
+                   } else { 
+                       if ( event.keyCode < 48 || event.keyCode > 57 ) { 
+                           event.preventDefault();  
+                       }        
+                   } 
+               }); 
 
             });
         </script>
@@ -76,7 +76,7 @@
                 ?>
                 <div class="alert alert-success text-center">
                     Usuário Cadastrado com Sucesso!<br/>
-                    Clique <a href="login.php"><strong>aqui</strong></a> para fazer o login!
+                    Clique <a href="../login.php"><strong>aqui</strong></a> para fazer o login!
                 </div>
                 <?php
             }

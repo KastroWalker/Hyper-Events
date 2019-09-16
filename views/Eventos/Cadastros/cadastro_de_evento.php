@@ -92,24 +92,32 @@ session_start();
                     <input type="time" name="hora_fim" class="form-control" id="hora_fim" required>
                 </div>
                 <div class="form-group">
-                    <label for="site">Site do Evento: </label>
-                    <input type="url" name="site" class="form-control" id="site">
-                </div>
-                <div class="form-group">
-                    <label for="descricao">Descrição do evento</label>
-                    <textarea name="descricao" class="form-control" id="descricao" required></textarea>
-                </div>
-                <br/>
-                <button type="submit" class="btn btn-primary">Cadastrar</button>
-                <button type="reset" class="btn btn-secondary">Limpar</button>
-                <a class="btn btn-info" href="../Listar/lista_eventos.php">Voltar</a>
-                <p><strong>Atenção: </strong>Todos os campos que possuem '*' são obrigatorios.</p>
-            </form>
-        </section>
-    </main>
-    <?php 
+                    <label for="vagas">Site do Evento: </label>
+                    <select class="form-control" id="vagas" name="vagas">
+                      <option value="100">100 vagas</option>
+                      <option value="150">150 vagas</option>
+                      <option value="200">200 vagas</option>
+                  </select>
+              </div>
+              <div class="form-group">
+                <label for="site">Site do Evento: </label>
+                <input type="text" name="site" class="form-control" id="site">
+            </div>
+            <div class="form-group">
+                <label for="descricao">Descrição do evento</label>
+                <textarea name="descricao" class="form-control" id="descricao" required></textarea>
+            </div>
+            <br/>
+            <button type="submit" class="btn btn-primary">Cadastrar</button>
+            <button type="reset" class="btn btn-secondary">Limpar</button>
+            <a class="btn btn-info" href="../Listar/lista_eventos.php">Voltar</a>
+            <p><strong>Atenção: </strong>Todos os campos que possuem '*' são obrigatorios.</p>
+        </form>
+    </section>
+</main>
+<?php 
             # Importa o rodape padrão
-    require_once '../../footer.php';
-    ?>
+require_once '../../footer.php';
+?>
 </body>
 </html>
