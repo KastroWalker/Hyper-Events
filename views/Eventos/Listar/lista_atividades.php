@@ -46,7 +46,7 @@ $_SESSION['id_evento'] = $id;
             </form>
         </nav>
         <div class="text-right mx-auto" style="margin: 20px">
-            <a href="#" class="btn btn-primary btn-lg text-right"> Cadastrar Atividade </a>
+            <a href="../Cadastros/cadastra_atividade.php" class="btn btn-primary btn-lg text-right"> Cadastrar Atividade </a>
         </div>
         <?php
         require_once '../../../Controls/Listar/lista_atividades.php'; 
