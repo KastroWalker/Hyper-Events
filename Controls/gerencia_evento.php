@@ -15,13 +15,12 @@
 	echo "<strong>Email: </strong>".$email."<br/>";
 	echo "<strong>Site: </strong>".$site."<br/>";
 	echo "<strong>Id: </strong>".$id."<br/>";
-	
-
 	*/
 
 	$titulo = mysqli_real_escape_string($conexao, trim($_POST['titulo']));
 	$descricao = mysqli_real_escape_string($conexao, trim($_POST['descricao']));
 	$hora_inicio = mysqli_real_escape_string($conexao, trim($_POST['hora_inicio']));
+	$vagas = mysqli_real_escape_string($conexao, trim($_POST['vagas'])); 
 	$hora_fim = mysqli_real_escape_string($conexao, trim($_POST['hora_fim']));
 	$data_inicio = mysqli_real_escape_string($conexao, trim($_POST['inicio']));
 	$data_fim = mysqli_real_escape_string($conexao, trim($_POST['fim']));
@@ -46,7 +45,7 @@
 			header('Location: ../views/Eventos/Cadastros/cadastro_de_evento.php');
 			exit();
 		} else {
-			$sql = "insert into eventos (user_id, titulo_evento, descricao, url_evento, data_inicio, data_fim, hora_inicio, hora_fim, email) values ('$id', '$titulo', '$descricao', '$site', '$data_inicio', '$data_fim', '$hora_inicio', '$hora_fim', '$email');";
+			$sql = "insert into eventos (user_id, titulo_evento, descricao, qtde_vagas_evento, url_evento, data_inicio, data_fim, hora_inicio, hora_fim, email) values ('$id', '$titulo', '$descricao', '$vagas', '$site', '$data_inicio', '$data_fim', '$hora_inicio', '$hora_fim', '$email');";
 
 			if ($conexao->query($sql) === TRUE) {
 				$_SESSION['evento_cadastrado'] = true;
