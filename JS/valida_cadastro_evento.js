@@ -1,5 +1,22 @@
 function valida_cadastro() {
+
+    var name_class_inicio = document.forms['form_cadastro'].inicio.className;
+    var name_class_fim = document.forms['form_cadastro'].fim.className;
+    
+    if (name_class_inicio.match(/is-invalid/)) {
+        document.forms['form_cadastro'].inicio.className = name_class_inicio.replace('is-invalid', ' ');
+    }
+
+
+    if (name_class_fim.match(/is-invalid/)) {
+        document.forms['form_cadastro'].fim.className = name_class_fim.replace('is-invalid', '');
+    }
+
     function valida_data() {
+
+        var name_class = document.forms['form_cadastro'].inicio.className;
+        var new_class_name = name_class + ' is-invalid';
+
 		// Pega a data do evento
         var data_passada = document.forms['form_cadastro'].inicio.value;
 
@@ -21,30 +38,38 @@ function valida_cadastro() {
 
 		// Verificando se a data é valida
         if(data_passada.length > 10 || data_passada.length < 10){
+            document.forms['form_cadastro'].inicio.className = new_class_name;
             return false;
         }
 
         // Verifica se o ano é válidos
         if(ano_passado < ano) {
-            alert ("Ano de inicio inválido");
+            document.forms['form_cadastro'].inicio.className = new_class_name;
+            //alert ("Ano de inicio inválido");
             return false;
         }
 
         // Verifica se o mês é válido
         else if (ano_passado == ano && mes_passado < mes) {
-            alert ("Mês de inicio inválido");
+            document.forms['form_cadastro'].inicio.className = new_class_name;
+            //alert ("Mês de inicio inválido");
             return false;
         }
 
         // Verificando se o dia é válido
         else if (ano_passado == ano && mes_passado == mes && dia_passado < dia) {
-            alert ("Dia de inicio inválido");
+            document.forms['form_cadastro'].inicio.className = new_class_name;
+            //alert ("Dia de inicio inválido");
             return false;
         }
         return true;
     }
 
     function valida_fim () {
+
+        var name_class = document.forms['form_cadastro'].fim.className;
+        var new_class_name = name_class + ' is-invalid';
+
         // Pega a data final e atual do evento
         var data_passada = document.forms['form_cadastro'].inicio.value;
         var data_passada_final = document.forms['form_cadastro'].fim.value;
@@ -71,17 +96,20 @@ function valida_cadastro() {
 
         // Verificando o ano
         if (ano_passado_final < ano_passado) {
-            alert ("Ano de encerramento inválido")
+            document.forms['form_cadastro'].fim.className = new_class_name;
+            //alert ("Ano de encerramento inválido")
             return false;
         }
         // Verificando mês
         else if (ano_passado_final == ano_passado && mes_passado_final < mes_passado) {
-            alert ("Mês de encerramento inválido");
+            document.forms['form_cadastro'].fim.className = new_class_name;
+            //alert ("Mês de encerramento inválido");
             return false;
         }
         // Verificando dia
         else if (ano_passado_final == ano_passado && mes_passado_final == mes_passado && dia_passado_final < dia_passado) {
-            alert ("Dia de encerramento inválido");
+            document.forms['form_cadastro'].fim.className = new_class_name;
+            //alert ("Dia de encerramento inválido");
             return false;
         }
     }

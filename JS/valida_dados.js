@@ -260,7 +260,7 @@ function valida_data_nasc(){
 
         // Verificando se a idade do participante é valida
         if(idade < 8 && tipo_user == 'part'){
-            document.getElementById("data_invalida").innerHTML = "Participante tem que no minino 8 anos";
+            document.getElementById("data_invalida").innerHTML = "Participante tem que ter no minino 8 anos";
             document.forms['form_cadastro'].campo_data_nasc.className = new_name_class;
             return false;
         }
