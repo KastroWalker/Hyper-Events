@@ -7,6 +7,7 @@
 <html lang="pt-br">
 <head>
     <link rel="stylesheet" type="text/css" href="../../CSS/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../CSS/bootstrap/bootstrap-theme.css">
     <link rel="stylesheet" type="text/css" href="../../CSS/style_padrao.css">
     <title>Informações do Evento - HyperEvents</title>
 </head>

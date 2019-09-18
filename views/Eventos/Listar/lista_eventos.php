@@ -16,6 +16,7 @@ if(isset($_SESSION['id'])){
         <meta name="author" content="Victor Castro">
         <meta name="description" content="Organizador pode visualizar seus eventos já cadastrados">
         <link rel="stylesheet" href="../../../CSS/bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../../../CSS/bootstrap/bootstrap-theme.css">
         <link rel="icon" href="../../../img/icon.png" type="image/x-icon"/>
         <style>
             header, footer, #Manual {

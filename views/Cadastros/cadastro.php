@@ -10,6 +10,7 @@
     <meta name="author" content="Victor Castro"/>
     <link rel="canonical" href="https://localhost:8000/home/"/>
     <link rel="stylesheet" type="text/css" href="../../CSS/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../CSS/bootstrap/bootstrap-theme.css">
     <link rel="stylesheet" type="text/css" href="../../CSS/style_cadastro.css">
     <link rel="stylesheet" type="text/css" href="../../CSS/style_padrao.css">
     <link rel="icon" href="../../img/icon.png" type="image/x-icon"/>
@@ -17,7 +18,6 @@
         header, footer, #Manual {
             text-align: center;
         }
-        
     </style>
     <script src="../../JS/formata.js"></script>
     <script src="../../JS/jquery.js"></script>

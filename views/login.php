@@ -14,6 +14,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="author" content="Victor Castro"/>
     <link rel="canonical" href="https://localhost:8000/home/"/>
+    <link rel="stylesheet" type="text/css" href="../CSS/bootstrap/bootstrap-theme.css">
     <link rel="stylesheet" type="text/css" href="../CSS/bootstrap/bootstrap.min.css"/>
     <link rel="icon" href="../img/icon.png" type="image/x-icon"/>
     <link rel="stylesheet" type="text/css" href="../CSS/style_index.css"/>

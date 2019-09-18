@@ -1,8 +1,6 @@
 <?php 
     session_start();
-
-    $tipo = $_REQUEST['tipo'];
-    $evento_id = $_REQUEST['id'];
+    $evento_id = $_SESSION['id_evento'];
 ?>
 
 <!DOCTYPE html>
@@ -11,7 +9,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="author" content="Victor Castro">
-        <link rel="stylesheet" type="text/css" href="../CSS/bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../../../CSS/bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../../../CSS/bootstrap/bootstrap-theme.css">
+        <link rel="stylesheet" type="text/css" href="../../../CSS/style_padrao.css">
         <link rel="icon" href="../img/icon.png" type="image/x-icon"/>
         <style type="text/css">
             header, footer, #Manual {
@@ -24,21 +24,12 @@
     <body>
         <div class="container">
         <?php 
-            require_once 'header.php';
-
-            if ($tipo == 'palestra') {
-                require_once 'cadastra_palestra.php';
-            } else if ($tipo == 'minicurso') {
-                require_once 'cadastra_minicurso.php?tipo=minicurso';
-            }
+            # Importa o cabeçalho padrão
+            require_once '../../header_eventos.php';
         ?>
-        <input type="submit" name="btn_enviar" id="btn_enviar" value="Cadastrar" class="btn btn-primary">
-        <input type="reset" name="btn_limpar" id="btn_limpar" value="Limpar" class="btn btn-secondary">
-        <a href="lista_atividades.php?id=<?php echo $evento_id?>&tipo=<?php echo $tipo?>" id="btn_voltar" name="btn_voltar" class="btn btn-info">Voltar</a>
-        </form>
         <?php 
             # Importa o rodape padrão
-            require_once 'footer.php';
+            require_once '../../footer.php';
         ?>
     </div>
     </body>
