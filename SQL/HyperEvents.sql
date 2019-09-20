@@ -103,6 +103,8 @@ create table atividade(
 create table inscricao_evento (
 	evento_id int not null,
     user_id int not null,
+    data_inscricao_evento Date not null,
+    hota_inscricao_evento Time not null,
     primary key (evento_id, user_id),
     foreign key (user_id) references usuario (user_id),
     foreign key (evento_id) references eventos (evento_id)
@@ -111,6 +113,8 @@ create table inscricao_evento (
 create table inscricao_atividade (
 	atividade_id int not null,
     user_id int not null,
+    data_inscricao_atividade Date not null,
+    hota_inscricao_atividade Time not null,
     primary key (atividade_id, user_id),
     foreign key (atividade_id) references atividade (atividade_id),
     foreign key (user_id) references usuario (user_id)
