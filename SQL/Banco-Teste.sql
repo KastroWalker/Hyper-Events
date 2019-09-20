@@ -1,4 +1,44 @@
 /**
+-- MySQL Workbench Synchronization
+-- Generated: 2019-09-20 19:43
+-- Model: New Model
+-- Version: 1.0
+-- Project: Name of the project
+-- Author: Victor Castro
+
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
+
+ALTER TABLE `HyperEvents`.`inscricao_atividade` 
+DROP FOREIGN KEY `inscricao_atividade_ibfk_2`;
+
+ALTER TABLE `HyperEvents`.`inscricao_atividade` 
+DROP COLUMN `user_id`,
+ADD COLUMN `Matricula` BIGINT(20) NOT NULL AFTER `hota_inscricao_atividade`,
+DROP PRIMARY KEY,
+ADD PRIMARY KEY (`atividade_id`, `Matricula`),
+ADD INDEX `fk_inscricao_atividade_inscricao_evento1_idx` (`Matricula` ASC),
+DROP INDEX `user_id` ;
+
+ALTER TABLE `HyperEvents`.`inscricao_evento` 
+ADD COLUMN `Matricula` BIGINT(20) NOT NULL AFTER `hota_inscricao_evento`,
+DROP PRIMARY KEY,
+ADD PRIMARY KEY (`Matricula`);
+
+ALTER TABLE `HyperEvents`.`inscricao_atividade` 
+ADD CONSTRAINT `fk_inscricao_atividade_inscricao_evento1`
+  FOREIGN KEY (`Matricula`)
+  REFERENCES `HyperEvents`.`inscricao_evento` (`Matricula`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+
   *Banco de dados HyperEvents
   *Criado por Descompila Compilando
   */
