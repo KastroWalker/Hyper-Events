@@ -76,6 +76,7 @@ create table convidado(
     nome_convidado varchar(100) not null,
     descricao varchar(250),
     email varchar(60),
+    contato VARCHAR (11),
     primary key(idConvidado),
     foreign key (idTipoConvidado) references tipoConvidado (idTipoConvidado)
 );
