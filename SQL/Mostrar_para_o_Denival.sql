@@ -9,7 +9,6 @@ select atividade.*, tipoatividade.tipo_atividade, convidado.nome_convidado
 from atividade
 inner join eventos on (atividade.evento_id = 1 and eventos.evento_id = 1)
 inner join tipoatividade on (atividade.idTipoAtividade = tipoatividade.idTipoAtividade and tipoatividade.idTipoAtividade = atividade.idTipoAtividade)
-<<<<<<< HEAD
 left outer join convidado on (atividade.idConvidado = convidado.idConvidado and convidado.idConvidado = atividade.idConvidado)
 */
 
@@ -22,11 +21,11 @@ from atividade
        inner join(evento) on (atividade.evento_id = evento.evento_id)
 */
 
+/*
 select atividade.*, tipoAtividade.tipo_atividade, convidado.nome_convidado
 from atividade    
        inner join tipoAtividade on (atividade.idTipoAtividade = tipoAtividade.idTipoAtividade)  
        inner join convidado on (atividade.idConvidado = convidado.idConvidado) 
        inner join eventos on (atividade.evento_id = eventos.evento_id) and eventos.evento_id = 1
-=======
 left outer join convidado on (atividade.idConvidado = convidado.idConvidado and convidado.idConvidado = atividade.idConvidado);
->>>>>>> 4d40f622818416ce120fdeb7a929ba2c856f3093
+*/
