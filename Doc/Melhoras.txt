@@ -1,3 +1,3 @@
-Cadrastar Mini curso;
-Cadrastar Palestrante(Modificações);
-Participante se Cadrastar;
+Não tem como o organizador modificar o evento.
+Não da pra se cadrastar sem estar logado,pois quando clica no butão "Cadrastar" não acontece nada
+Está dando erro quando vai entrar como participante.
