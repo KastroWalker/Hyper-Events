@@ -1,5 +1,4 @@
-/**
--- MySQL Workbench Synchronization
+/*-- MySQL Workbench Synchronization
 -- Generated: 2019-09-20 19:43
 -- Model: New Model
 -- Version: 1.0
