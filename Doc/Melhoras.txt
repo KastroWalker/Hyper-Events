@@ -1,4 +1,4 @@
 Não tem como o organizador modificar o evento.
 Não da pra se cadrastar sem estar logado,pois quando clica no butão "Cadrastar" não acontece nada
-Está dando erro quando vai entrar como participante.
+Está dando erro quando vai entrar como participante na hora de lista os eventos.
 Da pra cadrastar evento como partipante.
