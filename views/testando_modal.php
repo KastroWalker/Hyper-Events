@@ -30,8 +30,8 @@
       </div>
     </div>
   </div>
-</div>
-	<script type="text/javascript" src="../JS/jquery.js"></script>
-	<script type="text/javascript" src="../JS/bootstrap/bootstrap.js"></script>
+</div>	
+  <script type="text/javascript" src="../JS/jquery.js"></script>
+	<script type="text/javascript" src="../JS/bootstrap/bootstrap.min.js"></script>
 </body>
 </html>
