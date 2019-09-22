@@ -1,7 +1,7 @@
-<?php 
-    session_start();
-    $evento_id = $_SESSION['id_evento'];
-    include '../../../Controls/conexao.php'
+<?php
+session_start();
+$evento_id = $_SESSION['id_evento'];
+include '../../../Controls/conexao.php'
 ?>
 
 <!DOCTYPE html>
@@ -38,26 +38,19 @@
                 <h2>Cadastrar Atividade</h2>
                 <!-- Tipo Atividade -->
                 <div class="form-row">
-                <input type="hidden" name="evento_id" value="<?php echo$evento_id ?>">
-                <div class="form-group">
-                    <label for="tipo_ativ">Tipo Atividade: </label>
-                    <select name="tipo_ativ" id="tipo_ativ" class="form-control">
-                        <?php require_once '../../../Controls/Listar/lista_tipo_atividades.php' ?>
-                    </select>
-                </div>
-
                     <!-- Titulo Atividade -->
                     <div class="col-md-4">
                         <label for="nome_ativ">Nome: *</label>
                         <input type="text" name="nome_ativ" id="nome_ativ" class="form-control" required>
                     </div>
+
+                    <input type="hidden" name="evento_id" value="<?php echo $evento_id ?>">
                     <div class="col-md-4">
                         <label for="tipo_ativ">Tipo Atividade: </label>
                         <select name="tipo_ativ" id="tipo_ativ" class="form-control">
                             <?php require_once '../../../Controls/Listar/lista_tipo_atividades.php' ?>
                         </select>
                     </div>
-
                     <!-- Local -->
                     <div class="col-md-4">
                         <label for="local">Local: </label>
