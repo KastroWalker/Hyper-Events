@@ -22,7 +22,6 @@
     <script src="../../JS/formata.js"></script>
     <script src="../../JS/jquery.js"></script>
     <script src="../../JS/valida_dados.js"></script>
-    <script src="../../JS/verSenha.js"></script>
     <script>
         function logout() {
                 /**
@@ -63,7 +62,6 @@
         <?php
         # Iniciando a sessão
         session_start();
-        # Importando cabeçalho padrão
         ?>
         <header>
             <h1 style="height: 100px"><img src="../../img/logo.png" alt="logo" style="height: 125px;">Sistema de Eventos Academicos</h1>
@@ -184,7 +182,7 @@
 </section> 
 <hr/>
 <footer>
-    <script src="../../JS/bootstrap/bootstrap.min.js"></script>
+    <script src="../../../JS/bootstrap/bootstrap.min.js"></script>
     <h2>Direitos</h2>
     <p>2019 &copy; Copyright - Todos os direitos reservados | Criado por Descompila Compilando.</p>
 </footer>
