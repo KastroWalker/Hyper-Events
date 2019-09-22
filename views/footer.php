@@ -1,7 +1,7 @@
             <!-- Rodape padrão para as paginas -->
             <section id="Manual">
                 <h2>Está com dificuldade?</h2>
-                <a href="manual.php">Acesse aqui o manual</a>
+                <a href="../../manual.php">Acesse aqui o manual</a>
             </section> 
     <hr/>
     <footer>

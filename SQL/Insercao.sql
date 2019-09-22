@@ -3,7 +3,9 @@
   *Dados apenas para testes
   *Criado por Descompila Compilando
   */
+
 use HyperEvents;
+
 -- Inserindo usuários padrões--
 insert into usuario (
     idtipo_usuario,

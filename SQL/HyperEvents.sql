@@ -34,7 +34,7 @@ insert into tipoUsuario (nome)
     data_nasc Date not null,
     usuario varchar(100) not null,
     senha varchar(32) not null,
-    email varchar(100) not null,
+    email varchar(100) not null unique,
     contato varchar(11),
     primary key(user_id),
     foreign key (idtipo_usuario) references tipoUsuario (idtipo_usuario)
