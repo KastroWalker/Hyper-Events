@@ -1,6 +1,7 @@
 <?php 
     session_start();
     $evento_id = $_SESSION['id_evento'];
+    include '../../../Controls/conexao.php'
 ?>
 
 <!DOCTYPE html>
@@ -31,6 +32,7 @@
             <form id="form_cadastro_atividade" method="POST" action="../../../Controls/Cadastros/cadastra_atividade.php">
                 <h2>Cadastrar Atividade</h2>
                 <!-- Tipo Atividade -->
+                <input type="hidden" name="evento_id" value="<?php echo$evento_id ?>">
                 <div class="form-group">
                     <label for="tipo_ativ">Tipo Atividade: </label>
                     <select name="tipo_ativ" id="tipo_ativ" class="form-control">
@@ -67,7 +69,7 @@
                 <!-- Descrição -->
                 <div class="form-group">
                     <label for="descricao">Descrição: </label>
-                    <textarea class="form-control"></textarea>
+                    <textarea class="form-control" name="descricao" id="descricao"></textarea>
                 </div>
                 
                 <!-- Data -->

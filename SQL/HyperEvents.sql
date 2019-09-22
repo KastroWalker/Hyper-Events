@@ -64,12 +64,28 @@ insert into tipoUsuario (nome)
     primary key(idTipoAtividade)
   );
 
+-- Inserindo tipo de atividade padrões--
+  insert into tipoAtividade (tipo_atividade)
+    values ("Palestra");
+
+  insert into tipoAtividade (tipo_atividade)
+    values ("Minicurso");
+
+
 -- Criando tabela de tipo convidado --
   create table tipoConvidado (
     idTipoConvidado int not null auto_increment,
     tipo_convidado varchar (60) not null,
     primary key (idTipoConvidado)
   );
+
+-- Inserindo convidados padrões --
+  insert into tipoConvidado (tipo_convidado) 
+    values ("Ministrante");
+
+  insert into tipoConvidado (tipo_convidado)
+    values ("Palestrante");
+
 
 -- Criando tabela para convidado --
   create table convidado(

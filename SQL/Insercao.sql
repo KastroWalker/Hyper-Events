@@ -100,20 +100,6 @@ insert into eventos (
     "victorcsa2002@.hotmail.com"
   );
 
--- Inserindo tipo de atividade padrões--
-insert into tipoAtividade (tipo_atividade)
-  values ("Palestra");
-
-insert into tipoAtividade (tipo_atividade)
-  values ("Minicurso");
-
--- Inserindo convidados padrões --
-insert into tipoConvidado (tipo_convidado) 
-  values ("Ministrante");
-
-insert into tipoConvidado (tipo_convidado)
-  values ("Palestrante");
-
 -- Inserindo Convidado  --
 insert into convidado(
     idTipoConvidado,
