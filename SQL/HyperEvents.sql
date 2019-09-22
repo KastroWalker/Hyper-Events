@@ -71,7 +71,7 @@ values
     idTipoConvidado int not null,
     nome_convidado varchar(100) not null,
     descricao varchar(250),
-    email varchar(60),
+    email varchar(60) unique,
     contato VARCHAR (11),
     primary key(idConvidado),
     foreign key (idTipoConvidado) references tipoConvidado (idTipoConvidado)
@@ -95,17 +95,19 @@ values
     foreign key(idTipoAtividade) references tipoAtividade(idTipoAtividade),
     foreign key(idConvidado) references convidado(idConvidado)
   );
-create table inscricao_evento (
+-- Criando a tabela de inscrições em eventos --
+  create table inscricao_evento (
     matricula int not null auto_increment,
     evento_id int not null,
     user_id int not null,
     data_inscricao_evento Date not null,
-    hota_inscricao_evento Time not null,
+    hora_inscricao_evento Time not null,
     primary key (matricula),
     foreign key (user_id) references usuario (user_id),
     foreign key (evento_id) references eventos (evento_id)
   );
-create table inscricao_atividade (
+-- Criando tabela de inscrição em atividade --
+  create table inscricao_atividade (
     atividade_id int not null,
     matricula int not null,
     data_inscricao_atividade Date not null,
