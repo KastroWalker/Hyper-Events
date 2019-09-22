@@ -80,6 +80,6 @@
 
 	$conexao->close();
 
-	#header('Location: ../../views/Cadastros/cadastro.php');
-	#exit();
+	header('Location: ../../views/Cadastros/cadastro.php');
+	exit();
 ?>
