@@ -69,7 +69,7 @@
         <hr />
         <script src="../../../JS/jquery.js"></script>
     </header>
-    <section id="Cadastrar_Convidado">
+    <section id="Cadastrar_Convidado" class="container">
         <form method="POST" action="../../../Controls/Cadastro/cadastrar_convidado.php" name="form_cadastro">
             <h2>Cadastro de convidado</h2>
             <div class="form-row">
