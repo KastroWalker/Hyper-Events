@@ -32,7 +32,7 @@ values
     data_nasc Date not null,
     usuario varchar(100) not null,
     senha varchar(32) not null,
-    email varchar(100) not null,
+    email varchar(100) not null unique,
     contato varchar(11),
     primary key(user_id),
     foreign key (idtipo_usuario) references tipoUsuario (idtipo_usuario)
@@ -111,7 +111,7 @@ values
     atividade_id int not null,
     matricula int not null,
     data_inscricao_atividade Date not null,
-    hota_inscricao_atividade Time not null,
+    hora_inscricao_atividade Time not null,
     primary key (atividade_id, matricula),
     foreign key (atividade_id) references atividade (atividade_id),
     foreign key (matricula) references inscricao_evento (matricula)

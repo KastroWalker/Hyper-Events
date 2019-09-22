@@ -151,7 +151,7 @@ values
     "1",
     "Victor",
     "Formado em Ciência da Computação.",
-    "rian_estudante.com"
+    "rian_estudante@hotmail.com"
   );
 -- Inserindo Atividades --
 insert into
@@ -225,7 +225,7 @@ insert into
     evento_id,
     user_id,
     data_inscricao_evento,
-    data_inscricao_evento
+    hora_inscricao_evento
   )
 values
   (2, 2, "2019-09-26", "00:30");
