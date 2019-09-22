@@ -17,11 +17,11 @@
 <?php
 	$result = mysqli_query($conexao, $sql);
 	echo mysqli_error($conexao);
-
+	$indice = 1;
 	while ($tlb = mysqli_fetch_array($result)) {
 		#header("Content-Type: text/html; charset=ISO-8859-1", true);
 		$id = $tlb['atividade_id'];
-		$titulo = utf8_encode($tlb['titulo_atividade']);
+		$titulo = $tlb['titulo_atividade'];
 		$tipo_ativ = $tlb['tipo_atividade'];
 		$nome_convidado = $tlb['nome_convidado'];
 		$vagas = $tlb['qtde_vagas_atividade'];
@@ -29,13 +29,15 @@
 
 		mysqli_error($conexao);
 		echo "<tr>";
-		echo "<td>$id</td>";
+		echo "<td>$indice</td>";
 		echo "<td>$titulo</td>";
 		echo "<td>$tipo_ativ</td>";
 		echo "<td>$nome_convidado</td>";
 		echo "<td>$vagas</td>";
 		echo "<td>$valor</td>";
 		echo "</tr>";
+
+		$indice++;
 	}
 ?>
 </table>

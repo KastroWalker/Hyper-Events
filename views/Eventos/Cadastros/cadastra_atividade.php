@@ -34,17 +34,44 @@ include '../../../Controls/conexao.php'
         require_once '../../header_eventos.php';
         ?>
         <main class="container">
+            <?php
+            # Verifica se a atividade foi cadastrada com sucesso
+            if (isset($_SESSION['atividade_cadastrada'])) {
+                # Mostra a mensagem pro usuário
+                ?>
+                <div class="alert alert-success text-center">
+                    Atividade Cadastrada com Sucesso!<br />
+                    Clique <a href="../Listar/lista_atividades.php?id=<?php echo $evento_id?>"><strong>aqui</strong></a> para ver as Atividades;
+                </div>
+            <?php
+            }
+            # Encerra a sessão de atividade cadastrada
+            unset($_SESSION['atividade_cadastrada']);
+            # Verfica se deu algum erro na hora de cadastrar o evento
+            if (isset($_SESSION['atividade_não_cadastrada'])) {
+                # Mostra a mensagem pro usuário
+                ?>
+                <div class="alert alert-danger text-center">
+                    Não foi possivel cadastrar a atividade!
+                </div>
+            <?php
+            }
+            # Encerra a sessão de erro ao cadastrar
+            unset($_SESSION['atividade_não_cadastrada']);
+            ?>
             <form id="form_cadastro_atividade" method="POST" action="../../../Controls/Cadastros/cadastra_atividade.php">
                 <h2>Cadastrar Atividade</h2>
-                <!-- Tipo Atividade -->
+
                 <div class="form-row">
+                    <!-- ID Evento -->
+                    <input type="hidden" name="evento_id" value="<?php echo $evento_id ?>">
+                    
                     <!-- Titulo Atividade -->
                     <div class="col-md-4">
                         <label for="nome_ativ">Nome: *</label>
                         <input type="text" name="nome_ativ" id="nome_ativ" class="form-control" required>
                     </div>
 
-                    <input type="hidden" name="evento_id" value="<?php echo $evento_id ?>">
                     <div class="col-md-4">
                         <label for="tipo_ativ">Tipo Atividade: </label>
                         <select name="tipo_ativ" id="tipo_ativ" class="form-control">
