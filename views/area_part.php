@@ -33,7 +33,7 @@ Criado por: Victor Castro
     <?php
         require_once 'header.php';
         require_once 'Menus/nav_bar_user.php';
-        require_once '../Controls/Listar/lista_eventos_user.php';
+        require_once '../Controls/Listar/lista_eventos_user_logado.php';
         require_once 'footer.php';
     ?>
 </body>
