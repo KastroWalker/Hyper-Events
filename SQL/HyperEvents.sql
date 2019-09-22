@@ -2,26 +2,28 @@
   *Banco de dados HyperEvents
   *Criado por Descompila Compilando
   */
+
 -- Criando a base de dados --
 create database HyperEvents;
+
 use HyperEvents;
+
 -- Dando o privilegio para o usuário padrão --
 grant all privileges on HyperEvents.* to 'matue' @'%';
+
 -- Criando tabela de tipos de usuário --
 create table tipoUsuario(
   idtipo_usuario int not null auto_increment,
   nome varchar(60) not null,
   primary key(idtipo_usuario)
 );
+
 -- Inserindo tipo de usuarios padrões --
-insert into
-  tipoUsuario (nome)
-values
-  ("Organizador");
-insert into
-  tipoUsuario (nome)
-values
-  ("Participante");
+insert into tipoUsuario (nome)
+  values("Organizador");
+insert into tipoUsuario (nome)
+  values("Participante");
+
 -- Criando tabela de usuário --
   create table usuario(
     user_id int not null auto_increment,
@@ -37,6 +39,7 @@ values
     primary key(user_id),
     foreign key (idtipo_usuario) references tipoUsuario (idtipo_usuario)
   );
+
 -- Criando tabela de eventos --
   create table eventos(
     evento_id int not null auto_increment,
@@ -53,18 +56,21 @@ values
     primary key(evento_id),
     foreign key(user_id) references usuario(user_id)
   );
+
 -- Criando tabela de tipos de atividade --
   create table tipoAtividade (
     idTipoAtividade int not null auto_increment,
     tipo_atividade varchar(100) not null,
     primary key(idTipoAtividade)
   );
+
 -- Criando tabela de tipo convidado --
   create table tipoConvidado (
     idTipoConvidado int not null auto_increment,
     tipo_convidado varchar (60) not null,
     primary key (idTipoConvidado)
   );
+
 -- Criando tabela para convidado --
   create table convidado(
     idConvidado int not null auto_increment,
@@ -76,6 +82,7 @@ values
     primary key(idConvidado),
     foreign key (idTipoConvidado) references tipoConvidado (idTipoConvidado)
   );
+
 -- Criando a tabela de atividades --
   create table atividade(
     atividade_id int not null auto_increment,
@@ -95,6 +102,7 @@ values
     foreign key(idTipoAtividade) references tipoAtividade(idTipoAtividade),
     foreign key(idConvidado) references convidado(idConvidado)
   );
+
 -- Criando a tabela de inscrições em eventos --
   create table inscricao_evento (
     matricula int not null auto_increment,
@@ -106,12 +114,13 @@ values
     foreign key (user_id) references usuario (user_id),
     foreign key (evento_id) references eventos (evento_id)
   );
+
 -- Criando tabela de inscrição em atividade --
   create table inscricao_atividade (
     atividade_id int not null,
     matricula int not null,
     data_inscricao_atividade Date not null,
-    hota_inscricao_atividade Time not null,
+    hora_inscricao_atividade Time not null,
     primary key (atividade_id, matricula),
     foreign key (atividade_id) references atividade (atividade_id),
     foreign key (matricula) references inscricao_evento (matricula)
