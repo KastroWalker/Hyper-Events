@@ -13,7 +13,7 @@ $_SESSION['id_evento'] = $id;
     <link rel="stylesheet" type="text/css" href="../../../CSS/style_padrao.css">
     <link rel="stylesheet" type="text/css" href="../../../CSS/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../../../CSS/bootstrap/bootstrap-theme.css">
-    <link rel="icon" href="../img/icon.png" type="image/x-icon"/>
+    <link rel="icon" href="../../../img/icon.png" type="image/x-icon"/>
     <style>
         .div_principal {
             width: 80%;
@@ -27,7 +27,7 @@ $_SESSION['id_evento'] = $id;
     ?>
     <div class="div_principal">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="area_org.php">Hyper Events</a>
+            <a class="navbar-brand" href="../../area_org.php">Hyper Events</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -43,7 +43,7 @@ $_SESSION['id_evento'] = $id;
                 </ul>
             </div>
             <form class="form-inline my-2 my-lg-0">
-                <a href="../Listar/lista_eventos.php" class="btn btn-danger">Voltar</a>
+                <a href="../Listar/lista_eventos.php" class="btn btn-info">Voltar</a>
             </form>
         </nav>
         <div class="text-right mx-auto" style="margin: 20px">

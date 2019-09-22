@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="../../CSS/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../../CSS/bootstrap/bootstrap-theme.css">
     <link rel="stylesheet" type="text/css" href="../../CSS/style_padrao.css">
+    <link rel="icon" type="image/x-icon" href="../../img/icon.png">
     <title>Informações do Evento - HyperEvents</title>
 </head>
 <body>
@@ -24,7 +25,7 @@
 
     <div class="div_principal">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="area_org.php">Hyper Events</a>
+            <a class="navbar-brand" href="../area_org.php">Hyper Events</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
@@ -40,7 +41,7 @@
                 </ul>
             </div>
             <form class="form-inline my-2 my-lg-0">
-                <a href="Listar/lista_eventos.php" class="btn btn-danger">Voltar</a>
+                <a href="Listar/lista_eventos.php" class="btn btn-info">Voltar</a>
             </form>
         </nav>
         <main>
