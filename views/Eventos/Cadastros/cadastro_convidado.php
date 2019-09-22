@@ -87,10 +87,8 @@
                 </div>
             </div>
             <div class="form-group">
-                <div class="form-group">
-                    <label for="descricao" id="campo_descricao">Descrição</label>
-                    <textarea name="campo_descricao" id="descricao" cols="30" rows="5" placeholder="Descrição..." class="form-control" required></textarea>
-                </div>
+                <label for="descricao" id="campo_descricao">Descrição</label>
+                <textarea name="campo_descricao" id="descricao" cols="30" rows="5" placeholder="Descrição..." class="form-control" required></textarea>
             </div>
             <button type="submit" class="btn btn-success">Cadastrar</button>
             <button type="reset" class="btn btn-primary">Limpar</button>
