@@ -103,11 +103,13 @@ insert into eventos (
 -- Inserindo Convidado  --
 insert into convidado(
     idTipoConvidado,
+    evento_id,
     nome_convidado,
     descricao,
     email
   )values(
-    "2",
+    2,
+    2,
     "Marcos",
     "Especializado em áreas sociais.",
     "victorcsa2002.com"
@@ -115,11 +117,13 @@ insert into convidado(
 
 insert into convidado(
     idTipoConvidado,
+    evento_id,
     nome_convidado,
     descricao,
     email
   )values(
-    "1",
+    1,
+    1,
     "Victor",
     "Formado em Ciência da Computação.",
     "rian_estudante.com"
