@@ -35,6 +35,13 @@ create table usuario(
   primary key(user_id),
   foreign key (idtipo_usuario) references tipoUsuario (idtipo_usuario)
   );
+  
+  -- Criando tabela do local da atividade --
+create table local_atividade(
+  local_id int not null auto_increment,
+  nome_local varchar(100) not null,
+  primary key (local_id)
+  );  
 
 -- Criando tabela de eventos --
 create table eventos(
@@ -104,7 +111,7 @@ create table atividade(
   inicio time not null,
   fim time not null,
   primary key(atividade_id),
-  foreign key(local_id) references local_atividade(local_atividade),
+  foreign key(local_id) references local_atividade(local_id),
   foreign key(evento_id) references eventos(evento_id),
   foreign key(idTipoAtividade) references tipoAtividade(idTipoAtividade),
   foreign key(idConvidado) references convidado(idConvidado)
@@ -132,10 +139,3 @@ create table inscricao_atividade (
   foreign key (atividade_id) references atividade (atividade_id),
   foreign key (matricula) references inscricao_evento (matricula)
   );
-
--- Criando tabela do local da atividade --
-create table local_atividade(
-  local_id int not null auto_increment,
-  nome_loca varchar(100) not null,
-  primary key (local_id)
-  );  

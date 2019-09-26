@@ -50,6 +50,18 @@ insert into usuario (
     "participante@gmail.com",
     "86999999999"
   );
+  
+  insert into local_atividade (
+	nome_local
+  )values(
+	"Sala 12"
+  );
+  
+  insert into local_atividade (
+	nome_local
+  )values(
+	"Laboratório 12"
+  );
 
 -- Inserindo Eventos --
 insert into eventos (
@@ -139,7 +151,7 @@ insert into atividade(
     titulo_atividade,
     descricao,
     data,
-    local,
+    local_id,
     inicio,
     fim
   )values(
@@ -151,7 +163,7 @@ insert into atividade(
     "Buscando oportunidades.",
     "Proucurando oportunidades no mercado de trabalho.",
     "2019-11-10",
-    "Auditorio.",
+    "1",
     "08:30",
     "09:00"
   );
@@ -165,7 +177,7 @@ insert into atividade(
     titulo_atividade,
     descricao,
     data,
-    local,
+    local_id,
     inicio,
     fim
   )values(
@@ -177,7 +189,7 @@ insert into atividade(
     "Segurança de dados.",
     "Aprenda a garantir a Segurança dos seus dados.",
     "2019-11-09",
-    "Laboratorio L1.",
+    "2",
     "09:30",
     "12:00"
   );
