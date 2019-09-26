@@ -1,3 +1,7 @@
+<?php
+include_once "../../../Controls/conexao.php";
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -73,17 +77,25 @@
         <form method="POST" action="../../../Controls/Cadastro/cadastrar_convidado.php" name="form_cadastro">
             <h2>Cadastro de convidado</h2>
             <div class="form-row">
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <label for="nome" id="campo_nome">Nome:</label>
                     <input type="text" name="campo_nome" id="nome" class="form-control" placeholder="Digite o nome do convidado..." required>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <label for="email" id="campo_email">E-mail:</label>
                     <input type="email" name="campo_email" id="email" class="form-control" placeholder="Digite o e-mail para contato" required>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <label for="contato" id="campo_contato">Contato:</label>
                     <input type="tel" name="campo_telefone" id="telefone" onkeypress="formata_mascara(this, '## #####-####', event)" minlength="13" maxlength="13" class="frm_number_only form-control" placeholder="(xx) xxxxx-xxxx" required>
+                </div>
+                <div class="col-md-3">
+                    <label for="tipo_conv">Tipo de Convidado:</label>
+                    <select class="form-control" name="tipo_convidado" id="tipo_conv">
+                        <?php
+                        include "../../../Controls/Listar/listar_tipo_convidado.php";
+                        ?>
+                    </select>
                 </div>
             </div>
             <div class="form-group">
