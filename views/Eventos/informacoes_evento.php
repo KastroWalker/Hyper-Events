@@ -37,6 +37,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="Listar/lista_atividades.php?id=<?php echo $id; ?>">Atividades</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="Listar/lista_convidados.php?id=<?php echo $id; ?>">Convidados</a>
                     </li>  
                 </ul>
             </div>

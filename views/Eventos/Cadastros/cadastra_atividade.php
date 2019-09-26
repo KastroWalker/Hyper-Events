@@ -95,7 +95,7 @@ include '../../../Controls/conexao.php'
                     <div class="col-md-4">
                         <label for="convidado">Convidado: </label>
                         <select name="convidado" id="convidado" class="form-control">
-                            <?php require_once '../../../Controls/Listar/lista_convidados.php'; ?>
+                            <?php require_once '../../../Controls/Listar/lista_convidados_atividade.php'; ?>
                         </select>
                     </div>
 

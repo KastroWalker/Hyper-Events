@@ -3,7 +3,7 @@
 	#$id_evento = intval($id_evento);
 	#echo gettype($id_evento);
 
-	$sql = "select atividade.*, tipoAtividade.tipo_atividade, convidado.nome_convidado from atividade inner join tipoAtividade on (atividade.idTipoAtividade = tipoAtividade.idTipoAtividade) inner join convidado on (atividade.idConvidado = convidado.idConvidado) inner join eventos on (atividade.evento_id = eventos.evento_id) and eventos.evento_id = $id;";
+	$sql = "select atividade.*, tipoAtividade.tipo_atividade, convidado.nome_convidado from atividade inner join tipoAtividade on (atividade.idTipoAtividade = tipoAtividade.idTipoAtividade) inner join convidado on (atividade.idConvidado = convidado.idConvidado) inner join eventos on (atividade.evento_id = eventos.evento_id) and eventos.evento_id = $id_evento;";
 ?>
 <table class="table table-condensed table-striped table-bordered table-hover">
 	<tr>
