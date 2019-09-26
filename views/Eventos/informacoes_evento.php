@@ -41,6 +41,9 @@
                     <li>
                         <a class="nav-link" href="Listar/lista_convidados.php?id=<?php echo $id; ?>">Convidados</a>
                     </li>  
+                    <li>
+                        <a class="nav-link" href="Listar/lista_locais.php?id=<?php echo $id; ?>">Locais</a>
+                    </li>
                 </ul>
             </div>
             <form class="form-inline my-2 my-lg-0">

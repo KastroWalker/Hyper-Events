@@ -43,7 +43,10 @@ $_SESSION['id_evento'] = $id;
                 </li>
                 <li>
                     <a class="nav-link" href="lista_convidados.php?id=<?php echo $id; ?>">Convidados</a>
-                </li>  
+                </li> 
+                <li>
+                    <a class="nav-link" href="lista_locais.php?id=<?php echo $id; ?>">Locais</a>
+                </li> 
             </ul>
         </div>
         <form class="form-inline my-2 my-lg-0">
@@ -54,6 +57,7 @@ $_SESSION['id_evento'] = $id;
         <a href="../Cadastros/cadastra_atividade.php" class="btn btn-primary btn-lg text-right"> Cadastrar Convidado </a>
     </div>
     <?php
+    require_once '../../../Controls/Listar/lista_convidados.php';
     require_once '../../footer.php';
     ?>
 </body>
