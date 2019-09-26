@@ -31,13 +31,6 @@ include_once "../../../Controls/conexao.php";
     <script src="../../../JS/jquery.js"></script>
     
     <script>
-        function logout() {
-            /**
-             * Função para sair da pagina de cadastro
-             */
-            window.location.href = '../Listar/lista_atividades.php';
-        }
-
         function frm_number_only_exc() {
             /**
              * Função pada deixar digitar apenas numero
@@ -72,7 +65,6 @@ include_once "../../../Controls/conexao.php";
     # Iniciando sessão 
     session_start();
     $id = $_SESSION['id'];
-    echo "$id";
     ?>
     <header>
         <h1 style="height: 100px"><img src="../../../img/logo.png" alt="logo" style="height: 125px;">Sistema de Eventos Academicos</h1>
@@ -80,7 +72,7 @@ include_once "../../../Controls/conexao.php";
         <script src="../../../JS/jquery.js"></script>
     </header>
     <section id="Cadastrar_Convidado" class="container">
-        <form method="POST" action="../../../Controls/Cadastro/cadastrar_convidado.php" name="form_cadastro">
+        <form method="POST" action="../../../Controls/Cadastros/cadastrar_convidado.php" name="form_cadastro">
             <h2>Cadastro de convidado</h2>
             <div class="form-row">
                 <div class="col-md-3">
@@ -92,7 +84,7 @@ include_once "../../../Controls/conexao.php";
                     <input type="email" name="campo_email" id="email" class="form-control" placeholder="Digite o e-mail para contato" required>
                 </div>
                 <div class="col-md-3">
-                    <label for="contato" id="campo_contato">Contato:</label>
+                    <label for="telefone" id="campo_contato">Contato:</label>
                     <input type="tel" name="campo_telefone" id="telefone" onkeypress="formata_mascara(this, '## #####-####', event)" minlength="13" maxlength="13" class="frm_number_only form-control" placeholder="(xx) xxxxx-xxxx" required>
                 </div>
                 <div class="col-md-3">
@@ -110,7 +102,7 @@ include_once "../../../Controls/conexao.php";
             </div>
             <button type="submit" class="btn btn-success">Cadastrar</button>
             <button type="reset" class="btn btn-primary">Limpar</button>
-            <button onclick="logout();">Voltar</button>
+            <a class="btn btn-info" href="../Listar/lista_convidados.php">Voltar</a>
         </form>
     </section>
     <section id="Manual">

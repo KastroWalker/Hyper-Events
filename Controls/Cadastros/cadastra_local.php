@@ -2,8 +2,8 @@
 	session_start();
 	include '../conexao.php';
 
-	$evento_id = $_POST['evento_id'];
-	$nome_local = $_POST['nome_local'];
+	$evento_id = mysqli_real_escape_string($conexao, trim($_POST['evento_id']));
+	$nome_local = mysqli_real_escape_string($conexao, trim($_POST['nome_local']));
 
 	$sql = "insert into local_atividade (evento_id, nome_local) values ('{$evento_id}', '{$nome_local}');";
 
