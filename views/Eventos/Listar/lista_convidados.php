@@ -1,8 +1,7 @@
 <?php
 require_once '../../../Controls/conexao.php';   
-$id = $_REQUEST['id'];
 session_start();
-$_SESSION['id_evento'] = $id;
+$id = $_SESSION['id_evento'];
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -39,13 +38,13 @@ $_SESSION['id_evento'] = $id;
                     <a class="nav-link" href="../informacoes_evento.php?id=<?php echo $id; ?>">Home<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="lista_atividades.php?id=<?php echo $id; ?>">Atividades</a>
+                    <a class="nav-link" href="lista_atividades.php">Atividades</a>
                 </li>
                 <li>
-                    <a class="nav-link" href="lista_convidados.php?id=<?php echo $id; ?>">Convidados</a>
+                    <a class="nav-link" href="lista_convidados.php">Convidados</a>
                 </li> 
                 <li>
-                    <a class="nav-link" href="lista_locais.php?id=<?php echo $id; ?>">Locais</a>
+                    <a class="nav-link" href="lista_locais.php">Locais</a>
                 </li> 
             </ul>
         </div>

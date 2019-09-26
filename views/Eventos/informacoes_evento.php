@@ -1,11 +1,14 @@
 <?php
     $id = $_REQUEST['id'];
-    #echo "$id_evento";
+    session_start();
+    $_SESSION['id_evento'] = $id;
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../../CSS/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../../CSS/bootstrap/bootstrap-theme.css">
     <link rel="stylesheet" type="text/css" href="../../CSS/style_padrao.css">
@@ -36,13 +39,13 @@
                         <a class="nav-link" href="informacoes_evento.php?id=<?php echo $id; ?>">Home<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Listar/lista_atividades.php?id=<?php echo $id; ?>">Atividades</a>
+                        <a class="nav-link" href="Listar/lista_atividades.php">Atividades</a>
                     </li>
                     <li>
-                        <a class="nav-link" href="Listar/lista_convidados.php?id=<?php echo $id; ?>">Convidados</a>
+                        <a class="nav-link" href="Listar/lista_convidados.php">Convidados</a>
                     </li>  
                     <li>
-                        <a class="nav-link" href="Listar/lista_locais.php?id=<?php echo $id; ?>">Locais</a>
+                        <a class="nav-link" href="Listar/lista_locais.php">Locais</a>
                     </li>
                 </ul>
             </div>

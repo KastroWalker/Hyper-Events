@@ -31,7 +31,7 @@ include_once "../../../Controls/conexao.php";
             /**
              * Função para sair da pagina de cadastro
              */
-            window.location.href = '../login.php';
+            window.location.href = '../Listar/lista_atividades.php';
         }
 
         function frm_number_only_exc() {
@@ -67,6 +67,8 @@ include_once "../../../Controls/conexao.php";
     <?php
     # Iniciando sessão 
     session_start();
+    $id = $_SESSION['id'];
+    echo "$id";
     ?>
     <header>
         <h1 style="height: 100px"><img src="../../../img/logo.png" alt="logo" style="height: 125px;">Sistema de Eventos Academicos</h1>
@@ -104,6 +106,7 @@ include_once "../../../Controls/conexao.php";
             </div>
             <button type="submit" class="btn btn-success">Cadastrar</button>
             <button type="reset" class="btn btn-primary">Limpar</button>
+            <button onclick="logout();">Voltar</button>
         </form>
     </section>
     <section id="Manual">

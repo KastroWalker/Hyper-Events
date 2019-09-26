@@ -1,4 +1,5 @@
 <!-- Nav Bar padrão de todo as paginas de usuário -->
+
 <div class="div_principal">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="area_org.php">Hyper Events</a>

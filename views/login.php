@@ -9,16 +9,18 @@ session_start();
 <head>
     <meta charset="UTF-8"/>
     <meta name="robots" content="index, follow"/>
-    <meta name="description" content="Hyper Events - Sistema de Eventos Acadêmicos"/>
-    <meta name="keywords" content="Eventos Acadêmicos, Escola,"/>
+    <meta name="description" content="Hyper Events - Login"/>
+    <meta name="keywords" content="Login, Entrar"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="author" content="Victor Castro"/>
+    <meta name="author" content="Victor Castro"/> 
+    
     <link rel="canonical" href="https://localhost:8000/home/"/>
     <link rel="stylesheet" type="text/css" href="../CSS/bootstrap/bootstrap-theme.css">
     <link rel="stylesheet" type="text/css" href="../CSS/bootstrap/bootstrap.min.css"/>
     <link rel="icon" href="../img/icon.png" type="image/x-icon"/>
     <link rel="stylesheet" type="text/css" href="../CSS/style_index.css"/>
     <link rel="stylesheet" type="text/css" href="../CSS/style_padrao.css"/>
+    
     <script src="../JS/verSenha.js"></script>
     <script>
         function cadastrar() {

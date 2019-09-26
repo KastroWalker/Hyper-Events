@@ -1,14 +1,13 @@
 <?php
 require_once '../../../Controls/conexao.php';   
-$id = $_REQUEST['id'];
 session_start();
-$_SESSION['id_evento'] = $id;
+$id = $_SESSION['id_evento'];
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <!--meta http-equiv="content-Type" content="text/html; charset=iso-8859-1" /--> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>Locais do Evento - Hyper Events</title>
     <link rel="stylesheet" type="text/css" href="../../../CSS/style_padrao.css">
     <link rel="stylesheet" type="text/css" href="../../../CSS/bootstrap/bootstrap.min.css">
@@ -38,13 +37,13 @@ $_SESSION['id_evento'] = $id;
                         <a class="nav-link" href="../informacoes_evento.php?id=<?php echo $id; ?>">Home<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="lista_atividades.php?id=<?php echo $id; ?>">Atividades</a>
+                        <a class="nav-link" href="lista_atividades.php">Atividades</a>
                     </li>  
                     <li>
-                        <a class="nav-link" href="lista_convidados.php?id=<?php echo $id; ?>">Convidados</a>
+                        <a class="nav-link" href="lista_convidados.php">Convidados</a>
                     </li>
                     <li>
-                        <a class="nav-link" href="lista_locais.php?id=<?php echo $id; ?>">Locais</a>
+                        <a class="nav-link" href="lista_locais.php">Locais</a>
                     </li>
                 </ul>
             </div>
