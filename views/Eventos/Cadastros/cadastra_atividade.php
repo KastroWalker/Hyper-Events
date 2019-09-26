@@ -8,14 +8,18 @@ include '../../../Controls/conexao.php'
 <html lang="pt-br">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="author" content="Victor Castro">
-    <meta name="description" content="O organizador cadastra as atividades que ocorrerão no evento">
+    <meta charset="UTF-8"/>
+    <meta name="robots" content="index, follow"/>
+    <meta name="description" content="Hyper Events - Sistema de Eventos Acadêmicos"/>
+    <meta name="keywords" content="Eventos Acadêmicos, Escola,"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="author" content="Victor Castro"/> 
+
     <link rel="stylesheet" type="text/css" href="../../../CSS/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../../../CSS/bootstrap/bootstrap-theme.css">
     <link rel="stylesheet" type="text/css" href="../../../CSS/style_padrao.css">
     <link rel="icon" href="../../../img/icon.png" type="image/x-icon" />
+    
     <style type="text/css">
         header,
         footer,
@@ -23,7 +27,9 @@ include '../../../Controls/conexao.php'
             text-align: center;
         }
     </style>
+    
     <script src="../JS/valida_cadastro_evento.js"></script>
+    
     <title>Cadastrar Evento - Hyper-Events</title>
 </head>
 
@@ -143,5 +149,4 @@ include '../../../Controls/conexao.php'
         ?>
     </div>
 </body>
-
 </html>

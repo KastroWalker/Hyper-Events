@@ -6,17 +6,19 @@ include_once "../../../Controls/conexao.php";
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="robots" content="index, follow" />
-    <meta name="description" content="Cadastro - Hyper Events - Sistema de Eventos Acadêmicos" />
-    <meta name="keywords" content="Eventos Acadêmicos, Escola, Cadastro no sistema" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="author" content="Victor Castro" />
+    <meta charset="UTF-8"/>
+    <meta name="robots" content="index, follow"/>
+    <meta name="description" content="Hyper Events - Sistema de Eventos Acadêmicos"/>
+    <meta name="keywords" content="Eventos Acadêmicos, Escola,"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="author" content="Victor Castro"/> 
+
     <link rel="canonical" href="https://localhost:8000/home/" />
     <link rel="stylesheet" type="text/css" href="../../../CSS/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../../../CSS/style_cadastro.css">
     <link rel="stylesheet" type="text/css" href="../../../CSS/style_padrao.css">
     <link rel="icon" href="../../../img/icon.png" type="image/x-icon" />
+    
     <style>
         header,
         footer,
@@ -24,8 +26,10 @@ include_once "../../../Controls/conexao.php";
             text-align: center;
         }
     </style>
+    
     <script src="../../../JS/formata.js"></script>
     <script src="../../../JS/jquery.js"></script>
+    
     <script>
         function logout() {
             /**
@@ -60,9 +64,9 @@ include_once "../../../Controls/conexao.php";
 
         });
     </script>
+    
     <title>Cadastro de convidado</title>
 </head>
-
 <body>
     <?php
     # Iniciando sessão 

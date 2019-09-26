@@ -1,61 +1,65 @@
-<!-- Pagina de Cadastro da Hyper Events -->
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8"/>
     <meta name="robots" content="index, follow"/>
-    <meta name="description" content="Cadastro - Hyper Events - Sistema de Eventos Acadêmicos"/>
-    <meta name="keywords" content="Eventos Acadêmicos, Escola, Cadastro no sistema"/>
+    <meta name="description" content="Hyper Events - Sistema de Eventos Acadêmicos"/>
+    <meta name="keywords" content="Eventos Acadêmicos, Escola,"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="author" content="Victor Castro"/>
+    <meta name="author" content="Victor Castro"/> 
+
     <link rel="canonical" href="https://localhost:8000/home/"/>
     <link rel="stylesheet" type="text/css" href="../../CSS/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../../CSS/bootstrap/bootstrap-theme.css">
     <link rel="stylesheet" type="text/css" href="../../CSS/style_cadastro.css">
     <link rel="stylesheet" type="text/css" href="../../CSS/style_padrao.css">
     <link rel="icon" href="../../img/icon.png" type="image/x-icon"/>
+    
     <style>
         header, footer, #Manual {
             text-align: center;
         }
     </style>
+    
     <script src="../../JS/formata.js"></script>
     <script src="../../JS/jquery.js"></script>
     <script src="../../JS/valida_dados.js"></script>
+    
     <script>
         function logout() {
-                /**
-                  * Função para sair da pagina de cadastro
-                  */
-                  window.location.href = '../login.php';
-              }
+        /**
+          * Função para sair da pagina de cadastro
+          */
+          window.location.href = '../login.php';
+      }
 
-              function frm_number_only_exc(){
-                /**
-                  * Função pada deixar digitar apenas numero
-                  */
-                  if ( event.keyCode == 37 || event.keyCode == 38 || event.keyCode == 39 || event.keyCode == 40 || event.keyCode == 46 || event.keyCode == 8 || event.keyCode == 9 || ( event.keyCode < 106 && event.keyCode > 95 ) ) { 
-                    return true;
-                }else{
-                    return false;
-                }
-            }
+      function frm_number_only_exc(){
+        /**
+          * Função pada deixar digitar apenas numero
+          */
+          if ( event.keyCode == 37 || event.keyCode == 38 || event.keyCode == 39 || event.keyCode == 40 || event.keyCode == 46 || event.keyCode == 8 || event.keyCode == 9 || ( event.keyCode < 106 && event.keyCode > 95 ) ) { 
+            return true;
+        }else{
+            return false;
+        }
+    }
 
-            $(document).ready(function(){
+    $(document).ready(function(){
 
-                $("input.frm_number_only").keydown(function(event) { 
+        $("input.frm_number_only").keydown(function(event) { 
 
-                   if ( frm_number_only_exc() ) { 
+           if ( frm_number_only_exc() ) { 
 
-                   } else { 
-                       if ( event.keyCode < 48 || event.keyCode > 57 ) { 
-                           event.preventDefault();  
-                       }        
-                   } 
-               }); 
+           } else { 
+               if ( event.keyCode < 48 || event.keyCode > 57 ) { 
+                   event.preventDefault();  
+               }        
+           } 
+       }); 
 
-            });
-        </script>
+    });
+</script>
+        
         <title>Cadastro de usuário - Hyper Events</title>
     </head>
     <body>

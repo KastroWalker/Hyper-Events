@@ -11,13 +11,17 @@ if(isset($_SESSION['id'])){
     <!DOCTYPE html>
     <html lang="pt-br">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="author" content="Victor Castro">
-        <meta name="description" content="Organizador pode visualizar seus eventos já cadastrados">
+        <meta charset="UTF-8"/>
+        <meta name="robots" content="index, follow"/>
+        <meta name="description" content="Hyper Events - Sistema de Eventos Acadêmicos"/>
+        <meta name="keywords" content="Eventos Acadêmicos, Escola,"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="author" content="Victor Castro"/> 
+
         <link rel="stylesheet" href="../../../CSS/bootstrap/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="../../../CSS/bootstrap/bootstrap-theme.css">
+        <link rel="stylesheet" type="text/css" href="../../../CSS/bootstrap/bootstrap.min.css">
         <link rel="icon" href="../../../img/icon.png" type="image/x-icon"/>
+        
         <style>
             header, footer, #Manual {
                 text-align: center;
@@ -32,7 +36,6 @@ if(isset($_SESSION['id'])){
         </style>
 
         <title>Eventos - Hyper Events</title>
-        <link rel="stylesheet" type="text/css" href="../../../CSS/bootstrap/bootstrap.min.css">
     </head>
     <body>
         <?php 

@@ -7,24 +7,31 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8"/>
+    <meta name="robots" content="index, follow"/>
+    <meta name="description" content="Hyper Events - Acompanhar detalhes dos eventos"/>
+    <meta name="keywords" content="Eventos Acadêmicos, Escola,"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="author" content="Victor Castro"/>
+
     <link rel="stylesheet" type="text/css" href="../../CSS/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../../CSS/bootstrap/bootstrap-theme.css">
     <link rel="stylesheet" type="text/css" href="../../CSS/style_padrao.css">
     <link rel="icon" type="image/x-icon" href="../../img/icon.png">
+    
     <title>Informações do Evento - HyperEvents</title>
-</head>
-<body>
-    <?php
-        require_once '../header_cadastro.php';
-    ?>
+    
     <style type="text/css">
     .div_principal {
         width: 80%;
         margin: auto; 
     }
     </style>
+</head>
+<body>
+    <?php
+        require_once '../header_cadastro.php';
+    ?>
 
     <div class="div_principal">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">

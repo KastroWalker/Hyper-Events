@@ -5,12 +5,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Atividades do Evento - Hyper Events</title>
+    <meta charset="UTF-8"/>
+    <meta name="robots" content="index, follow"/>
+    <meta name="description" content="Hyper Events - Sistema de Eventos Acadêmicos"/>
+    <meta name="keywords" content="Eventos Acadêmicos, Escola,"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="author" content="Victor Castro"/> 
+
     <link rel="stylesheet" type="text/css" href="../../../CSS/style_padrao.css">
     <link rel="stylesheet" type="text/css" href="../../../CSS/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../../../CSS/bootstrap/bootstrap-theme.css">
     <link rel="icon" href="../img/icon.png" type="image/x-icon"/>
+    
+    <title>Atividades do Evento - Hyper Events</title>
 </head>
 <body>
 
