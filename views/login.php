@@ -52,9 +52,6 @@ session_start();
                     </li>  
                 </ul>
             </div>
-            <form class="form-inline my-2 my-lg-0">
-                <a href="../Controls/logout.php" class="btn btn-danger">Sair</a>             
-            </form>
         </nav>
         <main>
             <form method="POST" action="../Controls/login.php" name="form_login" class="form-group">
