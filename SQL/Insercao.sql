@@ -3,11 +3,10 @@
   *Dados apenas para testes
   *Criado por Descompila Compilando
   */
-
 use HyperEvents;
-
 -- Inserindo usuários padrões--
-insert into usuario (
+insert into
+  usuario (
     idtipo_usuario,
     nome,
     sexo,
@@ -17,7 +16,8 @@ insert into usuario (
     senha,
     email,
     contato
-  )values(
+  )
+values(
     "1",
     "Organizador",
     "M",
@@ -28,8 +28,8 @@ insert into usuario (
     "organizador@gmail.com",
     "86999999999"
   );
-
-insert into usuario (
+insert into
+  usuario (
     idtipo_usuario,
     nome,
     sexo,
@@ -39,7 +39,8 @@ insert into usuario (
     senha,
     email,
     contato
-  )values(
+  )
+values(
     "2",
     "Participante",
     "M",
@@ -50,21 +51,9 @@ insert into usuario (
     "participante@gmail.com",
     "86999999999"
   );
-  
-  insert into local_atividade (
-	nome_local
-  )values(
-	"Sala 12"
-  );
-  
-  insert into local_atividade (
-	nome_local
-  )values(
-	"Laboratório 12"
-  );
-
 -- Inserindo Eventos --
-insert into eventos (
+insert into
+  eventos (
     user_id,
     titulo_evento,
     qtde_vagas_evento,
@@ -75,7 +64,8 @@ insert into eventos (
     hora_inicio,
     hora_fim,
     email
-  )values(
+  )
+values(
     "1",
     "Festa",
     300,
@@ -87,8 +77,8 @@ insert into eventos (
     "09:00",
     "rian_estudante@.hotmail.com"
   );
-
-insert into eventos (
+insert into
+  eventos (
     user_id,
     titulo_evento,
     qtde_vagas_evento,
@@ -99,7 +89,8 @@ insert into eventos (
     hora_inicio,
     hora_fim,
     email
-  )values(
+  )
+values(
     "2",
     "Evento de Libras",
     300,
@@ -111,38 +102,47 @@ insert into eventos (
     "15:00",
     "victorcsa2002@.hotmail.com"
   );
-
+-- Inserindo locais das atividades --
+insert into
+  local_atividade (evento_id, nome_local)
+values("1", "Sala 12");
+insert into
+  local_atividade (evento_id, nome_local)
+values("2", "Laboratório 12");
 -- Inserindo Convidado  --
-insert into convidado(
+insert into
+  convidado(
     idTipoConvidado,
     evento_id,
     nome_convidado,
     descricao,
     email
-  )values(
+  )
+values(
     2,
     2,
     "Marcos",
     "Especializado em áreas sociais.",
     "victorcsa2002.com"
   );
-
-insert into convidado(
+insert into
+  convidado(
     idTipoConvidado,
     evento_id,
     nome_convidado,
     descricao,
     email
-  )values(
+  )
+values(
     1,
     1,
     "Victor",
     "Formado em Ciência da Computação.",
     "rian_estudante.com"
   );
-
 -- Inserindo Atividades --
-insert into atividade(
+insert into
+  atividade(
     evento_id,
     idTipoAtividade,
     idConvidado,
@@ -154,7 +154,8 @@ insert into atividade(
     local_id,
     inicio,
     fim
-  )values(
+  )
+values(
     "1",
     "1",
     "2",
@@ -167,8 +168,8 @@ insert into atividade(
     "08:30",
     "09:00"
   );
-
-insert into atividade(
+insert into
+  atividade(
     evento_id,
     idTipoAtividade,
     idConvidado,
@@ -180,7 +181,8 @@ insert into atividade(
     local_id,
     inicio,
     fim
-  )values(
+  )
+values(
     "2",
     "2",
     "1",
@@ -194,47 +196,35 @@ insert into atividade(
     "12:00"
   );
 -- Inserindo Inscrições Eventos --
-
-insert into inscricao_evento (
+insert into
+  inscricao_evento (
     evento_id,
     user_id,
     data_inscricao_evento,
     hora_inscricao_evento
-  )values(
-  1, 
-  2, 
-  "2019-09-25", 
-  "00:00");
-
-insert into inscricao_evento (
+  )
+values(1, 2, "2019-09-25", "00:00");
+insert into
+  inscricao_evento (
     evento_id,
     user_id,
     data_inscricao_evento,
     hora_inscricao_evento
-  )values(
-   2,
-   2, 
-   "2019-09-26", 
-   "00:30");
-
-insert into inscricao_atividade (
+  )
+values(2, 2, "2019-09-26", "00:30");
+insert into
+  inscricao_atividade (
     atividade_id,
     matricula,
     data_inscricao_atividade,
     hora_inscricao_atividade
-  )values(
-   1, 
-   2, 
-   "2019-09-30", 
-   "00:00");
-
-insert into inscricao_atividade (
+  )
+values(1, 2, "2019-09-30", "00:00");
+insert into
+  inscricao_atividade (
     atividade_id,
     matricula,
     data_inscricao_atividade,
     hora_inscricao_atividade
-  )values(
-   2, 
-   2, 
-   "2019-09-30", 
-   "00:30");
+  )
+values(2, 2, "2019-09-30", "00:30");

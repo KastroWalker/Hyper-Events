@@ -1,0 +1,1 @@
+select local_atividade.* from local_atividade;
