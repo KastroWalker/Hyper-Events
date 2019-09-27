@@ -8,8 +8,8 @@ $id = $_SESSION['id_evento'];
 <head>
     <meta charset="UTF-8"/>
     <meta name="robots" content="index, follow"/>
-    <meta name="description" content="Hyper Events - Sistema de Eventos Acadêmicos"/>
-    <meta name="keywords" content="Eventos Acadêmicos, Escola,"/>
+    <meta name="description" content="Hyper Events - Ver detalhes das atividades que ocorrerão no evento"/>
+    <meta name="keywords" content="Visualizar, Atividades, Evento, Detalhes"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="author" content="Victor Castro"/> 
 

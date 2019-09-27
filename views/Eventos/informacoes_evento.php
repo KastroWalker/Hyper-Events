@@ -10,7 +10,7 @@
     <meta charset="UTF-8"/>
     <meta name="robots" content="index, follow"/>
     <meta name="description" content="Hyper Events - Acompanhar detalhes dos eventos"/>
-    <meta name="keywords" content="Eventos Acadêmicos, Escola,"/>
+    <meta name="keywords" content="Eventos Acadêmicos, Escola"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="author" content="Victor Castro"/>
 

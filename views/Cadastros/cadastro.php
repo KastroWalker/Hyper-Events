@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="robots" content="index, follow"/>
-    <meta name="description" content="Hyper Events - Sistema de Eventos Acadêmicos"/>
-    <meta name="keywords" content="Eventos Acadêmicos, Escola,"/>
+    <meta name="description" content="Hyper Events - Usuário novo pode se cadastrar na plataforma para organizar seus eventos ou participar de algum evento"/>
+    <meta name="keywords" content="Cadastro, Usuário, Eventos"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="author" content="Victor Castro"/> 
 

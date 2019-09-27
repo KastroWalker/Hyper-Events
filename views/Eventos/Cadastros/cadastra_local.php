@@ -10,8 +10,8 @@ include '../../../Controls/conexao.php'
 <head>
     <meta charset="UTF-8"/>
     <meta name="robots" content="index, follow"/>
-    <meta name="description" content="Hyper Events - Sistema de Eventos Acadêmicos"/>
-    <meta name="keywords" content="Eventos Acadêmicos, Escola,"/>
+    <meta name="description" content="Hyper Events - Cadastrar locais em que ocorrerá as atividades do evento"/>
+    <meta name="keywords" content="Eventos, Local, Localização, Atividades"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="author" content="Victor Castro"/> 
     

@@ -13,8 +13,8 @@ if(isset($_SESSION['id'])){
     <head>
         <meta charset="UTF-8"/>
         <meta name="robots" content="index, follow"/>
-        <meta name="description" content="Hyper Events - Sistema de Eventos Acadêmicos"/>
-        <meta name="keywords" content="Eventos Acadêmicos, Escola,"/>
+        <meta name="description" content="Hyper Events - Visualizar os eventos já cadastrados"/>
+        <meta name="keywords" content="Eventos, Detalhes, Visualizar"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <meta name="author" content="Victor Castro"/> 
 

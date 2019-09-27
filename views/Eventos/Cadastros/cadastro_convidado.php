@@ -8,10 +8,10 @@ include_once "../../../Controls/conexao.php";
 <head>
     <meta charset="UTF-8"/>
     <meta name="robots" content="index, follow"/>
-    <meta name="description" content="Hyper Events - Sistema de Eventos Acadêmicos"/>
-    <meta name="keywords" content="Eventos Acadêmicos, Escola,"/>
+    <meta name="description" content="Hyper Events - Cadastrar convidados que ministrarão as atividades"/>
+    <meta name="keywords" content="Eventos, Convidado, Ministrante, Palestrante, Atividade"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="author" content="Victor Castro"/> 
+    <meta name="author" content="Kauan Portela"/> 
 
     <link rel="canonical" href="https://localhost:8000/home/" />
     <link rel="stylesheet" type="text/css" href="../../../CSS/bootstrap/bootstrap.min.css">
