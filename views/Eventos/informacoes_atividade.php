@@ -15,24 +15,23 @@
     <meta name="author" content="Victor Castro"/>
 
     <link rel="stylesheet" type="text/css" href="../../CSS/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../../CSS/bootstrap/bootstrap-theme.css">
     <link rel="stylesheet" type="text/css" href="../../CSS/style_padrao.css">
     <link rel="icon" type="image/x-icon" href="../../img/icon.png">
     
     <title>Informações do Evento - HyperEvents</title>
-    
-    <style type="text/css">
-    .div_principal {
-        width: 80%;
-        margin: auto; 
-    }
-    </style>
 </head>
 <body>
 	<?php
 		include '../header_cadastro.php';
-		include '../../Controls/Listar/Informacoes/informacoes_atividade.php';
-		include '../footer.php';
+    ?>
+    <div class='div_principal'>
+        <h2 align="center">Informações Atividade:</h2>
+	<?php
+    	include '../../Controls/Listar/Informacoes/informacoes_atividade.php';
+	?>
+    </div>
+    <?php
+    	include '../footer.php';
 	?>
 </body>
 </html>

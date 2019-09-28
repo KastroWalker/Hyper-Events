@@ -19,14 +19,6 @@ include_once "../../../Controls/conexao.php";
     <link rel="stylesheet" type="text/css" href="../../../CSS/style_padrao.css">
     <link rel="icon" href="../../../img/icon.png" type="image/x-icon" />
     
-    <style>
-        header,
-        footer,
-        #Manual {
-            text-align: center;
-        }
-    </style>
-    
     <script src="../../../JS/formata.js"></script>
     <script src="../../../JS/jquery.js"></script>
     

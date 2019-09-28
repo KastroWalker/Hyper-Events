@@ -9,7 +9,6 @@
     <meta name="author" content="Victor Castro"/> 
 
     <link rel="stylesheet" type="text/css" href="../../../CSS/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../../../CSS/bootstrap/bootstrap-theme.css">
     <link rel="stylesheet" type="text/css" href="../../../CSS/style_padrao.css">
     <link rel="icon" href="../../../img/icon.png" type="image/x-icon">
     

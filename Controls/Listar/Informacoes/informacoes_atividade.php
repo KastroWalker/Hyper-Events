@@ -1,27 +1,28 @@
 <?php 
 	$id_evento = $_SESSION['id'];
 
-	$sql = "select atividade.*, tipoAtividade.tipo_atividade, convidado.nome_convidado from atividade inner join tipoAtividade on (atividade.idTipoAtividade = tipoAtividade.idTipoAtividade) inner join convidado on (atividade.idConvidado = convidado.idConvidado) inner join eventos on (atividade.evento_id = eventos.evento_id) and eventos.evento_id = $id_evento and atividade.atividade_id = $id_atividade;";
+	$sql = "select atividade.*, tipoAtividade.tipo_atividade, convidado.nome_convidado, local_atividade.nome_local from atividade inner join tipoAtividade on (atividade.idTipoAtividade = tipoAtividade.idTipoAtividade) inner join convidado on (atividade.idConvidado = convidado.idConvidado) inner join eventos on (atividade.evento_id = eventos.evento_id) inner join local_atividade on (atividade.local_id = local_atividade.local_id) and eventos.evento_id = $id_evento and atividade.atividade_id = $id_atividade;";
 
 	$result = mysqli_query($conexao, $sql);
 	$row = mysqli_fetch_assoc($result);
 	$idConvidado = $row['idConvidado'];
-	
 	function escreve_coluna($titulo, $atributo){
-		echo "<tr>";
-		echo "<td>";
-		echo "<dt class='col-sm-3'>$titulo</dt>";
-		echo "</td>";
-		echo "<td>";
-		echo "<dd class='col-sm-9'>".$atributo."</dd>";
-		echo "</td>";
-		echo "</tr>";
+		$linha = "
+			<tr>
+				<td>
+					<dt class='col-sm-3'>$titulo</dt>
+				</td>
+				<td>
+					<dd class='col-sm-9'>$atributo</dd>
+				</td>
+			</tr>
+		";
+		echo $linha;
 	}
 
-	echo "<div class='div_principal'>";
-	echo "<table border=5 width=100%;>";
-	echo "<h2>Informações Atividade:</h2>";
-	echo "<dl class='row'>";
+	echo "
+	<table class='table table-bordered table-hover'>
+		<dl class='row'>";
 	#ID da atividade
 	escreve_coluna("ID: ", $row['atividade_id']);
 
@@ -32,14 +33,7 @@
 	escreve_coluna("Tipo:", $row['tipo_atividade']);
 	
 	#Ministrante da atividade
-	echo "<tr>";
-		echo "<td>";
-			echo "<dt class='col-sm-3'>Ministrante: </dt>";
-		echo "</td>";
-		echo "<td>";
-			echo "<dd class='col-sm-9'><a href'informacoes_ministrante.php?id_convidado=$idConvidado'>".$row['nome_convidado']."</a></dd>";
-		echo "</td>";
-	echo "</tr>";
+	escreve_coluna("Ministrante", "<a href='informacoes_ministrante.php?id_convidado=$idConvidado'>".$row['nome_convidado']."</a>");
 		
 	#Vagas da atividade
 	escreve_coluna("Vagas: ", $row['qtde_vagas_atividade']);
@@ -54,11 +48,11 @@
 	escreve_coluna("Data: ", $row['data']);
 	
 	#Local da atividade
-	escreve_coluna("Local: ", $row['local_id']);
+	escreve_coluna("Local: ", $row['nome_local']);
 	
 	#Hora de inicio da atividade
-	escreve_coluna("Inicio: ", $row['inicio']);
-	echo "</table>";
-	echo "</dl>";
-	echo "</div>";
+	escreve_coluna("Hora de Inicio: ", $row['inicio']);
+	echo "
+		</dl>
+	</table>";
 ?>
