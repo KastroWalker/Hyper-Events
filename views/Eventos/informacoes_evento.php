@@ -1,4 +1,6 @@
 <?php
+    include '../../Controls/funcoes.php';
+    include '../../Controls/conexao.php';
     $id = $_REQUEST['id'];
     session_start();
     $_SESSION['id_evento'] = $id;
@@ -53,6 +55,11 @@
             </form>
         </nav>
         <main>
+            <h2 align="center">Informações Atividade</h2>
+            <?php
+                require_once './../../Controls/Listar/Informacoes/informacoes_evento.php'
+            ?>
+        </main>
     <?php
         require_once '../footer.php';
     ?>

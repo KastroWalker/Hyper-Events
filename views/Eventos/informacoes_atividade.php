@@ -1,5 +1,6 @@
 <?php
 	include '../../Controls/conexao.php';
+    include '../../Controls/funcoes.php';
 	session_start();
 	$id_atividade = $_REQUEST['id'];
 	$_SESSION['id_atividade'] = $id_atividade;
