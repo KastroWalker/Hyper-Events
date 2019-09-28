@@ -65,7 +65,7 @@ include '../../../Controls/conexao.php'
             # Encerra a sessão de erro ao cadastrar
             unset($_SESSION['atividade_não_cadastrada']);
             ?>
-            <form id="form_cadastro_atividade" method="POST" action="../../../Controls/Cadastros/cadastra_atividade.php">
+            <form id="form_cadastro_atividade" method="POST" action="../../../Controls/CRUD/gerencia_atividade.php?acao=cadastrar">
                 <h2>Cadastrar Atividade</h2>
 
                 <div class="form-row">
@@ -81,13 +81,15 @@ include '../../../Controls/conexao.php'
                     <div class="col-md-4">
                         <label for="tipo_ativ">Tipo Atividade: </label>
                         <select name="tipo_ativ" id="tipo_ativ" class="form-control">
-                            <?php require_once '../../../Controls/Listar/lista_tipo_atividades.php' ?>
+                            <?php require_once '../../../Controls/Listar/lista_tipo_atividades.php'; ?>
                         </select>
                     </div>
                     <!-- Local -->
                     <div class="col-md-4">
                         <label for="local">Local: </label>
-                        <input type="text" name="local" id="local" class="form-control">
+                        <select type="text" name="local" id="local" class="form-control">
+                            <?php require_once '../../../Controls/Listar/lista_locais_atividade.php';?>
+                        </select>
                     </div>
                 </div>
                 <div class="form-row">

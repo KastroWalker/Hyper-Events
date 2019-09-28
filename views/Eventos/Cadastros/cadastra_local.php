@@ -65,7 +65,7 @@ include '../../../Controls/conexao.php'
             # Encerra a sessão de erro ao cadastrar
             unset($_SESSION['local_não_cadastrada']);
             ?>
-            <form id="form_cadastro_atividade" method="POST" action="../../../Controls/Cadastros/cadastra_local.php">
+            <form id="form_cadastro_atividade" method="POST" action="../../../Controls/CRUD/gerencia_local.php?acao=cadastrar">
                 <h2>Cadastrar Local</h2>
 
 				<!-- ID Evento -->

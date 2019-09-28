@@ -72,7 +72,7 @@ include_once "../../../Controls/conexao.php";
         <script src="../../../JS/jquery.js"></script>
     </header>
     <section id="Cadastrar_Convidado" class="container">
-        <form method="POST" action="../../../Controls/Cadastros/cadastrar_convidado.php" name="form_cadastro">
+        <form method="POST" action="../../../Controls/CRUD/gerencia_convidado.php?acao=cadastrar" name="form_cadastro">
             <h2>Cadastro de convidado</h2>
             <div class="form-row">
                 <div class="col-md-3">

@@ -1,6 +1,8 @@
 <?php
 	session_start();
 	include '../conexao.php';
+
+	$acao = $_REQUEST['acao'];
 	
 	/*Dados Pessoais*/
 	$nome = mysqli_real_escape_string($conexao, trim($_POST['campo_nome']));
@@ -68,18 +70,20 @@
 		exit();
 	}
 
-	$sql = "insert into usuario (idtipo_usuario, nome, sexo, cpf, data_nasc, usuario, senha, email, contato) values ('{$tipo_user}', '{$nome}', '{$sexo}', '{$cpf}', '{$data_nasc}', '{$user}', '{$senha}', '{$email}', '{$contato}');";
+	if ($acao = "cadastrar") {
+		$sql = "insert into usuario (idtipo_usuario, nome, sexo, cpf, data_nasc, usuario, senha, email, contato) values ('{$tipo_user}', '{$nome}', '{$sexo}', '{$cpf}', '{$data_nasc}', '{$user}', '{$senha}', '{$email}', '{$contato}');";
 
-	if($conexao->query($sql) === TRUE){
-		$_SESSION['status_cadastro'] = true;
-		echo "cadastrado";
-	}else{
-		$_SESSION['Não_foi_cadastrado'] = true;
-		echo "não cadastrado".mysqli_error($conexao);
+		if($conexao->query($sql) === TRUE){
+			$_SESSION['status_cadastro'] = true;
+			echo "cadastrado";
+		}else{
+			$_SESSION['Não_foi_cadastrado'] = true;
+			echo "não cadastrado".mysqli_error($conexao);
+		}
+
+		$conexao->close();
+
+		header('Location: ../../views/Cadastros/cadastro.php');
+		exit();
 	}
-
-	$conexao->close();
-
-	header('Location: ../../views/Cadastros/cadastro.php');
-	exit();
 ?>

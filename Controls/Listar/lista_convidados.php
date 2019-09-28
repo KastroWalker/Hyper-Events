@@ -21,7 +21,7 @@
 		mysqli_error($conexao);
 		echo "<tr>";
 		echo "<td>$indice</td>";
-		echo "<td>$nome</td>";
+		echo "<td><a href='#'>$nome</a></td>";
 		echo "<td>$tipo_convi</td>";
 		echo "</tr>";
 

@@ -1,21 +1,8 @@
 <?php 
+	include '../conexao.php';
 	session_start();
 
-	include_once 'conexao.php';
-	include_once 'verifica_login.php';
-
 	$acao = $_REQUEST['acao'];
-
-	/*
-	echo "<strong>Titulo: </strong>".$titulo."<br/>";
-	echo "<strong>Descrição: </strong>".$descricao."<br/>";
-	echo "<strong>Hora: </strong>".$hora."<br/>";
-	echo "<strong>Data_inicio: </strong>".$data_inicio."<br/>";
-	echo "<strong>Data_fim: </strong>".$data_fim."<br/>";
-	echo "<strong>Email: </strong>".$email."<br/>";
-	echo "<strong>Site: </strong>".$site."<br/>";
-	echo "<strong>Id: </strong>".$id."<br/>";
-	*/
 
 	$titulo = mysqli_real_escape_string($conexao, trim($_POST['titulo']));
 	$descricao = mysqli_real_escape_string($conexao, trim($_POST['descricao']));
@@ -49,13 +36,11 @@
 
 			if ($conexao->query($sql) === TRUE) {
 				$_SESSION['evento_cadastrado'] = true;
-				header('Location: ../views/Eventos/Cadastros/cadastro_de_evento.php');
+				header('Location: ../../views/Eventos/Cadastros/cadastro_de_evento.php');
 				exit();
 				echo "Cadastrado com sucesso";
 			} else {
 				$_SESSION['erro_cadastrado'] = true;
-				#header('Location: ../views/cadastro_de_evento.php');
-				#exit();
 				echo "não cadastrado".mysqli_error($conexao);
 			}
 		}
@@ -63,17 +48,6 @@
 		$conexao->close();
 	} elseif ($acao == "editar") {
 		$id = $_POST['id'];
-
-		/*
-		echo "ID: $id<br>";	
-		echo "Titulo: ".$titulo."<br>";
-		echo "Descrição: ".$descricao."<br>";
-		echo "Hora: ".$hora."<br>";
-		echo "Data inicio: ".$data_inicio."<br>";
-		echo "Data fim: ".$data_fim."<br>";
-		echo "Email: ".$email."<br>";
-		echo "Site: ".$site."<br>";	
-		*/
 
 		$sql = "update eventos set titulo_evento = '{$titulo}', descricao = '{$descricao}', data_inicio = '{$data_inicio}', data_fim = '{$data_fim}', hora_inicio = '{$hora_inicio}', hora_fim = '{$hora_fim}', email = '{$email}', url_evento = '{$site}' where evento_id = '{$id}';";
 
