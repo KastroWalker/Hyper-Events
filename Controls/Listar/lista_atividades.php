@@ -30,7 +30,7 @@
 		mysqli_error($conexao);
 		echo "<tr>";
 		echo "<td>$indice</td>";
-		echo "<td><a href='#'>$titulo</a></td>";
+		echo "<td><a href='../informacoes_atividade.php?id=$id'>$titulo</a></td>";
 		echo "<td>$tipo_ativ</td>";
 		echo "<td>$nome_convidado</td>";
 		echo "<td>$vagas</td>";
