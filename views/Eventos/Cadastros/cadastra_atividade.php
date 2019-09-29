@@ -19,7 +19,7 @@ include '../../../Controls/conexao.php'
     <link rel="stylesheet" type="text/css" href="../../../CSS/style_padrao.css">
     <link rel="icon" href="../../../img/icon.png" type="image/x-icon" />
 
-    <script src="../JS/valida_cadastro_evento.js"></script>
+    <script src="../../../JS/valida_cadastro_atividade.js"></script>
     
     <title>Cadastrar Evento - Hyper-Events</title>
 </head>
@@ -55,7 +55,7 @@ include '../../../Controls/conexao.php'
         # Encerra a sessão de erro ao cadastrar
         unset($_SESSION['atividade_não_cadastrada']);
         ?>
-        <form id="form_cadastro_atividade" method="POST" action="../../../Controls/CRUD/gerencia_atividade.php?acao=cadastrar">
+        <form id="form_cadastro_atividade" method="POST" action="../../../Controls/CRUD/gerencia_atividade.php?acao=cadastrar" onsubmit="return validaCadastro();">
             <h2>Cadastrar Atividade</h2>
 
             <div class="form-row">
@@ -86,7 +86,7 @@ include '../../../Controls/conexao.php'
                 <!-- Quantidade de Vagas -->
                 <div class="col-md-4">
                     <label for="qtd_vagas">Quantidade de Vagas: </label>
-                    <input type="number" name="qtd_vagas" name="qtd_vagas" class="form-control">
+                    <input type="number" name="qtd_vagas" name="qtd_vagas" class="form-control" required>
                 </div>
 
                 <!-- Convidado -->
@@ -100,7 +100,7 @@ include '../../../Controls/conexao.php'
                 <!-- Valor -->
                 <div class="col-md-4">
                     <label for="valor">Valor: </label>
-                    <input type="number" name="valor" id="valor" class="form-control">
+                    <input type="number" name="valor" id="valor" class="form-control" required>
                 </div>
             </div>
 
@@ -114,20 +114,20 @@ include '../../../Controls/conexao.php'
                 <!-- Hora Inicio -->
                 <div class="col-md-4">
                     <label for="hora_inicio">Hora inicio: </label>
-                    <input type="time" name="hora_inicio" id="hora_inicio" class="form-control">
+                    <input type="time" name="hora_inicio" id="hora_inicio" class="form-control" required>
                 </div>
 
                 <!-- Hora Fim -->
                 <div class="col-md-4">
                     <label for="hora_fim">Hora fim: </label>
-                    <input type="time" name="hora_fim" id="hora_fim" class="form-control">
+                    <input type="time" name="hora_fim" id="hora_fim" class="form-control" required>
                 </div>
             </div>
 
             <!-- Descrição -->
             <div class="form-group">
                 <label for="descricao">Descrição: </label>
-                <textarea class="form-control" name="descricao" id="descricao"></textarea>
+                <textarea class="form-control" name="descricao" id="descricao" required></textarea>
             </div>
 
             <button type="submit" class="btn btn-primary">Cadastrar</button>
