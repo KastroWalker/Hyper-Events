@@ -19,7 +19,10 @@
     <link rel="stylesheet" type="text/css" href="../../CSS/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../../CSS/style_padrao.css">
     <link rel="icon" type="image/x-icon" href="../../img/icon.png">
-    
+    <script type="text/javascript" src="../../JS/jquery.js"></script>
+    <script type="text/javascript" src="../../JS/bootstrap/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../JS/personalizado.js"></script>    
+
     <title>Informações do Evento - HyperEvents</title>
 </head>
 <body>
@@ -60,6 +63,7 @@
                 require_once './../../Controls/Listar/Informacoes/informacoes_evento.php'
             ?>
             <a href="Editar/edita_evento.php" class="btn btn-primary">Editar</a>
+            <!--a href='../../Controls/CRUD/gerencia_evento.php?acao=deletar' data-confirm='teste'><button type='button' class='btn btn-danger'>Excluir</button></a  on delete cascade on update cascade-->
         </main>
     <?php
         require_once '../footer.php';

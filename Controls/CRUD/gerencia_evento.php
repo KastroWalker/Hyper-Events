@@ -65,22 +65,22 @@
 			header('Location: ../../views/Eventos/Editar/edita_evento.php');
 			exit();
 		}
-	} elseif ($acao == "deletar") {
-		$id = $_REQUEST['id'];
+	} else if ($acao == "deletar") {
+		$evento_id = $_SESSION['id_evento'];
 		
-		$sql = "delete from eventos where evento_id = $id";
+		$sql = "delete from eventos where evento_id = $evento_id";
 
 		$result = mysqli_query($conexao, $sql);
 
 		if(!$result){
 			$_SESSION['erro_excluir'] = true;
 			die('Erro: '.mysqli_error($conexao));
-			header('Location: ../views/Listar/lista_eventos.php');
-			exit();
+			#header('Location: ../views/Listar/lista_eventos.php');
+			#exit();
 		}else{
 			$_SESSION['sucesso_excluir'] = true;
-			header('Location: ../views/Listar/lista_eventos.php');
-			exit();
+			#header('Location: ../views/Listar/lista_eventos.php');
+			#exit();
 		}
 	}
 ?>
