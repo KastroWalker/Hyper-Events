@@ -59,6 +59,7 @@
             <?php
                 require_once './../../Controls/Listar/Informacoes/informacoes_evento.php'
             ?>
+            <a href="Editar/edita_evento.php" class="btn btn-primary">Editar</a>
         </main>
     <?php
         require_once '../footer.php';

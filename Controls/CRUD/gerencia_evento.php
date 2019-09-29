@@ -47,21 +47,22 @@
 
 		$conexao->close();
 	} elseif ($acao == "editar") {
-		$id = $_POST['id'];
+		$evento_id = $_POST['evento_id'];
+		$user_id = $_POST['user_id'];
 
-		$sql = "update eventos set titulo_evento = '{$titulo}', descricao = '{$descricao}', data_inicio = '{$data_inicio}', data_fim = '{$data_fim}', hora_inicio = '{$hora_inicio}', hora_fim = '{$hora_fim}', email = '{$email}', url_evento = '{$site}' where evento_id = '{$id}';";
+		$sql = "update eventos set user_id = '{$user_id}', titulo_evento = '{$titulo}', descricao = '{$descricao}', qtde_vagas_evento = '{$vagas}', url_evento = '{$site}', data_inicio = '{$data_inicio}', data_fim = '{$data_fim}', hora_inicio = '{$hora_inicio}', hora_fim = '{$hora_fim}', email = '{$email}' where evento_id = $evento_id;";
 
 		$result = mysqli_query($conexao, $sql);
 
 		if (!$result) {
 			die('Erro: '.mysqli_error($conexao));
-			$_SESSION['erro_alterar'] = true;
-			header('Location: ../views/Listar/lista_eventos.php');
+			$_SESSION['erro_nao_alterado'] = true;
+			header('Location: ../../views/Eventos/Editar/edita_evento.php');
 			exit();
 		}else {
 			echo "A operação foi realizado com sucesso";
-			$_SESSION['alterado'] = true;
-			header('Location: ../views/Listar/lista_eventos.php');
+			$_SESSION['evento_alterado'] = true;
+			header('Location: ../../views/Eventos/Editar/edita_evento.php');
 			exit();
 		}
 	} elseif ($acao == "deletar") {
