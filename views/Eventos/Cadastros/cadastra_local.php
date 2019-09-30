@@ -19,8 +19,6 @@ include '../../../Controls/conexao.php'
     <link rel="stylesheet" type="text/css" href="../../../CSS/style_padrao.css">
     <link rel="icon" href="../../../img/icon.png" type="image/x-icon" />
     
-    <script src="../JS/valida_cadastro_evento.js"></script>
-    
     <title>Cadastrar Local - Hyper-Events</title>
 </head>
 
@@ -43,7 +41,7 @@ include '../../../Controls/conexao.php'
             <?php
             }
             # Encerra a sessão de atividade cadastrada
-            unset($_SESSION['local_cadastrada']);
+            unset($_SESSION['local_cadastrado']);
             # Verfica se deu algum erro na hora de cadastrar o evento
             if (isset($_SESSION['local_não_cadastrada'])) {
                 # Mostra a mensagem pro usuário
@@ -65,7 +63,7 @@ include '../../../Controls/conexao.php'
                 <!-- Nome -->
                 <div class="form-group">
                     <label for="nome_local">Nome: </label>
-                    <input class="form-control" name="nome_local" id="nome_local">
+                    <input class="form-control" name="nome_local" id="nome_local" required>
                 </div>
 
                 <button type="submit" class="btn btn-primary">Cadastrar</button>
