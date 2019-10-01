@@ -1,9 +1,8 @@
 <?php
     include '../../Controls/funcoes.php';
     include '../../Controls/conexao.php';
-    $id = $_REQUEST['id'];
     session_start();
-    $_SESSION['id_evento'] = $id;
+    $_SESSION['id_evento'] = $_REQUEST['id'];
 ?>
 
 <!DOCTYPE html>
@@ -63,7 +62,25 @@
                 require_once './../../Controls/Listar/Informacoes/informacoes_evento.php'
             ?>
             <a href="Editar/edita_evento.php" class="btn btn-primary">Editar</a>
-            <!--a href='../../Controls/CRUD/gerencia_evento.php?acao=deletar' data-confirm='teste'><button type='button' class='btn btn-danger'>Excluir</button></a  on delete cascade on update cascade-->
+            <!--a href='../../Controls/CRUD/gerencia_evento.php?acao=deletar' id='bnt-deletar' data-confirm='btn-deletar'><button type='button' class='btn btn-danger'>Excluir</button></a-->
+            <!--a href="#">Teste</a-->
+            <!--div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            EXCLUIR ITEM
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        </div>
+                        <div class="modal-body">
+                            <p class="alert alert-danger">Deseja mesmo Excluir o Evento?</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-success" data-dismiss="modal">Cancelar</button>
+                            <a class="btn btn-danger text-white" id="dataComfirmOK">Excluir</a>
+                        </div>
+                    </div>
+                </div>
+            </div-->
         </main>
     <?php
         require_once '../footer.php';

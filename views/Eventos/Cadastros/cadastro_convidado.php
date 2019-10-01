@@ -64,6 +64,43 @@ include_once "../../../Controls/conexao.php";
         <script src="../../../JS/jquery.js"></script>
     </header>
     <section id="Cadastrar_Convidado" class="container">
+        <?php
+            # Verifica se o convidado foi cadastrado com sucesso
+            if (isset($_SESSION['convidado_cadastrado'])) {
+                # Mostra a mensagem pro usuário
+                ?>
+                <div class="alert alert-success text-center">
+                    Convidado Cadastrado com Sucesso!<br />
+                    Clique <a href="../Listar/lista_convidados.php"><strong>aqui</strong></a> para ver os convidados;
+                </div>
+            <?php
+            }
+            # Encerra a sessão de convidado cadastrado
+            unset($_SESSION['convidado_cadastrado']);
+            # Verifica se o convidado ja esta cadastrado
+            if (isset($_SESSION['convidado_ja_cadastrado'])) {
+                # Mostra a mensagem pro usuário
+                ?>
+                <div class="alert alert-danger text-center">
+                    Convidado já cadastrado!
+                </div>
+            <?php
+            }
+            # Encerra a sessão de convidado ja cadastrado
+            unset($_SESSION['convidado_ja_cadastrado']);
+            # Verfica se deu algum erro na hora de cadastrar o convidado
+            if (isset($_SESSION['convidado_nao_cadastrado'])) {
+                # Mostra a mensagem pro usuário
+                ?>
+                <div class="alert alert-danger text-center">
+                    Não foi possivel cadastrar o convidados!
+                </div>
+            <?php
+            }
+            # Encerra a sessão de erro ao cadastrar
+            unset($_SESSION['convidado_nao_cadastrado']);
+        ?>
+
         <form method="POST" action="../../../Controls/CRUD/gerencia_convidado.php?acao=cadastrar" name="form_cadastro">
             <h2>Cadastro de convidado</h2>
             <div class="form-row">
