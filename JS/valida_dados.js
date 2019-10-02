@@ -51,10 +51,7 @@ function valida_dados() {
             document.forms['form_cadastro'].campo_nome.className = new_name_class;
             form_cadastro.campo_nome.focus();
             return false;
-        } else {
-            document.forms['form_cadastro'].campo_nome.className = name_class;
         }
-
         return true;
     }
     

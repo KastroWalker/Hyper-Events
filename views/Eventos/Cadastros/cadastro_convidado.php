@@ -6,22 +6,23 @@ include_once "../../../Controls/conexao.php";
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="robots" content="index, follow"/>
-    <meta name="description" content="Hyper Events - Cadastrar convidados que ministrarão as atividades"/>
-    <meta name="keywords" content="Eventos, Convidado, Ministrante, Palestrante, Atividade"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="author" content="Kauan Portela"/> 
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow" />
+    <meta name="description" content="Hyper Events - Cadastrar convidados que ministrarão as atividades" />
+    <meta name="keywords" content="Eventos, Convidado, Ministrante, Palestrante, Atividade" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Kauan Portela" />
 
     <link rel="canonical" href="https://localhost:8000/home/" />
     <link rel="stylesheet" type="text/css" href="../../../CSS/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../../../CSS/style_cadastro.css">
     <link rel="stylesheet" type="text/css" href="../../../CSS/style_padrao.css">
     <link rel="icon" href="../../../img/icon.png" type="image/x-icon" />
-    
+
     <script src="../../../JS/formata.js"></script>
     <script src="../../../JS/jquery.js"></script>
-    
+    <script src="../../../JS/valida_cadastro_convidado.js"></script>
+
     <script>
         function frm_number_only_exc() {
             /**
@@ -49,9 +50,10 @@ include_once "../../../Controls/conexao.php";
 
         });
     </script>
-    
+
     <title>Cadastro de convidado</title>
 </head>
+
 <body>
     <?php
     # Iniciando sessão 
@@ -64,6 +66,7 @@ include_once "../../../Controls/conexao.php";
         <script src="../../../JS/jquery.js"></script>
     </header>
     <section id="Cadastrar_Convidado" class="container">
+        <form method="POST" action="../../../Controls/CRUD/gerencia_convidado.php?acao=cadastrar" name="form_cadastro" onsubmit="return valida_nome();" <h2>Cadastro de convidado</h2>
         <?php
             # Verifica se o convidado foi cadastrado com sucesso
             if (isset($_SESSION['convidado_cadastrado'])) {
@@ -107,6 +110,7 @@ include_once "../../../Controls/conexao.php";
                 <div class="col-md-3">
                     <label for="nome" id="campo_nome">Nome:</label>
                     <input type="text" name="campo_nome" id="nome" class="form-control" placeholder="Digite o nome do convidado..." required>
+                    <div class="invalid-feedback">Nome inválido!</div>
                 </div>
                 <div class="col-md-3">
                     <label for="email" id="campo_email">E-mail:</label>

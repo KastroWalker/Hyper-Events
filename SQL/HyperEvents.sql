@@ -59,7 +59,7 @@ create table local_atividade(
   evento_id int not null,
   nome_local varchar(100) not null,
   primary key (local_id),
-  foreign key (evento_id) references eventos (evento_id)
+  foreign key (evento_id) references eventos (evento_id) on delete cascade
 );
 
 -- Criando tabela de tipos de atividade --

@@ -18,7 +18,9 @@ session_start();
     <link rel="stylesheet" type="text/css" href="../../../CSS/style_cadastro_eveto.css">
     <link rel="stylesheet" type="text/css" href="../../../CSS/style_padrao.css">
     <link rel="icon" href="../../../img/icon.png" type="image/x-icon" />
-        
+    
+    <script src="../../../JS/jquery.js"></script>
+    <script src="../../../JS/formata.js"></script>
     <script src="../../../JS/valida_cadastro_evento.js"></script>
     
     <title>Cadastrar Evento - Hyper-Events</title>
@@ -83,6 +85,7 @@ session_start();
                     <div class="col-md-3">
                         <label for="inicio">Inicio do evento: *</label>
                         <input type="date" name="inicio" id="inicio" class="form-control" required>
+                        <div class="invalid-feedback">Você não pode voltar no tempo!</div>
                     </div>
                     <div class="col-md-3">
                         <label for="hora_inicio">Hora inicial: *</label>
@@ -91,6 +94,7 @@ session_start();
                     <div class="col-md-3">
                         <label for="fim">Fim do Evento: *</label>
                         <input type="date" name="fim" id="fim" class="form-control" required>
+                        <div class="invalid-feedback">O evento não pode acabar antes de começar!</div>
                     </div>
                     <div class="col-md-3">
                         <label for="hora_fim">Hora final: *</label>
