@@ -15,7 +15,7 @@
         $descricao = $row['descricao'];
         $email = $row['email'];
         $contato = $row['contato'];
-
+        $nome_html = htmlspecialchars($nome_convidado);
         echo mysqli_error($conexao);
     } else {
         echo "Registro não encontrado".mysqli_error($conexao);
@@ -36,7 +36,8 @@
         <link rel="stylesheet" type="text/css" href="../../../CSS/style_padrao.css">
         <link rel="icon" type="image/x-icon" href="../../../img/icon.png">
         
-        <script src="../../../JS/valida_cadastro_evento.js"></script>
+        <script src="../../../JS/formata.js"></script>
+        <script src="../../../JS/jquery.js"></script>
 
         <title>Edita Convidado - HyperEvents</title>
 
@@ -64,7 +65,6 @@
                         }
                     }
                 });
-
             });
         </script>
     </head>
@@ -110,20 +110,22 @@
                 unset($_SESSION['convidado_nao_cadastrado']);
             ?>
 
-            <form method="POST" action="../../../Controls/CRUD/gerencia_convidado.php?acao=cadastrar" name="form_cadastro">
+            <form method="POST" action="../../../Controls/CRUD/gerencia_convidado.php?acao=editar" name="form_cadastro">
                 <h2>Cadastro de convidado</h2>
+                <input type="hidden" name="convidado_id" id="convidado_id" value="<?php echo $convidado_id; ?>">
+                <input type="hidden" name="evento_id" id="evento_id" value="<?php echo $evento_id; ?>">
                 <div class="form-row">
                     <div class="col-md-3">
                         <label for="nome" id="campo_nome">Nome:</label>
-                        <input type="text" name="campo_nome" id="nome" class="form-control" placeholder="Digite o nome do convidado..." required value=<?php echo $nome_convidado; ?>>
+                        <input type="text" name="campo_nome" id="nome" class="form-control" placeholder="Digite o nome do convidado..." required value="<?php echo $nome_convidado; ?>">
                     </div>
                     <div class="col-md-3">
                         <label for="email" id="campo_email">E-mail:</label>
-                        <input type="email" name="campo_email" id="email" class="form-control" placeholder="Digite o e-mail para contato" required value=<?php echo $email; ?>>
+                        <input type="email" name="campo_email" id="email" class="form-control" placeholder="Digite o e-mail para contato" required value="<?php echo $email; ?>">
                     </div>
                     <div class="col-md-3">
                         <label for="telefone" id="campo_contato">Contato:</label>
-                        <input type="tel" name="campo_telefone" id="telefone" onkeypress="formata_mascara(this, '## #####-####', event)" minlength="13" maxlength="13" class="frm_number_only form-control" placeholder="(xx) xxxxx-xxxx" required value=<?php echo $contato; ?>>
+                        <input type="tel" name="campo_telefone" id="telefone" onkeypress="formata_mascara(this, '## #####-####', event)" minlength="13" maxlength="13" class="frm_number_only form-control" placeholder="(xx) xxxxx-xxxx" required value="<?php echo $contato; ?>">
                     </div>
                     <div class="col-md-3">
                         <label for="tipo_conv">Tipo de Convidado:</label>
@@ -136,11 +138,11 @@
                 </div>
                 <div class="form-group">
                     <label for="descricao" id="campo_descricao">Descrição</label>
-                    <textarea name="campo_descricao" id="descricao" cols="30" rows="5" placeholder="Descrição..." class="form-control" required><?php echo $nome_convidado; ?></textarea>
+                    <textarea name="campo_descricao" id="descricao" cols="30" rows="5" placeholder="Descrição..." class="form-control" required><?php echo $descricao; ?></textarea>
                 </div>
                 <button type="submit" class="btn btn-success">Editar</button>
                 <button type="reset" class="btn btn-primary">Limpar</button>
-                <a class="btn btn-info" href="../informacoes_convidado.php">Voltar</a>
+                <a class="btn btn-info" href="../informacoes_convidado.php?convidado_id=<?php echo $id_convidado?>">Voltar</a>
             </form>
         </main>
         <?php 

@@ -27,5 +27,5 @@
 		header('Location: ../../views/Eventos/Cadastros/cadastro_convidado.php');
 		exit();
 		$conexao->close();
-	}
+	}else if($acao == "editar")
 ?>
