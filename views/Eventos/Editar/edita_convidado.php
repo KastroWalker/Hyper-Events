@@ -15,7 +15,6 @@
         $descricao = $row['descricao'];
         $email = $row['email'];
         $contato = $row['contato'];
-        $nome_html = htmlspecialchars($nome_convidado);
         echo mysqli_error($conexao);
     } else {
         echo "Registro não encontrado".mysqli_error($conexao);

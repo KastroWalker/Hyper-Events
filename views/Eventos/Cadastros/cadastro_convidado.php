@@ -66,7 +66,8 @@ include_once "../../../Controls/conexao.php";
         <script src="../../../JS/jquery.js"></script>
     </header>
     <section id="Cadastrar_Convidado" class="container">
-        <form method="POST" action="../../../Controls/CRUD/gerencia_convidado.php?acao=cadastrar" name="form_cadastro" onsubmit="return valida_nome();" <h2>Cadastro de convidado</h2>
+        <form method="POST" action="../../../Controls/CRUD/gerencia_convidado.php?acao=cadastrar" name="form_cadastro" onsubmit="return valida_nome();"> 
+        <h2>Cadastro de convidado</h2>
         <?php
             # Verifica se o convidado foi cadastrado com sucesso
             if (isset($_SESSION['convidado_cadastrado'])) {
