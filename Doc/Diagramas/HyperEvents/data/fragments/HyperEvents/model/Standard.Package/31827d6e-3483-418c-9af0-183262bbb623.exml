@@ -17,6 +17,7 @@
         <COMPID name="Organizador" mc="Standard.Actor" uid="5f126e63-5f64-4076-ba5a-f0e501733944"/>
         <COMPID name="Usuário" mc="Standard.Actor" uid="7875bd71-c168-46cd-bc5c-a7e624192323"/>
         <COMPID name="Diagramas de Caso de Uso" mc="Standard.Package" uid="3b818e25-102b-45dd-bb7c-ae9842a2c4e7"/>
+        <COMPID name="Diagramas de Atividade" mc="Standard.Package" uid="fbffc0f0-1b73-4277-9f73-3b15b0e69fef"/>
       </COMP>
     </DEPENDENCIES>
   </OBJECT>
