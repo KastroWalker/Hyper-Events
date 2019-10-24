@@ -82,6 +82,7 @@ include '../../../Controls/conexao.php'
                     <select type="text" name="local" id="local" class="form-control">
                         <?php require_once '../../../Controls/Listar/lista_locais_atividade.php'; ?>
                     </select>
+                    <a href="cadastra_local.php">Cadastrar</a>
                 </div>
             </div>
             <div class="form-row">
@@ -97,6 +98,7 @@ include '../../../Controls/conexao.php'
                     <select name="convidado" id="convidado" class="form-control">
                         <?php require_once '../../../Controls/Listar/lista_convidados_atividade.php'; ?>
                     </select>
+                    <a href="cadastro_convidado.php">Cadastrar</a>
                 </div>
 
                 <!-- Valor -->

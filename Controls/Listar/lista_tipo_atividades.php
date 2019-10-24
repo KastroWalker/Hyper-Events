@@ -1,4 +1,5 @@
 <?php
+	include_once '../conexao.php';
 	$sql = "select * from tipoAtividade";
 	$result = mysqli_query($conexao, $sql);
 	while ($tlb = mysqli_fetch_array($result)) {

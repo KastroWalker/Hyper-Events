@@ -106,7 +106,6 @@ include_once "../../../Controls/conexao.php";
         ?>
 
         <form method="POST" action="../../../Controls/CRUD/gerencia_convidado.php?acao=cadastrar" name="form_cadastro">
-            <h2>Cadastro de convidado</h2>
             <div class="form-row">
                 <div class="col-md-3">
                     <label for="nome" id="campo_nome">Nome:</label>

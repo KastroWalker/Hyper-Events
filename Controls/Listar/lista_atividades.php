@@ -1,5 +1,5 @@
 <?php
-	$id_evento = $_SESSION['id'];
+	$id_evento = $_SESSION['id_evento'];
 	#$id_evento = intval($id_evento);
 	#echo gettype($id_evento);
 

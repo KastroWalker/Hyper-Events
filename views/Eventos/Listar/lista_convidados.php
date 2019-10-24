@@ -21,7 +21,7 @@ $id = $_SESSION['id_evento'];
 </head>
 <body>
     <?php
-        require_once '../../header_eventos.php'
+        require_once '../../header_eventos.php';
     ?>
     <div class="div_principal">
         <?php require_once '../../Menus/nav_bar_evento.php' ?>

@@ -62,9 +62,8 @@
                 require_once './../../Controls/Listar/Informacoes/informacoes_evento.php'
             ?>
             <a href="Editar/edita_evento.php" class="btn btn-primary">Editar</a>
-            <!--a href='../../Controls/CRUD/gerencia_evento.php?acao=deletar' id='bnt-deletar' data-confirm='btn-deletar'><button type='button' class='btn btn-danger'>Excluir</button></a-->
-            <!--a href="#">Teste</a-->
-            <!--div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <a href='../../Controls/CRUD/gerencia_evento.php?acao=deletar' id='bnt-deletar' data-confirm='btn-deletar'><button type='button' class='btn btn-danger'>Excluir</button></a>
+            <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -80,7 +79,7 @@
                         </div>
                     </div>
                 </div>
-            </div-->
+            </div>
         </main>
     <?php
         require_once '../footer.php';

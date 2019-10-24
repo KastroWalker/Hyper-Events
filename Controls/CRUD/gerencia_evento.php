@@ -75,12 +75,12 @@
 		if(!$result){
 			$_SESSION['erro_excluir'] = true;
 			die('Erro: '.mysqli_error($conexao));
-			#header('Location: ../views/Listar/lista_eventos.php');
-			#exit();
+			header('Location: ../../views/Eventos/Listar/lista_eventos.php');
+			exit();
 		}else{
 			$_SESSION['sucesso_excluir'] = true;
-			#header('Location: ../views/Listar/lista_eventos.php');
-			#exit();
+			header('Location: ../../views/Eventos/Listar/lista_eventos.php');
+			exit();
 		}
 	}
 ?>

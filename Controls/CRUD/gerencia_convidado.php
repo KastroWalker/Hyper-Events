@@ -4,7 +4,7 @@
     
 	$acao = $_REQUEST['acao'];
 
-    $evento_id = $_SESSION['id'];
+    $evento_id = $_SESSION['id_evento'];
     $nome = mysqli_real_escape_string($conexao, trim($_POST['campo_nome']));
     $email = mysqli_real_escape_string($conexao, trim($_POST['campo_email']));
     $contato = mysqli_real_escape_string($conexao, trim($_POST['campo_telefone']));

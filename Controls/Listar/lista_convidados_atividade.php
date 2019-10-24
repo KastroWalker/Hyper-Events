@@ -1,5 +1,5 @@
 <?php
-	$evento_id = $_SESSION['id'];
+	$evento_id = $_SESSION['id_evento'];
 	include '../conexao.php';
 	$sql = "select convidado.nome_convidado, convidado.idConvidado, tipoConvidado.tipo_convidado, eventos.evento_id
 	from convidado inner join tipoConvidado on (convidado.idTipoConvidado = tipoConvidado.idTipoConvidado)

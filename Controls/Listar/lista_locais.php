@@ -1,6 +1,6 @@
-<?php 
-	$id_evento = $_SESSION['id'];
-	$sql = "select * from local_atividade where local_id = $id_evento;"
+<?php
+	$id_evento = $_SESSION['id_evento'];
+	$sql = "select * from local_atividade where evento_id = $id_evento;"
 ?>
 <table class="table table-condensed table-striped table-bordered table-hover">
 <tr>

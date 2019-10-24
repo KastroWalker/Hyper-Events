@@ -57,7 +57,7 @@ if(isset($_SESSION['id'])){
             <?php 
             if (isset($_SESSION['sucesso_excluir'])) {
                 ?>
-                <div class="alert alert-success">
+                <div class="alert alert-success text-center">
                     <p>Evento Excluido com Sucesso!</p>
                 </div>
                 <?php 
@@ -65,7 +65,7 @@ if(isset($_SESSION['id'])){
             unset($_SESSION['sucesso_excluir']);
             if (isset($_SESSION['erro_excluir'])) {
                 ?>
-                <div class="alert alert-danger">
+                <div class="alert alert-danger text-center">
                     <p>Erro ao Excluir o Evento!<br>Tente novamente!</p>
                 </div>
                 <?php 

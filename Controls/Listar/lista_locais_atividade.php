@@ -1,8 +1,7 @@
 <?php
-	include '../conexao.php';
+	include_once '../conexao.php';
 	session_start();
-	$evento_id = $_SESSION['id'];
-	echo "$evento_id";
+	$evento_id = $_SESSION['id_evento'];
 
 	$sql = "select * from local_atividade where evento_id = $evento_id;";
 	$result = mysqli_query($conexao, $sql);
