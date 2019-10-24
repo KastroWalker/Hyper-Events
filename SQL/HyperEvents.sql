@@ -7,7 +7,7 @@ create database HyperEvents;
   use HyperEvents;
 
 -- Dando o privilegio para o usuário padrão --
-grant all privileges on HyperEvents.* to 'matue' @'%';
+-- grant all privileges on HyperEvents.* to 'matue' @'%'; --
 
 -- Criando tabela de tipos de usuário --
 create table tipoUsuario(
@@ -33,7 +33,7 @@ create table usuario(
   email varchar(100) not null,
   contato varchar(11),
   primary key(user_id),
-  foreign key (idtipo_usuario) references tipoUsuario (idtipo_usuario)
+  foreign key (idtipo_usuario) references tipoUsuario (idtipo_usuario) on delete cascade
   );
 
 -- Criando tabela de eventos --
@@ -50,7 +50,7 @@ create table eventos(
   hora_fim time not null,
   email varchar(100) not null,
   primary key(evento_id),
-  foreign key(user_id) references usuario(user_id)
+  foreign key(user_id) references usuario(user_id) on delete cascade
   );
 
   -- Criando tabela do local da atividade --
@@ -94,8 +94,8 @@ create table convidado(
   email varchar(60),
   contato VARCHAR (11),
   primary key(idConvidado),
-  foreign key (idTipoConvidado) references tipoConvidado (idTipoConvidado),
-  foreign key (evento_id) references eventos (evento_id)
+  foreign key (idTipoConvidado) references tipoConvidado (idTipoConvidado)on delete cascade,
+  foreign key (evento_id) references eventos (evento_id)on delete cascade
   );
 
 -- Criando a tabela de atividades --
@@ -113,10 +113,10 @@ create table atividade(
   inicio time not null,
   fim time not null,
   primary key(atividade_id),
-  foreign key(local_id) references local_atividade(local_id),
-  foreign key(evento_id) references eventos(evento_id),
-  foreign key(idTipoAtividade) references tipoAtividade(idTipoAtividade),
-  foreign key(idConvidado) references convidado(idConvidado)
+  foreign key(local_id) references local_atividade(local_id)on delete cascade,
+  foreign key(evento_id) references eventos(evento_id)on delete cascade,
+  foreign key(idTipoAtividade) references tipoAtividade(idTipoAtividade)on delete cascade,
+  foreign key(idConvidado) references convidado(idConvidado)on delete cascade
   );
 
 -- Criando a tabela de inscrições em eventos --
@@ -127,8 +127,8 @@ create table inscricao_evento (
   data_inscricao_evento Date not null,
   hora_inscricao_evento Time not null,
   primary key (matricula),
-  foreign key (user_id) references usuario (user_id),
-  foreign key (evento_id) references eventos (evento_id)
+  foreign key (user_id) references usuario (user_id)on delete cascade,
+  foreign key (evento_id) references eventos (evento_id)on delete cascade
   );
 
 -- Criando tabela de inscrição em atividade --
@@ -138,6 +138,6 @@ create table inscricao_atividade (
   data_inscricao_atividade Date not null,
   hora_inscricao_atividade Time not null,
   primary key (atividade_id, matricula),
-  foreign key (atividade_id) references atividade (atividade_id),
-  foreign key (matricula) references inscricao_evento (matricula)
+  foreign key (atividade_id) references atividade (atividade_id)on delete cascade,
+  foreign key (matricula) references inscricao_evento (matricula)on delete cascade
   );

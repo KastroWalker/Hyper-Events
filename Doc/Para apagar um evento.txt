@@ -1,0 +1,7 @@
+Para apagar um evento
+
+01. Inscrição atividade
+02. Atividade
+03. Inscrição evento
+04. Local atividade
+05. Convidado
