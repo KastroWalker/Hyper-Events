@@ -98,6 +98,7 @@ include '../../../Controls/conexao.php'
                     <select name="convidado" id="convidado" class="form-control">
                         <?php require_once '../../../Controls/Listar/lista_convidados_atividade.php'; ?>
                     </select>
+                    <div class="invalid-feedback">Convidado inválido!</div>
                     <a href="cadastro_convidado.php">Cadastrar</a>
                 </div>
 

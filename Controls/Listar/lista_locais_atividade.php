@@ -1,6 +1,6 @@
 <?php
-	include_once '../conexao.php';
-	session_start();
+	//include_once '../conexao.php';
+	//session_start();
 	$evento_id = $_SESSION['id_evento'];
 
 	$sql = "select * from local_atividade where evento_id = $evento_id;";
