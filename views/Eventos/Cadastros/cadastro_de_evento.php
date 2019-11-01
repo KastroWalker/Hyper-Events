@@ -41,7 +41,7 @@ session_start();
                     Evento Cadastrado com Sucesso!<br />
                     Clique <a href="../Listar/lista_eventos.php"><strong>aqui</strong></a> para ver os eventos;
                 </div>
-            <?php
+                <?php
             }
             # Encerra a sessão de evento cadastrado
             unset($_SESSION['evento_cadastrado']);
@@ -52,7 +52,7 @@ session_start();
                 <div class="alert alert-danger text-center">
                     Evento já cadastrado!
                 </div>
-            <?php
+                <?php
             }
             # Encerra a sessão de evento ja cadastrado
             unset($_SESSION['evento_ja_cadastrado']);
@@ -63,7 +63,7 @@ session_start();
                 <div class="alert alert-danger text-center">
                     Não foi possivel cadastrar o evento!
                 </div>
-            <?php
+                <?php
             }
             # Encerra a sessão de erro ao cadastrar
             unset($_SESSION['erro_cadastrado']);
@@ -82,55 +82,58 @@ session_start();
                     </div>
                 </div>
                 <div class="form-row">
-                    <div class="col-md-3">
+                    <div class="col-md-6">
                         <label for="inicio">Inicio do evento: *</label>
                         <input type="date" name="inicio" id="inicio" class="form-control" required>
                         <div class="invalid-feedback">Você não pode voltar no tempo!</div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-6">
                         <label for="hora_inicio">Hora inicial: *</label>
                         <input type="time" name="hora_inicio" class="form-control" id="hora_inicio" required>
                     </div>
-                    <div class="col-md-3">
+                </div>
+                <div class="form-row">
+                    <div class="col-md-6">
                         <label for="fim">Fim do Evento: *</label>
                         <input type="date" name="fim" id="fim" class="form-control" required>
                         <div class="invalid-feedback">O evento não pode acabar antes de começar!</div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-6">
                         <label for="hora_fim">Hora final: *</label>
                         <input type="time" name="hora_fim" class="form-control" id="hora_fim" required>
                     </div>
                 </div>
-                <div class="form-row">
-                    <div class="col-md-4">
-                        <label for="vagas">Vagas no evento: </label>
-                        <select class="form-control" id="vagas" name="vagas">
-                            <option value="100">100 vagas</option>
-                            <option value="150">150 vagas</option>
-                            <option value="200">200 vagas</option>
-                        </select>
-                    </div>
-                    <div class="col-md-8">
-                        <label for="site">Site do Evento: </label>
-                        <input type="text" name="site" class="form-control" id="site">
-                    </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-4">
+                    <label for="vagas">Vagas no evento: </label>
+                    <select class="form-control" id="vagas" name="vagas">
+                        <option value="100">100 vagas</option>
+                        <option value="150">150 vagas</option>
+                        <option value="200">200 vagas</option>
+                    </select>
                 </div>
-                <div class="form-group">
-                    <label for="descricao">Descrição do evento</label>
-                    <textarea name="descricao" class="form-control" id="descricao" required></textarea>
+                <div class="col-md-8">
+                    <label for="site">Site do Evento: </label>
+                    <input type="text" name="site" class="form-control" id="site">
                 </div>
-                <br />
-                <button type="submit" class="btn btn-primary">Cadastrar</button>
-                <button type="reset" class="btn btn-secondary">Limpar</button>
-                <a class="btn btn-info" href="../Listar/lista_eventos.php">Voltar</a>
-                <p><strong>Atenção: </strong>Todos os campos que possuem '*' são obrigatorios.</p>
-            </form>
-        </section>
-    </main>
-    <?php
+            </div>
+            <div class="form-group">
+                <label for="descricao">Descrição do evento</label>
+                <textarea name="descricao" class="form-control" id="descricao" required></textarea>
+            </div>
+            <br />
+            <button type="submit" class="btn btn-primary">Cadastrar</button>
+            <button type="reset" class="btn btn-secondary">Limpar</button>
+            <a class="btn btn-info" href="../Listar/lista_eventos.php">Voltar</a>
+            <p><strong>Atenção: </strong>Todos os campos que possuem '*' são obrigatorios.</p>
+        </form>
+    </section>
+</main>
+<?php
     # Importa o rodape padrão
-    require_once '../../footer.php';
-    ?>
+require_once '../../footer.php';
+?>
 </body>
 
 </html>
