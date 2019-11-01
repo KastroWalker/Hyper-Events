@@ -17,6 +17,7 @@
 		<th>Data de fim</th>
 		<th>Email</th>
 		<th>Site</th>
+		<th>Apagar</th>
 	</tr>
 
 <?php
@@ -36,6 +37,7 @@
 		mysqli_error($conexao);
 		echo "<tr>";
 		echo "<td>$indice</td>";
+		echo "<td style='display: none;'>$id_evento</td>";
 		echo "<td><a href='../informacoes_evento.php?id=$id_evento'>$Titulo</a></td>";
 		echo "<td>$Descricao</td>";
 		echo "<td>$hora_inicio</td>";
@@ -43,6 +45,7 @@
 		echo "<td>$data_fim</td>";
 		echo "<td>$email</td>";
 		echo "<td><a href='$url_evento'>$url_evento</a></td>";
+		echo "<td><button type='button' class='btn btn-danger deletebtn'> APAGAR </button></td>";
 		echo "</tr>";
 
 		$indice++;
@@ -50,5 +53,3 @@
 ?>
 
 </table>
-
-<script src="../../../JS/personalizado.js"></script>

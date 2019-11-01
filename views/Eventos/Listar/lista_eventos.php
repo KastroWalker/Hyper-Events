@@ -30,6 +30,32 @@ if(isset($_SESSION['id'])){
             # Importa o cabeçalho e a nav bar padrão
         require_once '../../header_eventos.php';
         ?>
+        <!-- DELETE -->
+        <div class="modal fade" id="deletemodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Delete Student Data</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <form action="../../../Controls/CRUD/gerencia_evento.php?acao=deletar" method="POST">
+                  <div class="modal-body">
+                      <input type="text" name="delete_id" id="delete_id">
+
+                        <h4> Você tem certeza que deseja apagar esse Evento? </h4>
+
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"> NÃO </button>
+                    <button type="submit" name="deletedata" class="btn btn-primary"> SIM!! DELETAR </button>
+                  </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
         <div class="div_principal">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <a class="navbar-brand" href="area_org.php">Hyper Events</a>
@@ -94,6 +120,28 @@ if(isset($_SESSION['id'])){
             require_once '../../footer.php';
             ?>
         </div>
+        <script src="../../../JS/jquery.js"></script>
+        <script src="../../../JS/bootstrap/bootstrap.min.js"></script>
+        <script src="../../../JS/bootstrap/popper.min.js"></script>
+        <script>
+        $(document).ready(function(){
+            $('.deletebtn').on('click', function(){
+
+                $('#deletemodal').modal('show');
+                
+                $tr = $(this).closest('tr');
+
+                var data = $tr.children("td").map(function(){
+                    return $(this).text();
+                }).get();
+
+                console.log(data);
+
+                $("#delete_id").val(data[1]);
+
+            });
+        });
+        </script>
     </body>
     </html>
 

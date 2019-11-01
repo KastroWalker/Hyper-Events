@@ -4,15 +4,15 @@
 
 	$acao = $_REQUEST['acao'];
 
-	$titulo = mysqli_real_escape_string($conexao, trim($_POST['titulo']));
-	$descricao = mysqli_real_escape_string($conexao, trim($_POST['descricao']));
-	$hora_inicio = mysqli_real_escape_string($conexao, trim($_POST['hora_inicio']));
-	$vagas = mysqli_real_escape_string($conexao, trim($_POST['vagas'])); 
-	$hora_fim = mysqli_real_escape_string($conexao, trim($_POST['hora_fim']));
-	$data_inicio = mysqli_real_escape_string($conexao, trim($_POST['inicio']));
-	$data_fim = mysqli_real_escape_string($conexao, trim($_POST['fim']));
-	$email = mysqli_real_escape_string($conexao, trim($_POST['email']));
-	$site = mysqli_real_escape_string($conexao, trim($_POST['site']));
+	@$titulo = mysqli_real_escape_string($conexao, trim($_POST['titulo']));
+	@$descricao = mysqli_real_escape_string($conexao, trim($_POST['descricao']));
+	@$hora_inicio = mysqli_real_escape_string($conexao, trim($_POST['hora_inicio']));
+	@$vagas = mysqli_real_escape_string($conexao, trim($_POST['vagas'])); 
+	@$hora_fim = mysqli_real_escape_string($conexao, trim($_POST['hora_fim']));
+	@$data_inicio = mysqli_real_escape_string($conexao, trim($_POST['inicio']));
+	@$data_fim = mysqli_real_escape_string($conexao, trim($_POST['fim']));
+	@$email = mysqli_real_escape_string($conexao, trim($_POST['email']));
+	@$site = mysqli_real_escape_string($conexao, trim($_POST['site']));
 
 	if($acao == "cadastrar"){
 		$id = $_SESSION['id'];
@@ -66,21 +66,23 @@
 			exit();
 		}
 	} else if ($acao == "deletar") {
-		$evento_id = $_SESSION['id_evento'];
+		$evento_id = $_POST['delete_id'];
 		
-		$sql = "delete from eventos where evento_id = $evento_id";
+		if (isset($_POST['deletedata'])) {
+			$sql = "delete from eventos where evento_id = $evento_id";
 
-		$result = mysqli_query($conexao, $sql);
+			$result = mysqli_query($conexao, $sql);
 
-		if(!$result){
-			$_SESSION['erro_excluir'] = true;
-			die('Erro: '.mysqli_error($conexao));
-			header('Location: ../../views/Eventos/Listar/lista_eventos.php');
-			exit();
-		}else{
-			$_SESSION['sucesso_excluir'] = true;
-			header('Location: ../../views/Eventos/Listar/lista_eventos.php');
-			exit();
+			if(!$result){
+				$_SESSION['erro_excluir'] = true;
+				die('Erro: '.mysqli_error($conexao));
+				header('Location: ../../views/Eventos/Listar/lista_eventos.php');
+				exit();
+			}else{
+				$_SESSION['sucesso_excluir'] = true;
+				header('Location: ../../views/Eventos/Listar/lista_eventos.php');
+				exit();
+			}
 		}
 	}
 ?>
