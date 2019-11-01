@@ -15,9 +15,10 @@
 		<th>Hora de inicio</th>
 		<th>Data de incio</th>
 		<th>Data de fim</th>
-		<th>Email</th>
+		<th>Hora Final</th>
 		<th>Site</th>
 		<th>Apagar</th>
+		<th>Editar</th>
 	</tr>
 
 <?php
@@ -30,7 +31,7 @@
 		$hora_inicio = $tlb['hora_inicio'];
 		$data_inicio = $tlb['data_inicio'];
 		$data_fim = $tlb['data_fim'];
-		$email = $tlb['email'];
+		$hora_fim = $tlb['hora_fim'];
 		$url_evento = $tlb['url_evento'];
 		$id_evento = $tlb['evento_id'];
 
@@ -43,9 +44,9 @@
 		echo "<td>$hora_inicio</td>";
 		echo "<td>$data_inicio</td>";
 		echo "<td>$data_fim</td>";
-		echo "<td>$email</td>";
+		echo "<td>$hora_fim</td>";
 		echo "<td><a href='$url_evento'>$url_evento</a></td>";
-		echo "<td><button type='button' class='btn btn-danger deletebtn'> APAGAR </button></td>";
+		echo "<td><button type='button' class='btn btn-danger deletebtn'>Apagar</button></td>";
 		echo "</tr>";
 
 		$indice++;

@@ -57,7 +57,7 @@
             </form>
         </nav>
         <main>
-            <h2 align="center">Informações Atividade</h2>
+            <h2 align="center">Informações do Evento</h2>
             <?php
                 require_once './../../Controls/Listar/Informacoes/informacoes_evento.php'
             ?>

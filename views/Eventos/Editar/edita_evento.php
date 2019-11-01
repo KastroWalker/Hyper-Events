@@ -57,7 +57,7 @@
                 ?>
                 <div class="alert alert-success text-center">
                     Evento Alterado com Sucesso!<br />
-                    Clique <a href="../Listar/lista_eventos.php"><strong>aqui</strong></a> para ver os eventos;
+                    Clique <a href="../informacoes_evento.php?id=<?php echo $id_evento;?>"><strong>aqui</strong></a> para ver o evento;
                 </div>
             <?php
             }
@@ -77,10 +77,10 @@
             ?>
 
             <form method="POST" action="../../../Controls/CRUD/gerencia_evento.php?acao=editar" id="form_cadastro" onsubmit="return valida_cadastro();">
-                <h2>Cadastrar Evento</h2>
+                <h2>Editar Evento</h2>
                 <div class="form-row">
-                    <input type="hidden" name="evento_id" id="evento_id" value="<?php echo $user_id; ?>">
-                    <input type="hidden" name="user_id" id="user_id" value="<?php echo $id_evento; ?>">
+                    <input type="hidden" name="evento_id" id="evento_id" value="<?php echo $id_evento; ?>">
+                    <input type="hidden" name="user_id" id="user_id" value="<?php echo $user_id; ?>">
                     <div class="col-md-6">
                         <label for="titulo">Titulo do Evento: *</label>
                         <input type="text" name="titulo" id="titulo" class="form-control" value="<?php echo $titulo ?>" required>
@@ -113,8 +113,8 @@
                         <label for="vagas">Vagas no evento: </label>
                         <select class="form-control" id="vagas" name="vagas">
                             <option value="100">100 vagas</option>
-                            <option value="150">150 vagas</option>
                             <option value="200">200 vagas</option>
+                            <option value="300">300 vagas</option>
                         </select>
                     </div>
                     <div class="col-md-8">

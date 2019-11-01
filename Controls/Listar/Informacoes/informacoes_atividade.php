@@ -1,7 +1,8 @@
 <?php
-	$id_evento = $_SESSION['id'];
+	$id_evento = $_SESSION['id_evento'];
 	$id_atividade = $_SESSION['id_atividade'];
-
+	#echo $id_atividade;
+	#echo $id_evento;
 	$sql = "select atividade.*, tipoAtividade.tipo_atividade, convidado.nome_convidado, local_atividade.nome_local from atividade inner join tipoAtividade on (atividade.idTipoAtividade = tipoAtividade.idTipoAtividade) inner join convidado on (atividade.idConvidado = convidado.idConvidado) inner join eventos on (atividade.evento_id = eventos.evento_id) inner join local_atividade on (atividade.local_id = local_atividade.local_id) and eventos.evento_id = $id_evento and atividade.atividade_id = $id_atividade;";
 
 	$result = mysqli_query($conexao, $sql);
@@ -27,7 +28,7 @@
 	escreve_linha("Vagas: ", $row['qtde_vagas_atividade']);
 	
 	#Valor da atividade
-	escreve_linha("Valor: ", $row['valor']);
+	escreve_linha("Valor:", "R$ ".$row['valor']);
 	
 	#Descrição da atividade
 	escreve_linha("Descrição: ", $row['descricao']);

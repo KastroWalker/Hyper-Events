@@ -1,5 +1,6 @@
 <?php
 	$id_evento = $_SESSION['id_evento'];
+	echo $id_evento;
 	#$id_evento = intval($id_evento);
 	#echo gettype($id_evento);
 
@@ -34,7 +35,7 @@
 		echo "<td>$tipo_ativ</td>";
 		echo "<td>$nome_convidado</td>";
 		echo "<td>$vagas</td>";
-		echo "<td>$valor</td>";
+		echo "<td>R$ $valor</td>";
 		echo "</tr>";
 
 		$indice++;

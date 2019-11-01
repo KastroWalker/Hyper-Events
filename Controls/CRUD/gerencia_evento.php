@@ -50,6 +50,9 @@
 		$evento_id = $_POST['evento_id'];
 		$user_id = $_POST['user_id'];
 
+		echo $evento_id."<br>";
+		echo $user_id."<br>";
+
 		$sql = "update eventos set user_id = '{$user_id}', titulo_evento = '{$titulo}', descricao = '{$descricao}', qtde_vagas_evento = '{$vagas}', url_evento = '{$site}', data_inicio = '{$data_inicio}', data_fim = '{$data_fim}', hora_inicio = '{$hora_inicio}', hora_fim = '{$hora_fim}', email = '{$email}' where evento_id = $evento_id;";
 
 		$result = mysqli_query($conexao, $sql);

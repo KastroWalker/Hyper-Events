@@ -35,21 +35,21 @@ if(isset($_SESSION['id'])){
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Delete Student Data</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Apagar Evento!</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
               <form action="../../../Controls/CRUD/gerencia_evento.php?acao=deletar" method="POST">
                   <div class="modal-body">
-                      <input type="text" name="delete_id" id="delete_id">
+                      <input type="hidden" name="delete_id" id="delete_id">
 
-                        <h4> Você tem certeza que deseja apagar esse Evento? </h4>
+                        <h4> Você tem certeza que deseja apagar esse evento? </h4>
 
                   </div>
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal"> NÃO </button>
-                    <button type="submit" name="deletedata" class="btn btn-primary"> SIM!! DELETAR </button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"> Não </button>
+                    <button type="submit" name="deletedata" class="btn btn-primary"> Sim, deletar </button>
                   </div>
               </form>
             </div>

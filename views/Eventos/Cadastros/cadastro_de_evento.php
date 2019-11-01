@@ -109,8 +109,8 @@ session_start();
                     <label for="vagas">Vagas no evento: </label>
                     <select class="form-control" id="vagas" name="vagas">
                         <option value="100">100 vagas</option>
-                        <option value="150">150 vagas</option>
                         <option value="200">200 vagas</option>
+                        <option value="300">300 vagas</option>
                     </select>
                 </div>
                 <div class="col-md-8">
