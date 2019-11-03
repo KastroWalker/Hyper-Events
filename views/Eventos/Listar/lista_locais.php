@@ -35,7 +35,7 @@ $id = $_SESSION['id_evento'];
           </div>
           <form action="../../../Controls/CRUD/gerencia_local.php?acao=deletar" method="POST">
               <div class="modal-body">
-                  <input type="text" name="delete_id" id="delete_id">
+                  <input type="hidden" name="delete_id" id="delete_id">
 
                     <h4> Você tem certeza que deseja apagar esse local? </h4>
 
