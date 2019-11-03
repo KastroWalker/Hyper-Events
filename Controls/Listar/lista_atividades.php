@@ -1,6 +1,6 @@
 <?php
 	$id_evento = $_SESSION['id_evento'];
-	echo $id_evento;
+	#echo $id_evento;
 	#$id_evento = intval($id_evento);
 	#echo gettype($id_evento);
 
@@ -14,6 +14,8 @@
 		<th>Ministrante: </th>
 		<th>Vagas: </th>
 		<th>Valor: </th>
+		<th>EDITAR</th>
+		<th>APAGAR</th>
 	</tr>
 <?php
 	$result = mysqli_query($conexao, $sql);
@@ -31,11 +33,14 @@
 		mysqli_error($conexao);
 		echo "<tr>";
 		echo "<td>$indice</td>";
+		echo "<td style='display: none;'>$id</td>";
 		echo "<td><a href='../informacoes_atividade.php?id=$id'>$titulo</a></td>";
 		echo "<td>$tipo_ativ</td>";
 		echo "<td>$nome_convidado</td>";
 		echo "<td>$vagas</td>";
 		echo "<td>R$ $valor</td>";
+		echo "<td><button type='button' class='btn btn-success editbtn'>Editar</button></td>";
+		echo "<td><button type='button' class='btn btn-danger deletebtn'>Apagar</button></td>";
 		echo "</tr>";
 
 		$indice++;

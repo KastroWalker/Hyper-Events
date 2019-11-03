@@ -23,6 +23,33 @@ $id = $_SESSION['id_evento'];
     <?php 
     require_once '../../header_eventos.php';
     ?>
+
+    <!-- DELETE  -->
+    <div class="modal fade" id="deletemodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Apagar Convidado</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <form action="../../../Controls/CRUD/gerencia_atividade.php?acao=deletar" method="POST">
+              <div class="modal-body">
+                  <input type="hidden" name="delete_id" id="delete_id">
+
+                    <h4> Você tem certeza que deseja apagar esse convidado? </h4>
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal"> Não </button>
+                <button type="submit" name="deletedata" class="btn btn-primary"> Sim, deletar </button>
+              </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
     <div class="div_principal">
         <?php require_once '../../Menus/nav_bar_evento.php' ?>
         <div class="text-right mx-auto" style="margin: 20px">
@@ -32,5 +59,28 @@ $id = $_SESSION['id_evento'];
         require_once '../../../Controls/Listar/lista_atividades.php'; 
         require_once '../../footer.php';
         ?>
+
+        <script src="../../../JS/jquery.js"></script>
+        <script src="../../../JS/bootstrap/bootstrap.min.js"></script>
+        <script src="../../../JS/bootstrap/popper.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $('.deletebtn').on('click', function(){
+
+                    $('#deletemodal').modal('show');
+                    
+                    $tr = $(this).closest('tr');
+
+                    var data = $tr.children("td").map(function(){
+                        return $(this).text();
+                    }).get();
+
+                    console.log(data);
+
+                    $("#delete_id").val(data[1]);
+        
+                });
+            });
+        </script>
     </body>
-    </html>
+</html>

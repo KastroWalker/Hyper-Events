@@ -4,17 +4,17 @@
 
 	$acao = $_REQUEST['acao'];
 
-	$evento_id = mysqli_real_escape_string($conexao, trim($_POST['evento_id']));
-	$tipo_atividade = mysqli_real_escape_string($conexao, trim($_POST['tipo_ativ']));
-	$vagas = mysqli_real_escape_string($conexao, trim($_POST['qtd_vagas']));
-	$convidado = mysqli_real_escape_string($conexao, trim($_POST['convidado']));
-	$titulo = mysqli_real_escape_string($conexao, trim($_POST['nome_ativ']));
-	$valor = mysqli_real_escape_string($conexao, trim($_POST['valor']));
-	$descricao = mysqli_real_escape_string($conexao, trim($_POST['descricao']));
-	$data = mysqli_real_escape_string($conexao, trim($_POST['data']));
-	$local = mysqli_real_escape_string($conexao, trim($_POST['local']));
-	$hora_inicio = mysqli_real_escape_string($conexao, trim($_POST['hora_inicio']));
-	$hora_fim = mysqli_real_escape_string($conexao, trim($_POST['hora_fim']));
+	@$evento_id = mysqli_real_escape_string($conexao, trim($_POST['evento_id']));
+	@$tipo_atividade = mysqli_real_escape_string($conexao, trim($_POST['tipo_ativ']));
+	@$vagas = mysqli_real_escape_string($conexao, trim($_POST['qtd_vagas']));
+	@$convidado = mysqli_real_escape_string($conexao, trim($_POST['convidado']));
+	@$titulo = mysqli_real_escape_string($conexao, trim($_POST['nome_ativ']));
+	@$valor = mysqli_real_escape_string($conexao, trim($_POST['valor']));
+	@$descricao = mysqli_real_escape_string($conexao, trim($_POST['descricao']));
+	@$data = mysqli_real_escape_string($conexao, trim($_POST['data']));
+	@$local = mysqli_real_escape_string($conexao, trim($_POST['local']));
+	@$hora_inicio = mysqli_real_escape_string($conexao, trim($_POST['hora_inicio']));
+	@$hora_fim = mysqli_real_escape_string($conexao, trim($_POST['hora_fim']));
 
 	echo "<strong>Id Evento: </strong>".$evento_id."<br/>";
 	echo "<strong>Tipo Atividade: </strong>".$tipo_atividade."<br/>";
@@ -45,5 +45,25 @@
 
 		header('Location: ../../views/Eventos/Cadastros/cadastra_atividade.php');
 		exit();
+	}else if($acao == "deletar"){
+		$atividade_id = $_POST['delete_id'];
+
+		if (isset($_POST['deletedata'])) {
+			$sql = "delete from atividade where atividade_id = $atividade_id";
+
+			$result = mysqli_query($conexao, $sql);
+
+			if(!$result){
+				$_SESSION['erro_excluir'] = true;
+				die('Erro: '.mysqli_error($conexao));
+			}else{
+				$_SESSION['sucesso_excluir'] = true;
+			}
+			header('Location: ../../views/Eventos/Listar/lista_atividades.php');
+			
+			$conexao->close();
+			
+			exit();
+		}
 	}
 ?>
