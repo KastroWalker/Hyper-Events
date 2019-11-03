@@ -56,6 +56,24 @@ $id = $_SESSION['id_evento'];
             <a href="../Cadastros/cadastra_atividade.php" class="btn btn-primary btn-lg text-right"> Cadastrar Atividade </a>
         </div>
         <?php
+        if (isset($_SESSION['sucesso_excluir'])) {
+        ?>
+            <div class="alert alert-success text-center">
+                <p>Evento Excluido com Sucesso!</p>
+            </div>
+        <?php 
+        }
+        unset($_SESSION['sucesso_excluir']);
+        if (isset($_SESSION['erro_excluir'])) {
+        ?>
+            <div class="alert alert-danger text-center">
+                <p>Erro ao Excluir o Evento!<br>Tente novamente!</p>
+            </div>
+        <?php 
+        }
+        unset($_SESSION['erro_exluir']);
+        ?>
+        <?php
         require_once '../../../Controls/Listar/lista_atividades.php'; 
         require_once '../../footer.php';
         ?>

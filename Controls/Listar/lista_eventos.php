@@ -18,7 +18,7 @@
 		<th>Hora Final</th>
 		<th>Site</th>
 		<th>Apagar</th>
-		<th>Editar</th>
+		<!--th>Editar</th-->
 	</tr>
 
 <?php
