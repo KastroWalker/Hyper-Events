@@ -6,6 +6,8 @@
 <tr>
 	<th>Id: </th>
 	<th>Nome: </th>
+	<th>EDITAR</th>
+	<th>APAGAR</th>
 </tr>
 <?php
 	$result = mysqli_query($conexao, $sql);
@@ -18,7 +20,10 @@
 		mysqli_error($conexao);
 		echo "<tr>";
 		echo "<td>$indice</td>";
+		echo "<td style='display: none;'>$id</td>";
 		echo "<td><a href='#'>$nome</a></td>";
+		echo "<td><button type='button' class='btn btn-success editbtn'>Editar</button></td>";
+		echo "<td><button type='button' class='btn btn-danger deletebtn'>Apagar</button></td>";
 		echo "</tr>";
 
 		$indice++;

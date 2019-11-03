@@ -1,4 +1,4 @@
-<?php 
+<?php
 	include '../conexao.php';
 	session_start();
 
@@ -24,7 +24,7 @@
 
 		mysqli_error($conexao);
 		print_r($row);
-		echo $row['total'];	
+		echo $row['total'];
 
 		if ($row['total'] >= 1) {
 			echo "Evento cadastrado".mysqli_error($conexao);
@@ -70,7 +70,7 @@
 		}
 	} else if ($acao == "deletar") {
 		$evento_id = $_POST['delete_id'];
-		
+
 		if (isset($_POST['deletedata'])) {
 			$sql = "delete from eventos where evento_id = $evento_id";
 
