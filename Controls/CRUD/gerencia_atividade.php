@@ -1,6 +1,7 @@
 <?php
 	session_start();
 	include '../conexao.php';
+	include '../funcoes.php';
 
 	$acao = $_REQUEST['acao'];
 
@@ -29,22 +30,29 @@
 	echo "<strong>Hora Fim: </strong>".$hora_fim."<br/>";
 	
 	if($acao == "cadastrar"){
-		$sql = "insert into atividade (evento_id, idTipoAtividade, idConvidado, qtde_vagas_atividade, valor, titulo_atividade, descricao, data, local_id, inicio ,fim) values ('{$evento_id}', '{$tipo_atividade}', '{$convidado}', '{$vagas}', '{$valor}', '{$titulo}', '{$descricao}', '{$data}', '{$local}', '{$hora_inicio}', '{$hora_fim}'); ";
+
+		$vagas_evento = vagas($evento_id, $conexao, $vagas);
+
+		$sql = "update eventos set qtde_vagas_evento='{$vagas_evento}' where evento_id = '{$evento_id}'";
 		
-		echo mysqli_error($conexao);
-
 		if($conexao->query($sql) === TRUE){
-			$_SESSION['atividade_cadastrada'] = true;
-			echo "cadastrado";
-		}else{
-			$_SESSION['atividade_não_cadastrada'] = true;
-			echo "não cadastrado".mysqli_error($conexao);
+			$sql = "insert into atividade (evento_id, idTipoAtividade, idConvidado, qtde_vagas_atividade, valor, titulo_atividade, descricao, data, local_id, inicio ,fim) values ('{$evento_id}', '{$tipo_atividade}', '{$convidado}', '{$vagas}', '{$valor}', '{$titulo}', '{$descricao}', '{$data}', '{$local}', '{$hora_inicio}', '{$hora_fim}'); ";
+			
+			echo mysqli_error($conexao);
+
+			if($conexao->query($sql) === TRUE){
+				$_SESSION['atividade_cadastrada'] = true;
+				echo "cadastrado";
+			}else{
+				$_SESSION['atividade_não_cadastrada'] = true;
+				echo "não cadastrado".mysqli_error($conexao);
+			}
+
+			$conexao->close();
+
+			header('Location: ../../views/Eventos/Cadastros/cadastra_atividade.php');
+			exit();
 		}
-
-		$conexao->close();
-
-		header('Location: ../../views/Eventos/Cadastros/cadastra_atividade.php');
-		exit();
 	}else if($acao == "deletar"){
 		$atividade_id = $_POST['delete_id'];
 

@@ -12,4 +12,23 @@
 		";
 		echo $linha;
 	}
+
+	function vagas($evento_id, $conexao, $vagas){
+		/*
+			Função para diminuir as quantidades de vagas do evento quando cadastrar uma atividade
+		*/
+		$sql = "select * from eventos where evento_id = '{$evento_id}'";
+
+		$result = mysqli_query($conexao, $sql);
+
+		$result = $result->fetch_array();
+
+		$vagas_evento = $result['qtde_vagas_evento'];
+		$vagas_evento = (int)$vagas_evento;
+
+		$vagas_evento = $vagas_evento - $vagas;
+		$vagas_evento = (string)$vagas_evento;
+
+		return $vagas_evento;
+	}
 ?>
