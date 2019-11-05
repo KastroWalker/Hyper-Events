@@ -19,9 +19,9 @@ include '../../../Controls/conexao.php'
     <link rel="stylesheet" type="text/css" href="../../../CSS/style_padrao.css">
     <link rel="icon" href="../../../img/icon.png" type="image/x-icon" />
 
+    <script src="../../../JS/jquery.js"></script>
     <script src="../../../JS/valida_cadastro_atividade.js"></script>
     <script src="../../../JS/formata.js"></script>
-    <script src="../../../JS/jquery.js"></script>
 
     <title>Cadastrar Evento - Hyper-Events</title>
 </head>
