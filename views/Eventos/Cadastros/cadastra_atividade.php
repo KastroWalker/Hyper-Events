@@ -57,6 +57,51 @@ include '../../../Controls/conexao.php'
         # Encerra a sessão de erro ao cadastrar
         unset($_SESSION['atividade_não_cadastrada']);
         ?>
+
+        <div class="modal fade" id="modal_local" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Cadastrar Local</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <form action="" method="POST">
+                  <div class="modal-body">
+                      
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"> Cancelar </button>
+                    <button type="submit" name="deletedata" class="btn btn-success"> Cadastrar </button>
+                  </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal fade" id="modal_convidado" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Cadastrar Convidado</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <form action="" method="POST">
+                  <div class="modal-body">
+                      
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"> Cancelar </button>
+                    <button type="submit" name="deletedata" class="btn btn-success"> Cadastrar </button>
+                  </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
         <form id="form_cadastro_atividade" method="POST" action="../../../Controls/CRUD/gerencia_atividade.php?acao=cadastrar" onsubmit="return validaCadastro();">
             <h2>Cadastrar Atividade</h2>
 
@@ -82,7 +127,7 @@ include '../../../Controls/conexao.php'
                     <select type="text" name="local" id="local" class="form-control">
                         <?php require_once '../../../Controls/Listar/lista_locais_atividade.php'; ?>
                     </select>
-                    <a href="cadastra_local.php">Cadastrar</a>
+                    <a href="#" class="create_local">Cadastrar</a>
                 </div>
             </div>
             <div class="form-row">
@@ -98,7 +143,7 @@ include '../../../Controls/conexao.php'
                     <select name="convidado" id="convidado" class="form-control">
                         <?php require_once '../../../Controls/Listar/lista_convidados_atividade.php'; ?>
                     </select>
-                    <a href="cadastro_convidado.php">Cadastrar</a>
+                    <a href="#" class="create_convidado">Cadastrar</a>
                 </div>
 
                 <!-- Valor -->
@@ -139,12 +184,28 @@ include '../../../Controls/conexao.php'
             <button type="submit" class="btn btn-primary">Cadastrar</button>
             <button type="reset" class="btn btn-secondary">Limpar</button>
             <a class="btn btn-info" href="../Listar/lista_atividades.php?id=<?php echo $evento_id ?>">Voltar</a>
+            <button id="create_convidado">teste</button>
         </form>
     </main>
     <?php
     # Importa o rodape padrão
     require_once '../../footer.php';
     ?>
-</body>
+        <script src="../../../JS/jquery.js"></script>
+        <script src="../../../JS/bootstrap/bootstrap.min.js"></script>
+        <script src="../../../JS/bootstrap/popper.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $('.create_convidado').on('click', function(){
+                    $('#modal_convidado').modal('show');
+                });
+            });
 
+            $(document).ready(function(){
+                $('.create_local').on('click', function(){
+                    $('#modal_local').modal('show');
+                });
+            });
+        </script>
+</body>
 </html>
