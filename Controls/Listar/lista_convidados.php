@@ -6,8 +6,8 @@
 <table class="table table-condensed table-striped table-bordered table-hover">
 	<tr>
 		<th>Id: </th>
-		<th>Nome: </th>
 		<th>Tipo: </th>
+		<th>Nome: </th>
 		<th>EDITAR</th>
 		<th>APAGAR</th>
 	</tr>

@@ -47,5 +47,19 @@
 			
 			exit();
 		}
+	}else if ($acao == "modalCadastrar") {
+		$sql = "insert into convidado(idTipoConvidado ,evento_id ,nome_convidado ,descricao ,email ,contato) values ('{$tipo_convidado}', '{$evento_id}', '{$nome}', '{$descricao}', '{$email}', '{$contato}');";
+
+	    if($conexao->query($sql) === TRUE){
+			$_SESSION['convidado_cadastrado'] = true;
+			echo "Cadastrado com sucesso";
+		}else{
+			$_SESSION['convidado_nao_cadastrado'] = true;
+			echo "Erro ao cadastrar ".mysqli_error($conexao);
+		}
+
+		header('Location: ../../views/Eventos/Cadastros/cadastra_atividade.php');
+		exit();
+		$conexao->close();
 	}
 ?>
