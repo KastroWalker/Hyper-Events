@@ -67,11 +67,20 @@ include '../../../Controls/conexao.php'
                   <span aria-hidden="true">&times;</span>
               </button>
           </div>
-          <form action="" method="POST">
-              <div class="modal-body">
+          <div class="modal-body">
+            <form id="form_cadastro_atividade" method="POST" action="../../../Controls/CRUD/gerencia_local.php?acao=modalCadastrar">
 
-              </div>
-              <div class="modal-footer">
+                <!-- ID Evento -->
+                <input type="hidden" name="evento_id" value="<?php echo $evento_id ?>">
+
+                <!-- Nome -->
+                <div class="form-group">
+                    <label for="nome_local">Nome: </label>
+                    <input class="form-control" name="nome_local" id="nome_local" required>
+                </div>
+
+            </div>
+            <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal"> Cancelar </button>
                 <button type="submit" name="deletedata" class="btn btn-success"> Cadastrar </button>
             </div>
