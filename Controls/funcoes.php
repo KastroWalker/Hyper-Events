@@ -31,4 +31,11 @@
 
 		return $vagas_evento;
 	}
+
+	function mostra_msg($session, $msg){
+        if(isset($_SESSION[$session])){
+            echo "$msg";
+        }
+        unset($_SESSION[$session]);
+    }
 ?>

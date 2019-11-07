@@ -1,7 +1,8 @@
 <?php
 session_start();
 $evento_id = $_SESSION['id_evento'];
-include '../../../Controls/conexao.php'
+include '../../../Controls/conexao.php';
+include '../../../Controls/funcoes.php';
 ?>
 
 <!DOCTYPE html>
@@ -32,30 +33,43 @@ include '../../../Controls/conexao.php'
     require_once '../../header_eventos.php';
     ?>
     <main class="container">
-        <?php
-        # Verifica se a atividade foi cadastrada com sucesso
-        if (isset($_SESSION['atividade_cadastrada'])) {
-            # Mostra a mensagem pro usuário
-            ?>
-            <div class="alert alert-success text-center">
+        <?php 
+            $session = 'atividade_cadastrada';
+            $msg = "
+                <div class='alert alert-success text-center'>
                 Atividade Cadastrada com Sucesso!<br />
-                Clique <a href="../Listar/lista_atividades.php?id=<?php echo $evento_id ?>"><strong>aqui</strong></a> para ver as Atividades;
-            </div>
-            <?php
-        }
-        # Encerra a sessão de atividade cadastrada
-        unset($_SESSION['atividade_cadastrada']);
-        # Verfica se deu algum erro na hora de cadastrar o evento
-        if (isset($_SESSION['atividade_não_cadastrada'])) {
-            # Mostra a mensagem pro usuário
-            ?>
-            <div class="alert alert-danger text-center">
-                Não foi possivel cadastrar a atividade!
-            </div>
-            <?php
-        }
-        # Encerra a sessão de erro ao cadastrar
-        unset($_SESSION['atividade_não_cadastrada']);
+                Clique <a href='../Listar/lista_atividades.php?id=$evento_id'><strong>aqui</strong></a> para ver as Atividades;
+                </div>
+            ";
+
+            mostra_msg($session, $msg);
+
+            $session = 'atividade_não_cadastrada';
+            $msg = "
+                <div class='alert alert-danger text-center'>
+                    Não foi possivel cadastrar a atividade!
+                </div>
+            ";
+
+            mostra_msg($session, $msg);
+
+            $session = 'convidado_cadastrado';
+            $msg = "
+                <div class='alert alert-success text-center'>
+                    Convidado Cadastrado!
+                </div>
+            ";
+
+            mostra_msg($session, $msg);
+
+            $session = 'local_cadastrado';
+            $msg = "
+                <div class='alert alert-success text-center'>
+                    Local Cadastrado!
+                </div>
+            ";
+
+            mostra_msg($session, $msg);
         ?>
 
         <div class="modal fade" id="modal_local" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
