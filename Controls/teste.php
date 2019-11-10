@@ -4,6 +4,43 @@
 	$sql = "select * from eventos";
 ?>
 
+<form method="POST">
+	<input type="time" name="time">
+	<button type="submit" id="btn-enviar" name="btn-enviar">Enviar</button>
+</form>
+
+<?php
+	function transforma_hora($hora){
+		/*
+			Função para pegar a hora e o minuto do horario;
+			Recebe uma String;
+			Retora um Array com o minuto(int) e hora(int);
+		*/
+		$min = substr($hora, 3, 4);
+		$hora = substr($hora, 0, 2);
+
+		$min = (int)$min;
+		$hora = (int)$hora;
+
+		$hora = array($min, $hora);
+		return $hora;
+	}
+	$hora = @$_POST['time'];
+	
+	$time = transforma_hora($hora);
+
+	print_r($time);
+?>
+
+
+<link rel="stylesheet" type="text/css" href="../CSS/bootstrap/bootstrap.min.css">
+
+<form method="POST">
+	<input type=time value='<?php echo $hora?>' id='hora_evento'>
+</form>
+
+<script type="text/javascript" src="../JS/jquery.js"></script>
+
 <h2 class="text-center mx-auto" style="margin: 20px; font-size: 35pt;">Meus Eventos</h2>
 <table class="table table-condensed table-striped table-bordered table-hover">
 	<tr>
@@ -16,8 +53,6 @@
 		<th>Hora Final</th>
 		<th>Site</th>
 		<th>vagas</th>
-		<th>Apagar</th>
-		<th>Editar</th>
 	</tr>
 
 <?php
@@ -35,8 +70,8 @@
 		$url_evento = $tlb['url_evento'];
 		$id_evento = $tlb['evento_id'];
 
-		$vagas = (int)$vagas;
-		echo gettype($vagas);
+		$hora_inicio = (int)$hora_inicio;
+		echo gettype($hora_inicio)."<br>";
 
 		mysqli_error($conexao);
 		echo "<tr>";
@@ -50,7 +85,6 @@
 		echo "<td>$hora_fim</td>";
 		echo "<td><a href='$url_evento'>$url_evento</a></td>";
 		echo "<td> $vagas </td>";
-		echo "<td><button type='button' class='btn btn-danger deletebtn'>Apagar</button></td>";
 		echo "</tr>";
 
 		$indice++;
@@ -58,3 +92,26 @@
 ?>
 
 </table>
+
+<script>
+	function transforma_hora(hora){
+		/*
+			Função para pegar a hora e o minuto do horario;
+			Recebe uma String;
+			Retora um Array com o minuto(int) e hora(int);
+		*/
+		hora = hora.substring(0, 2);
+		min = hora.substring(3, 5);
+
+		hora = parseInt(hora);
+		min = parseInt(min);
+
+		time = [hora, min];
+
+		return time;
+	}
+	
+	hora = document.getElementById("hora_evento").value;
+	hora = transforma_hora(hora);
+	console.log(hora);
+</script>

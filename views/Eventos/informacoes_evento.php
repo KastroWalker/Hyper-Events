@@ -3,6 +3,7 @@
     include '../../Controls/conexao.php';
     session_start();
     $_SESSION['id_evento'] = $_REQUEST['id'];
+    $id = $_REQUEST['id'];
 ?>
 
 <!DOCTYPE html>
