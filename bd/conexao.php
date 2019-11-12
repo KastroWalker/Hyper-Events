@@ -1,12 +1,18 @@
 <?php
-    /* 
-    Conectando com o Banco de Dados
-    Criador por: Victor Castro  
-    */
-    $HOST = 'localhost';
-    $USER = 'root';
-    $SENHA = '';
-    $BD = 'HyperEvents';
-
-    $conexao = mysqli_connect($HOST, $USER, $SENHA, $BD) or die ('Não foi possivel conectar');
+    class Conexao
+    {
+        private $con;
+        function __construct()
+        {
+            try {
+                $this->con = new PDO("mysql:hostname=localhost;dbname=HyperEvents", "root", "");
+            } catch (PDOException $e) {
+                echo ("Erro: ".$e);
+            }
+        }
+        function Conectar(){
+            return $this->con;
+        }
+    }
+    
 ?>
