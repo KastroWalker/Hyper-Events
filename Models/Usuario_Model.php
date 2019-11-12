@@ -15,7 +15,7 @@ class Usuario_Model
     function __construct()
     {
         $this->user_id = 0;
-        $this->idTipoUsuario;
+        $this->idTipoUsuario = 0;
         $this->nome = "vazio";
         $this->sexo = 'u';
         $this->cpf = "000.000.000-00";
