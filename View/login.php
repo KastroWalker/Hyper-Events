@@ -50,14 +50,13 @@ session_start();
                     <div id="div_btns">
                         <button type="submit" id="btn_entrar" class="btn btn-success">Entrar</button>
                         <button type="reset" id="btn_limpar" class="btn btn-danger">Limpar</button>
-                        <button id="btn_cadastrar" class="btn btn-primary btn-cadastrar">Cadastrar-se</button>
+                        <button type="button" class="btn btn-primary btn-cadastrar">Cadastrar-se</button>
                     </div>
                 </form>
             </div>
         </div>
     </main>
     <?php include 'footer.php'; ?>
-    <script src="../JS/verSenha.js"></script>
     <script type="text/javascript" src="../lib/js/jquery.js"></script>
     <script>
         $(document).ready(function(){
