@@ -44,20 +44,21 @@ class Usuario_Model
         return $this->nome;
     }
     function setNome($nome){ 
+        trimm($nome);
         $this->nome = $nome;
     }
     
     function getSexo(){
         return $this->sexo;
     }
-    function setSexo($sexo){ 
+    function setSexo($sexo){
         $this->sexo = $sexo;
     }
     
     function getCpf(){
         return $this->cpf;
     }
-    function setCpf($cpf){ 
+    function setCpf($cpf){
         $this->cpf = $cpf;
     }
 
@@ -72,6 +73,7 @@ class Usuario_Model
         return $this->usuario;
     }
     function setUsuario($usuario){
+        trimm($usuario);
         $this->usuario = $usuario;
     }
 
@@ -86,6 +88,7 @@ class Usuario_Model
         return $this->email;
     }
     function setEmail($email){
+        trimm($email);
         $this->email = $email;
     }
 
