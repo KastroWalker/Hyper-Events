@@ -12,32 +12,6 @@ table {
 	height: 10px; 
 }
 
-#label_user, #label_pass{ 
-	color: #069;
-	padding: 10px 10px 10px 10px; 
-	height: 10px;
-}
-
-#user, #pass {
-	padding-top: 0px; 
-	height: 25px;
-	width: 90%;
-}
-
-#field_pass{
-	margin-left: 8% !important;
-}
-
-
-#field_pass, #field_user{
-	width: 280px;
-	padding: 6px;
-	border: none;
-	font: 15px; 
-	border-radius: 4px;
-	text-align: left !important;
-}
-
 #icone_img{
 	width: 150px;
 }
@@ -46,19 +20,6 @@ table {
 	padding: 0px;
 	margin: 0px;
 	height: 100px;
-}
-
-#div_erro {
-	background-color: rgba(236, 8, 8, 0.7);
-	width: 60%;
-	border-radius: 10px;
-	font-size: 16pt;
-	margin: auto;
-	color: #000;
-}
-
-#table_login {
-	text-align: center;
 }
 
 #ver_senha {
