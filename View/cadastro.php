@@ -1,5 +1,6 @@
 <?php 
     session_start();
+    include '../Control/Usuario_Control.php';
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -21,6 +22,27 @@
     <title>Cadastro de usuário - Hyper Events</title>
 </head>
 <body>
+    <?php 
+        $obj_user = New Usuario_Control();
+
+        if(isset($_POST['btn_cadastrar'])){
+            /*Dados Pessoais*/
+            @$nome = $_POST['campo_nome'];
+            @$data_nasc = $_POST['campo_data_nasc'];
+            @$sexo = $_POST['campo_sexo'];
+            @$contato = $_POST['campo_telefone'];
+            @$cpf =  $_POST['campo_cpf'];            
+            /*Dados da conta*/
+            @$email = $_POST['campo_email'];
+            @$conf_email = $_POST['campo_conf_email'];
+            @$user = $_POST['campo_user'];
+            @$senha = $_POST['campo_senha'];
+            @$conf_senha = $_POST['campo_conf_senha'];
+            @$tipo_user = $_POST['tipo_user'];
+
+            $obj_user->add($tipo_user, $nome, $sexo, $cpf, $data_nasc, $usuario, $senha, $email, $contato);
+        }
+    ?>
     <?php include 'header.php' ?>
     <?php include 'menu.php' ?>
     <main>
@@ -54,7 +76,7 @@
             ?>
         </div>
         <div id="form_cadastro">
-            <form method="POST" action="../../Controls/CRUD/gerencia_usuario.php?acao=cadastrar" name="form_cadastro" onsubmit="return valida_dados();">
+            <form method="POST" name="form_cadastro" onsubmit="return valida_dados();">
                 <h2>Cadastro de Usuário</h2>
                 <div class="form-row">
                     <div class="col-md-8">
@@ -109,8 +131,8 @@
                     <label for="tipo_user">Tipo de usuário: *</label>
                     <select class="form-control" id="tipo_user" name="tipo_user">
                         <option value="padrao" selected>Escolha o tipo de usuário</option>
-                        <option value="part">Participante</option>
-                        <option value="org">Organizador</option>
+                        <option value="2">Participante</option>
+                        <option value="1">Organizador</option>
                     </select>
                     <div class="invalid-feedback">Escolha um valor!</div>
                 </div>
@@ -129,7 +151,7 @@
         </div>
         <div id="div_btns">
             <p class="alert alert-warning" style="text-align: center;"><strong>Atenção: </strong>Todos os campos que possuem '*' são obrigatorios.</p>
-            <button type="submit" class="btn btn-success">Cadastrar</button>
+            <button type="submit" class="btn btn-success" name="btn_cadastrar" value="btn_cadastrar" id="btn_cadastrar">Cadastrar</button>
             <button type="reset" class="btn btn-primary">Limpar</button>
             <button class="btn btn-danger btn-sair">Sair</button>    
         </div>
