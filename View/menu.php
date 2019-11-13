@@ -12,6 +12,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="listar_eventos.php">Eventos</a>
             </li>  
+            <li class="nav-item">
+                <a class="nav-link" href="cadastro.php">Cadastra-se</a>
+            </li>
         </ul>
     </div>
 </nav>
