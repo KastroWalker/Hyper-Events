@@ -44,7 +44,7 @@ class Usuario_Model
         return $this->nome;
     }
     function setNome($nome){ 
-        trimm($nome);
+        trim($nome);
         $this->nome = $nome;
     }
     
@@ -73,7 +73,7 @@ class Usuario_Model
         return $this->usuario;
     }
     function setUsuario($usuario){
-        trimm($usuario);
+        trim($usuario);
         $this->usuario = $usuario;
     }
 
@@ -88,7 +88,7 @@ class Usuario_Model
         return $this->email;
     }
     function setEmail($email){
-        trimm($email);
+        trim($email);
         $this->email = $email;
     }
 

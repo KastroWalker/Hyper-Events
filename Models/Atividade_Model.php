@@ -33,44 +33,86 @@ class Atividade_Model
 	function getAtividadeId(){
 		return $this->atividade_id;
 	}
-	function getEventoId(){
-		return $this->evento_id;
-	}
-	function getIdTipoAtividade(){
-		return $this->idTipoAtividade;
-	}
-	function getIdConvidado(){
-		return $this->idConvidado;
-	}
-	function getQtdeVagasAtividade(){
-		return $this->qtde_vagas_atividade;
-	}
-	function getValor(){
-		return $this->valor;
-	}
-	function getTituloAtividade(){
-		return $this->titulo_atividade;
-	}
-	function getDescricao(){
-		return $this->descricao;
-	}
-	function getData(){
-		return $this->data;
-	}
-	function getLocalId(){
-		return $this->local_id;
-	}
-	function getInicio(){
-		return $this->inicio;
-	}
-	function getFim(){
-		return $this->fim;
-	}
-
 	function setAtividadeId($atividade_id){
 		$this->atividade_id = $atividade_id;
 	}
+
+	function getEventoId(){
+		return $this->evento_id;
+	}
 	function setEventoId($evento_id){
 		$this->evento_id = $evento_id;
+	}
+
+	function getIdTipoAtividade(){
+		return $this->idTipoAtividade;
+	}
+	function setIdTipoAtividade($idTipoAtividade){
+		$this->idTipoAtividade = $idTipoAtividade;
+	}
+
+	function getIdConvidado(){
+		return $this->idConvidado;
+	}
+	function setIdConvidado($idConvidado){
+		$this->idConvidado = $idConvidado;
+	}
+
+	function getQtdeVagasAtividade(){
+		return $this->qtde_vagas_atividade;
+	}
+	function setQtdeVagasAtividade($qtde_vagas_atividade){
+		$this->qtde_vagas_atividade = $qtde_vagas_atividade;
+	}
+
+	function getValor(){
+		return $this->valor;
+	}
+	function setValor($valor){
+		$this->valor = $valor;
+	}
+
+	function getTituloAtividade(){
+		return $this->titulo_atividade;
+	}
+	function setTituloAtividade($titulo_atividade){
+		trim($titulo_atividade);
+		$this->titulo_atividade = $titulo_atividade;
+	}
+
+	function getDescricao(){
+		return $this->descricao;
+	}
+	function setDescricao($descricao){
+		trim($descricao);
+		$this->descricao = $descricao;
+	}
+
+	function getData(){
+		return $this->data;
+	}
+	function setData($data){
+		$this->data = $data;
+	}
+
+	function getLocalId(){
+		return $this->local_id;
+	}
+	function setLocalId($local_id){
+		$this->local_id = $local_id;
+	}
+
+	function getInicio(){
+		return $this->inicio;
+	}
+	function setInicio($inicio){
+		$this->inicio = $inicio;
+	}
+	
+	function getFim(){
+		return $this->fim;
+	}
+	function setFim($fim){
+		$this->fim = $fim;
 	}
 }

@@ -37,7 +37,7 @@ class Evento_Model{
         return $this->user_id;
     }
     function setUserId($user_id){
-        trimm($user_id);
+        trim($user_id);
         $this->user_id = $user_id;
     }
 
@@ -45,7 +45,7 @@ class Evento_Model{
         return $this->titulo_evento;
     }
     function setTituloEvento($titulo_evento){
-        trimm($titulo_evento);
+        trim($titulo_evento);
         $this->titulo_evento = $titulo_evento;
     }
 
@@ -53,7 +53,7 @@ class Evento_Model{
         return $this->descricao;
     }
     function setDescricao($descricao){
-        trimm($descricao);
+        trim($descricao);
         $this->descricao = $descricao;
     }
 
@@ -68,7 +68,7 @@ class Evento_Model{
         return $this->url_evento;
     }
     function setUrlEvento($url_evento){
-        trimm($url_evento);
+        trim($url_evento);
         $this->url_evento = $url_evento;
     }
 
@@ -104,7 +104,7 @@ class Evento_Model{
         return $this->email;
     }
     function setEmail($email){
-        trimm($email);
+        trim($email);
         $this->email = $email;
     }
     
