@@ -8,7 +8,7 @@
         private $data_nasc;
         private $usuario;
         private $senha;
-        private $email;
+        private $email; 
         private $contato;
         
         function __construct(){
@@ -57,6 +57,9 @@
             return $this->cpf;
         }
         function setCpf($cpf){
+            $cpf = trim($cpf);
+            $cpf = str_replace('-', '', $cpf);
+            $cpf = str_replace('.', '', $cpf);
             $this->cpf = $cpf;
         }
 
@@ -79,6 +82,7 @@
             return $this->senha;
         }
         function setSenha($senha){
+            $senha = md5($senha);
             $this->senha = $senha;
         }
 
@@ -94,6 +98,9 @@
             return $this->contato;
         }
         function setContato($contato){
+            $contato = trim($contato);
+            $contato = str_replace('-', '', $contato);
+            $contato = str_replace(' ', '', $contato);
             $this->contato = $contato;
         }
     }
