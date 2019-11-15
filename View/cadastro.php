@@ -1,72 +1,72 @@
-<?php 
-    session_start();
-    include '../Control/Usuario_Control.php';
+<?php
+session_start();
+include '../Control/Usuario_Control.php';
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8"/>
-    <meta name="robots" content="index, follow"/>
-    <meta name="description" content="Hyper Events - Usuário novo pode se cadastrar na plataforma para organizar seus eventos ou participar de algum evento"/>
-    <meta name="keywords" content="Cadastro, Usuário, Eventos"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="author" content="Victor Castro"/> 
 
-    <link rel="canonical" href="https://localhost:8000/home/"/>
-    
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow" />
+    <meta name="description" content="Hyper Events - Usuário novo pode se cadastrar na plataforma para organizar seus eventos ou participar de algum evento" />
+    <meta name="keywords" content="Cadastro, Usuário, Eventos" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Victor Castro" />
+
+    <link rel="canonical" href="https://localhost:8000/home/" />
+
     <link rel="stylesheet" type="text/css" href="../lib/css/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../lib/css/style_cadastro.css">
     <link rel="stylesheet" type="text/css" href="../lib/css/style_padrao.css">
-    
-    <link rel="icon" href="../../img/icon.png" type="image/x-icon"/>    
+
+    <link rel="icon" href="../../img/icon.png" type="image/x-icon" />
     <title>Cadastro de usuário - Hyper Events</title>
 </head>
+
 <body>
-    <?php 
-        $obj_user = New Usuario_Control();
+    <?php
+    $obj_user = new Usuario_Control();
 
-        if(isset($_POST['btn_cadastrar'])){
-            /*Dados Pessoais*/
-            @$nome = $_POST['campo_nome'];
-            @$data_nasc = $_POST['campo_data_nasc'];
-            @$sexo = $_POST['campo_sexo'];
-            @$contato = $_POST['campo_telefone'];
-            @$cpf =  $_POST['campo_cpf'];            
-            /*Dados da conta*/
-            @$email = $_POST['campo_email'];
-            @$conf_email = $_POST['campo_conf_email'];
-            @$user = $_POST['campo_user'];
-            @$senha = $_POST['campo_senha'];
-            @$conf_senha = $_POST['campo_conf_senha'];
-            @$tipo_user = $_POST['tipo_user'];
+    if (@$_POST['btn'] == "cadastrar") {
+        /*Dados Pessoais*/
+        $nome = $_POST['campo_nome'];
+        $data_nasc = $_POST['campo_data_nasc'];
+        $sexo = $_POST['campo_sexo'];
+        $contato = $_POST['campo_telefone'];
+        $cpf =  $_POST['campo_cpf'];
+        /*Dados da conta*/
+        $email = $_POST['campo_email'];
+        $user = $_POST['campo_user'];
+        $senha = $_POST['campo_senha'];
+        $tipo_user = $_POST['tipo_user'];
 
-            $obj_user->add($tipo_user, $nome, $sexo, $cpf, $data_nasc, $usuario, $senha, $email, $contato);
-        }
+        $obj_user->add($tipo_user, $nome, $sexo, $cpf, $data_nasc, $user, $senha, $email, $contato);
+    }
     ?>
     <?php include 'header.php' ?>
     <?php include 'menu.php' ?>
     <main>
         <div alert="div_alert">
             <?php
-            if(isset($_SESSION['status_cadastro'])){
-            ?>
+            if (isset($_SESSION['status_cadastro'])) {
+                ?>
                 <div class="alert alert-success text-center">
-                    Usuário Cadastrado com Sucesso!<br/>
+                    Usuário Cadastrado com Sucesso!<br />
                     Clique <a href="../login.php"><strong>aqui</strong></a> para fazer o login!
                 </div>
             <?php
             }
             unset($_SESSION['status_cadastro']);
             if (isset($_SESSION['Não_foi_cadastrado'])) {
-            ?>
+                ?>
                 <div class="alert alert-danger text-center">
                     Erro ao cadastrar o usuário!
                 </div>
             <?php
             }
             unset($_SESSION['Não_foi_cadastrado']);
-            if(isset($_SESSION['usuario_existe'])){
-            ?>
+            if (isset($_SESSION['usuario_existe'])) {
+                ?>
                 <div class="alert alert-danger text-center">
                     Usuário já cadastrado!
                 </div>
@@ -76,7 +76,7 @@
             ?>
         </div>
         <div id="form_cadastro">
-            <form method="POST" name="form_cadastro" onsubmit="return valida_dados();">
+            <form method="POST" action="cadastro.php" name="form_cadastro" onsubmit="return valida_dados();">
                 <h2>Cadastro de Usuário</h2>
                 <div class="form-row">
                     <div class="col-md-8">
@@ -125,70 +125,70 @@
                     <div class="col-md-4">
                         <label for="user">Usuário: *</label>
                         <input type="text" name="campo_user" id="user" class="form-control" placeholder="Nome de Usuário" required>
-                    <div class="invalid-feedback">Usuário Inválido!</div>
-                </div>  
-                <div class="col-md-3">
-                    <label for="tipo_user">Tipo de usuário: *</label>
-                    <select class="form-control" id="tipo_user" name="tipo_user">
-                        <option value="padrao" selected>Escolha o tipo de usuário</option>
-                        <option value="2">Participante</option>
-                        <option value="1">Organizador</option>
-                    </select>
-                    <div class="invalid-feedback">Escolha um valor!</div>
+                        <div class="invalid-feedback">Usuário Inválido!</div>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="tipo_user">Tipo de usuário: *</label>
+                        <select class="form-control" id="tipo_user" name="tipo_user">
+                            <option value="padrao" selected>Escolha o tipo de usuário</option>
+                            <option value="2">Participante</option>
+                            <option value="1">Organizador</option>
+                        </select>
+                        <div class="invalid-feedback">Escolha um valor!</div>
+                    </div>
                 </div>
-        </div>
-        <div class="form-row">
-            <div class="col-md-6">
-                <label for="senha">Senha: *</label>
-                <input type="password" name="campo_senha" id="senha" class="form-control" placeholder="Digite sua senha" required>
-                <div class="invalid-feedback">Senha invalida!</div>
-            </div>
-            <div class="col-md-6">
-                <label for="conf_senha">Confirmar Senha: *</label>
-                <input type="password" name="campo_conf_senha" id="conf_senha" class="form-control" placeholder="Confirme sua senha" required>
-                <div class="invalid-feedback">As senhas não correspondem!</div>
-            </div>
-        </div>
-        <div id="div_btns">
-            <p class="alert alert-warning" style="text-align: center;"><strong>Atenção: </strong>Todos os campos que possuem '*' são obrigatorios.</p>
-            <button type="submit" class="btn btn-success" name="btn_cadastrar" value="btn_cadastrar" id="btn_cadastrar">Cadastrar</button>
-            <button type="reset" class="btn btn-primary">Limpar</button>
-            <button class="btn btn-danger btn-sair">Sair</button>    
-        </div>
-        </form>
+                <div class="form-row">
+                    <div class="col-md-6">
+                        <label for="senha">Senha: *</label>
+                        <input type="password" name="campo_senha" id="senha" class="form-control" placeholder="Digite sua senha" required>
+                        <div class="invalid-feedback">Senha invalida!</div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="conf_senha">Confirmar Senha: *</label>
+                        <input type="password" name="campo_conf_senha" id="conf_senha" class="form-control" placeholder="Confirme sua senha" required>
+                        <div class="invalid-feedback">As senhas não correspondem!</div>
+                    </div>
+                </div>
+                <div id="div_btns">
+                    <p class="alert alert-warning" style="text-align: center;"><strong>Atenção: </strong>Todos os campos que possuem '*' são obrigatorios.</p>
+                    <button type="submit" class="btn btn-success" name="btn" value="cadastrar" id="cadastrar">Cadastrar</button>
+                    <button class="btn btn-danger btn-sair" name="btn" value="sair">Sair</button>
+                </div>
+            </form>
         </div>
     </main>
-    <hr/>
+    <hr />
     <?php include 'footer.php' ?>
     <script src="../lib/js/formata.js"></script>
     <script src="../lib/js/jquery.js"></script>
     <script src="../lib/js/valida_dados.js"></script>
     <script>
-        function frm_number_only_exc(){
+        function frm_number_only_exc() {
             /**
              * Função pada deixar digitar apenas numero
-            */
-            if ( event.keyCode == 37 || event.keyCode == 38 || event.keyCode == 39 || event.keyCode == 40 || event.keyCode == 46 || event.keyCode == 8 || event.keyCode == 9 || ( event.keyCode < 106 && event.keyCode > 95 ) ) { 
+             */
+            if (event.keyCode == 37 || event.keyCode == 38 || event.keyCode == 39 || event.keyCode == 40 || event.keyCode == 46 || event.keyCode == 8 || event.keyCode == 9 || (event.keyCode < 106 && event.keyCode > 95)) {
                 return true;
-            }else{
+            } else {
                 return false;
             }
         }
 
-        $(document).ready(function(){
-            $("input.frm_number_only").keydown(function(event) { 
-               if ( frm_number_only_exc() ) { 
+        $(document).ready(function() {
+            $("input.frm_number_only").keydown(function(event) {
+                if (frm_number_only_exc()) {
 
-               } else { 
-                   if ( event.keyCode < 48 || event.keyCode > 57 ) { 
-                       event.preventDefault();  
-                   }        
-               } 
+                } else {
+                    if (event.keyCode < 48 || event.keyCode > 57) {
+                        event.preventDefault();
+                    }
+                }
             });
-            $('.btn-sair').on('click', function(){
+            $('.btn-sair').on('click', function() {
                 window.location.href = 'login.php';
-            }); 
+            });
         });
     </script>
 </body>
+
 </html>
