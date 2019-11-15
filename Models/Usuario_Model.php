@@ -42,7 +42,7 @@
             return $this->nome;
         }
         function setNome($nome){ 
-            trim($nome);
+            $nome = trim($nome);
             $this->nome = $nome;
         }
         
@@ -74,7 +74,7 @@
             return $this->usuario;
         }
         function setUsuario($usuario){
-            trim($usuario);
+            $usuario = trim($usuario);
             $this->usuario = $usuario;
         }
 
