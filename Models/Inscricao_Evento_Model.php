@@ -1,15 +1,24 @@
 <?php
 class Inscricao_Evento_Model{
+    private $matricula;
     private $evento_id;
     private $user_id;
     private $data_inscricao_evento;
     private $hora_inscricao_evento;
 
     function __construct(){
+        $this->matricula = 0;
         $this->evento_id = 0;
         $this->user_id = 0;
         $this->data_inscricao_evento = "aaaa/mm/dd";
         $this->hora_inscricao_evento = "00:00";
+    }
+
+    function getMatricula(){
+        return $this->matricula;
+    }
+    function setMatricula($matricula){
+        $this->matricula = $matricula;
     }
 
     function getEventoId(){
