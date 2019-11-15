@@ -56,7 +56,7 @@ session_start();
             ?>
         </div>
         <div id="form_cadastro">
-            <form method="POST" action="../Control/Usuario_Control.php" name="form_cadastro" onsubmit="return valida_dados();">
+            <form method="POST" action="../Control/Usuario_Control.php?acao=cadastrar" name="form_cadastro" onsubmit="return valida_dados();">
                 <h2>Cadastro de Usuário</h2>
                 <div class="form-row">
                     <div class="col-md-8">
@@ -131,7 +131,7 @@ session_start();
                 </div>
                 <div id="div_btns">
                     <p class="alert alert-warning" style="text-align: center;"><strong>Atenção: </strong>Todos os campos que possuem '*' são obrigatorios.</p>
-                    <button type="submit" class="btn btn-success" name="btn" value="cadastrar" id="cadastrar">Cadastrar</button>
+                    <button type="submit" class="btn btn-success" name="btn-cadastrar" value="cadastrar" id="cadastrar">Cadastrar</button>
                     <button class="btn btn-danger btn-sair" name="btn" value="sair">Sair</button>
                 </div>
             </form>

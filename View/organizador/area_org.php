@@ -1,7 +1,6 @@
 <?php
 session_start();
-if(isset($_SESSION['id'])){
-$site = ' ';
+#echo $_SESSION['user_id'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,30 +12,22 @@ $site = ' ';
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="author" content="Victor Castro"/>
     
-    <link rel="stylesheet" type="text/css" href="../CSS/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../CSS/style_padrao.css">
-    <link rel="icon" href="../img/icon.png" type="image/x-icon"/>
+    <link rel="stylesheet" type="text/css" href="../../lib/css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../lib/css/style_padrao.css">
+    <link rel="icon" href="../../img/logo.png" type="image/x-icon"/>
     
     <title>Home - Hyper Events</title>
 </head>
 <body>
     <?php 
-    require_once 'header.php';
-    require_once 'Menus/nav_bar.php';
+        include 'header.php';
+        include 'nav_bar.php';
     ?>
     <div class="div_principal">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia magni reprehenderit quae sit quidem, delectus. Et laboriosam quia cumque, animi rerum! Eveniet provident eius, numquam, iure sit quis laboriosam voluptatibus?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia magni reprehenderit quae sit quidem, delectus. Et laboriosam quia cumque, animi rerum! Eveniet provident eius, numquam, iure sit quis laboriosam voluptatibus?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia magni reprehenderit quae sit quidem, delectus. Et laboriosam quia cumque, animi rerum! Eveniet provident eius, numquam, iure sit quis laboriosam voluptatibus?
     </div>
-    <footer>
-        <script src="../JS/bootstrap/bootstrap.min.js"></script>
-        <h2>Direitos</h2>
-        <p>2019 &copy; Copyright - Todos os direitos reservados | Criado por Descompila Compilando.</p>
-    </footer>
+    <?php 
+        include '../footer.php';
+    ?>
 </body>
 </html>
-
-<?php
-    }else{
-    header('Location: ../index.php');
-    }
-?>

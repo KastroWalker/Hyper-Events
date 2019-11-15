@@ -1,5 +1,0 @@
-    <!-- Cabeçalho padrão para as paginas -->
-    <header>
-        <h1 style="height: 100px"><img src="../img/logo.png" alt="logo" style="height: 125px;">Sistema de Eventos Academicos</h1>
-        <hr/>
-    </header>

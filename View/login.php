@@ -37,7 +37,7 @@ session_start();
                 ?>
             </div>
             <div id="div_form">
-                <form method="POST" action="../Control/login.php">
+                <form method="POST" action="../Control/Usuario_Control.php?acao=logar">
                     <h2>Login</h2>
                     <div class="form-group">
                         <label for="campo_user">Usuário</label>

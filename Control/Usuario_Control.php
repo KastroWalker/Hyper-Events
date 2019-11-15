@@ -1,4 +1,5 @@
 <?php
+    session_start();
     include "../Models/Usuario_Model.php";
     include "../bd/conexao.php";
     class Usuario_Control{
@@ -59,28 +60,63 @@
                 return $e->getMessage();
             }
         }
+
+        function login($user, $senha){
+            try{
+                $sql = "SELECT user_id, usuario FROM usuario WHERE usuario = '$user' AND senha = md5('$senha');";
+                $d = $this->con->Conectar();
+                $dados=$d->prepare($sql);
+                #$dados->bindValue(":user", $user);
+                #$dados->bindValue(":senha", $senha);
+                $dados->execute();
+                if($dados->rowCount() == 1){
+                    foreach($dados as $d){
+                        $_SESSION['user_id'] = $d['user_id'];
+                    }
+                    return true;
+                }else{
+                    $_SESSION['nao_autenticado'] = true;
+                    return false;
+                }
+            }catch(PDOException $e){
+                echo 'Error: ' . $e->getMessage();
+                return $e->getMessage();
+            }
+        }
     }
     /*Dados Pessoais*/
-    $nome = $_POST['campo_nome'];
-    $data_nasc = $_POST['campo_data_nasc'];
-    $sexo = $_POST['campo_sexo'];
-    $contato = $_POST['campo_telefone'];
-    $cpf =  $_POST['campo_cpf'];
-    /*Dados da conta*/
-    $email = $_POST['campo_email'];
-    $user = $_POST['campo_user'];
-    $senha = $_POST['campo_senha'];
-    $tipo_user = $_POST['tipo_user'];
-
     $obj_user = new Usuario_Control();
 
-    $cadastrado = $obj_user->read($user);
-    echo "$cadastrado";
-    if($cadastrado == 0){
-        $obj_user->add($tipo_user, $nome, $sexo, $cpf, $data_nasc, $user, $senha, $email, $contato);
-    }else{
-        $_SESSION['usuario_existe'] = true;
-    }
+    $acao = $_REQUEST['acao'];
+    if($acao == "cadastrar"){
+        $nome = $_POST['campo_nome'];
+        $data_nasc = $_POST['campo_data_nasc'];
+        $sexo = $_POST['campo_sexo'];
+        $contato = $_POST['campo_telefone'];
+        $cpf =  $_POST['campo_cpf'];
+        /*Dados da conta*/
+        $email = $_POST['campo_email'];
+        $user = $_POST['campo_user'];
+        $senha = $_POST['campo_senha'];
+        $tipo_user = $_POST['tipo_user'];
 
-    header('Location: ../View/cadastro.php');
+        $cadastrado = $obj_user->read($user);
+        echo "$cadastrado";
+        if($cadastrado == 0){
+            $obj_user->add($tipo_user, $nome, $sexo, $cpf, $data_nasc, $user, $senha, $email, $contato);
+        }else{
+            $_SESSION['usuario_existe'] = true;
+        }
+
+        header('Location: ../View/cadastro.php');
+    }else if($acao == "logar"){
+        $user = $_POST['usuario'];
+        $senha = $_POST['senha'];
+        
+        if($obj_user->login($user, $senha)){
+            header('Location: ../View/organizador/area_org.php');
+        }else{
+            header('Location: ../View/login.php');
+        }
+    }
 ?>
