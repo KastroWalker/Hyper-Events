@@ -1,6 +1,5 @@
 <?php
 session_start();
-include '../Control/Usuario_Control.php';
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -24,47 +23,28 @@ include '../Control/Usuario_Control.php';
 </head>
 
 <body>
-    <?php
-    $obj_user = new Usuario_Control();
-
-    if (@$_POST['btn'] == "cadastrar") {
-        /*Dados Pessoais*/
-        $nome = $_POST['campo_nome'];
-        $data_nasc = $_POST['campo_data_nasc'];
-        $sexo = $_POST['campo_sexo'];
-        $contato = $_POST['campo_telefone'];
-        $cpf =  $_POST['campo_cpf'];
-        /*Dados da conta*/
-        $email = $_POST['campo_email'];
-        $user = $_POST['campo_user'];
-        $senha = $_POST['campo_senha'];
-        $tipo_user = $_POST['tipo_user'];
-
-        $obj_user->add($tipo_user, $nome, $sexo, $cpf, $data_nasc, $user, $senha, $email, $contato);
-    }
-    ?>
     <?php include 'header.php' ?>
     <?php include 'menu.php' ?>
     <main>
         <div alert="div_alert">
             <?php
-            if (isset($_SESSION['status_cadastro'])) {
+            if (isset($_SESSION['user_cadastrado'])) {
                 ?>
                 <div class="alert alert-success text-center">
                     Usuário Cadastrado com Sucesso!<br />
-                    Clique <a href="../login.php"><strong>aqui</strong></a> para fazer o login!
+                    Clique <a href="login.php"><strong>aqui</strong></a> para fazer o login!
                 </div>
             <?php
             }
-            unset($_SESSION['status_cadastro']);
-            if (isset($_SESSION['Não_foi_cadastrado'])) {
+            unset($_SESSION['user_cadastrado']);
+            if(isset($_SESSION['erro_cadastrado'])) {
                 ?>
                 <div class="alert alert-danger text-center">
                     Erro ao cadastrar o usuário!
                 </div>
             <?php
             }
-            unset($_SESSION['Não_foi_cadastrado']);
+            unset($_SESSION['erro_cadastrado']);
             if (isset($_SESSION['usuario_existe'])) {
                 ?>
                 <div class="alert alert-danger text-center">
@@ -76,7 +56,7 @@ include '../Control/Usuario_Control.php';
             ?>
         </div>
         <div id="form_cadastro">
-            <form method="POST" action="cadastro.php" name="form_cadastro" onsubmit="return valida_dados();">
+            <form method="POST" action="../Control/Usuario_Control.php" name="form_cadastro" onsubmit="return valida_dados();">
                 <h2>Cadastro de Usuário</h2>
                 <div class="form-row">
                     <div class="col-md-8">
