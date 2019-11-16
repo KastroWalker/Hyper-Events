@@ -107,6 +107,5 @@
             trim($email);
             $this->email = $email;
         }
-        
     }
 ?>

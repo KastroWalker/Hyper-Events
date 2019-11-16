@@ -18,7 +18,7 @@
             </ul>
         </div>
         <form class="form-inline my-2 my-lg-0">
-            <a href="../Controls/logout.php" class="btn btn-danger">Sair</a>      
+            <a href="../../Control/logout.php" class="btn btn-danger">Sair</a>      
         </form>
     </nav>
 </div>

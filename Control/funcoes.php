@@ -38,4 +38,38 @@
         }
         unset($_SESSION[$session]);
     }
+
+    function lista_eventos($id){
+    $con = new Conexao();
+
+    $sql = "select * from eventos where user_id = '{$id}'";
+    $d = $con->Conectar();
+    $dados=$d->prepare($sql);
+    $dados->execute();
+    $indice = 1;
+    foreach ($dados as $tlb) {
+        $Titulo = $tlb['titulo_evento'];
+        $Descricao = $tlb['descricao'];
+        $hora_inicio = $tlb['hora_inicio'];
+        $data_inicio = $tlb['data_inicio'];
+        $data_fim = $tlb['data_fim'];
+        $hora_fim = $tlb['hora_fim'];
+        $url_evento = $tlb['url_evento'];
+        $id_evento = $tlb['evento_id'];
+
+        echo "<tr>";
+        echo "<td>$indice</td>";
+        echo "<td style='display: none;'>$id_evento</td>";
+        echo "<td><a href='../informacoes_evento.php?id=$id_evento'>$Titulo</a></td>";
+        echo "<td>$Descricao</td>";
+        echo "<td>$hora_inicio</td>";
+        echo "<td>$data_inicio</td>";
+        echo "<td>$data_fim</td>";
+        echo "<td>$hora_fim</td>";
+        echo "<td><a href='$url_evento'>$url_evento</a></td>";
+        echo "<td><button type='button' class='btn btn-danger deletebtn'>Apagar</button></td>";
+        echo "</tr>";
+        $indice++;
+    }
+}
 ?>
