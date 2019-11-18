@@ -15,10 +15,10 @@ session_start();
     <meta name="author" content="Victor Castro"/> 
     
     <link rel="canonical" href="https://localhost:8000/home/"/>
-    <link rel="stylesheet" type="text/css" href="../CSS/bootstrap/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../lib/CSS/bootstrap/bootstrap.min.css"/>
     <link rel="icon" href="../img/icon.png" type="image/x-icon"/>
-    <link rel="stylesheet" type="text/css" href="../CSS/style_index.css"/>
-    <link rel="stylesheet" type="text/css" href="../CSS/style_padrao.css"/>
+    <link rel="stylesheet" type="text/css" href="../lib/CSS/style_index.css"/>
+    <link rel="stylesheet" type="text/css" href="../lib/CSS/style_padrao.css"/>
     
     <script src="../JS/verSenha.js"></script>
     <script>
@@ -50,7 +50,10 @@ session_start();
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="Eventos/Listar/listar_eventos_user.php">Eventos</a>
-                    </li>  
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"href="cadastro.php">Cadastrar-se</a>
+                    </li>
                 </ul>
             </div>
         </nav>
