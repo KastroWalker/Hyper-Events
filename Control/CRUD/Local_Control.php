@@ -2,8 +2,8 @@
 	session_start();
 	include '../conexao.php';
 
-	@$evento_id = mysqli_real_escape_string($conexao, trim($_POST['evento_id']));
-	@$nome_local = mysqli_real_escape_string($conexao, trim($_POST['nome_local']));
+	$evento_id = mysqli_real_escape_string($conexao, trim($_POST['evento_id']));
+	$nome_local = mysqli_real_escape_string($conexao, trim($_POST['nome_local']));
 
 	$acao = $_REQUEST['acao'];
 	echo $acao;

@@ -4,15 +4,15 @@
 
 	$acao = $_REQUEST['acao'];
 
-	@$titulo = mysqli_real_escape_string($conexao, trim($_POST['titulo']));
-	@$descricao = mysqli_real_escape_string($conexao, trim($_POST['descricao']));
-	@$hora_inicio = mysqli_real_escape_string($conexao, trim($_POST['hora_inicio']));
-	@$vagas = mysqli_real_escape_string($conexao, trim($_POST['vagas'])); 
-	@$hora_fim = mysqli_real_escape_string($conexao, trim($_POST['hora_fim']));
-	@$data_inicio = mysqli_real_escape_string($conexao, trim($_POST['inicio']));
-	@$data_fim = mysqli_real_escape_string($conexao, trim($_POST['fim']));
-	@$email = mysqli_real_escape_string($conexao, trim($_POST['email']));
-	@$site = mysqli_real_escape_string($conexao, trim($_POST['site']));
+	$titulo = mysqli_real_escape_string($conexao, trim($_POST['titulo']));
+	$descricao = mysqli_real_escape_string($conexao, trim($_POST['descricao']));
+	$hora_inicio = mysqli_real_escape_string($conexao, trim($_POST['hora_inicio']));
+	$vagas = mysqli_real_escape_string($conexao, trim($_POST['vagas'])); 
+	$hora_fim = mysqli_real_escape_string($conexao, trim($_POST['hora_fim']));
+	$data_inicio = mysqli_real_escape_string($conexao, trim($_POST['inicio']));
+	$data_fim = mysqli_real_escape_string($conexao, trim($_POST['fim']));
+	$email = mysqli_real_escape_string($conexao, trim($_POST['email']));
+	$site = mysqli_real_escape_string($conexao, trim($_POST['site']));
 
 	if($acao == "cadastrar"){
 		$id = $_SESSION['id'];
