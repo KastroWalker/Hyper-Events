@@ -58,7 +58,7 @@ session_start();
             </div>
         </nav>
         <main>
-            <form method="POST" action="../Controls/login.php" name="form_login" class="form-group">
+            <form method="POST" action="../Control/login.php" name="form_login" class="form-group">
                 <table id="table_login">
                     <tr id="titulo"><td><strong>LOGIN</strong></td></tr>
                     <tr>
@@ -103,8 +103,7 @@ session_start();
                 <tr>
                     <td id="bnts">
                         <button type="submit" id="btn_entrar" class="btn btn-success">Entrar</button>
-                        <button id="btn_cadastrar" onclick="cadastrar();" class="btn btn-primary">Cadastrar-se</button>
-                        <a href="../Controls/logout.php" class="btn btn-danger">Sair</a>
+                        <a href="../Control/logout.php" class="btn btn-danger">Sair</a>
                     </td>
                 </tr>
             </table>
