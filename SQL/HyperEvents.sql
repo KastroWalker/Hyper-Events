@@ -133,7 +133,7 @@ create table inscricao_evento (
 
 -- Criando tabela de inscrição em atividade --
 create table inscricao_atividade (
-  atividade_id int not null auto_increment,
+  atividade_id int not null,
   matricula int not null,
   data_inscricao_atividade Date not null,
   hora_inscricao_atividade Time not null,

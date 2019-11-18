@@ -9,7 +9,7 @@
     echo gettype($tipo_user);
     Realizando Login no sistema
     Criado pro Victor Castro
-    */
+    
 
     //Iniciando a sessão
     session_start();
@@ -67,4 +67,5 @@
         header('Location: login.php');
         exit();
     }
+    */
 ?>
