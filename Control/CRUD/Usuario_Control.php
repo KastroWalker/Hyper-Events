@@ -22,8 +22,14 @@
 	$acao = $_REQUEST['acao'];
 
 	if ($acao == 'cadastrar') {
-		$sql = 'INSERT INTO usuario (idtipo_usuario, nome, sexo, cpf, data_nasc, usuario, senha, email, contato) VALUES ('{$idtipo_usuario}', '{$nome}', '{$sexo}', '{$cpf}', '{$data_nasc}', '{$usuario}', '{$senha}', '{$email}', '{$contato}');';
+		$sql = 'insert into usuario (idtipo_usuario, nome, sexo, cpf, data_nasc, usuario, senha, email, contato) values ('{$idtipo_usuario}', '{$nome}', '{$sexo}', '{$cpf}', '{$data_nasc}', '{$usuario}', '{$senha}', '{$email}', '{$contato}');';
 
 		echo mysqli_error($conexao);
+		$conexao->close();
+
+		header("Location: ../../View/cadastro.php")
+		exit();
 	}
+
+
 ?>
