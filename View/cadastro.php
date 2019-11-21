@@ -169,7 +169,7 @@
         <p class="alert alert-warning" style="text-align: center;"><strong>Atenção: </strong>Todos os campos que possuem '*' são obrigatorios.</p>
         <button type="submit" class="btn btn-success">Cadastrar</button>
         <button type="reset" class="btn btn-primary">Limpar</button>
-        <button class="btn btn-danger" onclick="logout();">Sair</button>    
+        <a href="../Control/logout.php" class="btn btn-danger">Sair</a>    
     </form>
 </section> 
 <section id="Manual">
