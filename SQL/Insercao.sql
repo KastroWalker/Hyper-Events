@@ -5,141 +5,23 @@
   */
 use HyperEvents;
 -- Inserindo usuários padrões--
-insert into
-  usuario (
-    idtipo_usuario,
-    nome,
-    sexo,
-    cpf,
-    data_nasc,
-    usuario,
-    senha,
-    email,
-    contato
-  )
-values(
-    "1",
-    "Organizador",
-    "M",
-    "12345678909",
-    "2002-04-05",
-    "organizador",
-    md5("root"),
-    "organizador@gmail.com",
-    "86999999999"
-  );
-insert into
-  usuario (
-    idtipo_usuario,
-    nome,
-    sexo,
-    cpf,
-    data_nasc,
-    usuario,
-    senha,
-    email,
-    contato
-  )
-values(
-    "2",
-    "Participante",
-    "M",
-    "12345678909",
-    "2002-04-05",
-    "participante",
-    md5("1234"),
-    "participante@gmail.com",
-    "86999999999"
-  );
+insert into usuario (idtipo_usuario,nome, sexo, cpf, data_nasc, usuario, senha, email, contato) values ( "1", "Organizador", "M", "12345678909", "2002-04-05", "organizador", md5("root"), "organizador@gmail.com", "86999999999");
+insert into usuario (idtipo_usuario, nome, sexo, cpf, data_nasc, usuario, senha, email, contato) values ("2","Participante","M","12345678909","2002-04-05","participante",md5("1234"),"participante@gmail.com","86999999999");
+
 -- Inserindo Eventos --
-insert into
-  eventos (
-    user_id,
-    titulo_evento,
-    qtde_vagas_evento,
-    descricao,
-    url_evento,
-    data_inicio,
-    data_fim,
-    hora_inicio,
-    hora_fim,
-    email
-  )
-values(
-    "1",
-    "Festa",
-    300,
-    "Vai ser massa.",
-    "www.Festa",
-    "2019-11-10",
-    "2019-11-10",
-    "07:00",
-    "09:00",
-    "rian_estudante@.hotmail.com"
-  );
-insert into
-  eventos (
-    user_id,
-    titulo_evento,
-    qtde_vagas_evento,
-    descricao,
-    url_evento,
-    data_inicio,
-    data_fim,
-    hora_inicio,
-    hora_fim,
-    email
-  )
-values(
-    "2",
-    "Evento de Libras",
-    300,
-    "Apreder uma outra forma de comunicar-se.",
-    "www.Libras",
-    "2019-11-09",
-    "2019-11-09",
-    "09:00",
-    "15:00",
-    "victorcsa2002@.hotmail.com"
-  );
+insert into eventos (user_id, titulo_evento, qtde_vagas_evento, descricao, url_evento, data_inicio, data_fim, hora_inicio, hora_fim, email ) values ("1","Festa",300,"Vai ser massa.","www.Festa","2019-11-10","2019-11-10","07:00","09:00","rian_estudante@.hotmail.com", "IFPI-Campus Parnaíba");
+
+insert into eventos (user_id, titulo_evento, qtde_vagas_evento, descricao, url_evento, data_inicio, data_fim, hora_inicio, hora_fim, email, local_evento)
+values("2", "Evento de Libras", 300, "Apreder uma outra forma de comunicar-se.", "www.Libras", "2019-11-09", "2019-11-09", "09:00", "15:00", "victorcsa2002@.hotmail.com", "Indefinido");
+
 -- Inserindo locais das atividades --
-insert into
-  local_atividade (evento_id, nome_local)
-values("1", "Sala 12");
-insert into
-  local_atividade (evento_id, nome_local)
-values("2", "Laboratório 12");
+insert into local_atividade (evento_id, nome_local) values ("1", "Sala 12");
+insert into local_atividade (evento_id, nome_local) values ("2", "Laboratório 12");
 -- Inserindo Convidado  --
-insert into
-  convidado(
-    idTipoConvidado,
-    evento_id,
-    nome_convidado,
-    descricao,
-    email
-  )
-values(
-    2,
-    2,
-    "Marcos",
-    "Especializado em áreas sociais.",
-    "victorcsa2002.com"
-  );
-insert into
-  convidado(
-    idTipoConvidado,
-    evento_id,
-    nome_convidado,
-    descricao,
-    email
-  )
-values(
-    1,
-    1,
-    "Victor",
-    "Formado em Ciência da Computação.",
-    "rian_estudante.com"
-  );
+insert into convidado(idTipoConvidado, evento_id, nome_convidado, descricao, email) values ( 2, 2, "Marcos", "Especializado em áreas sociais.", "victorcsa2002.com");
+
+insert into convidado( idTipoConvidado, evento_id, nome_convidado, descricao, email) values ( 1, 1, "Victor", "Formado em Ciência da Computação.", "rian_estudante.com");
+
 -- Inserindo Atividades --
 insert into
   atividade(

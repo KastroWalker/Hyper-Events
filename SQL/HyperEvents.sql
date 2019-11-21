@@ -49,6 +49,7 @@ create table eventos(
   hora_inicio time not null,
   hora_fim time not null,
   email varchar(100) not null,
+  local_evento varchar (100) not null;
   primary key(evento_id),
   foreign key(user_id) references usuario(user_id) on delete cascade
   );
