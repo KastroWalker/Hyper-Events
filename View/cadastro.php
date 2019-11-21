@@ -70,19 +70,19 @@
                 ?>
                 <div class="alert alert-success text-center">
                     Usuário Cadastrado com Sucesso!<br/>
-                    Clique <a href="../login.php"><strong>aqui</strong></a> para fazer o login!
+                    Clique <a href="login.php"><strong>aqui</strong></a> para fazer o login!
                 </div>
                 <?php
             }
             unset($_SESSION['status_cadastro']);
-            if (isset($_SESSION['Não_foi_cadastrado'])) {
+            if (isset($_SESSION['nao_foi_cadastrado'])) {
                 ?>
                 <div class="alert alert-danger text-center">
                     Erro ao cadastrar o usuário!
                 </div>
                 <?php
             }
-            unset($_SESSION['Não_foi_cadastrado']);
+            unset($_SESSION['nao_foi_cadastrado']);
             if(isset($_SESSION['usuario_existe'])){
                 ?>
                 <div class="alert alert-danger text-center">

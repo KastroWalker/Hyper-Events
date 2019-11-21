@@ -10,7 +10,7 @@
     
     <link rel="icon" href="img/icon.png" type="image/x-icon"/>
     <link rel="stylesheet" type="text/CSS" href="lib/css/style_padrao.css"/>
-    <link rel="stylesheet" type="text/CSS" href="lib/css/bootstrap/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/CSS" href="lib/CSS/bootstrap/bootstrap.min.css"/>
     
     <title>Hyper Events</title>
 </head>
