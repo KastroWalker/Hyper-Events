@@ -9,14 +9,14 @@
     <meta name="author" content="Victor Castro"/> 
 
     <link rel="canonical" href="https://localhost:8000/home/"/>
-    <link rel="stylesheet" type="text/css" href="../lib/CSS/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../lib/CSS/style_cadastro.css">
-    <link rel="stylesheet" type="text/css" href="../lib/CSS/style_padrao.css">
-    <link rel="icon" href="../img/icon.png" type="image/x-icon"/>
+    <link rel="stylesheet" type="text/css" href="../../CSS/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../CSS/style_cadastro.css">
+    <link rel="stylesheet" type="text/css" href="../../CSS/style_padrao.css">
+    <link rel="icon" href="../../img/icon.png" type="image/x-icon"/>
     
-    <script src="../lib/JS/formata.js"></script>
-    <script src="../lib/JS/jquery.js"></script>
-    <script src="../lib/JS/valida_dados.js"></script>
+    <script src="../../JS/formata.js"></script>
+    <script src="../../JS/jquery.js"></script>
+    <script src="../../JS/valida_dados.js"></script>
     
     <script>
         function logout() {
@@ -61,7 +61,7 @@
         session_start();
         ?>
         <header>
-            <h1 style="height: 100px"><img src="../img/logo.png" alt="logo" style="height: 125px;">Sistema de Eventos Academicos</h1>
+            <h1 style="height: 100px"><img src="../../img/logo.png" alt="logo" style="height: 125px;">Sistema de Eventos Academicos</h1>
             <hr/>
         </header>
         <section id="cadastro">
@@ -70,19 +70,19 @@
                 ?>
                 <div class="alert alert-success text-center">
                     Usuário Cadastrado com Sucesso!<br/>
-                    Clique <a href="login.php"><strong>aqui</strong></a> para fazer o login!
+                    Clique <a href="../login.php"><strong>aqui</strong></a> para fazer o login!
                 </div>
                 <?php
             }
             unset($_SESSION['status_cadastro']);
-            if (isset($_SESSION['nao_foi_cadastrado'])) {
+            if (isset($_SESSION['Não_foi_cadastrado'])) {
                 ?>
                 <div class="alert alert-danger text-center">
                     Erro ao cadastrar o usuário!
                 </div>
                 <?php
             }
-            unset($_SESSION['nao_foi_cadastrado']);
+            unset($_SESSION['Não_foi_cadastrado']);
             if(isset($_SESSION['usuario_existe'])){
                 ?>
                 <div class="alert alert-danger text-center">
@@ -93,7 +93,7 @@
             unset($_SESSION['usuario_existe']);
                     #../Controls/cadastrar_organizador.php
             ?>
-            <form method="POST" action="../Control/CRUD/Usuario_Control.php?acao=cadastrar" name="form_cadastro" onsubmit="return valida_dados();">
+            <form method="POST" action="../../Controls/CRUD/gerencia_usuario.php?acao=cadastrar" name="form_cadastro" onsubmit="return valida_dados();">
                 <h2>Cadastro de Usuário</h2>
                 <div class="form-row">
                     <div class="col-md-8">
@@ -148,8 +148,8 @@
                     <label for="tipo_user">Tipo de usuário: *</label>
                     <select class="form-control" id="tipo_user" name="tipo_user">
                       <option value="padrao" selected>Escolha o tipo de usuário</option>
-                      <option value="1">Organizador</option>
-                      <option value="2">Participante</option>
+                      <option value="part">Participante</option>
+                      <option value="org">Organizador</option>
                   </select>
                   <div class="invalid-feedback">Escolha um valor!</div>
               </div>
@@ -169,7 +169,7 @@
         <p class="alert alert-warning" style="text-align: center;"><strong>Atenção: </strong>Todos os campos que possuem '*' são obrigatorios.</p>
         <button type="submit" class="btn btn-success">Cadastrar</button>
         <button type="reset" class="btn btn-primary">Limpar</button>
-        <a href="../Control/logout.php" class="btn btn-danger">Sair</a>    
+        <button class="btn btn-danger" onclick="logout();">Sair</button>    
     </form>
 </section> 
 <section id="Manual">
@@ -178,7 +178,7 @@
 </section> 
 <hr/>
 <footer>
-    <script src="../lib/JS/bootstrap/bootstrap.min.js"></script>
+    <script src="../../../JS/bootstrap/bootstrap.min.js"></script>
     <h2>Direitos</h2>
     <p>2019 &copy; Copyright - Todos os direitos reservados | Criado por Descompila Compilando.</p>
 </footer>

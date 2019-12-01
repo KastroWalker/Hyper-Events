@@ -15,10 +15,10 @@ session_start();
     <meta name="author" content="Victor Castro"/> 
     
     <link rel="canonical" href="https://localhost:8000/home/"/>
-    <link rel="stylesheet" type="text/css" href="../lib/CSS/bootstrap/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../CSS/bootstrap/bootstrap.min.css"/>
     <link rel="icon" href="../img/icon.png" type="image/x-icon"/>
-    <link rel="stylesheet" type="text/css" href="../lib/CSS/style_index.css"/>
-    <link rel="stylesheet" type="text/css" href="../lib/CSS/style_padrao.css"/>
+    <link rel="stylesheet" type="text/css" href="../CSS/style_index.css"/>
+    <link rel="stylesheet" type="text/css" href="../CSS/style_padrao.css"/>
     
     <script src="../JS/verSenha.js"></script>
     <script>
@@ -50,15 +50,12 @@ session_start();
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="Eventos/Listar/listar_eventos_user.php">Eventos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link"href="cadastro.php">Cadastrar-se</a>
-                    </li>
+                    </li>  
                 </ul>
             </div>
         </nav>
         <main>
-            <form method="POST" action="../Control/login.php" name="form_login" class="form-group">
+            <form method="POST" action="../Controls/login.php" name="form_login" class="form-group">
                 <table id="table_login">
                     <tr id="titulo"><td><strong>LOGIN</strong></td></tr>
                     <tr>
@@ -103,7 +100,8 @@ session_start();
                 <tr>
                     <td id="bnts">
                         <button type="submit" id="btn_entrar" class="btn btn-success">Entrar</button>
-                        <a href="../Control/logout.php" class="btn btn-danger">Sair</a>
+                        <button id="btn_cadastrar" onclick="cadastrar();" class="btn btn-primary">Cadastrar-se</button>
+                        <a href="../Controls/logout.php" class="btn btn-danger">Sair</a>
                     </td>
                 </tr>
             </table>
