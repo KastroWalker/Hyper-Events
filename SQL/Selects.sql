@@ -11,6 +11,6 @@ from convidado inner join tipoConvidado on (convidado.idTipoConvidado = tipoConv
 inner join eventos on (eventos.evento_id = convidado.evento_id) and eventos.evento_id = 1;
 
 -- Listando o nome do evento e o nome do usuário de inscrição evento --
-select usuario.nome, eventos.titulo_evento, inscricao_evento.matricula
+select usuario.nome, eventos.titulo_evento, inscricao_evento.*
 from inscricao_evento inner join eventos on (inscricao_evento.evento_id = eventos.evento_id)
-inner join usuario on (inscricao_evento.user_id = usuario.user_id) and inscricao_evento.matricula = 1;
+inner join usuario on (inscricao_evento.user_id = usuario.user_id) and eventos.evento_id = 1;
