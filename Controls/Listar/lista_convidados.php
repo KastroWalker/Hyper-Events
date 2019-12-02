@@ -26,12 +26,13 @@
 		echo "<td style='display: none;'>$id</td>";
 		echo "<td>$tipo_convi</td>";
 		echo "<td><a href='../informacoes_convidado.php?convidado_id=$id'>$nome</a></td>";
-		echo "<td><button type='button' class='btn btn-success editbtn'>Editar</button></td>";
+		echo "<td><a href='../../Eventos/Editar/edita_convidado.php'><button type='button' class='btn btn-success editbtn'>Editar</button></a></td>";
 		echo "<td><button type='button' class='btn btn-danger deletebtn'>Apagar</button></td>";
 		echo "</tr>";
 
 		$indice++;
 	}
+	$_SESSION['convidado_id'] = $id;
 ?>
 </table>
 </div>

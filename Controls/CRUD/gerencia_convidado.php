@@ -61,5 +61,23 @@
 		header('Location: ../../views/Eventos/Cadastros/cadastra_atividade.php');
 		exit();
 		$conexao->close();
+	} else if ($acao == "editar") {
+		$convidado_id = $_POST['convidado_id'];
+		echo $convidado_id;
+		
+		$sql = "UPDATE convidado SET nome_convidado = '{$nome}', descricao = '{$descricao}', email = '{$email}', contato = '{$contato}' WHERE idConvidado = $convidado_id;";
+
+		$result = mysqli_query($conexao, $sql);
+
+		if (!$result) {
+			die("Erro: ".mysqli_error($conexao));
+			$_SESSION['convidado_nao_alterado'] = true;
+			header('../../views/Eventos/Listar/lista_convidados.php');
+			exit();
+		} else {
+			$_SESSION['convidado_alterado'] = true;
+			header('../../views/Eventos/Listar/lista_convidados.php');
+			exit();
+		}
 	}
 ?>

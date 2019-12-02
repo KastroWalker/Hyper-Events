@@ -30,7 +30,7 @@
 	<?php
     	include '../../Controls/Listar/Informacoes/informacoes_convidados.php';
 	?>
-    <a href="Editar/edita_convidado.php" class="btn btn-primary">Editar</a>
+    <a href="Listar/lista_convidados.php" class="btn btn-primary">Voltar</a>
     </div>
     <?php
     	include '../footer.php';

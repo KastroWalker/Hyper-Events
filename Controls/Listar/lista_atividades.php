@@ -45,6 +45,7 @@
 
 		$indice++;
 	}
+	$_SESSION['id_atividade'] = $id;
 ?>
 </table>
 </div>

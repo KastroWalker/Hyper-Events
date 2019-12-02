@@ -74,34 +74,21 @@
         <main class="container">
             <?php
                 # Verifica se o convidado foi cadastrado com sucesso
-                if (isset($_SESSION['convidado_cadastrado'])) {
+                if (isset($_SESSION['convidado_alterado'])) {
                     # Mostra a mensagem pro usuário
                     ?>
                     <div class="alert alert-success text-center">
-                        Convidado Cadastrado com Sucesso!<br />
-                        Clique <a href="../Listar/lista_convidados.php"><strong>aqui</strong></a> para ver os convidados;
+                        Convidado Alterado com Sucesso!<br />
+                        Clique <a href="../informacoes_convidado?convidado_id=$id_convidado"><strong>aqui</strong></a> para ver os convidados;
                     </div>
                 <?php
                 }
-                # Encerra a sessão de convidado cadastrado
-                unset($_SESSION['convidado_cadastrado']);
-                # Verifica se o convidado ja esta cadastrado
-                if (isset($_SESSION['convidado_ja_cadastrado'])) {
+
+                if (isset($_SESSION['convidado_nao_alterado'])) {
                     # Mostra a mensagem pro usuário
                     ?>
                     <div class="alert alert-danger text-center">
-                        Convidado já cadastrado!
-                    </div>
-                <?php
-                }
-                # Encerra a sessão de convidado ja cadastrado
-                unset($_SESSION['convidado_ja_cadastrado']);
-                # Verfica se deu algum erro na hora de cadastrar o convidado
-                if (isset($_SESSION['convidado_nao_cadastrado'])) {
-                    # Mostra a mensagem pro usuário
-                    ?>
-                    <div class="alert alert-danger text-center">
-                        Não foi possivel cadastrar o convidados!
+                        Não foi possivel alterar o convidado!
                     </div>
                 <?php
                 }
@@ -111,7 +98,7 @@
 
             <form method="POST" action="../../../Controls/CRUD/gerencia_convidado.php?acao=editar" name="form_cadastro">
                 <h2>Cadastro de convidado</h2>
-                <input type="hidden" name="convidado_id" id="convidado_id" value="<?php echo $convidado_id; ?>">
+                <input type="hidden" name="convidado_id" id="convidado_id" value="<?php echo $id_convidado; ?>">
                 <input type="hidden" name="evento_id" id="evento_id" value="<?php echo $evento_id; ?>">
                 <div class="form-row">
                     <div class="col-md-3">
