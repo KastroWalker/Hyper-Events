@@ -51,6 +51,9 @@
                     <li>
                         <a class="nav-link" href="Listar/lista_locais.php">Locais</a>
                     </li>
+                    <li>
+                        <a class="nav-link" href="Listar/lista_inscritos.php">Pessoas</a>
+                    </li>
                 </ul>
             </div>
             <form class="form-inline my-2 my-lg-0">
