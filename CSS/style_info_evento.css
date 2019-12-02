@@ -1,0 +1,15 @@
+#div_info{
+    text-align: center;
+}
+#info_convidado, #info_atividade{
+    display: none;
+}
+
+table, #info_convidado, #info_atividade{
+    width: 50%;
+    margin: auto;
+}
+
+.info{
+    padding: 15px;
+}

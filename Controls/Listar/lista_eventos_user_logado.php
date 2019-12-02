@@ -4,7 +4,7 @@ require_once '../Controls/conexao.php';
 # Cria a expressão SQL de consulta aos registro
 $sql = "select * from eventos";
 ?>
-<div class="container">
+<div>
     <h2 class="text-center mx-auto" style="margin: 20px; font-size: 35pt;">Eventos</h2>
     <div class="div_principal">
         <table class="table table-condensed table-striped table-bordered table-hover">
@@ -36,7 +36,7 @@ $sql = "select * from eventos";
                 mysqli_error($conexao);
                 echo "<tr>";
                 echo "<td>$indice</td>";
-                echo "<td><a href='#'>$Titulo</a></td>";
+                echo "<td><a href='participante/info_evento.php?id=$id_evento'>$Titulo</a></td>";
                 echo "<td>$Descricao</td>";
                 echo "<td>$hora_inicio</td>";
                 echo "<td>$data_inicio</td>";

@@ -1,6 +1,6 @@
 <!-- Nav Bar padrão de todo as paginas de usuário -->
 
-<div class="div_principal">
+<div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="area_org.php">Hyper Events</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
