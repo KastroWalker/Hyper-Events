@@ -34,4 +34,7 @@ $(document).ready(function(){
         document.getElementById("hora_atividade").innerHTML = data[8];
         document.getElementById("nome_convidado").innerHTML = data[9];
     });
+    $('.inscreva_btn').on('click', function(){
+        $('#confirmmodal').modal('show');
+    });
 });

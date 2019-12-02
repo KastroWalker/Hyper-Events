@@ -1,5 +1,10 @@
 <?php 
     include '../../Controls/conexao.php';
+    session_start();
+    $id = $_REQUEST['id'];
+    $user_id = $_SESSION['id'];
+    #echo "$user_id";
+    #echo $id;
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -24,10 +29,38 @@
         include '../header_cadastro.php';
         include "../../Controls/paticipante/info_evento.php";
     ?>
+
+    <!-- DELETE  -->
+    <div class="modal fade" id="confirmmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Confirmar Inscrição</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="../../Controls/CRUD/gerencia_inscricao_evento.php?acao=cadastrar" method="POST">
+                <div class="modal-body">
+                    <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
+                    <input type="hidden" name="evento_id" value="<?php echo $id; ?>">
+                    <h4>Confirme a inscrição!</h4>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"> Cancelar! </button>
+                    <button type="submit" name="deletedata" class="btn btn-primary"> Confirmar! </button>
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+
     <div id="div_info">
         <h2>
             <?php echo $titulo; ?>
         </h2>
+        
+        <button class="btn btn-info inscreva_btn">Inscrever-se no evento</button>
 
         <div id="desc_evento" class="info">
             <h3>Descrição</h3>
@@ -181,6 +214,8 @@
         include '../footer.php';
     ?>
     <script src="../../JS/jquery.js"></script>
+    <script src="../../JS/bootstrap/bootstrap.min.js"></script>
+    <script src="../../JS/bootstrap/popper.min.js"></script>
     <script src="../../JS/informacoes_do_evento.js"></script>
 </body>
 </html>

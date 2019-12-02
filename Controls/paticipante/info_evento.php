@@ -1,6 +1,4 @@
 <?php
-    $id = $_REQUEST['id'];
-
     /* Pegando informações do Evento */
     $sql = "select * from eventos where evento_id = $id";
     $result = mysqli_query($conexao, $sql);
