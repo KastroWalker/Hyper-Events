@@ -73,5 +73,21 @@
 			
 			exit();
 		}
+	}else if ($acao == "editar") {
+		$atividade_id = $_POST['atividade_id'];
+		$sql = "UPDATE atividade SET idTipoAtividade = '{$tipo_atividade}', idConvidado = '{$convidado}', qtde_vagas_atividade = '{$vagas}', valor = '{$valor}', titulo_atividade = '{$titulo}', descricao = '{$descricao}', data = '{$data}', local_id = '{$local}', inicio = '{$hora_inicio}', fim = '{$hora_fim}' WHERE atividade_id = $atividade_id;";
+
+		$result = mysqli_query($conexao, $sql);
+
+		if (!$result) {
+			die('Erro: '.mysqli_error($conexao));
+			$_SESSION['atividade_nao_alterada'] = true;
+			header('Location: ../../views/Eventos/Editar/edita_atividade.php');
+			exit();
+		} else {
+			$_SESSION['atividade_alterada'] = true;
+			header('Location: ../../views/Eventos/Editar/edita_atividade.php');
+			exit();
+		}
 	}
 ?>

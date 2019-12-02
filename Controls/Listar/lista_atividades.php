@@ -39,7 +39,7 @@
 		echo "<td>$nome_convidado</td>";
 		echo "<td>$vagas</td>";
 		echo "<td>R$ $valor</td>";
-		echo "<td><button type='button' class='btn btn-success editbtn'>Editar</button></td>";
+		echo "<td><a href = '../../../views/Eventos/Editar/edita_atividade.php'><button type='button' class='btn btn-success'>Editar</button></a></td>";
 		echo "<td><button type='button' class='btn btn-danger deletebtn'>Apagar</button></td>";
 		echo "</tr>";
 
