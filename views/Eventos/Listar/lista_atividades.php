@@ -59,7 +59,7 @@ $id = $_SESSION['id_evento'];
         if (isset($_SESSION['sucesso_excluir'])) {
         ?>
             <div class="alert alert-success text-center">
-                <p>Evento Excluido com Sucesso!</p>
+                <p>Atividade Excluida com Sucesso!</p>
             </div>
         <?php 
         }
@@ -67,7 +67,7 @@ $id = $_SESSION['id_evento'];
         if (isset($_SESSION['erro_excluir'])) {
         ?>
             <div class="alert alert-danger text-center">
-                <p>Erro ao Excluir o Evento!<br>Tente novamente!</p>
+                <p>Erro ao Excluir a atividade!<br>Tente novamente!</p>
             </div>
         <?php 
         }

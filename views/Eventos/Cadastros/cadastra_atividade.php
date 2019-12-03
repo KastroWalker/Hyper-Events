@@ -82,7 +82,7 @@ include '../../../Controls/funcoes.php';
               </button>
           </div>
           <div class="modal-body">
-            <form id="form_cadastro_atividade" method="POST" action="../../../Controls/CRUD/gerencia_local.php?acao=modalCadastrar">
+            <form id="form_cadastro" method="POST" action="../../../Controls/CRUD/gerencia_local.php?acao=modalCadastrar" onsubmit="">
 
                 <!-- ID Evento -->
                 <input type="hidden" name="evento_id" value="<?php echo $evento_id ?>">

@@ -63,7 +63,6 @@
 		$conexao->close();
 	} else if ($acao == "editar") {
 		$convidado_id = $_POST['convidado_id'];
-		echo $convidado_id;
 		
 		$sql = "UPDATE convidado SET nome_convidado = '{$nome}', descricao = '{$descricao}', email = '{$email}', contato = '{$contato}' WHERE idConvidado = $convidado_id;";
 
@@ -72,11 +71,11 @@
 		if (!$result) {
 			die("Erro: ".mysqli_error($conexao));
 			$_SESSION['convidado_nao_alterado'] = true;
-			header('../../views/Eventos/Listar/lista_convidados.php');
+			header('Location: ../../views/Eventos/Editar/edita_convidado.php');
 			exit();
 		} else {
 			$_SESSION['convidado_alterado'] = true;
-			header('../../views/Eventos/Listar/lista_convidados.php');
+			header('Location: ../../views/Eventos/Editar/edita_convidado.php');
 			exit();
 		}
 	}

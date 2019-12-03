@@ -79,10 +79,12 @@
                     ?>
                     <div class="alert alert-success text-center">
                         Convidado Alterado com Sucesso!<br />
-                        Clique <a href="../informacoes_convidado?convidado_id=$id_convidado"><strong>aqui</strong></a> para ver os convidados;
+                        Clique <a href="../informacoes_convidado.php?convidado_id=<?php echo $id_convidado; ?>"><strong>aqui</strong></a> para ver os convidados;
                     </div>
                 <?php
                 }
+                # Encerra a sessão de cadastrado com sucesso
+                unset($_SESSION['convidado_alterado']);
 
                 if (isset($_SESSION['convidado_nao_alterado'])) {
                     # Mostra a mensagem pro usuário
@@ -128,7 +130,7 @@
                 </div>
                 <button type="submit" class="btn btn-success">Editar</button>
                 <button type="reset" class="btn btn-primary">Limpar</button>
-                <a class="btn btn-info" href="../informacoes_convidado.php?convidado_id=<?php echo $id_convidado?>">Voltar</a>
+                <a class="btn btn-info" href="../Listar/lista_convidados.php">Voltar</a>
             </form>
         </main>
         <?php 
