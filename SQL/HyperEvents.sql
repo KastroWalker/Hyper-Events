@@ -58,7 +58,7 @@ create table eventos(
 create table local_atividade(
   local_id int not null auto_increment,
   evento_id int not null,
-  nome_local varchar(100) not null,
+  nome_local varchar(100) not null unique,
   primary key (local_id),
   foreign key (evento_id) references eventos (evento_id) on delete cascade
 );

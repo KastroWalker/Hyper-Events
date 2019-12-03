@@ -63,5 +63,20 @@
 		$conexao->close();
 
 		exit();
+	} else if ($acao == "editar") {
+		$local_id = $_POST['local_id'];
+		$sql = "UPDATE local_atividade SET nome_local = '{$nome_local}' WHERE local_id = $local_id";
+		$result = mysqli_query($conexao, $sql);
+
+		if(!$result){
+			die("Erro: ".mysqli_error($conexao));
+			$_SESSION['local_nao_alterado'] = true;
+			header("Location: ../../views/Eventos/Editar/edita_local.php?local_id=$local_id");
+			exit();
+		} else {
+			$_SESSION['local_alterado'] = true;
+			header("Location: ../../views/Eventos/Editar/edita_local.php?local_id=$local_id");
+			exit();
+		}
 	}
 ?>

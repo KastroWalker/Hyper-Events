@@ -22,7 +22,7 @@
 		echo "<td>$indice</td>";
 		echo "<td style='display: none;'>$id</td>";
 		echo "<td><a href='#'>$nome</a></td>";
-		echo "<td><button type='button' class='btn btn-success editbtn'>Editar</button></td>";
+		echo "<td><a href='../../Eventos/Editar/edita_local.php?local_id=$id'><button type='button' class='btn btn-success'>Editar</button></td>";
 		echo "<td><button type='button' class='btn btn-danger deletebtn'>Apagar</button></td>";
 		echo "</tr>";
 
