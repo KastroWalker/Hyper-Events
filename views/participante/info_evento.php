@@ -30,7 +30,7 @@
         include "../../Controls/paticipante/info_evento.php";
     ?>
 
-    <!-- DELETE  -->
+    <!-- Inscricao Evento  -->
     <div class="modal fade" id="confirmmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -45,6 +45,32 @@
                     <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
                     <input type="hidden" name="evento_id" value="<?php echo $id; ?>">
                     <h4>Confirme a inscrição!</h4>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"> Cancelar! </button>
+                    <button type="submit" name="deletedata" class="btn btn-primary"> Confirmar! </button>
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Inscricao atividade  -->
+    <div class="modal fade" id="confirm_ativ_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Confirmar Inscrição</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="../../Controls/CRUD/gerencia_inscricao_atividade.php?acao=cadastrar" method="POST">
+                <div class="modal-body">
+                    <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
+                    <input type="hidden" name="evento_id" value="<?php echo $id; ?>">
+                    <input type="hidden" name="atividade_id" id="atividade_id">
+                    <h4>Confirme a inscrição na atividade <span id="titulo_atividade"></span>!</h4>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal"> Cancelar! </button>

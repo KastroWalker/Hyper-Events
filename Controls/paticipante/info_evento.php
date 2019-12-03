@@ -60,7 +60,7 @@
                 $convidado  = $row['nome_convidado'];
                 echo "<tr>";
                 echo "<td>".$indice."</td>";
-                #echo "<td style='display: none;'>$id</td>";
+                echo "<td style='display: none;'>$id</td>";
                 echo "<td><a class=atividade href=#info_atividade>".$nome."</a></td>";
                 echo "<td style='display: none;'>$tipo_atividade</td>";
                 echo "<td style='display: none;'>$vagas</td>";
@@ -70,6 +70,7 @@
                 echo "<td style='display: none;'>$nome_local</td>";
                 echo "<td style='display: none;'>$inicio</td>";
                 echo "<td style='display: none;'>$convidado</td>";
+                echo "<td width='25%'><button class='btn btn-info btn_inscreva_ativ'>inscrever na atividade</button></td>";
                 echo "</tr>";
                 $indice++;
             }
