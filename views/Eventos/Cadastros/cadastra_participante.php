@@ -32,7 +32,7 @@ session_start();
     ?>
 
     <section id="cadastro">
-        <form action="../../../Controls/CRUD/gerencia_participante.php" name="form_cadastro" method="post" onsubmit="return valida_dados()">
+        <form action="../../../Controls/CRUD/gerencia_participante.php?acao=cadastrar" name="form_cadastro" method="post" onsubmit="return valida_dados()">
             <h2>Cadastro de Usuário</h2>
 
             <input type="hidden" name="tipo_user">
