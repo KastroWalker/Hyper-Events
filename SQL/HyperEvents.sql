@@ -1,6 +1,6 @@
 /**
   *Banco de dados HyperEvents
-  *Criado por Descompila Compilando
+  *Criado por Tico e Teco
   */
 -- Criando a base de dados --
 create database HyperEvents;
