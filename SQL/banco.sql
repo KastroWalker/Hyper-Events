@@ -4,8 +4,6 @@
   *Versão: 1.0
   */
 
-drop database HyperEvents;
-
 create database HyperEvents;
 
 use HyperEvents;
@@ -78,3 +76,6 @@ create table Inscricao(
 	foreign key(atividade_id) references Atividade(atividade_id),
 	foreign key(participante_id) references Participante(participante_id)
 );
+
+insert into TipoAtividade (nome) values ("miniscurso");
+insert into TipoAtividade (nome) values ("palestra");

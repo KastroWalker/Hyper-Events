@@ -13,14 +13,14 @@
 		}
 		
 		public function setTipoAtividadeId($tipo_atividade_id){
-		    return $this->tipo_atividade_id = $tipo_atividade_id;
+		    $this->tipo_atividade_id = $tipo_atividade_id;
 		}
 
 		public function getNome(){
 		    return $this->nome;
 		}
 		public function setNome($nome){
-		    return $this->nome = $nome;
+		    $this->nome = $nome;
 		}
 	} 
 ?>

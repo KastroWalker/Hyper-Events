@@ -16,28 +16,28 @@
 		    return $this->ministrante_id;
 		}
 		public function setMinistranteId($ministrante_id){
-		    return $this->ministrante_id = $ministrante_id;
+		    $this->ministrante_id = $ministrante_id;
 		}
 
 		public function getNome(){
 		    return $this->nome;
 		}
 		public function setNome($nome){
-		    return $this->nome = $nome;
+		    $this->nome = $nome;
 		}
 
 		public function getDescricao(){
 		    return $this->descricao;
 		}
 		public function setDescricao($descricao){
-		    return $this->descricao = $descricao;
+		    $this->descricao = $descricao;
 		}
 
 		public function getEmail(){
 		    return $this->email;
 		}
 		public function setEmail($email){
-		    return $this->email = $email;
+		    $this->email = $email;
 		}
 	}
 ?>
