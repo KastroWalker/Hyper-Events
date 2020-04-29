@@ -1,0 +1,4 @@
+RewriteEngine off
+RewriteCond %{REQUEST_URI} !^/Hyper-Events/index.php$
+RewriteCond %{REQUEST_URI} !\.(gif|jpe?g|png|css|js)$
+RewriteRule .* /Hyper-Events/index.php [L,R=302]

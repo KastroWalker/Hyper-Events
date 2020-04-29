@@ -1,0 +1,12 @@
+CRITICAL - 2020-04-29 08:47:39 --> Class 'Kint\Kint' not found
+#0 /opt/lampp/htdocs/HyperEvents/system/CodeIgniter.php(224): require_once()
+#1 /opt/lampp/htdocs/HyperEvents/system/CodeIgniter.php(193): CodeIgniter\CodeIgniter->initializeKint()
+#2 /opt/lampp/htdocs/HyperEvents/system/bootstrap.php(168): CodeIgniter\CodeIgniter->initialize()
+#3 /opt/lampp/htdocs/HyperEvents/index.php(36): require('/opt/lampp/htdo...')
+#4 {main}
+CRITICAL - 2020-04-29 08:47:54 --> Class 'Kint\Kint' not found
+#0 /opt/lampp/htdocs/HyperEvents/system/CodeIgniter.php(224): require_once()
+#1 /opt/lampp/htdocs/HyperEvents/system/CodeIgniter.php(193): CodeIgniter\CodeIgniter->initializeKint()
+#2 /opt/lampp/htdocs/HyperEvents/system/bootstrap.php(168): CodeIgniter\CodeIgniter->initialize()
+#3 /opt/lampp/htdocs/HyperEvents/index.php(36): require('/opt/lampp/htdo...')
+#4 {main}

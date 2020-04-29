@@ -1,49 +1,45 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8"/>
-    <meta name="robots" content="index, follow"/>
-    <meta name="description" content="Hyper Events - Sistema de Eventos Acadêmicos"/>
-    <meta name="keywords" content="Eventos Acadêmicos, Escola,"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="author" content="Kauan Portela"/> 
-    
-    <link rel="icon" href="img/icon.png" type="image/x-icon"/>
-    <link rel="stylesheet" type="text/CSS" href="CSS/style_padrao.css"/>
-    <link rel="stylesheet" type="text/CSS" href="CSS/bootstrap/bootstrap.min.css"/>
-    
-    <title>Hyper Events</title>
-</head>
-<body>
-    <header>
-        <h1 style="height: 100px"><img src="img/logo.png" alt="logo" style="height: 125px;">Sistema de Eventos Academicos</h1>
-        <hr/>
-        <script src="JS/jquery.js"></script>
-    </header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="index.php"><img src="img/icon.png" width="30" height="30" class="d-inline-block align-top" alt="Hyper"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+<?php
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="views/login.php">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="views/Eventos/Listar/listar_eventos_user.php">Eventos</a>
-                </li>  
-            </ul>
-        </div>
-    </nav>
-    <div style="width: 80%; margin: 15px auto;">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia magni reprehenderit quae sit quidem, delectus. Et laboriosam quia cumque, animi rerum! Eveniet provident eius, numquam, iure sit quis laboriosam voluptatibus?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia magni reprehenderit quae sit quidem, delectus. Et laboriosam quia cumque, animi rerum! Eveniet provident eius, numquam, iure sit quis laboriosam voluptatibus?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia magni reprehenderit quae sit quidem, delectus. Et laboriosam quia cumque, animi rerum! Eveniet provident eius, numquam, iure sit quis laboriosam voluptatibus?
-    </div>
-    <footer>
-        <script src="JS/bootstrap/bootstrap.min.js"></script>
-        <h2>Direitos</h2>
-        <p>2019 &copy; Copyright - Todos os direitos reservados | Criado por Descompila Compilando.</p>
-    </footer>
-</body>
-</html>
+// Valid PHP Version?
+$minPHPVersion = '7.2';
+if (phpversion() < $minPHPVersion)
+{
+	die("Your PHP version must be {$minPHPVersion} or higher to run CodeIgniter. Current version: " . phpversion());
+}
+unset($minPHPVersion);
+
+// Path to the front controller (this file)
+define('FCPATH', __DIR__ . DIRECTORY_SEPARATOR);
+
+// Location of the Paths config file.
+// This is the line that might need to be changed, depending on your folder structure.
+$pathsPath = FCPATH . './app/Config/Paths.php';
+// ^^^ Change this if you move your application folder
+
+/*
+ *---------------------------------------------------------------
+ * BOOTSTRAP THE APPLICATION
+ *---------------------------------------------------------------
+ * This process sets up the path constants, loads and registers
+ * our autoloader, along with Composer's, loads our constants
+ * and fires up an environment-specific bootstrapping.
+ */
+
+// Ensure the current directory is pointing to the front controller's directory
+chdir(__DIR__);
+
+// Load our paths config file
+require $pathsPath;
+$paths = new Config\Paths();
+
+// Location of the framework bootstrap file.
+$app = require rtrim($paths->systemDirectory, '/ ') . '/bootstrap.php';
+
+/*
+ *---------------------------------------------------------------
+ * LAUNCH THE APPLICATION
+ *---------------------------------------------------------------
+ * Now that everything is setup, it's time to actually fire
+ * up the engines and make this app do its thang.
+ */
+$app->run();
